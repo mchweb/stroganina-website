@@ -1,0 +1,159 @@
+/***************************************************
+COMMON STYLES
+***************************************************/
+html, body {
+	height:100%;
+	min-height:100%;
+}
+
+a {
+	text-decoration: none;
+	cursor:pointer;
+	color:$text-clr;
+}
+
+a.anchor{
+	position: absolute;
+	margin-top:-5em;
+}
+
+button:focus {outline:0;}
+
+strong {font-weight:bold}
+
+body.modal_open {
+	overflow: hidden;
+}
+
+
+/***************************************************
+FONTS
+***************************************************/
+@font-face {
+	font-family: 'Lora';
+	src: url('../fonts/hinted-subset-Lora-Bold.eot');
+	src: url('../fonts/hinted-subset-Lora-Bold.eot?#iefix') format('embedded-opentype'),
+		url('../fonts/hinted-subset-Lora-Bold.woff2') format('woff2'),
+		url('../fonts/hinted-subset-Lora-Bold.woff') format('woff'),
+		url('../fonts/hinted-subset-Lora-Bold.ttf') format('truetype');
+	font-weight: bold;
+	font-style: normal;
+}
+
+@font-face {
+	font-family: 'Lato';
+	src: url('../fonts/subset-Lato-Regular.eot');
+	src: url('../fonts/subset-Lato-Regular.eot?#iefix') format('embedded-opentype'),
+		url('../fonts/subset-Lato-Regular.woff2') format('woff2'),
+		url('../fonts/subset-Lato-Regular.woff') format('woff'),
+		url('../fonts/subset-Lato-Regular.ttf') format('truetype');
+	font-weight: normal;
+	font-style: normal;
+}
+
+@font-face {
+	font-family: 'Lato';
+	src: url('../fonts/subset-Lato-Bold.eot');
+	src: url('../fonts/subset-Lato-Bold.eot?#iefix') format('embedded-opentype'),
+		url('../fonts/subset-Lato-Bold.woff2') format('woff2'),
+		url('../fonts/subset-Lato-Bold.woff') format('woff'),
+		url('../fonts/subset-Lato-Bold.ttf') format('truetype');
+	font-weight: bold;
+	font-style: normal;
+}
+
+/***************************************************
+MAIN TYPOGRAPHY
+***************************************************/
+@import "compass/typography/vertical_rhythm";
+$base-font-size: 16px;
+$base-line-height: 6px;
+
+@include establish-baseline;
+
+// settings
+body{
+	font-family: 'Lato', Helvetica, Arial, sans-serif;
+	color:$text-clr;
+	//@include adjust-font-size-to($fs-base, 4);
+}
+p{
+	@include adjust-font-size-to($fs-base, 4);
+}
+/***************************************************
+SUSY GRID
+***************************************************/
+@import "susy";
+
+$susy: (
+  columns: 12,
+  gutters: 30px/70px,
+  column-width: 70px,
+  gutter-position: inside-static,
+  global-box-sizing: border-box,
+  debug: (
+    image: show,
+    color: rgba(#66f, .25),
+    output: background
+  )
+);
+
+@include border-box-sizing;
+
+.wrap{
+  @include container(); 
+}
+
+
+// test data 
+// TODO:remove
+.one {
+	@include span(8);
+}
+.some-heading,
+.some-heading1,
+.some-heading2,
+.some-heading3,
+.some-heading4,
+.some-heading5,
+.some-heading6,
+.some-heading7,
+.some-heading8,
+.some-heading9,
+.some-heading10 {
+	@include leader(2);
+}
+
+.some-heading{
+	@extend .p-h1;
+}
+.some-heading1{
+	@extend .p-h2;
+}
+.some-heading2{
+	@extend .p-h3;
+}
+.some-heading3{
+	@extend .p-h4;
+}
+.some-heading4{
+	@extend .p-h5;
+}
+.some-heading5{
+	@extend .p-accent;
+}
+.some-heading6{
+	@extend .p-note;
+}
+.some-heading7{
+	@extend .p-compact;
+}
+.some-heading8{
+	@extend .p-secondary;
+}
+.some-heading9{
+	@extend .p-buttons;
+}
+.some-heading10{
+	@extend .p-small;
+}
