@@ -24,34 +24,36 @@
 .slideContent{
 }
 .slide__title{
+	color:$gray-15;
 	& h2{
 		@extend .p-h2;
 	}
 }
 .slide__text{
+	color:$gray-25;
 	margin:rhythm(4) 0;
 }
 .slide__buttons{
-	margin:rhythm(4) 0;
+	margin:rhythm(4) 0 rhythm(10) 0;
 	& button, a {
 		margin-right:rhythm(2);	
 	}
 }
 .slideExtras {
-	margin-top:rhythm(10);
 	display: flex;
 	flex-flow: row wrap;
 	justify-content: space-around;
 	text-align:center;
-	max-width:rhythm(65);
 }
 .slideExtrasWrap{
 	width:33%;
 	margin-bottom:rhythm(2);
 }
 .slideExtras__item{
-	max-width:rhythm(20);
+	padding-left:rhythm(1);
+	padding-right:rhythm(1);
 	& p{
+		color:$gray-15;
 		@extend .p-compact;
 	}
 	& img {
@@ -82,4 +84,17 @@
 		justify-content:flex-start;
 	}
 
+}
+
+.slideInfo{
+	margin:rhythm(4) 0;
+	color:$gray-15;
+}
+
+.slideInfo__item{
+	width:50%;
+	display:inline-block;
+}
+.slideInfo__price{
+	@extend .p-h3;
 }

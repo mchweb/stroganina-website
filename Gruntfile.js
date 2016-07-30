@@ -28,7 +28,8 @@ module.exports = function(grunt) {
         processhtml: {
             build: {
                 files: {
-                    'prod/index.html': ['index.html']
+                    'prod/index.html': ['index.html'],
+                    'prod/space.html': ['space.html']
                 }
             }
         },
@@ -45,7 +46,7 @@ module.exports = function(grunt) {
         },
         inlineImgSize: {
             files: {
-                src: ['index.html']
+                src: ['index.html', 'space.html']
             }
         },
         postcss: {

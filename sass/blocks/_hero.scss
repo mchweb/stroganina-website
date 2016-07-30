@@ -7,7 +7,6 @@
 	align-items: center;
 	justify-content:flex-end;
 	color:$bg-clr;
-	padding-bottom:rhythm(6);
 }
 
 .heroWrap{
@@ -23,6 +22,9 @@
 }
 .hero__title {
 	margin-bottom:rhythm(4);
+	&.hero__title_indented{
+		margin-top:rhythm(10);
+	}
 	& h1{
 		@extend .p-h1;
 	}
@@ -56,4 +58,27 @@
 }
 .heroInfo__item_time:before{
 	background: url("../img/index__hero-time.svg") no-repeat;
+}
+
+.heroExtras{
+	margin-top:rhythm(15);
+	//margin-bottom:rhythm(-20);
+}
+.heroExtras__item{
+
+	&:first-child {
+		@include push(2);
+	}
+	@include span(2);
+	color:$gray-70;
+	text-align:center;
+	& img {
+		max-width:rhythm(17);
+		height:auto;
+		margin-bottom:rhythm(4);
+	}
+	
+	& p{
+		@extend .p-compact;
+	}
 }

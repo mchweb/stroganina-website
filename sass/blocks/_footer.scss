@@ -32,14 +32,16 @@
 	& p{
 		@extend .p-secondary;
 	}
+	& a{
+		border-bottom:rhythm(1/6) solid rgba(186, 186, 186, 0.5);
+		&:hover{
+			color:$bg-clr;
+			border-bottom:rhythm(1/6) solid rgba(255, 255, 255, 0.65);
+		}
+	}
 }
 .footer__link{
 	margin-left:rhythm(3);
-	border-bottom:rhythm(1/6) solid rgba(186, 186, 186, 0.5);
-	&:hover{
-		color:$bg-clr;
-		border-bottom:rhythm(1/6) solid rgba(255, 255, 255, 0.65);
-	}
 }
 
 .footer__links{
