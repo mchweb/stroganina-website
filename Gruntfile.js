@@ -17,13 +17,6 @@ module.exports = function(grunt) {
                 }]
             }
         },
-        cssmin: {
-            dist: {
-                files: {
-                    'prod/assets/css/screen.min.css': ['assets/css/screen.css']
-                }
-            }
-        },
         compass: {
             dist: {
                 options: {
@@ -32,21 +25,10 @@ module.exports = function(grunt) {
                 }
             }
         },
-        /*sass: {
-            options: {
-                sourceMap: false
-            },
-            dist: {
-                files: {
-                    'css/screen.css': 'sass/screen.scss'
-                }
-            }
-        },*/
         processhtml: {
             build: {
                 files: {
-                    'prod/index.html': ['index.html'],
-                    'prod/cart.html': ['cart.html']
+                    'prod/index.html': ['index.html']
                 }
             }
         },
@@ -56,45 +38,41 @@ module.exports = function(grunt) {
                     {expand: true, src: ['favicon.ico'], dest: 'prod/', filter: 'isFile'},
                     {expand: true, src: ['assets/js/main.min.js'], dest: 'prod/', filter: 'isFile'},
                     {expand: true, src: ['assets/js/vendor/*'], dest: 'prod/', filter: 'isFile'},
-					{expand: true, src: ['assets/img/*.svg'], dest: 'prod/', filter: 'isFile'}
+					{expand: true, src: ['assets/img/*.svg'], dest: 'prod/', filter: 'isFile'},
+                    {expand: true, src: ['assets/css/*.css'], dest: 'prod/', filter: 'isFile'}
                 ],
             },
-        },
-        watch: {
-            options: { livereload: true, },
-            css: {
-                files: ['sass/*.scss'],
-                tasks: ['compass']
-            },
-            html: {
-                files: ['*.html','**/*.css']
-            }
-        },
-        uncss: {
-            dist: {
-                files: {
-                    'css/tidy.css': ['index.html']
-                }
-            }
         },
         inlineImgSize: {
             files: {
                 src: ['index.html']
             }
-        }
+        },
+        postcss: {
+            options: {
+                map: false, 
+                processors: [
+                    require('postcss-px-to-em')(),
+                    require('css-mqpacker')(),
+                    require('postcss-focus')(),
+                    require('autoprefixer')({browsers: '> 5%'}),
+                    require('cssnano')()
+                ]
+            },
+            dist: {
+                src: 'assets/css/*.css'
+            }
+        }            
     });
 
     grunt.loadNpmTasks('grunt-contrib-uglify');
     grunt.loadNpmTasks('grunt-contrib-imagemin');
-    grunt.loadNpmTasks('grunt-contrib-cssmin');
     grunt.loadNpmTasks('grunt-contrib-copy');
-    //grunt.loadNpmTasks('grunt-sass');
     grunt.loadNpmTasks('grunt-processhtml');
-    grunt.loadNpmTasks('grunt-contrib-watch');
-    grunt.loadNpmTasks('grunt-uncss');
     grunt.loadNpmTasks('grunt-contrib-compass');
     grunt.loadNpmTasks('grunt-inline-imgsize');
+    grunt.loadNpmTasks('grunt-postcss');
 
-    grunt.registerTask('default', ['compass', 'uglify', 'imagemin', 'cssmin', 'processhtml', 'copy']);
+    grunt.registerTask('default', ['compass', 'postcss', 'uglify', 'inlineImgSize', 'processhtml', 'imagemin', 'copy']);
 
 };

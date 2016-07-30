@@ -18,6 +18,12 @@
 	font-style: normal;
 	@include adjust-font-size-to($fs-sm, 3);
 }
+.p-base {
+	font-family: 'Lato';
+	font-weight: normal;
+	font-style: normal;
+	@include adjust-font-size-to($fs-base, 4);
+}
 .p-compact {
 	font-family: 'Lato';
 	font-weight: normal;

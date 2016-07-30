@@ -1,0 +1,8 @@
+.minicart{
+	
+}
+.minicart__title{
+	& p{
+		@extend .p-note;
+	}
+}

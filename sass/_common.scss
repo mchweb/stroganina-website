@@ -75,7 +75,6 @@ $base-line-height: 6px;
 body{
 	font-family: 'Lato', Helvetica, Arial, sans-serif;
 	color:$text-clr;
-	//@include adjust-font-size-to($fs-base, 4);
 }
 p{
 	@include adjust-font-size-to($fs-base, 4);
@@ -92,7 +91,7 @@ $susy: (
   gutter-position: inside-static,
   global-box-sizing: border-box,
   debug: (
-    image: show,
+    image: hide,
     color: rgba(#66f, .25),
     output: background
   )
@@ -100,13 +99,11 @@ $susy: (
 
 @include border-box-sizing;
 
+// test data 
+// TODO:remove
 .wrap{
   @include container(); 
 }
-
-
-// test data 
-// TODO:remove
 .one {
 	@include span(8);
 }

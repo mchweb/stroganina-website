@@ -1,0 +1,17 @@
+.insta{
+	&:after{
+		content: " ";
+    	display: block;
+    	clear: both;
+	}
+}
+.insta__item{
+	@include span(12/8);
+	padding:0;
+	display:inline-block;
+	//margin: 0 rhythm(-5/6) rhythm(-3/6) 0;
+	& img{
+		width:100%;
+		height:auto;
+	}
+}

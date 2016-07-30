@@ -1,1 +1,32 @@
 // Buttons
+.btn{
+	display:inline-block;
+	vertical-align:middle;
+	background:$bg-clr;
+	border:rhythm(1/6) solid $accent;
+	border-radius:rhythm(5);
+	padding:rhythm(2.5 - 1/6) rhythm(4);
+	border-color:$accent;
+	color:$gray-25;
+	text-align:center;
+	&:hover{
+		background:$accent;
+		
+		color:$bg-clr;
+	}
+	& span{
+		@extend .p-buttons;
+	}
+}
+.btn_primary{
+	background:$accent;
+	color:$bg-clr;
+	&:hover{
+		background:$accent-dark;
+		border-color:$accent-dark;
+	}
+}
+.btn_long{
+	max-width:rhythm(27);
+	padding:rhythm(1 - 1/6) rhythm(4);
+}
