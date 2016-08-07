@@ -98,13 +98,6 @@
 	& li{
 		display:inline;
 		@include adjust-font-size-to($fs-base);
-		& a{
-			border-bottom:rhythm(1/6, $fs-base) solid $gray-65;
-			&:hover{
-				color:$text-clr;
-				border-color:$gray-25;
-			}
-		}
 		&:after{
 			content:"";
 			display:inline-block;
