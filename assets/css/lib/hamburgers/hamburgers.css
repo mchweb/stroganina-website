@@ -104,7 +104,7 @@
 }
 /* line 27, ../../../../sass/lib/hamburgers/types/_slider.scss */
 .hamburger--slider.is-active .hamburger-inner::before {
-  transform: rotate(-45deg) translate3d(-4.571428571429px, -5px, 0);
+  transform: rotate(-45deg) translate3d(-4.57142857px, -5px, 0);
   opacity: 0;
 }
 /* line 32, ../../../../sass/lib/hamburgers/types/_slider.scss */

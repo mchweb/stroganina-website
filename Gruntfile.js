@@ -53,7 +53,6 @@ module.exports = function(grunt) {
             options: {
                 map: false, 
                 processors: [
-                    require('postcss-px-to-em')(),
                     require('css-mqpacker')(),
                     require('postcss-focus')(),
                     require('autoprefixer')({browsers: '> 5%'}),

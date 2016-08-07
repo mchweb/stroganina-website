@@ -24,7 +24,7 @@
 }
 
 .footerForm{
-	margin-top:rhythm(2);
+	padding-top:rhythm(2);
 }
 .footerForm__inputs{
 	width:100%;
@@ -46,7 +46,7 @@
 	border:none;
 	background:none;
 	padding:rhythm(1/2) 0 rhythm(3/6) 0;
-	border-bottom:rhythm(1/6) solid $gray-50;
+	border-bottom:1px solid $gray-50;
 }
 .footerFormGroup_privacy{
 	text-align:left;

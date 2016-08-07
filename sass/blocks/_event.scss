@@ -91,7 +91,7 @@
 
 .event__info{
 	@include span(7);
-	margin-top:rhythm(-2);
+	margin-top:rhythm(-1);
 }
 .eventTags {
 	color:$gray-50;
@@ -111,7 +111,8 @@
 	@include span(3);
 }
 .eventSidebar__title{
-	margin-bottom:rhythm(3);
+	margin-top:rhythm(-1);
+	margin-bottom:rhythm(2);
 	& p{
 		@extend .p-h4;
 	}

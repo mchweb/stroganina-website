@@ -1310,7 +1310,7 @@ img.mfp-img {
 }
 /* line 27, ../../sass/lib/hamburgers/types/_slider.scss */
 .hamburger--slider.is-active .hamburger-inner::before {
-  transform: rotate(-45deg) translate3d(-4.571428571429px, -5px, 0);
+  transform: rotate(-45deg) translate3d(-4.57142857px, -5px, 0);
   opacity: 0;
 }
 /* line 32, ../../sass/lib/hamburgers/types/_slider.scss */
@@ -1456,7 +1456,7 @@ body {
 /* line 79, ../../sass/_common.scss */
 p {
   font-size: 0.875em;
-  line-height: 1.714285714286em;
+  line-height: 1.71428571em;
 }
 
 /***************************************************
@@ -1497,7 +1497,7 @@ SUSY GRID
   font-weight: normal;
   font-style: normal;
   font-size: 0.6875em;
-  line-height: 1.636363636364em;
+  line-height: 1.63636364em;
   letter-spacing: 0.2em;
   text-transform: uppercase;
 }
@@ -1517,7 +1517,7 @@ SUSY GRID
   font-weight: normal;
   font-style: normal;
   font-size: 0.875em;
-  line-height: 1.714285714286em;
+  line-height: 1.71428571em;
 }
 
 /* line 27, ../../sass/_paragraph.scss */
@@ -1526,7 +1526,7 @@ SUSY GRID
   font-weight: normal;
   font-style: normal;
   font-size: 0.875em;
-  line-height: 1.285714285714em;
+  line-height: 1.28571429em;
 }
 
 /* line 33, ../../sass/_paragraph.scss */
@@ -1535,7 +1535,7 @@ SUSY GRID
   font-weight: normal;
   font-style: normal;
   font-size: 1.125em;
-  line-height: 1.333333333333em;
+  line-height: 1.33333333em;
 }
 
 /* line 39, ../../sass/_paragraph.scss */
@@ -1544,7 +1544,7 @@ SUSY GRID
   font-weight: bold;
   font-style: normal;
   font-size: 1.125em;
-  line-height: 1.333333333333em;
+  line-height: 1.33333333em;
 }
 
 /* line 45, ../../sass/_paragraph.scss */
@@ -1553,7 +1553,7 @@ SUSY GRID
   font-weight: bold;
   font-style: normal;
   font-size: 0.875em;
-  line-height: 1.714285714286em;
+  line-height: 1.71428571em;
 }
 
 /* line 51, ../../sass/_paragraph.scss */
@@ -1562,7 +1562,7 @@ SUSY GRID
   font-weight: bold;
   font-style: normal;
   font-size: 1.125em;
-  line-height: 1.333333333333em;
+  line-height: 1.33333333em;
 }
 
 /* line 57, ../../sass/_paragraph.scss */
@@ -1660,8 +1660,8 @@ SUSY GRID
   display: inline-block;
   vertical-align: middle;
   background-image: url("../img/arrow.svg");
-  width: 2.181818181818em;
-  height: 1.636363636364em;
+  width: 2.18181818em;
+  height: 1.63636364em;
 }
 
 /* line 22, ../../sass/blocks/_link.scss */
@@ -1727,7 +1727,7 @@ SUSY GRID
 
 /* line 35, ../../sass/blocks/_header.scss */
 .header__logo {
-  width: 16.666666666667%;
+  width: 16.66666667%;
   float: left;
   padding-left: 15px;
   padding-right: 15px;
@@ -1858,7 +1858,7 @@ SUSY GRID
 
 /* line 96, ../../sass/blocks/_header.scss */
 .headerSide {
-  width: 33.333333333333%;
+  width: 33.33333333%;
   float: left;
   padding-left: 15px;
   padding-right: 15px;
@@ -1982,10 +1982,10 @@ SUSY GRID
 .heroInfo__item p:before {
   content: "";
   display: block;
-  width: 1.333333333333em;
-  height: 1.333333333333em;
+  width: 1.33333333em;
+  height: 1.33333333em;
   float: left;
-  margin: 0 0.333333333333em 0 0;
+  margin: 0 0.33333333em 0 0;
 }
 
 /* line 56, ../../sass/blocks/_hero.scss */
@@ -2005,7 +2005,7 @@ SUSY GRID
 
 /* line 67, ../../sass/blocks/_hero.scss */
 .heroExtras__item {
-  width: 16.666666666667%;
+  width: 16.66666667%;
   float: left;
   padding-left: 15px;
   padding-right: 15px;
@@ -2014,7 +2014,7 @@ SUSY GRID
 }
 /* line 69, ../../sass/blocks/_hero.scss */
 .heroExtras__item:first-child {
-  margin-left: 16.666666666667%;
+  margin-left: 16.66666667%;
 }
 /* line 75, ../../sass/blocks/_hero.scss */
 .heroExtras__item img {
@@ -2027,16 +2027,20 @@ SUSY GRID
 .slide {
   width: 100%;
   height: 100vh;
+  min-height: 54.375em;
+  max-height: 75em;
   background-repeat: no-repeat;
   background-size: contain;
 }
 
-/* line 7, ../../sass/blocks/_slide.scss */
+/* line 9, ../../sass/blocks/_slide.scss */
 .slideWrap {
   max-width: 1200px;
   margin-left: auto;
   margin-right: auto;
   height: 100vh;
+  min-height: 54.375em;
+  max-height: 75em;
 }
 /* line 12, ../../../../../../Ruby22-x64/lib/ruby/gems/2.2.0/gems/susy-2.2.11/sass/susy/output/support/_clearfix.scss */
 .slideWrap:after {
@@ -2045,7 +2049,7 @@ SUSY GRID
   clear: both;
 }
 
-/* line 11, ../../sass/blocks/_slide.scss */
+/* line 15, ../../sass/blocks/_slide.scss */
 .slideSep {
   width: 25%;
   float: left;
@@ -2054,41 +2058,45 @@ SUSY GRID
   background-size: cover;
   background-repeat: no-repeat;
   height: 100vh;
+  min-height: 54.375em;
+  max-height: 75em;
 }
 
-/* line 17, ../../sass/blocks/_slide.scss */
+/* line 23, ../../sass/blocks/_slide.scss */
 .slideContentWrap {
-  width: 33.333333333333%;
+  width: 33.33333333%;
   float: left;
   padding-left: 15px;
   padding-right: 15px;
   display: flex;
   align-items: center;
   height: 100vh;
+  min-height: 54.375em;
+  max-height: 75em;
   background-color: #FFF;
 }
 
-/* line 26, ../../sass/blocks/_slide.scss */
+/* line 34, ../../sass/blocks/_slide.scss */
 .slide__title {
   color: #262626;
 }
 
-/* line 32, ../../sass/blocks/_slide.scss */
+/* line 40, ../../sass/blocks/_slide.scss */
 .slide__text {
   color: #434343;
   margin: 1.5em 0;
 }
 
-/* line 36, ../../sass/blocks/_slide.scss */
+/* line 44, ../../sass/blocks/_slide.scss */
 .slide__buttons {
   margin: 1.5em 0 3.75em 0;
 }
-/* line 38, ../../sass/blocks/_slide.scss */
+/* line 46, ../../sass/blocks/_slide.scss */
 .slide__buttons button, .slide__buttons a {
   margin-right: 0.75em;
 }
 
-/* line 42, ../../sass/blocks/_slide.scss */
+/* line 50, ../../sass/blocks/_slide.scss */
 .slideExtras {
   display: flex;
   flex-flow: row wrap;
@@ -2096,75 +2104,75 @@ SUSY GRID
   text-align: center;
 }
 
-/* line 48, ../../sass/blocks/_slide.scss */
+/* line 56, ../../sass/blocks/_slide.scss */
 .slideExtrasWrap {
   width: 33%;
   margin-bottom: 0.75em;
 }
 
-/* line 52, ../../sass/blocks/_slide.scss */
+/* line 60, ../../sass/blocks/_slide.scss */
 .slideExtras__item {
   padding-left: 0.375em;
   padding-right: 0.375em;
 }
-/* line 55, ../../sass/blocks/_slide.scss */
+/* line 63, ../../sass/blocks/_slide.scss */
 .slideExtras__item p {
   color: #262626;
 }
-/* line 59, ../../sass/blocks/_slide.scss */
+/* line 67, ../../sass/blocks/_slide.scss */
 .slideExtras__item img {
   margin-bottom: 0.75em;
   width: 4.125em;
   height: auto;
 }
 
-/* line 65, ../../sass/blocks/_slide.scss */
+/* line 73, ../../sass/blocks/_slide.scss */
 .slide_right {
   background-position: left center;
 }
-/* line 67, ../../sass/blocks/_slide.scss */
+/* line 75, ../../sass/blocks/_slide.scss */
 .slide_right .slideSep {
   background-image: url("../img/slide__sep_right.svg");
-  margin-left: 41.666666666667%;
+  margin-left: 41.66666667%;
 }
-/* line 71, ../../sass/blocks/_slide.scss */
+/* line 79, ../../sass/blocks/_slide.scss */
 .slide_right .slideContentWrap {
   justify-content: flex-end;
 }
 
-/* line 76, ../../sass/blocks/_slide.scss */
+/* line 84, ../../sass/blocks/_slide.scss */
 .slide_left {
   background-position: right center;
 }
-/* line 78, ../../sass/blocks/_slide.scss */
+/* line 86, ../../sass/blocks/_slide.scss */
 .slide_left .slideSep {
   background-image: url("../img/slide__sep_left.svg");
   margin-left: 0%;
 }
-/* line 83, ../../sass/blocks/_slide.scss */
+/* line 91, ../../sass/blocks/_slide.scss */
 .slide_left .slideContentWrap {
   justify-content: flex-start;
 }
 
-/* line 89, ../../sass/blocks/_slide.scss */
+/* line 97, ../../sass/blocks/_slide.scss */
 .slide_big .slideSep {
-  margin-left: 33.333333333333%;
+  margin-left: 33.33333333%;
 }
-/* line 92, ../../sass/blocks/_slide.scss */
+/* line 100, ../../sass/blocks/_slide.scss */
 .slide_big .slideContentWrap {
-  width: 41.666666666667%;
+  width: 41.66666667%;
   float: left;
   padding-left: 15px;
   padding-right: 15px;
 }
 
-/* line 97, ../../sass/blocks/_slide.scss */
+/* line 105, ../../sass/blocks/_slide.scss */
 .slideInfo {
   margin: 1.5em 0;
   color: #262626;
 }
 
-/* line 102, ../../sass/blocks/_slide.scss */
+/* line 110, ../../sass/blocks/_slide.scss */
 .slideInfo__item {
   width: 50%;
   display: inline-block;
@@ -2221,7 +2229,7 @@ SUSY GRID
 
 /* line 16, ../../sass/blocks/_footer.scss */
 .footer__text {
-  width: 33.333333333333%;
+  width: 33.33333333%;
   float: left;
   padding-left: 15px;
   padding-right: 15px;
@@ -2230,18 +2238,18 @@ SUSY GRID
 }
 /* line 23, ../../sass/blocks/_footer.scss */
 .footer__text a {
-  border-bottom: 0.0625em solid rgba(186, 186, 186, 0.5);
+  border-bottom: 1px solid rgba(186, 186, 186, 0.5);
 }
 /* line 25, ../../sass/blocks/_footer.scss */
 .footer__text a:hover {
   color: #FFF;
-  border-bottom: 0.0625em solid rgba(255, 255, 255, 0.65);
+  border-color: rgba(255, 255, 255, 0.65);
 }
 
 /* line 31, ../../sass/blocks/_footer.scss */
 .footer__contacts {
-  margin-left: 8.333333333333%;
-  width: 33.333333333333%;
+  margin-left: 8.33333333%;
+  width: 33.33333333%;
   float: left;
   padding-left: 15px;
   padding-right: 15px;
@@ -2251,12 +2259,12 @@ SUSY GRID
 }
 /* line 41, ../../sass/blocks/_footer.scss */
 .footer__contacts a {
-  border-bottom: 0.0625em solid rgba(186, 186, 186, 0.5);
+  border-bottom: 1px solid rgba(186, 186, 186, 0.5);
 }
 /* line 43, ../../sass/blocks/_footer.scss */
 .footer__contacts a:hover {
   color: #FFF;
-  border-bottom: 0.0625em solid rgba(255, 255, 255, 0.65);
+  border-color: rgba(255, 255, 255, 0.65);
 }
 
 /* line 49, ../../sass/blocks/_footer.scss */
@@ -2377,10 +2385,10 @@ SUSY GRID
 /* line 124, ../../sass/blocks/_footer.scss */
 .footerRight .footerForm__inputs {
   display: inline-block;
+  margin-right: 1.5em;
 }
-/* line 127, ../../sass/blocks/_footer.scss */
+/* line 128, ../../sass/blocks/_footer.scss */
 .footerRight .footerForm__button {
-  margin-left: 1.5em;
   margin-bottom: 0.375em;
   display: inline-block;
   vertical-align: bottom;
@@ -2616,7 +2624,7 @@ SUSY GRID
 
 /* line 35, ../../sass/blocks/_menu.scss */
 .menuCatWrap {
-  width: 33.333333333333%;
+  width: 33.33333333%;
   float: left;
   padding-left: 15px;
   padding-right: 15px;
@@ -2920,7 +2928,7 @@ SUSY GRID
 
 /* line 24, ../../sass/blocks/_event.scss */
 .eventHeading__date {
-  margin-left: 8.333333333333%;
+  margin-left: 8.33333333%;
   width: 25%;
   float: left;
   padding-left: 15px;
@@ -2931,7 +2939,7 @@ SUSY GRID
 /* line 30, ../../sass/blocks/_event.scss */
 .eventHeading__button {
   text-align: center;
-  width: 33.333333333333%;
+  width: 33.33333333%;
   float: left;
   padding-left: 15px;
   padding-right: 15px;
@@ -2939,8 +2947,8 @@ SUSY GRID
 
 /* line 34, ../../sass/blocks/_event.scss */
 .eventHeading__price {
-  margin-left: 8.333333333333%;
-  width: 16.666666666667%;
+  margin-left: 8.33333333%;
+  width: 16.66666667%;
   float: left;
   padding-left: 15px;
   padding-right: 15px;
@@ -2966,7 +2974,7 @@ SUSY GRID
 
 /* line 50, ../../sass/blocks/_event.scss */
 .event__author {
-  width: 16.666666666667%;
+  width: 16.66666667%;
   float: left;
   padding-left: 15px;
   padding-right: 15px;
@@ -3018,11 +3026,11 @@ SUSY GRID
 
 /* line 92, ../../sass/blocks/_event.scss */
 .event__info {
-  width: 58.333333333333%;
+  width: 58.33333333%;
   float: left;
   padding-left: 15px;
   padding-right: 15px;
-  margin-top: -0.75em;
+  margin-top: -0.375em;
 }
 
 /* line 96, ../../sass/blocks/_event.scss */
@@ -3053,66 +3061,67 @@ SUSY GRID
 
 /* line 113, ../../sass/blocks/_event.scss */
 .eventSidebar__title {
-  margin-bottom: 1.125em;
+  margin-top: -0.375em;
+  margin-bottom: 0.75em;
 }
 
-/* line 119, ../../sass/blocks/_event.scss */
+/* line 120, ../../sass/blocks/_event.scss */
 .eventRecent__item {
   margin-bottom: 1.5em;
   color: #262626;
 }
 
-/* line 123, ../../sass/blocks/_event.scss */
+/* line 124, ../../sass/blocks/_event.scss */
 .eventRecent__picture {
   max-width: 100%;
   height: auto;
   margin-bottom: 0.375em;
 }
 
-/* line 133, ../../sass/blocks/_event.scss */
+/* line 134, ../../sass/blocks/_event.scss */
 .eventRecent__text {
   color: #434343;
 }
 
-/* line 140, ../../sass/blocks/_event.scss */
+/* line 141, ../../sass/blocks/_event.scss */
 .eventReg {
   margin-top: 1.5em;
   max-width: 28.125em;
 }
 
-/* line 144, ../../sass/blocks/_event.scss */
+/* line 145, ../../sass/blocks/_event.scss */
 .eventReg__title {
   margin-bottom: 0.375em;
   color: #262626;
 }
 
-/* line 151, ../../sass/blocks/_event.scss */
+/* line 152, ../../sass/blocks/_event.scss */
 .eventReg__caption {
   color: #262626;
 }
 
-/* line 155, ../../sass/blocks/_event.scss */
+/* line 156, ../../sass/blocks/_event.scss */
 .eventForm__tickets {
   text-align: left;
   width: 100%;
   margin: 0.75em 0;
 }
-/* line 159, ../../sass/blocks/_event.scss */
+/* line 160, ../../sass/blocks/_event.scss */
 .eventForm__tickets th {
   color: #FFF;
   background: #7e0000;
 }
-/* line 163, ../../sass/blocks/_event.scss */
+/* line 164, ../../sass/blocks/_event.scss */
 .eventForm__tickets td {
   color: #262626;
   background: #f2e5e5;
 }
-/* line 167, ../../sass/blocks/_event.scss */
+/* line 168, ../../sass/blocks/_event.scss */
 .eventForm__tickets td, .eventForm__tickets th {
   padding: 0.375em 0.9375em;
 }
 
-/* line 171, ../../sass/blocks/_event.scss */
+/* line 172, ../../sass/blocks/_event.scss */
 .eventForm__count {
   border-radius: 0.1875em;
   color: #262626;
@@ -3121,34 +3130,34 @@ SUSY GRID
   max-width: 3.75em;
 }
 
-/* line 178, ../../sass/blocks/_event.scss */
+/* line 179, ../../sass/blocks/_event.scss */
 .eventForm__privacy {
   margin-bottom: 0.375em;
 }
 
-/* line 181, ../../sass/blocks/_event.scss */
+/* line 182, ../../sass/blocks/_event.scss */
 .eventFormGroup {
   margin: 0.75em 0;
 }
 
-/* line 184, ../../sass/blocks/_event.scss */
+/* line 185, ../../sass/blocks/_event.scss */
 .eventFormGroup_radio {
   margin: 1.125em 0;
 }
 
-/* line 187, ../../sass/blocks/_event.scss */
+/* line 188, ../../sass/blocks/_event.scss */
 .eventForm__radio {
   display: block;
   margin-top: 0.375em;
 }
 
-/* line 191, ../../sass/blocks/_event.scss */
+/* line 192, ../../sass/blocks/_event.scss */
 .eventFormGroup__label {
   display: block;
   color: #262626;
 }
 
-/* line 195, ../../sass/blocks/_event.scss */
+/* line 196, ../../sass/blocks/_event.scss */
 .eventFormGroup__input {
   color: #262626;
   display: block;
@@ -3157,18 +3166,18 @@ SUSY GRID
   border: 0.0625em solid #7c7c7c;
   padding: 0.375em 0.75em 0.25em 0.75em;
   font-size: 0.875em;
-  line-height: 1.285714285714em;
+  line-height: 1.28571429em;
 }
 
-/* line 204, ../../sass/blocks/_event.scss */
+/* line 205, ../../sass/blocks/_event.scss */
 .eventFormGroup__radio {
   cursor: pointer;
 }
 
-/* line 208, ../../sass/blocks/_event.scss */
+/* line 209, ../../sass/blocks/_event.scss */
 .eventFormGroup__radioLabel {
   font-size: 0.875em;
-  line-height: 1.285714285714em;
+  line-height: 1.28571429em;
   color: #262626;
   cursor: pointer;
   margin-bottom: 0.75em;
@@ -3232,7 +3241,7 @@ SUSY GRID
 
 /* line 26, ../../sass/blocks/_forms.scss */
 .footerForm {
-  margin-top: 0.75em;
+  padding-top: 0.75em;
 }
 
 /* line 29, ../../sass/blocks/_forms.scss */
@@ -3255,14 +3264,14 @@ SUSY GRID
 /* line 41, ../../sass/blocks/_forms.scss */
 .footerFormGroup__input {
   font-size: 0.875em;
-  line-height: 1.285714285714em;
+  line-height: 1.28571429em;
   color: #FFF;
   outline: 0;
   width: 100%;
   border: none;
   background: none;
   padding: 0.1875em 0 0.1875em 0;
-  border-bottom: 0.0625em solid #7c7c7c;
+  border-bottom: 1px solid #7c7c7c;
 }
 
 /* line 51, ../../sass/blocks/_forms.scss */
@@ -3325,7 +3334,7 @@ SUSY GRID
 /* line 16, ../../sass/blocks/_cook.scss */
 .cookNav > li > p {
   padding: 0.5em 1.25em;
-  border-bottom: 0.041666666667em solid #bababa;
+  border-bottom: 0.04166667em solid #bababa;
 }
 /* line 20, ../../sass/blocks/_cook.scss */
 .cookNav > li > p:after {
@@ -3347,7 +3356,7 @@ SUSY GRID
 }
 /* line 38, ../../sass/blocks/_cook.scss */
 .cookNav > li > ul > li > p {
-  padding: 0 2.142857142857em;
+  padding: 0 2.14285714em;
 }
 /* line 40, ../../sass/blocks/_cook.scss */
 .cookNav > li > ul > li > p:hover {
@@ -3357,32 +3366,32 @@ SUSY GRID
 .cookNav > li > ul > li > p.isTree:after {
   content: "";
   display: inline-block;
-  width: 0.857142857143em;
-  height: 0.571428571429em;
+  width: 0.85714286em;
+  height: 0.57142857em;
   background-image: url("../img/tree.svg");
-  margin-left: 0.428571428571em;
+  margin-left: 0.42857143em;
 }
-/* line 54, ../../sass/blocks/_cook.scss */
-.cookNav > li > ul > li > p.isActive {
+/* line 55, ../../sass/blocks/_cook.scss */
+.cookNav > li > ul > li > ul > li > p {
+  padding: 0 2.14285714em 0 3.42857143em;
+}
+/* line 57, ../../sass/blocks/_cook.scss */
+.cookNav > li > ul > li > ul > li > p:hover {
+  color: #7e0000;
+}
+/* line 61, ../../sass/blocks/_cook.scss */
+.cookNav > li > ul > li > ul > li.isActive > p {
   font-weight: bold;
 }
-/* line 56, ../../sass/blocks/_cook.scss */
-.cookNav > li > ul > li > p.isActive:before {
+/* line 63, ../../sass/blocks/_cook.scss */
+.cookNav > li > ul > li > ul > li.isActive > p:before {
   content: "";
   vertical-align: middle;
   display: inline-block;
-  width: 1.714285714286em;
-  height: 1.285714285714em;
-  margin-left: -0.571428571429em;
+  width: 1.71428571em;
+  height: 1.28571429em;
+  margin-left: -0.57142857em;
   background-image: url("../img/arrow.svg");
-}
-/* line 67, ../../sass/blocks/_cook.scss */
-.cookNav > li > ul > li > ul > li > p {
-  padding: 0 2.142857142857em 0 3.428571428571em;
-}
-/* line 69, ../../sass/blocks/_cook.scss */
-.cookNav > li > ul > li > ul > li > p:hover {
-  color: #7e0000;
 }
 
 /* line 78, ../../sass/blocks/_cook.scss */
@@ -3420,7 +3429,7 @@ SUSY GRID
 .breadcrumbs li {
   display: inline;
   font-size: 0.875em;
-  line-height: 1.285714285714em;
+  line-height: 1.28571429em;
 }
 /* line 101, ../../sass/blocks/_cook.scss */
 .breadcrumbs li:after {
@@ -3428,8 +3437,8 @@ SUSY GRID
   display: inline-block;
   vertical-align: middle;
   background-image: url("../img/arrow_black.svg");
-  width: 1.714285714286em;
-  height: 1.285714285714em;
+  width: 1.71428571em;
+  height: 1.28571429em;
 }
 /* line 109, ../../sass/blocks/_cook.scss */
 .breadcrumbs li:last-child:after {
@@ -3448,7 +3457,7 @@ SUSY GRID
 
 /* line 120, ../../sass/blocks/_cook.scss */
 .good {
-  width: 33.333333333333%;
+  width: 33.33333333%;
   float: left;
   padding-left: 15px;
   padding-right: 15px;
@@ -3476,10 +3485,10 @@ SUSY GRID
 .good__label p:before {
   content: "";
   display: block;
-  width: 1.714285714286em;
-  height: 1.714285714286em;
+  width: 1.71428571em;
+  height: 1.71428571em;
   float: left;
-  margin-right: 0.428571428571em;
+  margin-right: 0.42857143em;
 }
 /* line 148, ../../sass/blocks/_cook.scss */
 .good__label:before {
@@ -3542,7 +3551,7 @@ SUSY GRID
   outline: 0;
   padding: 0;
   color: #7c7c7c;
-  border-bottom: 0.083333333333em solid #bababa;
+  border-bottom: 1px solid #bababa;
 }
 /* line 203, ../../sass/blocks/_cook.scss */
 .good__more button:hover {
