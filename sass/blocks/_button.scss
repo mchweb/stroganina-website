@@ -10,11 +10,11 @@
 	color:$gray-25;
 	text-align:center;
 	&:hover{
-		background:$accent;
-		
+		background:$accent-dark;
+		border-color:$accent-dark;
 		color:$bg-clr;
 	}
-	& span{
+	& p{
 		@extend .p-buttons;
 	}
 }
@@ -24,6 +24,16 @@
 	&:hover{
 		background:$accent-dark;
 		border-color:$accent-dark;
+	}
+}
+.btn_light{
+	background:none;
+	color:$gray-70;
+	border-color:$gray-70;
+	&:hover{
+		color:$text-clr;
+		background:$gray-70;
+		border-color:$gray-70;
 	}
 }
 .btn_long{

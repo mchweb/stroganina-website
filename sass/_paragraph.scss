@@ -52,7 +52,7 @@
 	font-family: 'Lora';
 	font-weight: bold;
 	font-style: normal;
-	@include adjust-font-size-to($fs-md, 4);
+	@include adjust-font-size-to($fs-lg, 4);
 }
 .p-h3 {
 	font-family: 'Lora';

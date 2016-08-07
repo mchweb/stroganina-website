@@ -1,0 +1,123 @@
+.carousel {
+    position: relative;
+    &.carousel_big{
+        & .carouselWrap {
+            height:100vh;
+        }
+        & .carousel__item {
+            height:100vh;
+        }
+    }
+    &.carousel_static{
+        & .carousel__item {
+            visibility:hidden;
+            opacity:0.7;
+        }
+        & .carousel__radio:checked + .carousel__item {
+            visibility:visible;
+        }
+    }
+}
+.carousel_schedule{
+    margin-bottom:rhythm(8);
+}
+
+.carouselWrap {
+    position: relative;
+    overflow: hidden;
+    width: 100%;
+    min-height:rhythm(68);
+}
+
+.carousel__radio:checked + .carousel__item {
+    opacity: 1; 
+}
+.carousel__item {
+    position: absolute;
+    opacity: 0;
+    min-height:rhythm(68);
+    width:100%;
+    transition: opacity 0.3s linear;
+    background-size:cover;
+    background-position:center;
+}
+
+.carousel__control { 
+    border-radius: 50%;
+    cursor: pointer;
+    display: none;
+    height: rhythm(10);
+    width: rhythm(10);
+    position: absolute;
+    top: calc(50% - 1.875em);
+    z-index: 10;
+    opacity:0.5;
+    background-color: $accent;
+    background-image:url('../img/carousel__arrow.svg');
+}
+.carousel__control.prev {
+    left: 5%;
+    transform: rotate(180deg);
+}
+
+.carousel__control.next {
+    right: 5%;
+}
+
+.carousel__control:hover {
+    opacity:1;
+}
+
+#carousel-1:checked ~ .control-1,
+#carousel-2:checked ~ .control-2,
+#carousel-3:checked ~ .control-3,
+#carousel-4:checked ~ .control-4,
+#carousel-5:checked ~ .control-5 {
+    display: block;
+}
+
+.carouselIndicators {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    position: absolute;
+    bottom: rhythm(7);
+    left: 0;
+    right: 0;
+    text-align: center;
+    z-index: 10;
+}
+
+.carouselIndicators li {
+    display: inline-block;
+    margin: 0 rhythm(2);
+}
+
+.carousel__bullet {
+    color:$bg-clr;
+    opacity:0.5;
+    cursor: pointer;
+    display: block;
+    @include adjust-font-size-to(48px);
+    line-height:rhythm(3, 48px);
+}
+
+.carousel__bullet:hover {
+    color: $accent;
+}
+
+#carousel-1:checked ~ .control-1 ~ .carouselIndicators li:nth-child(1) .carousel__bullet,
+#carousel-2:checked ~ .control-2 ~ .carouselIndicators li:nth-child(2) .carousel__bullet,
+#carousel-3:checked ~ .control-3 ~ .carouselIndicators li:nth-child(3) .carousel__bullet,
+#carousel-4:checked ~ .control-4 ~ .carouselIndicators li:nth-child(4) .carousel__bullet,
+#carousel-5:checked ~ .control-5 ~ .carouselIndicators li:nth-child(5) .carousel__bullet {
+    opacity:0.9;
+    cursor:default;
+    &:hover{
+        color:$bg-clr;
+    }
+}
+
+.carousel__button{
+    margin-top:rhythm(5);
+}

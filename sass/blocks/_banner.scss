@@ -1,0 +1,52 @@
+.banner{
+	width:100%;
+	min-height:rhythm(68);
+	display:flex;
+	align-items: center;
+	justify-content:flex-end;
+	color:$bg-clr;
+	@include container();
+}
+.bannerContent{
+	text-align:left;
+	@include push(3);
+	@include span(6 last);
+	margin-right: span(3);
+}
+
+.bannerContent__title{
+	margin-bottom:rhythm(1);
+	& h2{
+		@extend .p-h3;
+	}
+}
+.bannerContent__text{
+	& p{
+		@extend .p-compact;
+	}
+}
+.bannerMeta{
+	margin-bottom:rhythm(2);
+}
+.bannerLabel{
+	display:inline-block;
+	padding:0 rhythm(1);
+	background:$accent;
+	& p{
+		@extend .p-buttons;
+	}
+}
+.bannerTags{
+	margin-left:rhythm(1);
+	display:inline-block;
+}
+.bannerTags__item{
+	display:inline;
+	@extend .p-base;
+	&:after{
+		content:",";
+	}
+	&:last-child:after{
+		content:"";
+	}
+}

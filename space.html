@@ -24,16 +24,6 @@
 		<!--[if lt IE 10]>
 			<p style="text-align:center;font-size:20px;background:white;width:100%;z-index:10000;padding:20px 0px"><strong>Кажется, ваш браузер безнадежно устарел.</strong> Скорее всего, сайт будет отображаться и работать некорректно.<br/>Пожалуйста, <a style="color:red" href="http://browsehappy.com/" target="_blank">установите с одного из официальных сайтов</a> новую версию своего браузера.<br/></p>
 		<![endif]-->
-
-		<div itemscope itemtype="http://schema.org/Organization">
-			<meta itemprop="name" content="Строганина-бар">
-				<div itemprop="address" itemscope itemtype="http://schema.org/PostalAddress">
-					<meta itemprop="streetAddress" content="_____УКАЗАТЬ АДРЕС_____">
-					<meta itemprop="postalCode" content="_____УКАЗАТЬ АДРЕС_____">
-					<meta itemprop="addressLocality" content="Томск">
-				</div>
-			<meta itemprop="telephone" content="+79131000987">
-		</div>
 		
 		<!-- BEGIN of header -->
 		<header class="header">
@@ -42,18 +32,14 @@
 
 				<nav class="header__nav">
 					<ul class="nav">
-						<li class="nav__item nav__item_isActive"><a href="#">Бар</a></li><!--
+						<li class="nav__item"><a href="#">Бар</a></li><!--
 						--><li class="nav__item"><a href="#">Магазин кулинарии</a></li><!--
-						--><li class="nav__item"><a href="#">Пространство</a></li><!--
+						--><li class="nav__item nav__item_isActive"><a href="#">Пространство</a></li><!--
 						--><li class="nav__item"><a href="#">Афиша</a></li><!--
 						--><li class="nav__item"><a href="#">Контакты</a></li>
 					</ul>
 				</nav>
 				<div class="headerSide">
-					<ul class="langSwitch">
-						<li class="langSwitch__item langSwitch__item_isActive"><a href="#">RU</a></li>
-						<li class="langSwitch__item"><a href="#">EN</a></li>
-					</ul>
 					<div class="headerSide__phone"><a href="tel:79131000987">+7 913 100-09-87</a></div>
 					<div class="headerSide__minicart minicart">
 						<div class="minicart__title"><p>Корзина/<span>0</span></p></div>
@@ -132,7 +118,7 @@
 							</li>
 						</ul>
 						<div class="slide__buttons">
-							<button class="btn btn_primary"><span>Забронировать</span></button>
+							<button class="btn btn_primary"><p>Забронировать</p></button>
 						</div>
 					</div>
 				</div>
@@ -173,7 +159,7 @@
 							</li>
 						</ul>
 						<div class="slide__buttons">
-							<button class="btn btn_primary"><span>Забронировать</span></button>
+							<button class="btn btn_primary"><p>Забронировать</p></button>
 						</div>
 					</div>
 				</div>
@@ -221,7 +207,7 @@
 							</li>
 						</ul>
 						<div class="slide__buttons">
-							<button class="btn btn_primary"><span>Забронировать</span></button>
+							<button class="btn btn_primary"><p>Забронировать</p></button>
 						</div>
 						</ul>
 					</div>
@@ -229,6 +215,35 @@
 			</div>
 		</div>
 		<!-- END of slide -->
+
+		<!-- BEGIN of carousel -->
+		<div class="carousel carousel_big">
+			<div class="carouselWrap">
+				<input class="carousel__radio" type="radio" id="carousel-1" name="carousel" aria-hidden="true" hidden="" checked="checked">
+				<div class="carousel__item" style="background-image:url('assets/img/space__carousel1.jpg')"></div>
+				<input class="carousel__radio" type="radio" id="carousel-2" name="carousel" aria-hidden="true" hidden="">
+				<div class="carousel__item" style="background-image:url('assets/img/space__carousel2.jpg')"></div>
+				<input class="carousel__radio" type="radio" id="carousel-3" name="carousel" aria-hidden="true" hidden="">
+				<div class="carousel__item" style="background-image:url('assets/img/space__carousel3.jpg')"></div>
+
+				<label for="carousel-3" class="carousel__control prev control-1"></label>
+				<label for="carousel-2" class="carousel__control next control-1"></label>
+
+				<label for="carousel-1" class="carousel__control prev control-2"></label>
+				<label for="carousel-3" class="carousel__control next control-2"></label>
+
+				<label for="carousel-2" class="carousel__control prev control-3"></label>
+				<label for="carousel-1" class="carousel__control next control-3"></label>
+				<ol class="carouselIndicators">
+					<li><label for="carousel-1" class="carousel__bullet">•</label></li>
+					<li><label for="carousel-2" class="carousel__bullet">•</label></li>
+					<li><label for="carousel-3" class="carousel__bullet">•</label></li>
+				    <br>
+				    <div class="carousel__button"><button class="btn btn_primary"><p>Забронировать</p></button></div>
+				</ol>
+			</div>
+		</div>
+		<!-- END of carousel -->
 
 		<!-- BEGIN of footer -->
 		<footer class="footer">

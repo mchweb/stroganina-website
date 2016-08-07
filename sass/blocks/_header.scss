@@ -1,6 +1,10 @@
 .header{
 	position:absolute;
 	width:100%;
+	color:$bg-clr;
+	& a{
+		color:$bg-clr;
+	}
 	&.header_black{
 		position:relative;
 		height:auto;
@@ -19,11 +23,14 @@
 .headerInner{
 	@include container();
 	padding-top:rhythm(6);
-	color:$bg-clr;
-	& a{
-		color:$bg-clr;
+}
+.header{
+	&.header_covered {
+		background-color:rgba(0, 0, 0, 0.77);
+		& .headerInner{
+			padding:rhythm(4) 0 rhythm(3) 0;
+		}
 	}
-	
 }
 .header__logo{
 	@include span(2);
@@ -32,7 +39,8 @@
 		width:100%;
 		height:rhythm(9 + 1/3);
 		background-image:url('../img/logo_white.svg');
-		background-size:cover;
+		background-size: contain;
+    	background-repeat: no-repeat;
 	}
 	
 }
@@ -101,4 +109,13 @@
 .headerSide__phone, .headerSide__minicart{
 	display:inline-block;
 	vertical-align:middle;
+}
+
+.heading{
+	@include container();
+	padding:0 rhythm(2.5);
+	margin-bottom:rhythm(4);
+	& h1{
+		@extend .p-h3;
+	}
 }

@@ -83,7 +83,15 @@
 	& .slideContentWrap{
 		justify-content:flex-start;
 	}
+}
 
+.slide_big{
+	& .slideSep{
+		@include push(4);
+	}
+	& .slideContentWrap{
+		@include span(5);
+	}
 }
 
 .slideInfo{

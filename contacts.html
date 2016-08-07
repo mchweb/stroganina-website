@@ -1,0 +1,126 @@
+<!doctype html>
+<html lang="ru">
+	<head>
+		<meta charset="utf-8">
+		<meta http-equiv="x-ua-compatible" content="ie=edge">
+		<meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no">
+
+		<title>Строганина-бар</title>
+		<meta name="description" content="Описание">
+		
+		<link rel="icon" href="favicon.ico" type="image/x-icon"/>
+		<link rel="apple-touch-icon" href="assets/img/apple-touch-icon.png">
+		
+		<!--[if lt IE 9]>
+			<script src="js/vendor/html5shiv.min.js"></script>
+		<![endif]-->
+
+		<!-- build:css assets/css/screen.min.css -->
+		<link rel="stylesheet" media="screen" href="assets/css/screen.css">
+		<!-- /build -->
+	</head>
+	<body>
+
+		<!--[if lt IE 10]>
+			<p style="text-align:center;font-size:20px;background:white;width:100%;z-index:10000;padding:20px 0px"><strong>Кажется, ваш браузер безнадежно устарел.</strong> Скорее всего, сайт будет отображаться и работать некорректно.<br/>Пожалуйста, <a style="color:red" href="http://browsehappy.com/" target="_blank">установите с одного из официальных сайтов</a> новую версию своего браузера.<br/></p>
+		<![endif]-->
+		
+		<!-- BEGIN of header -->
+		<header class="header header_covered">
+			<div class="headerInner">
+				<div class="header__logo"><a href="#"></a></div>
+
+				<nav class="header__nav">
+					<ul class="nav">
+						<li class="nav__item"><a href="#">Бар</a></li><!--
+						--><li class="nav__item"><a href="#">Магазин кулинарии</a></li><!--
+						--><li class="nav__item"><a href="#">Пространство</a></li><!--
+						--><li class="nav__item"><a href="#">Афиша</a></li><!--
+						--><li class="nav__item nav__item_isActive"><a href="#">Контакты</a></li>
+					</ul>
+				</nav>
+				<div class="headerSide">
+					<div class="headerSide__phone"><a href="tel:79131000987">+7 913 100-09-87</a></div>
+					<div class="headerSide__minicart minicart">
+						<div class="minicart__title"><p>Корзина/<span>0</span></p></div>
+					</div>
+				</div>
+			</div>
+		</header>
+		<!-- END of header -->
+
+		<!-- BEGIN of hero -->
+		<div id="map">
+			<script charset="utf-8" src="http://widgets.2gis.com/js/DGWidgetLoader.js"></script><script>	new DGWidgetLoader({"width":'100%',"height":740,"borderColor":"transparent","pos":{"lat":56.47092720029681,"lon":84.95797018432617,"zoom":16},"opt":{"city":"tomsk"},"org":[{"id":"422740746440511"}]});</script>
+		</div>
+		<!-- END of hero -->
+
+		<!-- BEGIN of footer -->
+		<footer class="footer">
+			<div class="footerContent">
+				<div class="footerTop"> 
+					<div class="footerLeft">
+						<div class="footerLeft__text">
+							<p><a href="#">+7 913 100-09-87</a>, <a href="#">+7 (3822) 45-67-00</a><br>
+							Томск, Карла Марска, 17а<br>
+							Мы&nbsp;работаем с&nbsp;12:00 до&nbsp;последнего гостя.</p>
+						</div>
+	
+						<div class="footerLeft__links">
+							<ul class="soc-links">
+								<a href="#"><li class="soc-links__item soc-links__item_flamp"></li></a>
+								<a href="#"><li class="soc-links__item soc-links__item_fb"></li></a>
+								<a href="#"><li class="soc-links__item soc-links__item_insta"></li></a>
+								<a href="#"><li class="soc-links__item soc-links__item_tripadv"></li></a>
+								<a href="#"><li class="soc-links__item soc-links__item_email"></li></a>
+							</ul>
+							<button class="footerLeft__button btn btn_light"><p>Задать вопрос</p></button>
+						</div>
+					</div>
+
+					<div class="footerRight footerSubscribe">
+						<div class="footerSubscribe__title"><p>Подпишитесь</p></div>
+						<div class="footerSubscribe__caption"><p>на&nbsp;рассылку самых интересных мероприятий и&nbsp;выступлений и&nbsp;Строганина-баре</p></div>
+
+						<form class="footerForm" action="">
+							<div class="footerForm__inputs">
+								<div class="footerFormGroup">
+									<input type="text" class="footerFormGroup__input" placeholder="Введите ваше имя" required/>
+								</div>
+								<div class="footerFormGroup">
+									<input type="email" class="footerFormGroup__input" placeholder="Введите свой e-mail" required/>
+								</div>
+								<div class="footerFormGroup_privacy formPrivacy">
+									<p>даю согласие на обработку своих персональных данных</p>
+								</div>
+							</div>
+							<div class="footerForm__button">
+								<button class="btn btn_primary"><p>Подписаться</p></button>
+							</div>
+						</form>
+					</div>
+				</div>
+
+				<div class="footerBottom">
+					<div class="footerBottom__text"><p>Строганина Бар&nbsp;&mdash; проект инвестиционно-управляющей <a href="#">Группы&nbsp;компаний WIN Corp</a> и компании «Экспедиция».</p></div>
+					<div class="footerBottom__author">
+						<a href="http://provocationstudio.ru/?from=stroganina">
+							<p class="footerBottom__authorTitle">Разработано в digital-студии</p>
+							<img  class="footerBottom__authorLogo" src="assets/img/provocation.svg" alt="">
+						</a>
+					</div>
+				</div>
+			</div>
+		</footer>
+		<!-- END of footer -->
+
+		<div id="updown"><div id="updown-container"></div></div>
+
+		<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.4/jquery.min.js"></script>
+		<script>window.jQuery || document.write('<script src="assets/js/vendor/jquery.min.js"><\/script>')</script>
+		<!--<script src="https://api-maps.yandex.ru/2.1/?lang=ru_RU" type="text/javascript"></script>-->
+		<!-- build:js assets/js/main.min.js -->
+		<script src="assets/js/main.js"></script>
+		<!-- /build -->
+	</body>
+</html>

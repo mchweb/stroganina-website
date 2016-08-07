@@ -6,9 +6,6 @@
 	border:none;
 	color:$accent;
 	margin-top:rhythm(2);
-	&:hover{
-		color:$text-clr;
-	}
 	& p{
 		@extend .p-buttons;
 		font-weight:bold;
@@ -20,5 +17,11 @@
 			width:rhythm(4, $fs-xs);
 			height:rhythm(3, $fs-xs);
 		}
+	}
+}
+.link_light{
+	color:$bg-clr;
+	& p:after{
+		background-image:url('../img/arrow_white.svg');
 	}
 }

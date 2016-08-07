@@ -8,7 +8,9 @@
 
 // fast animation
 .btn,
-.soc-links__item
+.soc-links__item,
+.carousel__control,
+.good__button button
 {
     transition: all 0.1s ease-in-out;
 }

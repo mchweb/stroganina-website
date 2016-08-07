@@ -1,0 +1,36 @@
+.team{
+	@include container();
+	margin:rhythm(12) auto rhythm(15) auto;
+}
+
+.team__title{
+	text-align:center;
+	max-width:rhythm(72);
+	margin:0 auto;
+	margin-bottom:rhythm(8);
+	& h2{
+		@extend .p-h2;
+		color:$gray-15;
+	}
+}
+
+.teamItem{
+	@include span(3);
+	text-align:center;
+}
+.teamItem__picture{
+	border-radius:100%;
+	max-width:100%;
+	height:auto;
+}
+.teamItem__title{
+	margin-top:rhythm(6);
+	margin-bottom:rhythm(1);
+	& h3{
+		@extend .p-h3;
+		color:$gray-15;
+	}
+}
+.teamItem__caption{
+	color:$gray-25;
+}

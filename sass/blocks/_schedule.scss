@@ -1,0 +1,63 @@
+.schedule{
+	@include container();
+}
+.schedule__item{
+	margin:rhythm(8) 0;
+	&:after{
+		content: " ";
+    	display: block;
+    	clear: both;
+	}
+}
+.schedule__meta{
+	margin-top:rhythm(-1);
+	@include span(3);
+}
+.schedule__info{
+	@include span(6);
+}
+.schedule__title{
+	margin-bottom:rhythm(3);
+	& h2{
+		@extend .p-h3;
+		color:$gray-15;
+	}
+}
+.schedule__text{
+	color:$gray-25;
+}
+.schedule__tags{
+	margin-top:rhythm(2);
+}
+.schedule__author{
+	@include span(3); 
+	text-align:center;
+}
+.schedule__link{
+	margin:rhythm(1) 0;
+}
+.schedule__price {
+	& p{
+		@extend .p-h3;
+	}
+}
+.schedule__price_sm{
+	& p{
+		@extend .p-secondary;
+	}
+}
+
+.date__digits, .date__text{
+	display:inline-block;
+	vertical-align:middle;
+}
+.date__digits{
+	& p{
+		@extend .p-h1;
+	}
+}
+.date__month{
+	& p{
+		@extend .p-h3;
+	}
+}

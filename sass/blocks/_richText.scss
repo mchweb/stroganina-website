@@ -1,0 +1,29 @@
+.richText{
+	& h2{
+		@extend .p-h3;
+		margin-bottom:rhythm(1, 24px);
+		color:$gray-15;
+	}
+	& p{
+		margin-bottom:rhythm(2);
+		color:$gray-25;
+	}
+	& > img{
+		margin:rhythm(2) 0 rhythm(4) 0;
+		width:100%;
+		height:auto;
+	}
+	& > div {
+		width:100%;
+		& img {
+			width:49%;
+			height:auto;
+			&:first-child{
+				padding-right:rhythm(1.25);
+			}
+			&:last-child{
+				padding-left:rhythm(1.25);
+			}
+		}
+	}
+}
