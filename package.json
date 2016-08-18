@@ -15,7 +15,8 @@
     "cssnano":"^3.7.3",
     "grunt-postcss":"^0.8.0",
     "postcss-focus":"^1.0.0",
-    "postcss-px-to-em":"^1.0.1"
+    "postcss-px-to-em":"^1.0.1",
+    "grunt-uncss": "^0.4.4"
   },
   "main": "Gruntfile.js",
   "scripts": {

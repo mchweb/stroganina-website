@@ -16,8 +16,10 @@
 	text-align:center;
 	margin:rhythm(4) 0 rhythm(8) 0;
 }
-.footerSubscribe__title{
+.footerSubscribe .footerSubscribe__title{
 	color:$bg-clr;
+}
+.footerSubscribe__title{
 	& p{
 		@extend .p-h3;
 	}
@@ -71,4 +73,13 @@
 	margin:rhythm(5) auto rhythm(13) auto;
 	max-width:rhythm(12);
 	height:auto;
+}
+
+.footerForm_soon{
+	padding-top:rhythm(8);
+	border-top:1px solid $gray-70;
+	margin-top:rhythm(8);
+	& .footerFormGroup__input{
+		color:$text-clr;
+	}
 }

@@ -28,8 +28,8 @@ module.exports = function(grunt) {
         processhtml: {
             build: {
                 files: {
-                    'prod/index.html': ['index.html'],
-                    'prod/space.html': ['space.html']
+                    //'prod/index.html': ['index.html'],
+                    'prod/soon.html': ['soon.html']
                 }
             }
         },
@@ -46,7 +46,7 @@ module.exports = function(grunt) {
         },
         inlineImgSize: {
             files: {
-                src: ['index.html', 'space.html']
+                src: ['soon.html']
             }
         },
         postcss: {
@@ -62,7 +62,14 @@ module.exports = function(grunt) {
             dist: {
                 src: 'assets/css/*.css'
             }
-        }            
+        },
+          uncss: {
+            dist: {
+                files: {
+                    'prod/assets/css/screen.css': ['soon.html']
+                }
+            }
+        }        
     });
 
     grunt.loadNpmTasks('grunt-contrib-uglify');
@@ -72,7 +79,8 @@ module.exports = function(grunt) {
     grunt.loadNpmTasks('grunt-contrib-compass');
     grunt.loadNpmTasks('grunt-inline-imgsize');
     grunt.loadNpmTasks('grunt-postcss');
+    grunt.loadNpmTasks('grunt-uncss');
 
-    grunt.registerTask('default', ['compass', 'postcss', 'uglify', 'inlineImgSize', 'processhtml', 'imagemin', 'copy']);
+    grunt.registerTask('default', ['compass', 'postcss', 'uglify', 'inlineImgSize', 'processhtml', 'imagemin', 'copy', 'uncss']);
 
 };
