@@ -172,7 +172,7 @@
 .eventForm__count{
 	border-radius:rhythm(1/2);
 	color:$gray-15;
-	border:rhythm(1/6) solid $gray-65;
+	border:1px solid $gray-65;
 	padding:rhythm(4/6) rhythm(1) rhythm(2/6) rhythm(1);
 	max-width:rhythm(10);
 }
@@ -198,7 +198,7 @@
 	display:block;
 	width:100%;
 	border-radius:rhythm(1);
-	border:rhythm(1/6) solid $gray-50;
+	border:1px solid $gray-50;
 	padding:rhythm(1) rhythm(2) rhythm(1 - 2/6) rhythm(2);
 	@include adjust-font-size-to($fs-base);
 }

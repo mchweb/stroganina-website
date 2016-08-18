@@ -28,12 +28,111 @@
 		<div itemscope itemtype="http://schema.org/Organization">
 			<meta itemprop="name" content="Строганина-бар">
 				<div itemprop="address" itemscope itemtype="http://schema.org/PostalAddress">
-					<meta itemprop="streetAddress" content="_____УКАЗАТЬ АДРЕС_____">
-					<meta itemprop="postalCode" content="_____УКАЗАТЬ АДРЕС_____">
+					<meta itemprop="streetAddress" content="Карла Марска, 17а">
+					<meta itemprop="postalCode" content="634009">
 					<meta itemprop="addressLocality" content="Томск">
 				</div>
 			<meta itemprop="telephone" content="+79131000987">
 		</div>
+
+		<!-- BEGIN of book -->
+		<form class="book">
+			<button class="book__close" onclick="hideBookForm()"><p>×</p></button>
+			<div class="book__title"><p>Бронирование</p></div>
+
+			<div class="bookFormSection">
+				<div class="bookFormGroup">
+					<label class="formGroup__label" for="">Представьтесь</label>
+					<p class="formGroup__error">Пожалуйста, укажите свое имя</p>
+					<input type="text" class="formGroup__input" placeholder="Иванов Иван">
+				</div>
+				<div class="bookFormGroup bookFormGroup_invalid bookFormGroup_required">
+					<label class="formGroup__label" for="">Телефон</label>
+					<p class="formGroup__error">Пожалуйста, укажите свой телефон</p>
+					<input class="formGroup__input" type="tel" value="+7 " required="" placeholder="+7 ___ ___-__-__">
+				</div>
+			</div>
+
+			<div class="bookFormSection">
+				<p class="formGroup__error">Пожалуйста, выберите хотя бы один пункт</p>
+				<div class="bookFormGroup bookFormGroup_checkbox">
+					<input class="formGroup__checkbox" type="checkbox" name="ch" id="ch0">
+					<label class="formGroup__label" for="ch0">Забронировать столик в Строганина-баре</label>
+
+					<div class="bookFormGroup__details">
+						<div class="bookFormGroup__dateTime formGroup_date">
+							<label class="formGroup__label" for="">Дата</label>
+							<input class="formGroup__input js-datepicker-bar" type="text" placeholder="24.07.2016">
+						</div><!--
+						--><div class="bookFormGroup__dateTime formGroup_time">
+							<label class="formGroup__label" for="">Время</label>
+							<input class="formGroup__input js-timepicker-bar" type="text" placeholder="18:00">
+							<div class="ui-timepicker-dropdown js-timepicker-bar-dropdown"></div>
+						</div>
+						<p class="formGroup__error">Пожалуйста, укажите дату и время бронирования столика в Строганина-баре</p>
+					</div>
+				</div>
+
+				<div class="bookFormGroup bookFormGroup_checkbox">
+					<input class="formGroup__checkbox" type="checkbox" name="ch" id="ch1">
+					<label class="formGroup__label" for="ch1">Арендовать зал для мероприятия в «Пространстве»</label>
+
+					<div class="bookFormGroup__details">
+						<div class="bookFormGroup__dateTime formGroup_date">
+							<label class="formGroup__label" for="">Дата</label>
+							<input class="formGroup__input js-datepicker-space" type="text" placeholder="24.07.2016">
+						</div><!--
+						--><div class="bookFormGroup__dateTime formGroup_time">
+							<label class="formGroup__label" for="">Время</label>
+							<input class="formGroup__input js-timepicker-space" type="text" placeholder="18:00">
+							<div class="ui-timepicker-dropdown js-timepicker-space-dropdown"></div>
+						</div>
+						<p class="formGroup__error">Пожалуйста, укажите дату и время аренды зала в «Пространстве»</p>
+					</div>
+				</div>
+
+				<div class="bookFormGroup bookFormGroup_checkbox">
+					<input class="formGroup__checkbox" type="checkbox" name="ch" id="ch2">
+					<label class="formGroup__label" for="ch2">Оформить подписку на доставку бизнес-ланчей в офис</label>
+
+					<div class="bookFormGroup__details">
+						<p class="p-compact">Наши менеджеры свяжутся с вами по телефону для уточнения подробностей</p>
+					</div>
+
+				</div>
+			</div>
+
+			<div class="bookFormSection">
+				<div class="bookFormGroup bookFormGroup_checkbox">
+					<input class="formGroup__checkbox" type="checkbox" name="ch" id="ch3">
+					<label class="formGroup__label" for="ch3">Подписаться на дайджест новостей и мероприятий в&nbsp;«Пространстве»</label>
+
+					<div class="bookFormGroup bookFormGroup__details bookFormGroup_required">
+						<label class="formGroup__label" for="">E-mail</label>
+						<p class="formGroup__error">Пожалуйста, укажите свой e-mail</p>
+						<input class="formGroup__input" type="email" placeholder="ivanov@gmail.com">
+					</div>
+				</div>
+
+				<div class="formPrivacy">
+					<p>даю согласие на обработку своих персональных данных</p>
+				</div>
+			</div>
+
+			
+
+			<div class="bookForm__button">
+				<button class="btn btn_disabled btn_primary">
+					<p>Отправить</p>
+					<div class="btn__spinner">
+						<div class="pt"></div>
+						<div class="pt"></div>
+						<div class="pt"></div>
+					</div>
+				</button>
+			</div>
+		</form>
+		<!-- END of book -->
 		
 		<!-- BEGIN of header -->
 		<header class="header">
@@ -197,15 +296,15 @@
 		</div>
 		<!-- END of slide -->
 		<!-- BEGIN of insta -->
-		<ul class="insta">
+		<ul id="instafeed" class="insta">
+			<!--<li class="insta__item"><a href="#"><img src="assets/img/insta__item.jpg" alt=""></a></li>
 			<li class="insta__item"><a href="#"><img src="assets/img/insta__item.jpg" alt=""></a></li>
 			<li class="insta__item"><a href="#"><img src="assets/img/insta__item.jpg" alt=""></a></li>
 			<li class="insta__item"><a href="#"><img src="assets/img/insta__item.jpg" alt=""></a></li>
 			<li class="insta__item"><a href="#"><img src="assets/img/insta__item.jpg" alt=""></a></li>
 			<li class="insta__item"><a href="#"><img src="assets/img/insta__item.jpg" alt=""></a></li>
 			<li class="insta__item"><a href="#"><img src="assets/img/insta__item.jpg" alt=""></a></li>
-			<li class="insta__item"><a href="#"><img src="assets/img/insta__item.jpg" alt=""></a></li>
-			<li class="insta__item"><a href="#"><img src="assets/img/insta__item.jpg" alt=""></a></li>
+			<li class="insta__item"><a href="#"><img src="assets/img/insta__item.jpg" alt=""></a></li>-->
 		</ul>
 		<!-- END of insta -->
 
@@ -237,6 +336,13 @@
 		<!-- END of footer -->
 
 		<div id="updown"><div id="updown-container"></div></div>
+
+		<!-- BEGIN of sticky -->
+		<button class="btn btn_primary btn_nohover sticky" onclick="showBookForm()">
+			<p>Забронировать</p>
+		</button>
+		<!-- END of sticky -->
+
 
 		<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.4/jquery.min.js"></script>
 		<script>window.jQuery || document.write('<script src="assets/js/vendor/jquery.min.js"><\/script>')</script>

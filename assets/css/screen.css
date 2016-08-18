@@ -1377,6 +1377,1157 @@ img.mfp-img {
   right: 0;
 }
 
+/* line 1, ../../sass/lib/_updown.scss */
+#updown,
+#updown-container {
+  position: fixed;
+  top: 0px;
+  height: 100%;
+  z-index: 1000;
+  font-family: Helvetica,Arial,sans-serif;
+}
+
+/* line 9, ../../sass/lib/_updown.scss */
+#updown-container {
+  width: 2.25em;
+  padding-top: 1.25em;
+  opacity: 0;
+  color: white;
+  text-align: center;
+}
+
+/* line 16, ../../sass/lib/_updown.scss */
+#updown.up,
+#updown.down {
+  cursor: pointer;
+}
+
+/* line 20, ../../sass/lib/_updown.scss */
+#updown.up #updown-container::before {
+  content: '\2191';
+  font-size: 1.75em;
+}
+
+/* line 25, ../../sass/lib/_updown.scss */
+#updown.up #updown-container, #updown.down #updown-container {
+  background: rgba(0, 0, 0, 0.5);
+}
+
+/* line 28, ../../sass/lib/_updown.scss */
+#updown.down #updown-container::before {
+  content: '\2193';
+  font-size: 1.75em;
+}
+
+/* line 32, ../../sass/lib/_updown.scss */
+#updown:hover #updown-container {
+  opacity: 1;
+}
+
+@media (max-width: 1200px) {
+  /* line 36, ../../sass/lib/_updown.scss */
+  #updown,
+  #updown-container {
+    display: none;
+  }
+}
+/* line 1, ../../sass/lib/_datepicker.scss */
+.datepicker--cell-day.-other-month-, .datepicker--cell-year.-other-decade- {
+  color: #dedede;
+}
+
+/* line 3, ../../sass/lib/_datepicker.scss */
+.datepicker--cell-day.-other-month-:hover, .datepicker--cell-year.-other-decade-:hover {
+  color: #c5c5c5;
+}
+
+/* line 5, ../../sass/lib/_datepicker.scss */
+.-disabled-.-focus-.datepicker--cell-day.-other-month-, .-disabled-.-focus-.datepicker--cell-year.-other-decade- {
+  color: #dedede;
+}
+
+/* line 7, ../../sass/lib/_datepicker.scss */
+.-selected-.datepicker--cell-day.-other-month-, .-selected-.datepicker--cell-year.-other-decade- {
+  color: #fff;
+  background: #a2ddf6;
+}
+
+/* line 10, ../../sass/lib/_datepicker.scss */
+.-selected-.-focus-.datepicker--cell-day.-other-month-, .-selected-.-focus-.datepicker--cell-year.-other-decade- {
+  background: #8ad5f4;
+}
+
+/* line 12, ../../sass/lib/_datepicker.scss */
+.-in-range-.datepicker--cell-day.-other-month-, .-in-range-.datepicker--cell-year.-other-decade- {
+  background-color: rgba(92, 196, 239, 0.1);
+  color: #cccccc;
+}
+
+/* line 15, ../../sass/lib/_datepicker.scss */
+.-in-range-.-focus-.datepicker--cell-day.-other-month-, .-in-range-.-focus-.datepicker--cell-year.-other-decade- {
+  background-color: rgba(92, 196, 239, 0.2);
+}
+
+/* line 17, ../../sass/lib/_datepicker.scss */
+.datepicker--cell-day.-other-month-:empty, .datepicker--cell-year.-other-decade-:empty {
+  background: none;
+  border: none;
+}
+
+/* -------------------------------------------------
+    Datepicker cells
+   ------------------------------------------------- */
+/* line 24, ../../sass/lib/_datepicker.scss */
+.datepicker--cells {
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-flex-wrap: wrap;
+  -ms-flex-wrap: wrap;
+  flex-wrap: wrap;
+}
+
+/* line 32, ../../sass/lib/_datepicker.scss */
+.datepicker--cell {
+  border-radius: 4px;
+  box-sizing: border-box;
+  cursor: pointer;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  position: relative;
+  -webkit-align-items: center;
+  -ms-flex-align: center;
+  align-items: center;
+  -webkit-justify-content: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+  height: 32px;
+  z-index: 1;
+}
+
+/* line 48, ../../sass/lib/_datepicker.scss */
+.datepicker--cell.-focus- {
+  background: #f0f0f0;
+}
+
+/* line 50, ../../sass/lib/_datepicker.scss */
+.datepicker--cell.-current- {
+  color: #cf0000;
+}
+
+/* line 52, ../../sass/lib/_datepicker.scss */
+.datepicker--cell.-current-.-focus- {
+  color: #4a4a4a;
+}
+
+/* line 54, ../../sass/lib/_datepicker.scss */
+.datepicker--cell.-current-.-in-range- {
+  color: #4EB5E6;
+}
+
+/* line 56, ../../sass/lib/_datepicker.scss */
+.datepicker--cell.-in-range- {
+  background: rgba(92, 196, 239, 0.1);
+  color: #4a4a4a;
+  border-radius: 0;
+}
+
+/* line 60, ../../sass/lib/_datepicker.scss */
+.datepicker--cell.-in-range-.-focus- {
+  background-color: rgba(92, 196, 239, 0.2);
+}
+
+/* line 62, ../../sass/lib/_datepicker.scss */
+.datepicker--cell.-disabled- {
+  cursor: default;
+  color: #aeaeae;
+}
+
+/* line 65, ../../sass/lib/_datepicker.scss */
+.datepicker--cell.-disabled-.-focus- {
+  color: #aeaeae;
+}
+
+/* line 67, ../../sass/lib/_datepicker.scss */
+.datepicker--cell.-disabled-.-in-range- {
+  color: #a1a1a1;
+}
+
+/* line 69, ../../sass/lib/_datepicker.scss */
+.datepicker--cell.-disabled-.-current-.-focus- {
+  color: #aeaeae;
+}
+
+/* line 71, ../../sass/lib/_datepicker.scss */
+.datepicker--cell.-range-from- {
+  border: 1px solid rgba(92, 196, 239, 0.5);
+  background-color: rgba(92, 196, 239, 0.1);
+  border-radius: 4px 0 0 4px;
+}
+
+/* line 75, ../../sass/lib/_datepicker.scss */
+.datepicker--cell.-range-to- {
+  border: 1px solid rgba(92, 196, 239, 0.5);
+  background-color: rgba(92, 196, 239, 0.1);
+  border-radius: 0 4px 4px 0;
+}
+
+/* line 79, ../../sass/lib/_datepicker.scss */
+.datepicker--cell.-range-from-.-range-to- {
+  border-radius: 4px;
+}
+
+/* line 81, ../../sass/lib/_datepicker.scss */
+.datepicker--cell.-selected- {
+  color: #fff;
+  border: none;
+  background: #7e0000;
+}
+
+/* line 85, ../../sass/lib/_datepicker.scss */
+.datepicker--cell.-selected-.-current- {
+  color: #fff;
+  background: #7e0000;
+}
+
+/* line 88, ../../sass/lib/_datepicker.scss */
+.datepicker--cell.-selected-.-focus- {
+  background: #3a0000;
+}
+
+/* line 90, ../../sass/lib/_datepicker.scss */
+.datepicker--cell:empty {
+  cursor: default;
+}
+
+/* line 93, ../../sass/lib/_datepicker.scss */
+.datepicker--days-names {
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-flex-wrap: wrap;
+  -ms-flex-wrap: wrap;
+  flex-wrap: wrap;
+  margin: 8px 0 3px;
+}
+
+/* line 102, ../../sass/lib/_datepicker.scss */
+.datepicker--day-name {
+  color: #7e0000;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-align-items: center;
+  -ms-flex-align: center;
+  align-items: center;
+  -webkit-justify-content: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+  -webkit-flex: 1;
+  -ms-flex: 1;
+  flex: 1;
+  text-align: center;
+  text-transform: uppercase;
+  font-size: .8em;
+}
+
+/* line 120, ../../sass/lib/_datepicker.scss */
+.datepicker--cell-day {
+  width: 14.28571%;
+}
+
+/* line 123, ../../sass/lib/_datepicker.scss */
+.datepicker--cells-months {
+  height: 170px;
+}
+
+/* line 126, ../../sass/lib/_datepicker.scss */
+.datepicker--cell-month {
+  width: 33.33%;
+  height: 25%;
+}
+
+/* line 130, ../../sass/lib/_datepicker.scss */
+.datepicker--years {
+  height: 170px;
+}
+
+/* line 133, ../../sass/lib/_datepicker.scss */
+.datepicker--cells-years {
+  height: 170px;
+}
+
+/* line 136, ../../sass/lib/_datepicker.scss */
+.datepicker--cell-year {
+  width: 25%;
+  height: 33.33%;
+}
+
+/* line 140, ../../sass/lib/_datepicker.scss */
+.datepicker--cell-day.-other-month-, .datepicker--cell-year.-other-decade- {
+  color: #dedede;
+}
+
+/* line 142, ../../sass/lib/_datepicker.scss */
+.datepicker--cell-day.-other-month-:hover, .datepicker--cell-year.-other-decade-:hover {
+  color: #c5c5c5;
+}
+
+/* line 144, ../../sass/lib/_datepicker.scss */
+.-disabled-.-focus-.datepicker--cell-day.-other-month-, .-disabled-.-focus-.datepicker--cell-year.-other-decade- {
+  color: #dedede;
+}
+
+/* line 146, ../../sass/lib/_datepicker.scss */
+.-selected-.datepicker--cell-day.-other-month-, .-selected-.datepicker--cell-year.-other-decade- {
+  color: #fff;
+  background: #a2ddf6;
+}
+
+/* line 149, ../../sass/lib/_datepicker.scss */
+.-selected-.-focus-.datepicker--cell-day.-other-month-, .-selected-.-focus-.datepicker--cell-year.-other-decade- {
+  background: #8ad5f4;
+}
+
+/* line 151, ../../sass/lib/_datepicker.scss */
+.-in-range-.datepicker--cell-day.-other-month-, .-in-range-.datepicker--cell-year.-other-decade- {
+  background-color: rgba(92, 196, 239, 0.1);
+  color: #cccccc;
+}
+
+/* line 154, ../../sass/lib/_datepicker.scss */
+.-in-range-.-focus-.datepicker--cell-day.-other-month-, .-in-range-.-focus-.datepicker--cell-year.-other-decade- {
+  background-color: rgba(92, 196, 239, 0.2);
+}
+
+/* line 156, ../../sass/lib/_datepicker.scss */
+.datepicker--cell-day.-other-month-:empty, .datepicker--cell-year.-other-decade-:empty {
+  background: none;
+  border: none;
+}
+
+/* -------------------------------------------------
+    Datepicker
+   ------------------------------------------------- */
+/* line 163, ../../sass/lib/_datepicker.scss */
+.datepickers-container {
+  z-index: 10000;
+  position: absolute;
+  left: 0;
+  top: 0;
+}
+
+@media print {
+  /* line 169, ../../sass/lib/_datepicker.scss */
+  .datepickers-container {
+    display: none;
+  }
+}
+/* line 172, ../../sass/lib/_datepicker.scss */
+.datepicker {
+  background: #fff;
+  border: 1px solid #dbdbdb;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+  border-radius: 4px;
+  box-sizing: content-box;
+  font-size: 14px;
+  color: #4a4a4a;
+  width: 250px;
+  position: absolute;
+  left: -100000px;
+  opacity: 0;
+  z-index: 100;
+}
+
+/* line 189, ../../sass/lib/_datepicker.scss */
+.datepicker.-from-top- {
+  -webkit-transform: translateY(-8px);
+  transform: translateY(-8px);
+}
+
+/* line 192, ../../sass/lib/_datepicker.scss */
+.datepicker.-from-right- {
+  -webkit-transform: translateX(8px);
+  transform: translateX(8px);
+}
+
+/* line 195, ../../sass/lib/_datepicker.scss */
+.datepicker.-from-bottom- {
+  -webkit-transform: translateY(8px);
+  transform: translateY(8px);
+}
+
+/* line 198, ../../sass/lib/_datepicker.scss */
+.datepicker.-from-left- {
+  -webkit-transform: translateX(-8px);
+  transform: translateX(-8px);
+}
+
+/* line 201, ../../sass/lib/_datepicker.scss */
+.datepicker.active {
+  opacity: 1;
+  -webkit-transform: translate(0);
+  transform: translate(0);
+}
+
+/* line 210, ../../sass/lib/_datepicker.scss */
+.datepicker-inline .datepicker {
+  border-color: #d7d7d7;
+  box-shadow: none;
+  position: static;
+  left: auto;
+  right: auto;
+  opacity: 1;
+  -webkit-transform: none;
+  transform: none;
+}
+
+/* line 220, ../../sass/lib/_datepicker.scss */
+.datepicker-inline .datepicker--pointer {
+  display: none;
+}
+
+/* line 223, ../../sass/lib/_datepicker.scss */
+.datepicker--content {
+  box-sizing: content-box;
+  padding: 4px;
+}
+
+/* line 227, ../../sass/lib/_datepicker.scss */
+.datepicker--pointer {
+  position: absolute;
+  background: #fff;
+  border-top: 1px solid #dbdbdb;
+  border-right: 1px solid #dbdbdb;
+  width: 10px;
+  height: 10px;
+  z-index: -1;
+}
+
+/* line 235, ../../sass/lib/_datepicker.scss */
+.-top-left- .datepicker--pointer, .-top-center- .datepicker--pointer, .-top-right- .datepicker--pointer {
+  top: calc(100% - 4px);
+  -webkit-transform: rotate(135deg);
+  transform: rotate(135deg);
+}
+
+/* line 239, ../../sass/lib/_datepicker.scss */
+.-right-top- .datepicker--pointer, .-right-center- .datepicker--pointer, .-right-bottom- .datepicker--pointer {
+  right: calc(100% - 4px);
+  -webkit-transform: rotate(225deg);
+  transform: rotate(225deg);
+}
+
+/* line 243, ../../sass/lib/_datepicker.scss */
+.-bottom-left- .datepicker--pointer, .-bottom-center- .datepicker--pointer, .-bottom-right- .datepicker--pointer {
+  bottom: calc(100% - 4px);
+  -webkit-transform: rotate(315deg);
+  transform: rotate(315deg);
+}
+
+/* line 247, ../../sass/lib/_datepicker.scss */
+.-left-top- .datepicker--pointer, .-left-center- .datepicker--pointer, .-left-bottom- .datepicker--pointer {
+  left: calc(100% - 4px);
+  -webkit-transform: rotate(45deg);
+  transform: rotate(45deg);
+}
+
+/* line 251, ../../sass/lib/_datepicker.scss */
+.-top-left- .datepicker--pointer, .-bottom-left- .datepicker--pointer {
+  left: 10px;
+}
+
+/* line 253, ../../sass/lib/_datepicker.scss */
+.-top-right- .datepicker--pointer, .-bottom-right- .datepicker--pointer {
+  right: 10px;
+}
+
+/* line 255, ../../sass/lib/_datepicker.scss */
+.-top-center- .datepicker--pointer, .-bottom-center- .datepicker--pointer {
+  left: calc(50% - 10px / 2);
+}
+
+/* line 257, ../../sass/lib/_datepicker.scss */
+.-left-top- .datepicker--pointer, .-right-top- .datepicker--pointer {
+  top: 10px;
+}
+
+/* line 259, ../../sass/lib/_datepicker.scss */
+.-left-bottom- .datepicker--pointer, .-right-bottom- .datepicker--pointer {
+  bottom: 10px;
+}
+
+/* line 261, ../../sass/lib/_datepicker.scss */
+.-left-center- .datepicker--pointer, .-right-center- .datepicker--pointer {
+  top: calc(50% - 10px / 2);
+}
+
+/* line 264, ../../sass/lib/_datepicker.scss */
+.datepicker--body {
+  display: none;
+}
+
+/* line 266, ../../sass/lib/_datepicker.scss */
+.datepicker--body.active {
+  display: block;
+}
+
+/* line 269, ../../sass/lib/_datepicker.scss */
+.datepicker--cell-day.-other-month-, .datepicker--cell-year.-other-decade- {
+  color: #dedede;
+}
+
+/* line 271, ../../sass/lib/_datepicker.scss */
+.datepicker--cell-day.-other-month-:hover, .datepicker--cell-year.-other-decade-:hover {
+  color: #c5c5c5;
+}
+
+/* line 273, ../../sass/lib/_datepicker.scss */
+.-disabled-.-focus-.datepicker--cell-day.-other-month-, .-disabled-.-focus-.datepicker--cell-year.-other-decade- {
+  color: #dedede;
+}
+
+/* line 275, ../../sass/lib/_datepicker.scss */
+.-selected-.datepicker--cell-day.-other-month-, .-selected-.datepicker--cell-year.-other-decade- {
+  color: #fff;
+  background: #a2ddf6;
+}
+
+/* line 278, ../../sass/lib/_datepicker.scss */
+.-selected-.-focus-.datepicker--cell-day.-other-month-, .-selected-.-focus-.datepicker--cell-year.-other-decade- {
+  background: #8ad5f4;
+}
+
+/* line 280, ../../sass/lib/_datepicker.scss */
+.-in-range-.datepicker--cell-day.-other-month-, .-in-range-.datepicker--cell-year.-other-decade- {
+  background-color: rgba(92, 196, 239, 0.1);
+  color: #cccccc;
+}
+
+/* line 283, ../../sass/lib/_datepicker.scss */
+.-in-range-.-focus-.datepicker--cell-day.-other-month-, .-in-range-.-focus-.datepicker--cell-year.-other-decade- {
+  background-color: rgba(92, 196, 239, 0.2);
+}
+
+/* line 285, ../../sass/lib/_datepicker.scss */
+.datepicker--cell-day.-other-month-:empty, .datepicker--cell-year.-other-decade-:empty {
+  background: none;
+  border: none;
+}
+
+/* -------------------------------------------------
+    Navigation
+   ------------------------------------------------- */
+/* line 292, ../../sass/lib/_datepicker.scss */
+.datepicker--nav {
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-justify-content: space-between;
+  -ms-flex-pack: justify;
+  justify-content: space-between;
+  border-bottom: 1px solid #efefef;
+  min-height: 32px;
+  padding: 4px;
+}
+
+/* line 303, ../../sass/lib/_datepicker.scss */
+.datepicker--nav-title,
+.datepicker--nav-action {
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  cursor: pointer;
+  -webkit-align-items: center;
+  -ms-flex-align: center;
+  align-items: center;
+  -webkit-justify-content: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+}
+
+/* line 316, ../../sass/lib/_datepicker.scss */
+.datepicker--nav-action {
+  width: 32px;
+  border-radius: 4px;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+}
+
+/* line 323, ../../sass/lib/_datepicker.scss */
+.datepicker--nav-action:hover {
+  background: #f0f0f0;
+}
+
+/* line 325, ../../sass/lib/_datepicker.scss */
+.datepicker--nav-action.-disabled- {
+  visibility: hidden;
+}
+
+/* line 327, ../../sass/lib/_datepicker.scss */
+.datepicker--nav-action svg {
+  width: 32px;
+  height: 32px;
+}
+
+/* line 330, ../../sass/lib/_datepicker.scss */
+.datepicker--nav-action path {
+  fill: none;
+  stroke: #9c9c9c;
+  stroke-width: 2px;
+}
+
+/* line 335, ../../sass/lib/_datepicker.scss */
+.datepicker--nav-title {
+  border-radius: 4px;
+  padding: 0 8px;
+}
+
+/* line 338, ../../sass/lib/_datepicker.scss */
+.datepicker--nav-title i {
+  font-style: normal;
+  color: #9c9c9c;
+  margin-left: 5px;
+}
+
+/* line 342, ../../sass/lib/_datepicker.scss */
+.datepicker--nav-title:hover {
+  background: #f0f0f0;
+}
+
+/* line 344, ../../sass/lib/_datepicker.scss */
+.datepicker--nav-title.-disabled- {
+  cursor: default;
+  background: none;
+}
+
+/* line 348, ../../sass/lib/_datepicker.scss */
+.datepicker--buttons {
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  padding: 4px;
+  border-top: 1px solid #efefef;
+}
+
+/* line 355, ../../sass/lib/_datepicker.scss */
+.datepicker--button {
+  color: #4EB5E6;
+  cursor: pointer;
+  border-radius: 4px;
+  -webkit-flex: 1;
+  -ms-flex: 1;
+  flex: 1;
+  display: -webkit-inline-flex;
+  display: -ms-inline-flexbox;
+  display: inline-flex;
+  -webkit-justify-content: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+  -webkit-align-items: center;
+  -ms-flex-align: center;
+  align-items: center;
+  height: 32px;
+}
+
+/* line 372, ../../sass/lib/_datepicker.scss */
+.datepicker--button:hover {
+  color: #4a4a4a;
+  background: #f0f0f0;
+}
+
+/* line 376, ../../sass/lib/_datepicker.scss */
+.datepicker--cell-day.-other-month-, .datepicker--cell-year.-other-decade- {
+  color: #dedede;
+}
+
+/* line 378, ../../sass/lib/_datepicker.scss */
+.datepicker--cell-day.-other-month-:hover, .datepicker--cell-year.-other-decade-:hover {
+  color: #c5c5c5;
+}
+
+/* line 380, ../../sass/lib/_datepicker.scss */
+.-disabled-.-focus-.datepicker--cell-day.-other-month-, .-disabled-.-focus-.datepicker--cell-year.-other-decade- {
+  color: #dedede;
+}
+
+/* line 382, ../../sass/lib/_datepicker.scss */
+.-selected-.datepicker--cell-day.-other-month-, .-selected-.datepicker--cell-year.-other-decade- {
+  color: #fff;
+  background: #a2ddf6;
+}
+
+/* line 385, ../../sass/lib/_datepicker.scss */
+.-selected-.-focus-.datepicker--cell-day.-other-month-, .-selected-.-focus-.datepicker--cell-year.-other-decade- {
+  background: #8ad5f4;
+}
+
+/* line 387, ../../sass/lib/_datepicker.scss */
+.-in-range-.datepicker--cell-day.-other-month-, .-in-range-.datepicker--cell-year.-other-decade- {
+  background-color: rgba(92, 196, 239, 0.1);
+  color: #cccccc;
+}
+
+/* line 390, ../../sass/lib/_datepicker.scss */
+.-in-range-.-focus-.datepicker--cell-day.-other-month-, .-in-range-.-focus-.datepicker--cell-year.-other-decade- {
+  background-color: rgba(92, 196, 239, 0.2);
+}
+
+/* line 392, ../../sass/lib/_datepicker.scss */
+.datepicker--cell-day.-other-month-:empty, .datepicker--cell-year.-other-decade-:empty {
+  background: none;
+  border: none;
+}
+
+/* -------------------------------------------------
+    Timepicker
+   ------------------------------------------------- */
+/* line 399, ../../sass/lib/_datepicker.scss */
+.datepicker--time {
+  border-top: 1px solid #efefef;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-align-items: center;
+  -ms-flex-align: center;
+  align-items: center;
+  padding: 4px;
+  position: relative;
+}
+
+/* line 409, ../../sass/lib/_datepicker.scss */
+.datepicker--time.-am-pm- .datepicker--time-sliders {
+  -webkit-flex: 0 1 138px;
+  -ms-flex: 0 1 138px;
+  flex: 0 1 138px;
+  max-width: 138px;
+}
+
+/* line 415, ../../sass/lib/_datepicker.scss */
+.datepicker--time-sliders {
+  -webkit-flex: 0 1 153px;
+  -ms-flex: 0 1 153px;
+  flex: 0 1 153px;
+  margin-right: 10px;
+  max-width: 153px;
+}
+
+/* line 422, ../../sass/lib/_datepicker.scss */
+.datepicker--time-label {
+  display: none;
+  font-size: 12px;
+}
+
+/* line 426, ../../sass/lib/_datepicker.scss */
+.datepicker--time-current {
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-align-items: center;
+  -ms-flex-align: center;
+  align-items: center;
+  -webkit-flex: 1;
+  -ms-flex: 1;
+  flex: 1;
+  font-size: 14px;
+  text-align: center;
+  margin: 0 0 0 10px;
+}
+
+/* line 440, ../../sass/lib/_datepicker.scss */
+.datepicker--time-current-colon {
+  margin: 0 2px 3px;
+  line-height: 1;
+}
+
+/* line 444, ../../sass/lib/_datepicker.scss */
+.datepicker--time-current-hours,
+.datepicker--time-current-minutes {
+  line-height: 1;
+  font-size: 19px;
+  font-family: "Century Gothic", CenturyGothic, AppleGothic, sans-serif;
+  position: relative;
+  z-index: 1;
+}
+
+/* line 451, ../../sass/lib/_datepicker.scss */
+.datepicker--time-current-hours:after,
+.datepicker--time-current-minutes:after {
+  content: '';
+  background: #f0f0f0;
+  border-radius: 4px;
+  position: absolute;
+  left: -2px;
+  top: -3px;
+  right: -2px;
+  bottom: -2px;
+  z-index: -1;
+  opacity: 0;
+}
+
+/* line 463, ../../sass/lib/_datepicker.scss */
+.datepicker--time-current-hours.-focus-:after,
+.datepicker--time-current-minutes.-focus-:after {
+  opacity: 1;
+}
+
+/* line 467, ../../sass/lib/_datepicker.scss */
+.datepicker--time-current-ampm {
+  text-transform: uppercase;
+  -webkit-align-self: flex-end;
+  -ms-flex-item-align: end;
+  align-self: flex-end;
+  color: #9c9c9c;
+  margin-left: 6px;
+  font-size: 11px;
+  margin-bottom: 1px;
+}
+
+/* line 477, ../../sass/lib/_datepicker.scss */
+.datepicker--time-row {
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-align-items: center;
+  -ms-flex-align: center;
+  align-items: center;
+  font-size: 11px;
+  height: 17px;
+  background: linear-gradient(to right, #dedede, #dedede) left 50%/100% 1px no-repeat;
+}
+
+/* line 487, ../../sass/lib/_datepicker.scss */
+.datepicker--time-row:first-child {
+  margin-bottom: 4px;
+}
+
+/* line 489, ../../sass/lib/_datepicker.scss */
+.datepicker--time-row input[type='range'] {
+  background: none;
+  cursor: pointer;
+  -webkit-flex: 1;
+  -ms-flex: 1;
+  flex: 1;
+  height: 100%;
+  padding: 0;
+  margin: 0;
+  -webkit-appearance: none;
+}
+
+/* line 499, ../../sass/lib/_datepicker.scss */
+.datepicker--time-row input[type='range']::-webkit-slider-thumb {
+  -webkit-appearance: none;
+}
+
+/* line 501, ../../sass/lib/_datepicker.scss */
+.datepicker--time-row input[type='range']::-ms-tooltip {
+  display: none;
+}
+
+/* line 503, ../../sass/lib/_datepicker.scss */
+.datepicker--time-row input[type='range']:hover::-webkit-slider-thumb {
+  border-color: #b8b8b8;
+}
+
+/* line 505, ../../sass/lib/_datepicker.scss */
+.datepicker--time-row input[type='range']:hover::-moz-range-thumb {
+  border-color: #b8b8b8;
+}
+
+/* line 507, ../../sass/lib/_datepicker.scss */
+.datepicker--time-row input[type='range']:hover::-ms-thumb {
+  border-color: #b8b8b8;
+}
+
+/* line 509, ../../sass/lib/_datepicker.scss */
+.datepicker--time-row input[type='range']:focus {
+  outline: none;
+}
+
+/* line 511, ../../sass/lib/_datepicker.scss */
+.datepicker--time-row input[type='range']:focus::-webkit-slider-thumb {
+  background: #5cc4ef;
+  border-color: #5cc4ef;
+}
+
+/* line 514, ../../sass/lib/_datepicker.scss */
+.datepicker--time-row input[type='range']:focus::-moz-range-thumb {
+  background: #5cc4ef;
+  border-color: #5cc4ef;
+}
+
+/* line 517, ../../sass/lib/_datepicker.scss */
+.datepicker--time-row input[type='range']:focus::-ms-thumb {
+  background: #5cc4ef;
+  border-color: #5cc4ef;
+}
+
+/* line 520, ../../sass/lib/_datepicker.scss */
+.datepicker--time-row input[type='range']::-webkit-slider-thumb {
+  box-sizing: border-box;
+  height: 12px;
+  width: 12px;
+  border-radius: 3px;
+  border: 1px solid #dedede;
+  background: #fff;
+  cursor: pointer;
+  transition: background .2s;
+}
+
+/* line 529, ../../sass/lib/_datepicker.scss */
+.datepicker--time-row input[type='range']::-moz-range-thumb {
+  box-sizing: border-box;
+  height: 12px;
+  width: 12px;
+  border-radius: 3px;
+  border: 1px solid #dedede;
+  background: #fff;
+  cursor: pointer;
+  transition: background .2s;
+}
+
+/* line 538, ../../sass/lib/_datepicker.scss */
+.datepicker--time-row input[type='range']::-ms-thumb {
+  box-sizing: border-box;
+  height: 12px;
+  width: 12px;
+  border-radius: 3px;
+  border: 1px solid #dedede;
+  background: #fff;
+  cursor: pointer;
+  transition: background .2s;
+}
+
+/* line 547, ../../sass/lib/_datepicker.scss */
+.datepicker--time-row input[type='range']::-webkit-slider-thumb {
+  margin-top: -6px;
+}
+
+/* line 549, ../../sass/lib/_datepicker.scss */
+.datepicker--time-row input[type='range']::-webkit-slider-runnable-track {
+  border: none;
+  height: 1px;
+  cursor: pointer;
+  color: transparent;
+  background: transparent;
+}
+
+/* line 555, ../../sass/lib/_datepicker.scss */
+.datepicker--time-row input[type='range']::-moz-range-track {
+  border: none;
+  height: 1px;
+  cursor: pointer;
+  color: transparent;
+  background: transparent;
+}
+
+/* line 561, ../../sass/lib/_datepicker.scss */
+.datepicker--time-row input[type='range']::-ms-track {
+  border: none;
+  height: 1px;
+  cursor: pointer;
+  color: transparent;
+  background: transparent;
+}
+
+/* line 567, ../../sass/lib/_datepicker.scss */
+.datepicker--time-row input[type='range']::-ms-fill-lower {
+  background: transparent;
+}
+
+/* line 569, ../../sass/lib/_datepicker.scss */
+.datepicker--time-row input[type='range']::-ms-fill-upper {
+  background: transparent;
+}
+
+/* line 571, ../../sass/lib/_datepicker.scss */
+.datepicker--time-row span {
+  padding: 0 12px;
+}
+
+/* line 574, ../../sass/lib/_datepicker.scss */
+.datepicker--time-icon {
+  color: #9c9c9c;
+  border: 1px solid;
+  border-radius: 50%;
+  font-size: 16px;
+  position: relative;
+  margin: 0 5px -1px 0;
+  width: 1em;
+  height: 1em;
+}
+
+/* line 583, ../../sass/lib/_datepicker.scss */
+.datepicker--time-icon:after, .datepicker--time-icon:before {
+  content: '';
+  background: currentColor;
+  position: absolute;
+}
+
+/* line 587, ../../sass/lib/_datepicker.scss */
+.datepicker--time-icon:after {
+  height: .4em;
+  width: 1px;
+  left: calc(50% - 1px);
+  top: calc(50% + 1px);
+  -webkit-transform: translateY(-100%);
+  transform: translateY(-100%);
+}
+
+/* line 594, ../../sass/lib/_datepicker.scss */
+.datepicker--time-icon:before {
+  width: .4em;
+  height: 1px;
+  top: calc(50% + 1px);
+  left: calc(50% - 1px);
+}
+
+/* line 600, ../../sass/lib/_datepicker.scss */
+.datepicker--cell-day.-other-month-, .datepicker--cell-year.-other-decade- {
+  color: #dedede;
+}
+
+/* line 602, ../../sass/lib/_datepicker.scss */
+.datepicker--cell-day.-other-month-:hover, .datepicker--cell-year.-other-decade-:hover {
+  color: #c5c5c5;
+}
+
+/* line 604, ../../sass/lib/_datepicker.scss */
+.-disabled-.-focus-.datepicker--cell-day.-other-month-, .-disabled-.-focus-.datepicker--cell-year.-other-decade- {
+  color: #dedede;
+}
+
+/* line 606, ../../sass/lib/_datepicker.scss */
+.-selected-.datepicker--cell-day.-other-month-, .-selected-.datepicker--cell-year.-other-decade- {
+  color: #fff;
+  background: #a2ddf6;
+}
+
+/* line 609, ../../sass/lib/_datepicker.scss */
+.-selected-.-focus-.datepicker--cell-day.-other-month-, .-selected-.-focus-.datepicker--cell-year.-other-decade- {
+  background: #8ad5f4;
+}
+
+/* line 611, ../../sass/lib/_datepicker.scss */
+.-in-range-.datepicker--cell-day.-other-month-, .-in-range-.datepicker--cell-year.-other-decade- {
+  background-color: rgba(92, 196, 239, 0.1);
+  color: #cccccc;
+}
+
+/* line 614, ../../sass/lib/_datepicker.scss */
+.-in-range-.-focus-.datepicker--cell-day.-other-month-, .-in-range-.-focus-.datepicker--cell-year.-other-decade- {
+  background-color: rgba(92, 196, 239, 0.2);
+}
+
+/* line 616, ../../sass/lib/_datepicker.scss */
+.datepicker--cell-day.-other-month-:empty, .datepicker--cell-year.-other-decade-:empty {
+  background: none;
+  border: none;
+}
+
+/* line 1, ../../sass/lib/_timepicker.scss */
+.ui-timepicker-dropdown {
+  position: relative;
+  width: 100%;
+}
+
+/* line 5, ../../sass/lib/_timepicker.scss */
+.ui-timepicker-wrapper {
+  overflow-y: auto;
+  height: 20em;
+  width: 100%;
+  background: #fff;
+  border: 1px solid #ddd;
+  border-radius: 3px;
+  outline: none;
+  z-index: 10001;
+  margin: 0;
+  position: absolute;
+  top: 3px !important;
+  right: 0 !important;
+}
+
+/* line 20, ../../sass/lib/_timepicker.scss */
+.ui-timepicker-wrapper.ui-timepicker-with-duration {
+  width: 13em;
+}
+
+/* line 24, ../../sass/lib/_timepicker.scss */
+.ui-timepicker-wrapper.ui-timepicker-with-duration.ui-timepicker-step-30,
+.ui-timepicker-wrapper.ui-timepicker-with-duration.ui-timepicker-step-60 {
+  width: 11em;
+}
+
+/* line 29, ../../sass/lib/_timepicker.scss */
+.ui-timepicker-list {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+/* line 35, ../../sass/lib/_timepicker.scss */
+.ui-timepicker-duration {
+  margin-left: 5px;
+  color: #888;
+}
+
+/* line 39, ../../sass/lib/_timepicker.scss */
+.ui-timepicker-list:hover .ui-timepicker-duration {
+  color: #888;
+}
+
+/* line 43, ../../sass/lib/_timepicker.scss */
+.ui-timepicker-list li {
+  padding: 0 0.75em;
+  cursor: pointer;
+  white-space: nowrap;
+  color: #262626;
+  list-style: none;
+  margin: 0;
+}
+
+/* line 54, ../../sass/lib/_timepicker.scss */
+.ui-timepicker-list:hover .ui-timepicker-selected {
+  background: #7e0000;
+  color: #fff;
+}
+
+/* line 58, ../../sass/lib/_timepicker.scss */
+li.ui-timepicker-selected,
+.ui-timepicker-list li:hover {
+  background: #f0f0f0;
+  color: #434343;
+}
+
+/* line 62, ../../sass/lib/_timepicker.scss */
+.ui-timepicker-list .ui-timepicker-selected:hover {
+  background: #3a0000;
+  color: #fff;
+}
+
+/* line 66, ../../sass/lib/_timepicker.scss */
+li.ui-timepicker-selected .ui-timepicker-duration,
+.ui-timepicker-list li:hover .ui-timepicker-duration {
+  color: #ccc;
+}
+
+/* line 71, ../../sass/lib/_timepicker.scss */
+.ui-timepicker-list li.ui-timepicker-disabled,
+.ui-timepicker-list li.ui-timepicker-disabled:hover,
+.ui-timepicker-list li.ui-timepicker-selected.ui-timepicker-disabled {
+  color: #888;
+  cursor: default;
+}
+
+/* line 78, ../../sass/lib/_timepicker.scss */
+.ui-timepicker-list li.ui-timepicker-disabled:hover,
+.ui-timepicker-list li.ui-timepicker-selected.ui-timepicker-disabled {
+  background: #f2f2f2;
+}
+
 /***************************************************
 COMMON STYLES
 ***************************************************/
@@ -1404,12 +2555,17 @@ button:focus {
   outline: 0;
 }
 
-/* line 22, ../../sass/_common.scss */
+/* line 21, ../../sass/_common.scss */
+input {
+  outline: 0;
+}
+
+/* line 23, ../../sass/_common.scss */
 strong {
   font-weight: bold;
 }
 
-/* line 24, ../../sass/_common.scss */
+/* line 25, ../../sass/_common.scss */
 body.modal_open {
   overflow: hidden;
 }
@@ -1447,13 +2603,13 @@ html {
   line-height: 0.375em;
 }
 
-/* line 75, ../../sass/_common.scss */
+/* line 76, ../../sass/_common.scss */
 body {
   font-family: 'Lato', Helvetica, Arial, sans-serif;
   color: #000;
 }
 
-/* line 79, ../../sass/_common.scss */
+/* line 80, ../../sass/_common.scss */
 p {
   font-size: 0.875em;
   line-height: 1.71428571em;
@@ -1470,7 +2626,7 @@ SUSY GRID
 }
 
 /* line 4, ../../sass/_anim.scss */
-.some {
+.book {
   transition: all 0.2s ease-in-out;
 }
 
@@ -1478,7 +2634,8 @@ SUSY GRID
 .btn,
 .soc-links__item,
 .carousel__control,
-.good__button button {
+.good__button button,
+.insta__item {
   transition: all 0.1s ease-in-out;
 }
 
@@ -1503,7 +2660,7 @@ SUSY GRID
 }
 
 /* line 15, ../../sass/_paragraph.scss */
-.p-secondary, .footer__text p, .footer__contacts p, .footerBottom__text p, .footerBottom__author p, .menuItemInfo__caption, .schedule__price_sm p, .eventRecent__text p, .good__more button, .good__size p, .good__button button p {
+.p-secondary, .footer__text p, .footer__contacts p, .footerBottom__text p, .footerBottom__author p, .menuItemInfo__caption, .schedule__price_sm p, .eventRecent__text p, .good__more button, .good__size p, .good__button button p, .book .formGroup__error {
   font-family: 'Lato';
   font-weight: normal;
   font-style: normal;
@@ -1512,7 +2669,7 @@ SUSY GRID
 }
 
 /* line 21, ../../sass/_paragraph.scss */
-.p-base, .bannerTags__item, .eventHeading__price.eventHeading__price_sm p, .eventTags__item {
+.p-base, .ui-timepicker-list li, .bannerTags__item, .eventHeading__price.eventHeading__price_sm p, .eventTags__item {
   font-family: 'Lato';
   font-weight: normal;
   font-style: normal;
@@ -1521,7 +2678,7 @@ SUSY GRID
 }
 
 /* line 27, ../../sass/_paragraph.scss */
-.p-compact, .heroExtras__item p, .slideExtras__item p, .bannerContent__text p, .eventAuthor__title p, .eventAuthor__caption p {
+.p-compact, .heroExtras__item p, .slideExtras__item p, .bannerContent__text p, .eventAuthor__title p, .eventAuthor__caption p, .bookFormGroup .formGroup__label {
   font-family: 'Lato';
   font-weight: normal;
   font-style: normal;
@@ -1566,7 +2723,7 @@ SUSY GRID
 }
 
 /* line 57, ../../sass/_paragraph.scss */
-.p-h3, .heading h1, .slideInfo__price, .menuCat__title h3, .teamItem__title h3, .bannerContent__title h2, .schedule__title h2, .schedule__price p, .date__month p, .eventHeading__price p, .eventReg__title p, .richText h2, .footerSubscribe__title p, .cookNav > li > p {
+.p-h3, .heading h1, .slideInfo__price, .menuCat__title h3, .teamItem__title h3, .bannerContent__title h2, .schedule__title h2, .schedule__price p, .date__month p, .eventHeading__price p, .eventReg__title p, .richText h2, .footerSubscribe__title p, .cookNav > li > p, .book__title p {
   font-family: 'Lora';
   font-weight: bold;
   font-style: normal;
@@ -1592,6 +2749,16 @@ SUSY GRID
   line-height: 1.2em;
 }
 
+/* line 77, ../../sass/_paragraph.scss */
+.p-link_black, .footer__text a, .footer__contacts a, .footerLeft__text a, .footerBottom__text a {
+  border-bottom: 1px solid rgba(186, 186, 186, 0.4);
+}
+/* line 79, ../../sass/_paragraph.scss */
+.p-link_black:hover, .footer__text a:hover, .footer__contacts a:hover, .footerLeft__text a:hover, .footerBottom__text a:hover {
+  color: #FFF;
+  border-color: rgba(255, 255, 255, 0.65);
+}
+
 /* line 2, ../../sass/blocks/_button.scss */
 .btn {
   display: inline-block;
@@ -1605,40 +2772,110 @@ SUSY GRID
   text-align: center;
 }
 /* line 12, ../../sass/blocks/_button.scss */
-.btn:hover {
+.btn:hover, .btn.btn_disabled {
   background: #3a0000;
   border-color: #3a0000;
   color: #FFF;
 }
-
 /* line 21, ../../sass/blocks/_button.scss */
+.btn.btn_nohover:hover {
+  background: #FFF;
+  border-color: #7e0000;
+  color: #434343;
+}
+
+/* line 29, ../../sass/blocks/_button.scss */
 .btn_primary {
   background: #7e0000;
   color: #FFF;
 }
-/* line 24, ../../sass/blocks/_button.scss */
-.btn_primary:hover {
+/* line 32, ../../sass/blocks/_button.scss */
+.btn_primary:hover, .btn_primary.btn_disabled {
   background: #3a0000;
   border-color: #3a0000;
 }
+/* line 37, ../../sass/blocks/_button.scss */
+.btn_primary.btn_nohover:hover {
+  background: #7e0000;
+  color: #FFF;
+}
 
-/* line 29, ../../sass/blocks/_button.scss */
+/* line 43, ../../sass/blocks/_button.scss */
 .btn_light {
   background: none;
   color: #bababa;
   border-color: #bababa;
 }
-/* line 33, ../../sass/blocks/_button.scss */
-.btn_light:hover {
+/* line 47, ../../sass/blocks/_button.scss */
+.btn_light:hover, .btn_light.btn_disabled {
   color: #000;
   background: #bababa;
   border-color: #bababa;
 }
+/* line 53, ../../sass/blocks/_button.scss */
+.btn_light.btn_nohover:hover {
+  background: none;
+  color: #bababa;
+  border-color: #bababa;
+}
 
-/* line 39, ../../sass/blocks/_button.scss */
+/* line 60, ../../sass/blocks/_button.scss */
 .btn_long {
   max-width: 10.125em;
   padding: 0.3125em 1.5em;
+}
+
+@keyframes spinner {
+  0% {
+    opacity: 0.2;
+  }
+  30% {
+    opacity: 1;
+  }
+  to {
+    opacity: 0.2;
+  }
+}
+/* line 79, ../../sass/blocks/_button.scss */
+.btn__spinner {
+  padding: 0.37125em 0;
+  margin: 0 auto;
+  display: none;
+}
+/* line 84, ../../sass/blocks/_button.scss */
+.btn__spinner .pt {
+  width: 0.375em;
+  height: 0.375em;
+  border-radius: 100%;
+  background: #FFF;
+  display: inline-block;
+  vertical-align: middle;
+  opacity: 0.2;
+  animation-duration: 750ms;
+  animation-name: spinner;
+  animation-iteration-count: infinite;
+}
+/* line 95, ../../sass/blocks/_button.scss */
+.btn__spinner .pt:nth-child(1) {
+  animation-delay: 0ms;
+}
+/* line 98, ../../sass/blocks/_button.scss */
+.btn__spinner .pt:nth-child(2) {
+  animation-delay: 180ms;
+}
+/* line 101, ../../sass/blocks/_button.scss */
+.btn__spinner .pt:nth-child(3) {
+  animation-delay: 360ms;
+}
+
+/* line 108, ../../sass/blocks/_button.scss */
+.btn_disabled p {
+  height: 0;
+  visibility: hidden;
+}
+/* line 109, ../../sass/blocks/_button.scss */
+.btn_disabled .btn__spinner {
+  display: block;
 }
 
 /* line 2, ../../sass/blocks/_link.scss */
@@ -2178,6 +3415,10 @@ SUSY GRID
   display: inline-block;
 }
 
+/* line 1, ../../sass/blocks/_insta.scss */
+.insta {
+  background: #000;
+}
 /* line 2, ../../sass/blocks/_insta.scss */
 .insta:after {
   content: " ";
@@ -2185,8 +3426,9 @@ SUSY GRID
   clear: both;
 }
 
-/* line 8, ../../sass/blocks/_insta.scss */
+/* line 9, ../../sass/blocks/_insta.scss */
 .insta__item {
+  opacity: 0.75;
   width: 12.5%;
   float: left;
   padding-left: 15px;
@@ -2194,10 +3436,14 @@ SUSY GRID
   padding: 0;
   display: inline-block;
 }
-/* line 13, ../../sass/blocks/_insta.scss */
+/* line 15, ../../sass/blocks/_insta.scss */
 .insta__item img {
   width: 100%;
   height: auto;
+}
+/* line 19, ../../sass/blocks/_insta.scss */
+.insta__item:hover {
+  opacity: 1;
 }
 
 /* line 1, ../../sass/blocks/_footer.scss */
@@ -2236,17 +3482,8 @@ SUSY GRID
   display: inline-block;
   vertical-align: middle;
 }
-/* line 23, ../../sass/blocks/_footer.scss */
-.footer__text a {
-  border-bottom: 1px solid rgba(186, 186, 186, 0.5);
-}
-/* line 25, ../../sass/blocks/_footer.scss */
-.footer__text a:hover {
-  color: #FFF;
-  border-color: rgba(255, 255, 255, 0.65);
-}
 
-/* line 31, ../../sass/blocks/_footer.scss */
+/* line 27, ../../sass/blocks/_footer.scss */
 .footer__contacts {
   margin-left: 8.33333333%;
   width: 33.33333333%;
@@ -2257,22 +3494,13 @@ SUSY GRID
   display: inline-block;
   vertical-align: middle;
 }
-/* line 41, ../../sass/blocks/_footer.scss */
-.footer__contacts a {
-  border-bottom: 1px solid rgba(186, 186, 186, 0.5);
-}
-/* line 43, ../../sass/blocks/_footer.scss */
-.footer__contacts a:hover {
-  color: #FFF;
-  border-color: rgba(255, 255, 255, 0.65);
-}
 
-/* line 49, ../../sass/blocks/_footer.scss */
+/* line 41, ../../sass/blocks/_footer.scss */
 .footer__link {
   margin-left: 1.125em;
 }
 
-/* line 53, ../../sass/blocks/_footer.scss */
+/* line 45, ../../sass/blocks/_footer.scss */
 .footer__links {
   width: 25%;
   float: left;
@@ -2281,7 +3509,7 @@ SUSY GRID
   text-align: right;
 }
 
-/* line 58, ../../sass/blocks/_footer.scss */
+/* line 50, ../../sass/blocks/_footer.scss */
 .soc-links__item {
   display: inline-block;
   width: 1.875em;
@@ -2290,66 +3518,66 @@ SUSY GRID
   background-image: url("../img/footer__soc-links_flamp.svg");
   background-size: cover;
 }
-/* line 65, ../../sass/blocks/_footer.scss */
+/* line 57, ../../sass/blocks/_footer.scss */
 .soc-links__item:hover {
   -webkit-filter: brightness(1.25);
 }
 
-/* line 69, ../../sass/blocks/_footer.scss */
+/* line 61, ../../sass/blocks/_footer.scss */
 .soc-links {
   display: inline-block;
   vertical-align: middle;
 }
 
-/* line 73, ../../sass/blocks/_footer.scss */
+/* line 65, ../../sass/blocks/_footer.scss */
 .soc-links__item_flamp {
   margin-left: 0;
   background-image: url("../img/footer__soc-links_flamp.svg");
 }
 
-/* line 77, ../../sass/blocks/_footer.scss */
+/* line 69, ../../sass/blocks/_footer.scss */
 .soc-links__item_fb {
   background-image: url("../img/footer__soc-links_fb.svg");
 }
 
-/* line 80, ../../sass/blocks/_footer.scss */
+/* line 72, ../../sass/blocks/_footer.scss */
 .soc-links__item_insta {
   background-image: url("../img/footer__soc-links_insta.svg");
 }
 
-/* line 83, ../../sass/blocks/_footer.scss */
+/* line 75, ../../sass/blocks/_footer.scss */
 .soc-links__item_tripadv {
   background-image: url("../img/footer__soc-links_tripadv.svg");
 }
 
-/* line 86, ../../sass/blocks/_footer.scss */
+/* line 78, ../../sass/blocks/_footer.scss */
 .soc-links__item_email {
   background-image: url("../img/footer__soc-links_email.svg");
 }
 
-/* line 89, ../../sass/blocks/_footer.scss */
+/* line 81, ../../sass/blocks/_footer.scss */
 .footer__author {
   text-align: right;
   margin-top: 0.75em;
 }
-/* line 92, ../../sass/blocks/_footer.scss */
+/* line 84, ../../sass/blocks/_footer.scss */
 .footer__author img {
   width: auto;
   height: 0.75em;
 }
 
-/* line 98, ../../sass/blocks/_footer.scss */
+/* line 90, ../../sass/blocks/_footer.scss */
 .footerTop {
   margin-bottom: 1.125em;
 }
-/* line 99, ../../sass/blocks/_footer.scss */
+/* line 91, ../../sass/blocks/_footer.scss */
 .footerTop:after {
   content: " ";
   display: block;
   clear: both;
 }
 
-/* line 106, ../../sass/blocks/_footer.scss */
+/* line 98, ../../sass/blocks/_footer.scss */
 .footerLeft {
   width: 50%;
   float: left;
@@ -2357,24 +3585,24 @@ SUSY GRID
   padding-right: 15px;
 }
 
-/* line 109, ../../sass/blocks/_footer.scss */
+/* line 101, ../../sass/blocks/_footer.scss */
 .footerLeft__text {
   margin: 1.875em 0;
 }
 
-/* line 112, ../../sass/blocks/_footer.scss */
+/* line 107, ../../sass/blocks/_footer.scss */
 .footerLeft__links {
   margin-bottom: 1.875em;
 }
 
-/* line 115, ../../sass/blocks/_footer.scss */
+/* line 110, ../../sass/blocks/_footer.scss */
 .footerLeft__button {
   margin-left: 1.875em;
   display: inline-block;
   vertical-align: middle;
 }
 
-/* line 121, ../../sass/blocks/_footer.scss */
+/* line 116, ../../sass/blocks/_footer.scss */
 .footerRight {
   width: 50%;
   float: left;
@@ -2382,41 +3610,43 @@ SUSY GRID
   padding-right: 15px;
   text-align: left !important;
 }
-/* line 124, ../../sass/blocks/_footer.scss */
+/* line 119, ../../sass/blocks/_footer.scss */
 .footerRight .footerForm__inputs {
   display: inline-block;
   margin-right: 1.5em;
 }
-/* line 128, ../../sass/blocks/_footer.scss */
+/* line 123, ../../sass/blocks/_footer.scss */
 .footerRight .footerForm__button {
   margin-bottom: 0.375em;
   display: inline-block;
   vertical-align: bottom;
 }
 
-/* line 135, ../../sass/blocks/_footer.scss */
+/* line 130, ../../sass/blocks/_footer.scss */
 .footerBottom {
   padding: 0 0.9375em;
 }
 
-/* line 138, ../../sass/blocks/_footer.scss */
-.footerBottom__text, .footerBottom__author {
+/* line 133, ../../sass/blocks/_footer.scss */
+.footerBottom__text {
   display: inline-block;
   vertical-align: middle;
 }
 
-/* line 146, ../../sass/blocks/_footer.scss */
+/* line 144, ../../sass/blocks/_footer.scss */
 .footerBottom__author {
   float: right;
+  display: inline-block;
+  vertical-align: middle;
 }
 
-/* line 149, ../../sass/blocks/_footer.scss */
+/* line 152, ../../sass/blocks/_footer.scss */
 .footerBottom__authorTitle, .footerBottom__authorLogo {
   display: inline-block;
   vertical-align: middle;
 }
 
-/* line 153, ../../sass/blocks/_footer.scss */
+/* line 156, ../../sass/blocks/_footer.scss */
 .footerBottom__authorLogo {
   height: 0.9375em;
   padding-top: 0.1875em;
@@ -3125,7 +4355,7 @@ SUSY GRID
 .eventForm__count {
   border-radius: 0.1875em;
   color: #262626;
-  border: 0.0625em solid #a3a2a1;
+  border: 1px solid #a3a2a1;
   padding: 0.25em 0.375em 0.125em 0.375em;
   max-width: 3.75em;
 }
@@ -3163,7 +4393,7 @@ SUSY GRID
   display: block;
   width: 100%;
   border-radius: 0.375em;
-  border: 0.0625em solid #7c7c7c;
+  border: 1px solid #7c7c7c;
   padding: 0.375em 0.75em 0.25em 0.75em;
   font-size: 0.875em;
   line-height: 1.28571429em;
@@ -3275,25 +4505,46 @@ SUSY GRID
 }
 
 /* line 51, ../../sass/blocks/_forms.scss */
+.footerFormGroup_invalid .footerFormGroup__input {
+  border-color: #cf0000;
+}
+/* line 53, ../../sass/blocks/_forms.scss */
+.footerFormGroup_invalid .footerFormGroup__input::-webkit-input-placeholder {
+  color: #cf0000;
+}
+/* line 54, ../../sass/blocks/_forms.scss */
+.footerFormGroup_invalid .footerFormGroup__input::-moz-placeholder {
+  color: #cf0000;
+}
+/* line 55, ../../sass/blocks/_forms.scss */
+.footerFormGroup_invalid .footerFormGroup__input:-moz-placeholder {
+  color: #cf0000;
+}
+/* line 56, ../../sass/blocks/_forms.scss */
+.footerFormGroup_invalid .footerFormGroup__input:-ms-input-placeholder {
+  color: #cf0000;
+}
+
+/* line 58, ../../sass/blocks/_forms.scss */
 .footerFormGroup_privacy {
   text-align: left;
   margin-top: 0.375em;
 }
 
-/* line 55, ../../sass/blocks/_forms.scss */
+/* line 62, ../../sass/blocks/_forms.scss */
 .footerSubscribe_success {
   max-width: 35.625em;
   margin: 0 auto;
 }
-/* line 58, ../../sass/blocks/_forms.scss */
+/* line 65, ../../sass/blocks/_forms.scss */
 .footerSubscribe_success .footerSubscribe__title {
   margin-top: 1.875em;
   margin-bottom: 0.75em;
 }
 
-/* line 63, ../../sass/blocks/_forms.scss */
+/* line 70, ../../sass/blocks/_forms.scss */
 .footerSubscribe__picture {
-  margin: 2.25em auto 3.75em auto;
+  margin: 1.875em auto 4.875em auto;
   max-width: 4.5em;
   height: auto;
 }
@@ -3371,19 +4622,33 @@ SUSY GRID
   background-image: url("../img/tree.svg");
   margin-left: 0.42857143em;
 }
-/* line 55, ../../sass/blocks/_cook.scss */
+/* line 54, ../../sass/blocks/_cook.scss */
+.cookNav > li > ul > li.isActive > p {
+  font-weight: bold;
+}
+/* line 56, ../../sass/blocks/_cook.scss */
+.cookNav > li > ul > li.isActive > p:before {
+  content: "";
+  vertical-align: middle;
+  display: inline-block;
+  width: 1.71428571em;
+  height: 1.28571429em;
+  margin-left: -0.57142857em;
+  background-image: url("../img/arrow.svg");
+}
+/* line 67, ../../sass/blocks/_cook.scss */
 .cookNav > li > ul > li > ul > li > p {
   padding: 0 2.14285714em 0 3.42857143em;
 }
-/* line 57, ../../sass/blocks/_cook.scss */
+/* line 69, ../../sass/blocks/_cook.scss */
 .cookNav > li > ul > li > ul > li > p:hover {
   color: #7e0000;
 }
-/* line 61, ../../sass/blocks/_cook.scss */
+/* line 73, ../../sass/blocks/_cook.scss */
 .cookNav > li > ul > li > ul > li.isActive > p {
   font-weight: bold;
 }
-/* line 63, ../../sass/blocks/_cook.scss */
+/* line 75, ../../sass/blocks/_cook.scss */
 .cookNav > li > ul > li > ul > li.isActive > p:before {
   content: "";
   vertical-align: middle;
@@ -3394,28 +4659,28 @@ SUSY GRID
   background-image: url("../img/arrow.svg");
 }
 
-/* line 78, ../../sass/blocks/_cook.scss */
+/* line 90, ../../sass/blocks/_cook.scss */
 .cookDelivery {
   padding: 1.5em 1.875em;
   border-bottom: 0.0625em solid #bababa;
 }
 
-/* line 82, ../../sass/blocks/_cook.scss */
+/* line 94, ../../sass/blocks/_cook.scss */
 .cookDelivery__text {
   color: #7c7c7c;
 }
 
-/* line 85, ../../sass/blocks/_cook.scss */
+/* line 97, ../../sass/blocks/_cook.scss */
 .cookDelivery__payMeth {
   padding-top: 0.75em;
 }
-/* line 87, ../../sass/blocks/_cook.scss */
+/* line 99, ../../sass/blocks/_cook.scss */
 .cookDelivery__payMeth img {
   max-width: 7.5em;
   height: auto;
 }
 
-/* line 93, ../../sass/blocks/_cook.scss */
+/* line 105, ../../sass/blocks/_cook.scss */
 .breadcrumbs {
   width: 75%;
   float: left;
@@ -3425,13 +4690,13 @@ SUSY GRID
   padding-top: 1.125em;
   padding-bottom: 1.125em;
 }
-/* line 98, ../../sass/blocks/_cook.scss */
+/* line 110, ../../sass/blocks/_cook.scss */
 .breadcrumbs li {
   display: inline;
   font-size: 0.875em;
   line-height: 1.28571429em;
 }
-/* line 101, ../../sass/blocks/_cook.scss */
+/* line 113, ../../sass/blocks/_cook.scss */
 .breadcrumbs li:after {
   content: "";
   display: inline-block;
@@ -3440,13 +4705,13 @@ SUSY GRID
   width: 1.71428571em;
   height: 1.28571429em;
 }
-/* line 109, ../../sass/blocks/_cook.scss */
+/* line 121, ../../sass/blocks/_cook.scss */
 .breadcrumbs li:last-child:after {
   width: 0;
   height: 0;
 }
 
-/* line 116, ../../sass/blocks/_cook.scss */
+/* line 128, ../../sass/blocks/_cook.scss */
 .goods {
   width: 75%;
   float: left;
@@ -3455,7 +4720,7 @@ SUSY GRID
   padding: 0;
 }
 
-/* line 120, ../../sass/blocks/_cook.scss */
+/* line 132, ../../sass/blocks/_cook.scss */
 .good {
   width: 33.33333333%;
   float: left;
@@ -3464,7 +4729,7 @@ SUSY GRID
   min-height: 21.75em;
 }
 
-/* line 124, ../../sass/blocks/_cook.scss */
+/* line 136, ../../sass/blocks/_cook.scss */
 .good__picture {
   width: 100%;
   height: 11.25em;
@@ -3472,7 +4737,7 @@ SUSY GRID
   margin-bottom: 0.75em;
 }
 
-/* line 130, ../../sass/blocks/_cook.scss */
+/* line 142, ../../sass/blocks/_cook.scss */
 .good__label {
   position: absolute;
   margin-top: 0.75em;
@@ -3481,7 +4746,7 @@ SUSY GRID
   color: #FFF;
   background: #000;
 }
-/* line 139, ../../sass/blocks/_cook.scss */
+/* line 151, ../../sass/blocks/_cook.scss */
 .good__label p:before {
   content: "";
   display: block;
@@ -3490,7 +4755,7 @@ SUSY GRID
   float: left;
   margin-right: 0.42857143em;
 }
-/* line 148, ../../sass/blocks/_cook.scss */
+/* line 160, ../../sass/blocks/_cook.scss */
 .good__label:before {
   content: '';
   position: absolute;
@@ -3502,49 +4767,49 @@ SUSY GRID
   border-left: solid 0.28125em transparent;
 }
 
-/* line 159, ../../sass/blocks/_cook.scss */
+/* line 171, ../../sass/blocks/_cook.scss */
 .good__label_1 {
   background-color: #fca600;
 }
-/* line 161, ../../sass/blocks/_cook.scss */
+/* line 173, ../../sass/blocks/_cook.scss */
 .good__label_1 p:before {
   background-image: url("../img/label1.svg");
 }
-/* line 164, ../../sass/blocks/_cook.scss */
+/* line 176, ../../sass/blocks/_cook.scss */
 .good__label_1:before {
   border-right-color: #8b5b00;
   border-bottom-color: #8b5b00;
 }
 
-/* line 169, ../../sass/blocks/_cook.scss */
+/* line 181, ../../sass/blocks/_cook.scss */
 .good__label_2 {
   background-color: #00b056;
 }
-/* line 171, ../../sass/blocks/_cook.scss */
+/* line 183, ../../sass/blocks/_cook.scss */
 .good__label_2 p:before {
   background-image: url("../img/label2.svg");
 }
-/* line 174, ../../sass/blocks/_cook.scss */
+/* line 186, ../../sass/blocks/_cook.scss */
 .good__label_2:before {
   border-right-color: #006d36;
   border-bottom-color: #006d36;
 }
 
-/* line 179, ../../sass/blocks/_cook.scss */
+/* line 191, ../../sass/blocks/_cook.scss */
 .good__label_3 {
   background-color: #7e0000;
 }
-/* line 181, ../../sass/blocks/_cook.scss */
+/* line 193, ../../sass/blocks/_cook.scss */
 .good__label_3 p:before {
   background-image: url("../img/label3.svg");
 }
-/* line 184, ../../sass/blocks/_cook.scss */
+/* line 196, ../../sass/blocks/_cook.scss */
 .good__label_3:before {
   border-right-color: #3a0000;
   border-bottom-color: #3a0000;
 }
 
-/* line 195, ../../sass/blocks/_cook.scss */
+/* line 207, ../../sass/blocks/_cook.scss */
 .good__more button {
   border: none;
   background: none;
@@ -3553,40 +4818,40 @@ SUSY GRID
   color: #7c7c7c;
   border-bottom: 1px solid #bababa;
 }
-/* line 203, ../../sass/blocks/_cook.scss */
+/* line 215, ../../sass/blocks/_cook.scss */
 .good__more button:hover {
   color: #000;
   border-color: #434343;
 }
 
-/* line 209, ../../sass/blocks/_cook.scss */
+/* line 221, ../../sass/blocks/_cook.scss */
 .good__info {
   display: none;
 }
 
-/* line 213, ../../sass/blocks/_cook.scss */
+/* line 225, ../../sass/blocks/_cook.scss */
 .good__footer {
   margin: 1.125em 0 2.25em 0;
 }
 
-/* line 216, ../../sass/blocks/_cook.scss */
+/* line 228, ../../sass/blocks/_cook.scss */
 .good__size, .good__price, .good__button {
   display: inline-block;
 }
 
-/* line 219, ../../sass/blocks/_cook.scss */
+/* line 231, ../../sass/blocks/_cook.scss */
 .good__size {
   color: #7c7c7c;
   padding-right: 0.75em;
 }
 
-/* line 226, ../../sass/blocks/_cook.scss */
+/* line 238, ../../sass/blocks/_cook.scss */
 .good__price {
   color: #7e0000;
   padding-right: 0.75em;
 }
 
-/* line 234, ../../sass/blocks/_cook.scss */
+/* line 246, ../../sass/blocks/_cook.scss */
 .good__button button {
   border: none;
   color: #FFF;
@@ -3595,7 +4860,7 @@ SUSY GRID
   padding: 0.375em 0.75em;
   border-radius: 0.75em;
 }
-/* line 243, ../../sass/blocks/_cook.scss */
+/* line 255, ../../sass/blocks/_cook.scss */
 .good__button button p:before {
   content: "";
   display: block;
@@ -3605,9 +4870,194 @@ SUSY GRID
   background-image: url("../img/cart.svg");
   margin-right: 0.5em;
 }
-/* line 253, ../../sass/blocks/_cook.scss */
+/* line 265, ../../sass/blocks/_cook.scss */
 .good__button button:hover {
   background-color: #7e0000;
+}
+
+/* line 1, ../../sass/blocks/_sticky.scss */
+.sticky {
+  position: fixed;
+  z-index: 1000;
+  top: calc(50% - 1.5em);
+  right: -9.375em;
+}
+/* line 6, ../../sass/blocks/_sticky.scss */
+.sticky:hover {
+  right: -1.3125em;
+  padding-right: 2.25em;
+}
+/* line 10, ../../sass/blocks/_sticky.scss */
+.sticky p:before {
+  content: "";
+  vertical-align: middle;
+  display: inline-block;
+  width: 2.18181818em;
+  height: 2.18181818em;
+  margin: -0.54545455em;
+  margin-right: 0.81818182em;
+  background-image: url("../img/index__hero-time.svg");
+}
+
+/* line 1, ../../sass/blocks/_book.scss */
+.book {
+  width: 100%;
+  max-width: 30em;
+  right: -30em;
+  position: fixed;
+  background: linear-gradient(to right, #2a0000 1%, #010000 100%);
+  min-height: 100vh;
+  padding: 1.125em 1.875em;
+  color: #bababa;
+  z-index: 1100;
+}
+
+/* line 12, ../../sass/blocks/_book.scss */
+.book_isActive {
+  right: 0;
+}
+
+/* line 15, ../../sass/blocks/_book.scss */
+.book__close {
+  border: none;
+  background: none;
+  padding: 0;
+  color: #cf0000;
+  position: absolute;
+  right: 1.125em;
+  opacity: 0.5;
+}
+/* line 23, ../../sass/blocks/_book.scss */
+.book__close p {
+  font-size: 2.125em;
+  line-height: 0.52941176em;
+}
+/* line 26, ../../sass/blocks/_book.scss */
+.book__close:hover {
+  opacity: 1;
+}
+
+/* line 30, ../../sass/blocks/_book.scss */
+.book__title {
+  padding-top: 0.75em;
+  text-align: center;
+  margin-bottom: 1.875em;
+}
+
+/* line 39, ../../sass/blocks/_book.scss */
+.book .formGroup__error {
+  color: #cf0000;
+  display: none;
+}
+
+/* line 45, ../../sass/blocks/_book.scss */
+.bookFormSection {
+  margin: 1.5em 0;
+}
+
+/* line 48, ../../sass/blocks/_book.scss */
+.bookFormGroup {
+  margin: 0.75em 0;
+}
+/* line 50, ../../sass/blocks/_book.scss */
+.bookFormGroup .formGroup__label {
+  margin-right: 0.42857143em;
+}
+/* line 54, ../../sass/blocks/_book.scss */
+.bookFormGroup.bookFormGroup_required .formGroup__label:after {
+  content: "*";
+  color: #cf0000;
+}
+/* line 58, ../../sass/blocks/_book.scss */
+.bookFormGroup .formGroup__input {
+  margin: 0.375em 0;
+  color: #FFF;
+  background: none;
+  display: block;
+  width: 100%;
+  border-radius: 0.375em;
+  border: 1px solid #7c7c7c;
+  padding: 0.375em 0.75em 0.25em 0.75em;
+  font-size: 0.875em;
+  line-height: 1.28571429em;
+}
+/* line 68, ../../sass/blocks/_book.scss */
+.bookFormGroup .formGroup__input::-webkit-input-placeholder {
+  opacity: 0.35;
+}
+/* line 69, ../../sass/blocks/_book.scss */
+.bookFormGroup .formGroup__input::-moz-placeholder {
+  opacity: 0.35;
+}
+/* line 70, ../../sass/blocks/_book.scss */
+.bookFormGroup .formGroup__input:-moz-placeholder {
+  opacity: 0.35;
+}
+/* line 71, ../../sass/blocks/_book.scss */
+.bookFormGroup .formGroup__input:-ms-input-placeholder {
+  opacity: 0.35;
+}
+/* line 72, ../../sass/blocks/_book.scss */
+.bookFormGroup .formGroup__input:focus {
+  border-color: #bababa;
+}
+
+/* line 78, ../../sass/blocks/_book.scss */
+.bookFormGroup_invalid .formGroup__error {
+  display: inline-block;
+}
+/* line 81, ../../sass/blocks/_book.scss */
+.bookFormGroup_invalid .formGroup__input {
+  border-color: #cf0000;
+}
+
+/* line 85, ../../sass/blocks/_book.scss */
+.bookFormGroup_checkbox {
+  margin: 0.375em 0;
+}
+/* line 87, ../../sass/blocks/_book.scss */
+.bookFormGroup_checkbox .formGroup__label {
+  vertical-align: middle;
+}
+/* line 90, ../../sass/blocks/_book.scss */
+.bookFormGroup_checkbox .formGroup__checkbox {
+  display: inline-block;
+  vertical-align: middle;
+}
+/* line 94, ../../sass/blocks/_book.scss */
+.bookFormGroup_checkbox .formGroup__checkbox:checked ~ .bookFormGroup__details {
+  display: block;
+}
+/* line 97, ../../sass/blocks/_book.scss */
+.bookFormGroup_checkbox .formGroup__checkbox:checked ~ .formGroup__label {
+  font-weight: bold;
+  color: #FFF;
+}
+
+/* line 105, ../../sass/blocks/_book.scss */
+.bookFormGroup__details {
+  margin: 0.375em 0 1.125em 0;
+  display: none;
+}
+/* line 108, ../../sass/blocks/_book.scss */
+.bookFormGroup__details .formGroup__error {
+  float: none;
+}
+
+/* line 113, ../../sass/blocks/_book.scss */
+.bookFormGroup__dateTime {
+  width: 50%;
+  display: inline-block;
+}
+
+/* line 117, ../../sass/blocks/_book.scss */
+.formGroup_date {
+  padding-right: 0.75em;
+}
+
+/* line 120, ../../sass/blocks/_book.scss */
+.formGroup_time {
+  padding-left: 0.75em;
 }
 
 /* line 5, ../../sass/_overrides.scss */

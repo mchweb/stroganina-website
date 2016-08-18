@@ -73,3 +73,11 @@
 	@include adjust-font-size-to($fs-h1, 12);
 	
 }
+
+.p-link_black {
+	border-bottom:1px solid rgba(186, 186, 186, 0.4);
+		&:hover{
+			color:$bg-clr;
+			border-color: rgba(255, 255, 255, 0.65);
+		}
+}

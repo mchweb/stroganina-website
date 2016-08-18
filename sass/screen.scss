@@ -8,6 +8,9 @@
 @import "lib/unslider";
 @import "lib/hamburgers/hamburgers.scss";
 @import "lib/hover/hover.scss";
+@import "lib/_updown.scss";
+@import "lib/_datepicker.scss";
+@import "lib/_timepicker.scss";
 
 // main styles
 @import "common";
@@ -32,6 +35,8 @@
 @import "blocks/richText";
 @import "blocks/forms";
 @import "blocks/cook";
+@import "blocks/sticky";
+@import "blocks/book";
 
 // !important
 @import "overrides";

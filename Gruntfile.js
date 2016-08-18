@@ -55,7 +55,7 @@ module.exports = function(grunt) {
                 processors: [
                     require('css-mqpacker')(),
                     require('postcss-focus')(),
-                    require('autoprefixer')({browsers: '> 5%'}),
+                    require('autoprefixer')({browsers: '> 1%, last 2 versions'}),
                     require('cssnano')()
                 ]
             },

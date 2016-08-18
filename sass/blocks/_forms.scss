@@ -48,6 +48,13 @@
 	padding:rhythm(1/2) 0 rhythm(3/6) 0;
 	border-bottom:1px solid $gray-50;
 }
+.footerFormGroup_invalid .footerFormGroup__input{ 
+	border-color:$warning-dark;
+	&::-webkit-input-placeholder {color:$warning-dark;}
+	&::-moz-placeholder          {color:$warning-dark;}
+	&:-moz-placeholder           {color:$warning-dark;}
+	&:-ms-input-placeholder      {color:$warning-dark;}
+}
 .footerFormGroup_privacy{
 	text-align:left;
 	margin-top:rhythm(1);
@@ -61,7 +68,7 @@
 	}
 }
 .footerSubscribe__picture{
-	margin:rhythm(6) auto rhythm(10) auto;
+	margin:rhythm(5) auto rhythm(13) auto;
 	max-width:rhythm(12);
 	height:auto;
 }

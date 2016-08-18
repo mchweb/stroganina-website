@@ -1,0 +1,122 @@
+.book{
+	width:100%;
+	max-width: rhythm(80);
+	right:-30em;
+	position:fixed;
+    background:linear-gradient(to right, #2a0000 1%,#010000 100%);
+    min-height:100vh;
+    padding:rhythm(3) rhythm(5);
+    color:$gray-70;
+    z-index:1100;
+}
+.book_isActive{
+	right:0;
+}
+.book__close{
+	border:none;
+	background:none;
+	padding:0;
+	color:$warning-dark;
+	position: absolute;
+	right:rhythm(3);
+	opacity:0.5;
+	& p{
+		@include adjust-font-size-to(34px, 3);
+	}
+	&:hover{
+		opacity:1;
+	}
+}
+.book__title{
+	padding-top:rhythm(2);
+	text-align:center;
+	margin-bottom:rhythm(5);
+	& p{
+		@extend .p-h3;
+	}
+}
+.book{
+	& .formGroup__error{
+		color:$warning-dark;
+		@extend .p-secondary;
+		display:none;
+	}
+}
+.bookFormSection {
+	margin:rhythm(4) 0;
+}
+.bookFormGroup {
+	margin:rhythm(2) 0;
+	& .formGroup__label{
+		@extend .p-compact;
+		margin-right:rhythm(1, 14px);
+	}
+	&.bookFormGroup_required .formGroup__label:after{
+		content:"*";
+		color:$warning-dark;
+	}
+	& .formGroup__input{
+		margin:rhythm(1) 0;
+		color:$bg-clr;
+		background:none;
+		display:block;
+		width:100%;
+		border-radius:rhythm(1);
+		border:1px solid $gray-50;
+		padding:rhythm(1) rhythm(2) rhythm(1 - 2/6) rhythm(2);
+		@include adjust-font-size-to($fs-base);
+		&::-webkit-input-placeholder {opacity:0.35}
+		&::-moz-placeholder          {opacity:0.35}
+		&:-moz-placeholder           {opacity:0.35}
+		&:-ms-input-placeholder      {opacity:0.35}
+		&:focus{
+			border-color:$gray-70;
+		}
+	}
+}
+.bookFormGroup_invalid {
+	& .formGroup__error{
+		display:inline-block;
+	}
+	& .formGroup__input{
+		border-color:$warning-dark;
+	}
+}
+.bookFormGroup_checkbox {
+	margin:rhythm(1) 0;
+	& .formGroup__label{
+		vertical-align:middle;
+	}
+	& .formGroup__checkbox{
+		display:inline-block;
+		vertical-align:middle;
+		&:checked{
+			& ~ .bookFormGroup__details{
+				display:block;
+			}
+			& ~ .formGroup__label{
+				font-weight:bold;
+				color:$bg-clr;				
+			}
+		}
+	}
+}
+
+.bookFormGroup__details{
+	margin:rhythm(1) 0 rhythm(3) 0;
+	display:none;
+	& .formGroup__error{
+		float:none;
+	}
+}
+
+.bookFormGroup__dateTime{
+	width:50%;
+	display:inline-block;
+}
+.formGroup_date{
+	padding-right:rhythm(2);
+}
+.formGroup_time{
+	padding-left:rhythm(2);
+}

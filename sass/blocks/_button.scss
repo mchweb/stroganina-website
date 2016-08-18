@@ -9,7 +9,7 @@
 	border-color:$accent;
 	color:$gray-25;
 	text-align:center;
-	&:hover{
+	&:hover, &.btn_disabled{
 		background:$accent-dark;
 		border-color:$accent-dark;
 		color:$bg-clr;
@@ -17,26 +17,94 @@
 	& p{
 		@extend .p-buttons;
 	}
+	&.btn_nohover{
+		&:hover{
+			background:$bg-clr;
+			border-color:$accent;
+			color:$gray-25;
+		}
+	}
 }
+
 .btn_primary{
 	background:$accent;
 	color:$bg-clr;
-	&:hover{
+	&:hover, &.btn_disabled{
 		background:$accent-dark;
 		border-color:$accent-dark;
+	}
+	&.btn_nohover{
+		&:hover{
+			background:$accent;
+			color:$bg-clr;
+		}
 	}
 }
 .btn_light{
 	background:none;
 	color:$gray-70;
 	border-color:$gray-70;
-	&:hover{
+	&:hover, &.btn_disabled{
 		color:$text-clr;
 		background:$gray-70;
 		border-color:$gray-70;
+	}
+	&.btn_nohover{
+		&:hover{
+			background:none;
+			color:$gray-70;
+			border-color:$gray-70;
+		}
 	}
 }
 .btn_long{
 	max-width:rhythm(27);
 	padding:rhythm(1 - 1/6) rhythm(4);
+}
+
+
+@keyframes spinner {
+    0% {
+        opacity: 0.2
+    }
+
+    30% {
+        opacity: 1
+    }
+
+    to {
+        opacity: 0.2
+    }
+}
+.btn__spinner{
+	padding:rhythm(0.99) 0;
+	//width:rhythm(11);
+	margin:0 auto;
+	display:none;
+	& .pt{
+		width:rhythm(1);
+		height:rhythm(1);
+		border-radius:100%;
+		background:$bg-clr;
+		display: inline-block;
+		vertical-align:middle;
+		opacity:0.2;
+		animation-duration: 750ms;
+		animation-name: spinner;
+		animation-iteration-count: infinite;
+		&:nth-child(1){
+			animation-delay: 0ms;
+		}
+		&:nth-child(2){
+			animation-delay: 180ms;
+		}
+		&:nth-child(3){
+			animation-delay: 360ms;
+		}
+	}
+}
+
+.btn_disabled {
+	& p {height:0;visibility:hidden;}
+	& .btn__spinner {display:block;}
 }

@@ -4,8 +4,10 @@
     	display: block;
     	clear: both;
 	}
+	background:$text-clr;
 }
 .insta__item{
+	opacity:0.75;
 	@include span(12/8);
 	padding:0;
 	display:inline-block;
@@ -13,5 +15,8 @@
 	& img{
 		width:100%;
 		height:auto;
+	}
+	&:hover{
+		opacity:1;
 	}
 }
