@@ -12,16 +12,8 @@
 	min-height:rhythm(145);
 	max-height:rhythm(200);
 }
-.slideSep{
-	@include span(3);
-	background-size:cover;
-	background-repeat:no-repeat;
-	height:100vh;
-	min-height:rhythm(145);
-	max-height:rhythm(200);
-}
 .slideContentWrap{
-	@include span(4);
+	@include span(5);
 	display:flex;
 	align-items: center;
 	height:100vh;
@@ -29,8 +21,57 @@
 	max-height:rhythm(200);
 	background-color: $bg-clr;
 }
-.slideContent{
+.slide_left{
+	background-position:right center;
+	& .slideContentWrap{
+		padding-right:0 !important;
+		justify-content:flex-start;
+		&:after{
+			content:' ';
+			height:100%;
+			transform-origin:top;
+			background:$bg-clr;
+			padding-left:rhythm(25);
+			transform:skew(8deg);
+			border-right:rhythm(8) solid $accent;
+			z-index:0;
+		}
+	}
+	& .slideContent{
+		margin-right:rhythm(-16);
+	}
 }
+.slide_right{
+	background-position:left center;
+	& .slideContentWrap{
+		@include push(7);
+		padding-left:0 !important;
+		justify-content:flex-end;
+		&:before{
+			content:' ';
+			height:100%;
+			transform-origin:top;
+			background:$bg-clr;
+			padding-right:rhythm(25);
+			transform:skew(-8deg);
+			border-left:rhythm(8) solid $accent;
+			z-index:0;
+		}
+	}
+	& .slideContent{
+		margin-left:rhythm(-16);
+	}
+}
+.slide_big{
+	& .slideContentWrap{
+		@include push(6);
+		@include span(6);
+	}
+}
+.slideContent {
+	z-index:10;
+}
+
 .slide__title{
 	color:$gray-15;
 	& h2{
@@ -70,38 +111,6 @@
 		height:auto;
 	}
 }
-.slide_right{
-	background-position:left center;
-	& .slideSep{
-		background-image:url('../img/slide__sep_right.svg');
-		@include push(5);
-	}
-	& .slideContentWrap{
-		justify-content:flex-end;
-	}
-
-}
-.slide_left{
-	background-position:right center;
-	& .slideSep{
-		background-image:url('../img/slide__sep_left.svg');
-		@include push(0);
-		
-	}
-	& .slideContentWrap{
-		justify-content:flex-start;
-	}
-}
-
-.slide_big{
-	& .slideSep{
-		@include push(4);
-	}
-	& .slideContentWrap{
-		@include span(5);
-	}
-}
-
 .slideInfo{
 	margin:rhythm(4) 0;
 	color:$gray-15;

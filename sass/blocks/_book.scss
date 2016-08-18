@@ -6,7 +6,7 @@
     background:linear-gradient(to right, #2a0000 1%,#010000 100%);
     min-height:100vh;
     padding:rhythm(3) rhythm(5);
-    color:$gray-70;
+    color:$gray-80;
     z-index:1100;
 }
 .book_isActive{
@@ -65,10 +65,10 @@
 		border:1px solid $gray-50;
 		padding:rhythm(1) rhythm(2) rhythm(1 - 2/6) rhythm(2);
 		@include adjust-font-size-to($fs-base);
-		&::-webkit-input-placeholder {opacity:0.35}
-		&::-moz-placeholder          {opacity:0.35}
-		&:-moz-placeholder           {opacity:0.35}
-		&:-ms-input-placeholder      {opacity:0.35}
+		&::-webkit-input-placeholder {opacity:0.45}
+		&::-moz-placeholder          {opacity:0.45}
+		&:-moz-placeholder           {opacity:0.45}
+		&:-ms-input-placeholder      {opacity:0.45}
 		&:focus{
 			border-color:$gray-70;
 		}
@@ -119,4 +119,59 @@
 }
 .formGroup_time{
 	padding-left:rhythm(2);
+}
+
+.formRemember{
+	display:none;
+	background-color:rgba(242, 229, 229, 0.5);
+	padding:rhythm(2);
+	border-radius:rhythm(1);
+	color:$gray-15;
+	margin:rhythm(-2) 0;
+	& p{
+		@extend .p-compact;
+	}
+	& a{
+		color:$gray-15;
+		border-bottom:1px solid $gray-25;
+		&:hover{
+			color:$text-clr;
+			border-color:$gray-15;
+		}
+	}
+}
+
+.bookSuccess{
+	text-align:center;
+	display:none;
+}
+.bookSuccess__text{
+	margin-bottom:rhythm(5);
+}
+.bookSuccess__soc-links{
+	margin-top:rhythm(2);
+}
+
+.checkmark{
+  display:inline-block;
+  padding:0 rhythm(0.5);
+  margin-right:rhythm(1);
+  margin-bottom:rhythm(7);
+  
+  &:after{
+    /*Add another block-level blank space*/
+    content: '';
+    display: block;
+ 
+    /*Make it a small rectangle so the border will create an L-shape*/
+    width: rhythm(10);
+    height: rhythm(16);
+ 
+    /*Add a white border on the bottom and left, creating that 'L' */
+    border: solid $accent;
+    border-width: 0 rhythm(4) rhythm(4) 0;
+ 
+    /*Rotate the L 45 degrees to turn it into a checkmark*/
+    transform: rotate(45deg);
+  }
 }

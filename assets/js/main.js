@@ -34,6 +34,11 @@ p.dataMask&&b.applyDataMask();setInterval(function(){b.jMaskGlobals.watchDataMas
 var i=s.getLeadingZeroNum,a={hourMin:this.minHours,hourMax:i(this.maxHours),hourStep:this.opts.hoursStep,hourValue:i(this.displayHours),minMin:this.minMinutes,minMax:i(this.maxMinutes),minStep:this.opts.minutesStep,minValue:i(this.minutes)},n=s.template(t,a);this.$timepicker=e(n).appendTo(this.d.$datepicker),this.$ranges=e('[type="range"]',this.$timepicker),this.$hours=e('[name="hours"]',this.$timepicker),this.$minutes=e('[name="minutes"]',this.$timepicker),this.$hoursText=e(".datepicker--time-current-hours",this.$timepicker),this.$minutesText=e(".datepicker--time-current-minutes",this.$timepicker),this.d.ampm&&(this.$ampm=e('<span class="datepicker--time-current-ampm">').appendTo(e(".datepicker--time-current",this.$timepicker)).html(this.dayPeriod),this.$timepicker.addClass("-am-pm-"))},_updateCurrentTime:function(){var t=s.getLeadingZeroNum(this.displayHours),e=s.getLeadingZeroNum(this.minutes);this.$hoursText.html(t),this.$minutesText.html(e),this.d.ampm&&this.$ampm.html(this.dayPeriod)},_updateRanges:function(){this.$hours.attr({min:this.minHours,max:this.maxHours}).val(this.hours),this.$minutes.attr({min:this.minMinutes,max:this.maxMinutes}).val(this.minutes)},_handleDate:function(t){this._setDefaultMinMaxTime(),t&&(s.isSame(t,this.d.opts.minDate)?this._setMinTimeFromDate(this.d.opts.minDate):s.isSame(t,this.d.opts.maxDate)&&this._setMaxTimeFromDate(this.d.opts.maxDate)),this._validateHoursMinutes(t)},update:function(){this._updateRanges(),this._updateCurrentTime()},_getValidHoursFromDate:function(t,e){var i=t,a=t;t instanceof Date&&(i=s.getParsedDate(t),a=i.hours);var n=e||this.d.ampm,h="am";if(n)switch(!0){case 0==a:a=12;break;case 12==a:h="pm";break;case a>11:a-=12,h="pm"}return{hours:a,dayPeriod:h}},set hours(t){this._hours=t;var e=this._getValidHoursFromDate(t);this.displayHours=e.hours,this.dayPeriod=e.dayPeriod},get hours(){return this._hours},_onChangeRange:function(t){var i=e(t.target),s=i.attr("name");this.d.timepickerIsActive=!0,this[s]=i.val(),this._updateCurrentTime(),this.d._trigger("timeChange",[this.hours,this.minutes]),this._handleDate(this.d.lastSelectedDate),this.update()},_onSelectDate:function(t,e){this._handleDate(e),this.update()},_onMouseEnterRange:function(t){var i=e(t.target).attr("name");e(".datepicker--time-current-"+i,this.$timepicker).addClass("-focus-")},_onMouseOutRange:function(t){var i=e(t.target).attr("name");this.d.inFocus||e(".datepicker--time-current-"+i,this.$timepicker).removeClass("-focus-")},_onMouseUpRange:function(t){this.d.timepickerIsActive=!1}}}()}(window,jQuery);
 ;
 
+function autoGrowTextArea(element) {
+    element.style.height = "67px";
+    element.style.height = (element.scrollHeight)+"px";
+}
+
 $(document).ready(function() {
 	$('.js-timepicker-bar').timepicker({
 			'minTime': '12:00pm',
@@ -59,6 +64,7 @@ $(document).ready(function() {
 		maxDate: d,
 		autoClose:true,
 		offset:9,
+		toggleSelected:false,
 		onSelect:function(formattedDate, date, inst){
 			var d = new Date();
 			var time = d.getHours()+':'+d.getMinutes();
@@ -75,6 +81,7 @@ $(document).ready(function() {
 		maxDate: d,
 		autoClose:true,
 		offset:9,
+		toggleSelected:false,
 		onSelect:function(formattedDate, date, inst){
 			var d = new Date();
 			var time = d.getHours()+':'+d.getMinutes();
@@ -99,11 +106,11 @@ function hideBookForm(){
 // Instafeed
 var feed = new Instafeed({
 		get: 'user',
-		userId: '207502049',
-		resolution: 'low_resolution',
-		limit: 8,
+		userId: '3176209645',
+		//resolution: 'low_resolution',
+		limit: 12,
 		template:'<li class="insta__item"><a href="{{link}}" target="_blank"><img src="{{image}}" alt="{{caption}}"></a></li>',
-		accessToken: '207502049.1677ed0.b16a966f7fb94d1d819a3e07c8a6db5a'
+		accessToken: '3176209645.1677ed0.17a3466edb5e422ba70c53b30cd38526'
 		//http://instagram.pixelunion.net/
    });
 feed.run();

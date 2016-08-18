@@ -17,8 +17,8 @@ a.anchor{
 	margin-top:-5em;
 }
 
-button:focus {outline:0;}
-input {outline:0;}
+button:focus, input, textarea {outline:0;}
+textarea {resize:none;overflow: hidden;}
 
 strong {font-weight:bold}
 
