@@ -20,7 +20,7 @@ a.anchor{
 button:focus, input, textarea {outline:0;}
 textarea {resize:none;overflow: hidden;}
 
-strong {font-weight:bold}
+strong {font-weight:bold !important}
 
 .modalBack{
 	opacity:0;

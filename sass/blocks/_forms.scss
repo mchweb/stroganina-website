@@ -61,7 +61,8 @@
 	text-align:left;
 	margin-top:rhythm(1);
 }
-.footerSubscribe_success{
+.footerSubscribe__success{
+	display:none;
 	max-width:rhythm(95);
 	margin:0 auto;
 	& .footerSubscribe__title{

@@ -81,7 +81,7 @@
 	height:rhythm(5);
 	margin-left:rhythm(1);
 	background-image:url('../img/footer__soc-links_flamp.svg');
-	background-size:cover;
+	//background-size:cover;
 	&:hover{
 		-webkit-filter: brightness(1.25);
 	}
@@ -89,6 +89,9 @@
 .soc-links{
 	display:inline-block;
 	vertical-align:middle;
+	&.soc-links_onWhite .soc-links__item:hover{
+		-webkit-filter: brightness(0.75);
+	}
 }
 .soc-links__item_flamp{
 	margin-left:0;
@@ -172,6 +175,10 @@
 		margin-bottom:rhythm(1);
 		display:inline-block;
 		vertical-align:bottom;
+	}
+	& .footerSubscribe__picture {
+		margin-top:rhythm(2);
+		max-width:rhythm(8);
 	}
 }
 

@@ -9,6 +9,9 @@
 	align-items: center;
 	justify-content:flex-end;
 	color:$bg-clr;
+	& a{
+		color:$bg-clr;
+	}
 	@media (max-width: 40em) {
 		height:auto;
 		max-height:none;
@@ -42,8 +45,13 @@
 	& h1{
 		@extend .p-h1;
 	}
+	&.hero__title_large h1{
+		font-size:10em;
+		line-height:1em;
+	}
 }
 .hero__desc {
+	margin-bottom:rhythm(2);
 	& p{
 		@extend .p-note;
 	}

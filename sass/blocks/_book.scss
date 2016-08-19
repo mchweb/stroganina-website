@@ -47,6 +47,25 @@
 		display:none;
 	}
 }
+.book_success{
+	.bookForm{
+		margin-left:-100%;
+		margin-right:100%;
+		visibility:hidden;
+		position:absolute;
+	}
+	.bookSuccess{
+		height:auto;
+		//opacity:1;
+		margin-left:0;
+		margin-right:0;
+		visibility:visible;
+	}
+	.checkmark{
+		opacity:1;
+	}
+}
+
 .bookFormSection {
 	margin:rhythm(4) 0;
 }
@@ -80,10 +99,13 @@
 	}
 }
 .bookFormGroup_invalid {
-	& .formGroup__error{
+	& > .formGroup__error{
 		display:inline-block;
 	}
-	& .formGroup__input{
+	&.bookFormGroup__dateTime ~ .formGroup__error{
+		display:inline-block;
+	}
+	& > .formGroup__input{
 		border-color:$warning-dark;
 	}
 }
@@ -91,14 +113,16 @@
 	margin:rhythm(1) 0;
 	& .formGroup__label{
 		vertical-align:middle;
+		cursor:pointer;
 	}
 	& .formGroup__checkbox{
 		display:inline-block;
 		vertical-align:middle;
+		cursor:pointer;
 		&:checked{
 			& ~ .bookFormGroup__details{
 				height:auto;
-				transform: scaleY(1);
+				visibility:visible;
 				opacity:1;
 				margin:rhythm(1) 0 rhythm(3) 0;
 			}
@@ -114,7 +138,7 @@
 	margin:0;
 	height:0;
 	opacity:0;
-	transform: scaleY(0);
+	visibility:hidden;
     transform-origin: top;
 	& .formGroup__error{
 		float:none;
@@ -154,7 +178,11 @@
 
 .bookSuccess{
 	text-align:center;
-	display:none;
+	visibility:hidden;
+	height:0;
+	//opacity:0;
+	margin-right: -100%;
+    margin-left: 100%;
 }
 .bookSuccess__text{
 	margin-bottom:rhythm(5);
@@ -165,9 +193,13 @@
 
 .checkmark{
   display:inline-block;
+  opacity:0;
   padding:0 rhythm(0.5);
   margin-right:rhythm(1);
   margin-bottom:rhythm(7);
+  
+  transition-delay:1s;
+  transition: all 1s ease-in-out;
   
   &:after{
     /*Add another block-level blank space*/

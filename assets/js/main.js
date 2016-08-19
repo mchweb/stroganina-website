@@ -40,7 +40,6 @@ function autoGrowTextArea(element) {
 }
 function headerScroll(){
 	var pageY = window.pageYOffset || document.documentElement.scrollTop;
-	console.log(pageY);
 	if (pageY == 0){
 		$(".header").removeClass("header_scrolled");
 	}else{
@@ -110,13 +109,148 @@ $(document).ready(function() {
 });
 
 
-function showBookForm(){
+function showBookForm(x){
+	closeMenuMobile();
+	if (x != null){
+		resetBookForm();
+		$('#f-order_' + x).prop('checked', true);
+	}
+	$('#f-name').focus();
 	$('.book').addClass('book_isActive');
 	$("body").addClass("modal_open");
 }
 function hideBookForm(){
 	$('.book').removeClass('book_isActive');
 	$("body").removeClass("modal_open");
+}
+function resetBookForm(){
+	$(".bookForm")[0].reset();
+
+	$(".book").removeClass("book_success");
+
+	$(".bookFormGroup").each(function(){
+		$(this).removeClass("bookFormGroup_invalid");
+	});
+	$(".bookFormGroup__dateTime").each(function(){
+		$(this).removeClass("bookFormGroup_invalid");
+	});
+	$(".bookFormSection").each(function(){
+		$(this).removeClass("bookFormGroup_invalid");
+	});
+}
+function successBookForm(){
+	$(".book").addClass("book_success");
+}
+
+function sendBookForm(){
+	var name = $('#f-name').val(),
+		phone = $('#f-phone').val(),
+		bar = $('#f-order_bar').prop("checked"),
+		bar_date = $('#f-bar_date').val(),
+		bar_time = $('#f-bar_time').val(),
+		space = $('#f-order_space').prop("checked"),
+		space_date = $('#f-space_date').val(),
+		space_time = $('#f-space_time').val(),
+		lunch = $('#f-order_lunch').prop("checked"),
+		sub = $('#f-order_sub').prop("checked"),
+		email = $('#f-email').val();
+	
+	$(".bookFormGroup").each(function(){
+		$(this).removeClass("bookFormGroup_invalid");
+	});
+	$(".bookFormGroup__dateTime").each(function(){
+		$(this).removeClass("bookFormGroup_invalid");
+	});
+	$(".bookFormSection").each(function(){
+		$(this).removeClass("bookFormGroup_invalid");
+	});
+
+	var isValid = true;
+	if (phone == "" || phone == "+7 "){
+		isValid = false;
+		$('#f-phone').parent().addClass("bookFormGroup_invalid");
+	}
+	if (!bar && !space && !lunch && !sub){
+		isValid = false;
+		$('#f-order').addClass("bookFormGroup_invalid");
+	}
+	if (bar){
+		console.log(bar);
+		if (bar_date == ""){
+			isValid = false;
+			$('#f-bar_date').parent().addClass("bookFormGroup_invalid");
+		}
+		if (bar_time == ""){
+			isValid = false;
+			$('#f-bar_time').parent().addClass("bookFormGroup_invalid");
+		}
+	}
+	if (space){
+		if (space_date == ""){
+			isValid = false;
+			$('#f-space_date').parent().addClass("bookFormGroup_invalid");
+		}
+		if (space_time == ""){
+			isValid = false;
+			$('#f-space_time').parent().addClass("bookFormGroup_invalid");
+		}
+	}
+	if (sub && (email == "")){
+		$('#f-email').parent().addClass("bookFormGroup_invalid");
+	}
+
+	if (!isValid){return}
+
+}
+
+function sendContactForm(){
+	var name = $('#f-name').val(),
+		phone = $('#f-phone').val(),
+		text = $('#f-text').val(),
+		sub = $('#f-order_sub').prop("checked"),
+		email = $('#f-email').val();
+	
+	$(".bookFormGroup").each(function(){
+		$(this).removeClass("bookFormGroup_invalid");
+	});
+
+	var isValid = true;
+	if (phone == "" || phone == "+7 "){
+		isValid = false;
+		$('#f-phone').parent().addClass("bookFormGroup_invalid");
+	}
+	if (text == ""){
+		isValid = false;
+		$('#f-text').parent().addClass("bookFormGroup_invalid");
+	}
+	if (sub && (email == "")){
+		$('#f-email').parent().addClass("bookFormGroup_invalid");
+	}
+
+	if (!isValid){return}
+	
+}
+
+function sendFooterForm(){
+	var name = $('#ff-name').val(),
+		email = $('#ff-email').val();
+	
+	$(".footerFormGroup").each(function(){
+		$(this).removeClass("footerFormGroup_invalid");
+	});
+
+	var isValid = true;
+	if (email == ""){
+		isValid = false;
+		$('#ff-email').parent().addClass("footerFormGroup_invalid");
+	}
+	if (name == ""){
+		isValid = false;
+		$('#ff-name').parent().addClass("footerFormGroup_invalid");
+	}
+
+	if (!isValid){return}
+	
 }
 
 $(document).ready(function() {
@@ -144,6 +278,7 @@ $(document).ready(function() {
             $(".hamburger").addClass("is-active");
             x.addClass("header__nav_isActive");
             $("body").addClass("modal_open");
+            hideBookForm();
         }
     });
     
@@ -155,6 +290,7 @@ $(document).ready(function() {
 
 //////////////////////////////////////////////////////////////////////////////////////////////////////
 // Instafeed
+/*
 var feed = new Instafeed({
 		get: 'user',
 		userId: '3176209645',
@@ -165,6 +301,7 @@ var feed = new Instafeed({
 		//http://instagram.pixelunion.net/
    });
 feed.run();
+*/
 //////////////////////////////////////////////////////////////////////////////////////////////////////
 
 
@@ -204,14 +341,22 @@ $(document).ready(function() {
 //////////////////////////////////////////////////////////////////////////////////////////////////////
 // Ajax
 $(document).ajaxStart(function() {
-    $(".form-loader").addClass("form-loader_isActive");
-    $(".js-send-btn").prop("disabled", true);
-});
-$(document).ajaxStop(function() {
-    $(".form-loader").removeClass("form-loader_isActive");
-    $(".js-send-btn").prop("disabled", false);
+    $(".form-loader").each(function(){
+    	$(this).addClass("form-loader_isActive");
+    });
+    $(".js-send-btn").each(function(){
+    	$(this).prop("disabled", true);
+    });
 });
 
+$(document).ajaxStart(function() {
+    $(".form-loader").each(function(){
+    	$(this).removeClass("form-loader_isActive");
+    });
+    $(".js-send-btn").each(function(){
+    	$(this).prop("disabled", false);
+    });
+});
 
 //////////////////////////////////////////////////////////////////////////////////////////////////////
 // Up-down

@@ -20,10 +20,85 @@
 		<!-- /build -->
 	</head>
 	<body>
+		<div class="modalBack"></div>
 
 		<!--[if lt IE 10]>
 			<p style="text-align:center;font-size:20px;background:white;width:100%;z-index:10000;padding:20px 0px"><strong>Кажется, ваш браузер безнадежно устарел.</strong> Скорее всего, сайт будет отображаться и работать некорректно.<br/>Пожалуйста, <a style="color:red" href="http://browsehappy.com/" target="_blank">установите с одного из официальных сайтов</a> новую версию своего браузера.<br/></p>
 		<![endif]-->
+
+		<!-- BEGIN of book -->
+		<div class="book">
+			<button type="button" class="book__close" onclick="hideBookForm()"><p>×</p></button>
+			<div class="book__title"><p>Задать вопрос</p></div>
+			<form class="bookForm" action="javascript:void(null);" onSubmit="sendContactForm()">
+				<div class="formRemember"><p>Мы заполнили форму данными из вашего прошлого заказа. Если данные изменились, вы можете <a>очистить форму</a>.</p></div>
+	
+				<div class="bookFormSection">
+					<div class="bookFormGroup">
+						<label class="formGroup__label" for="f-name">Представьтесь</label>
+						<input name="f-name" id="f-name" type="text" class="formGroup__input" placeholder="Иванов Иван">
+					</div>
+					<div class="bookFormGroup bookFormGroup_required">
+						<label class="formGroup__label" for="f-phone">Телефон</label>
+						<p class="formGroup__error">Пожалуйста, укажите свой телефон</p>
+						<input name="f-phone" id="f-phone" class="formGroup__input" type="tel" value="+7 " required="" placeholder="+7 ___ ___-__-__">
+					</div>
+
+					<div class="bookFormGroup bookFormGroup_required">
+						<label class="formGroup__label" for="f-text">Сообщение</label>
+						<p class="formGroup__error">Пожалуйста, укажите текст сообщения</p>
+						<textarea name="f-text" id="f-text" onkeyup="autoGrowTextArea(this)" class="formGroup__input" rows="3" required=""></textarea>
+					</div>
+				</div>
+
+				<div class="bookFormSection">
+					<div class="bookFormGroup bookFormGroup_checkbox">
+						<input class="formGroup__checkbox" type="checkbox" name="f-order_sub" id="f-order_sub">
+						<label class="formGroup__label" for="f-order_sub">Подписаться на дайджест новостей и мероприятий в&nbsp;«Пространстве»</label>
+	
+						<div class="bookFormGroup bookFormGroup__details bookFormGroup_required">
+							<label class="formGroup__label" for="f-email">E-mail</label>
+							<p class="formGroup__error">Пожалуйста, укажите свой e-mail</p>
+							<input name="f-email" id="f-email" class="formGroup__input" type="email" placeholder="ivanov@gmail.com">
+						</div>
+					</div>
+	
+					<div class="formPrivacy">
+						<p>даю согласие на обработку своих персональных данных</p>
+					</div>
+				</div>
+	
+				<div class="bookForm__button">
+					<button class="btn btn_primary" onclic="sendBookForm()">
+						<p>Отправить</p>
+						<div class="btn__spinner">
+							<div class="pt"></div>
+							<div class="pt"></div>
+							<div class="pt"></div>
+						</div>
+					</button>
+				</div>
+			</form>
+
+			<div class="bookSuccess">
+				<div class="checkmark"></div>
+				<div class="bookSuccess__text">
+					<p>Ваше обращение отправлено. Мы свяжемся с вами в ближайшее время.</p>
+				</div>
+				<p class="p-secondary">Ищите нас в любимых социальных сетях</p>
+
+				<div class="bookSuccess__soc-links">
+					<ul class="soc-links">
+						<a href="#"><li class="soc-links__item soc-links__item_flamp"></li></a>
+						<a href="#"><li class="soc-links__item soc-links__item_fb"></li></a>
+						<a href="#"><li class="soc-links__item soc-links__item_insta"></li></a>
+						<a href="#"><li class="soc-links__item soc-links__item_tripadv"></li></a>
+						<a href="#"><li class="soc-links__item soc-links__item_email"></li></a>
+					</ul>
+				</div>
+			</div>
+		</div>
+		<!-- END of book -->
 		
 		<!-- BEGIN of header -->
 		<header class="header header_covered">
@@ -76,7 +151,7 @@
 				<div class="footerTop"> 
 					<div class="footerLeft">
 						<div class="footerLeft__text">
-							<p><a href="#">+7 913 100-09-87</a>, <a href="#">+7 (3822) 45-67-00</a>,<br>
+							<p><a href="tel:79131000987">+7 913 100-09-87</a>, <a href="tel:73822456700">+7 (3822) 45-67-00</a>,<br>
 
 							Томск, Карла Марска, 17а<br>
 							Мы&nbsp;работаем с&nbsp;12:00 до&nbsp;последнего гостя.<br>
@@ -92,46 +167,57 @@
 								<a href="#"><li class="soc-links__item soc-links__item_tripadv"></li></a>
 								<a href="#"><li class="soc-links__item soc-links__item_email"></li></a>
 							</ul>
-							<button class="footerLeft__button btn btn_light"><p>Задать вопрос</p></button>
+							<button class="footerLeft__button btn btn_light" type="button" onclick="showBookForm()"><p>Задать вопрос</p></button>
 						</div>
 					</div>
 
 					<div class="footerRight footerSubscribe">
-						<div class="footerSubscribe__title"><p>Подпишитесь</p></div>
-						<div class="footerSubscribe__caption"><p>на&nbsp;рассылку самых интересных мероприятий и&nbsp;выступлений в&nbsp;Строганина-баре</p></div>
+						<div class="footerSubscribe__form">
+							<div class="footerSubscribe__title"><p>Подпишитесь</p></div>
+							<div class="footerSubscribe__caption"><p>на&nbsp;рассылку самых интересных мероприятий и&nbsp;выступлений в&nbsp;Строганина-баре</p></div>
 
-						<form class="footerForm" action="">
-							<div class="footerForm__inputs">
-								<div class="footerFormGroup">
-									<input type="text" class="footerFormGroup__input" placeholder="Введите ваше имя" required/>
-								</div>
-								<div class="footerFormGroup">
-									<input type="email" class="footerFormGroup__input" placeholder="Введите свой e-mail" required/>
-								</div>
-								<div class="footerFormGroup_privacy formPrivacy">
-									<p>даю согласие на обработку своих персональных данных</p>
-								</div>
-							</div>
-							<div class="footerForm__button">
-								<button class="btn btn_primary">
-									<p>Подписаться</p>
-									<div class="btn__spinner">
-										<div class="pt"></div>
-										<div class="pt"></div>
-										<div class="pt"></div>
+							<form class="footerForm" action="javascript:void(null);" onSubmit="sendFooterForm()">
+								<div class="footerForm__inputs">
+									<div class="footerFormGroup">
+										<input name="ff-name" id="ff-name" type="text" class="footerFormGroup__input" placeholder="Введите ваше имя" required/>
 									</div>
-								</button>
+									<div class="footerFormGroup">
+										<input name="ff-email" id="ff-email" type="email" class="footerFormGroup__input" placeholder="Введите свой e-mail" required/>
+									</div>
+									<div class="footerFormGroup_privacy formPrivacy">
+										<p>даю согласие на обработку своих персональных данных</p>
+									</div>
+								</div>
+								<div class="footerForm__button">
+									<button class="btn btn_primary">
+										<p>Подписаться</p>
+										<div class="btn__spinner">
+											<div class="pt"></div>
+											<div class="pt"></div>
+											<div class="pt"></div>
+										</div>
+									</button>
+								</div>
+							</form>
+						</div>
+
+						<div class="footerSubscribe footerSubscribe__success">
+							<div class="footerSubscribe__title"><p>Вы подписались</p></div>
+							<div class="footerSubscribe__caption"><p>на рассылку самых интересных мероприятий и выступлений и Строганина-баре.<br>
+								Для подтверждения подписки, пожалуйста, пройдите по ссылке в письме, которое мы отправили по указанному вами e-mail.</p></div>
+							<div class="footerSubscribe__picture">
+								<img src="assets/img/subscribe__success.svg" alt="">
 							</div>
-						</form>
+						</div>
 					</div>
 				</div>
 
 				<div class="footerBottom">
-					<div class="footerBottom__text"><p>Строганина Бар&nbsp;&mdash; проект инвестиционно-управляющей <a href="#">Группы&nbsp;компаний WIN Corp</a>, созданный по&nbsp;франшизе от&nbsp;Группы&nbsp;компаний&nbsp;&laquo;Руян&raquo;.</p></div>
+					<div class="footerBottom__text"><p>Строганина Бар&nbsp;&mdash; проект инвестиционно-управляющей <a href="http://wincorp.ru/?from=stroganina-bar.ru">Группы&nbsp;компаний WIN Corp</a>, созданный по&nbsp;франшизе от&nbsp;Группы&nbsp;компаний&nbsp;&laquo;Руян&raquo;.</p></div>
 					<div class="footerBottom__author">
-						<a href="http://provocationstudio.ru/?from=stroganina">
+						<a href="http://provocationstudio.ru/?from=stroganina-bar.ru" target="_blank">
 							<p class="footerBottom__authorTitle">Разработано в digital-студии</p>
-							<img  class="footerBottom__authorLogo" src="assets/img/provocation.svg" alt="">
+							<img class="footerBottom__authorLogo" src="assets/img/provocation.svg" alt="">
 						</a>
 					</div>
 				</div>
