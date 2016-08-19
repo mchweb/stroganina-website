@@ -1,9 +1,16 @@
 // ANIMATIONS
 
 // slow animation
-.book
+.book,
+.modalBack
 {
-	transition: all 0.2s ease-in-out;
+	transition: all 0.3s ease-in-out;
+}
+
+.header,
+.header__nav
+{
+    transition: all 0.2s ease-in-out;
 }
 
 // fast animation
@@ -11,7 +18,10 @@
 .soc-links__item,
 .carousel__control,
 .good__button button,
-.insta__item
+.insta__item,
+.bookFormGroup__details,
+.minicart__dummy
 {
     transition: all 0.1s ease-in-out;
 }
+

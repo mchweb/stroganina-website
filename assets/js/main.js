@@ -38,6 +38,21 @@ function autoGrowTextArea(element) {
     element.style.height = "67px";
     element.style.height = (element.scrollHeight)+"px";
 }
+function headerScroll(){
+	var pageY = window.pageYOffset || document.documentElement.scrollTop;
+	console.log(pageY);
+	if (pageY == 0){
+		$(".header").removeClass("header_scrolled");
+	}else{
+		$(".header").addClass("header_scrolled");
+	}
+}
+$(document).ready(function() {
+	headerScroll();
+	$(document).scroll(function(){
+		headerScroll();
+	});
+});
 
 $(document).ready(function() {
 	$('.js-timepicker-bar').timepicker({
@@ -97,10 +112,46 @@ $(document).ready(function() {
 
 function showBookForm(){
 	$('.book').addClass('book_isActive');
+	$("body").addClass("modal_open");
 }
 function hideBookForm(){
 	$('.book').removeClass('book_isActive');
+	$("body").removeClass("modal_open");
 }
+
+$(document).ready(function() {
+	$(".modalBack").click(function(){
+ 		hideBookForm();
+ 		closeMenuMobile();
+	});
+});
+
+/////////////////////////////////////////////////////////////////////////////////////////////////////
+// hamburger menu
+function closeMenuMobile(){
+	$(".hamburger").removeClass("is-active");
+	$(".header__nav").removeClass("header__nav_isActive");
+	$("body").removeClass("modal_open");
+}
+$(document).ready(function() {
+
+	// hamburger menu
+    $(".header__mobileNavTrigger").click(function() {
+        var x = $(".header__nav");
+        if (x.hasClass("header__nav_isActive")) {
+            closeMenuMobile();
+        } else {
+            $(".hamburger").addClass("is-active");
+            x.addClass("header__nav_isActive");
+            $("body").addClass("modal_open");
+        }
+    });
+    
+    $(".header__nav button").each(function() {
+        $(this).on("click", closeMenuMobile);
+    });
+});
+//////////////////////////////////////////////////////////////////////////////////////////////////////
 
 //////////////////////////////////////////////////////////////////////////////////////////////////////
 // Instafeed

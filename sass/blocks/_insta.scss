@@ -9,9 +9,43 @@
 .insta__item{
 	opacity:0.75;
 	@include span(1);
-	padding:0;
+	@media (max-width: 90em) {
+		@include span(12/10);
+		&:nth-child(11),
+		&:nth-child(12){
+			display:none;
+		}
+	}
+	@media (max-width: 64em) {
+		@include span(12/8);
+		&:nth-child(9),
+		&:nth-child(10){
+			display:none;
+		}
+	}
+	@media (max-width: 50em) {
+		@include span(2);
+		&:nth-child(7),
+		&:nth-child(8){
+			display:none;
+		}
+	}
+	@media (max-width: 40em) {
+		@include span(3);
+		&:nth-child(5),
+		&:nth-child(6){
+			display:none;
+		}
+	}
+	@media (max-width: 24em) {
+		@include span(4);
+		&:nth-child(4){
+			display:none;
+		}
+	}
+
+	padding:0 !important;
 	display:inline-block;
-	//margin: 0 rhythm(-5/6) rhythm(-3/6) 0;
 	& img{
 		width:100%;
 		height:auto;

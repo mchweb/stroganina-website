@@ -7,6 +7,14 @@
         & .carousel__item {
             height:100vh;
         }
+        @media (max-width: 38em) {
+            & .carouselWrap {
+                height:auto;
+            }
+            & .carousel__item {
+                height:auto;
+            }
+        }
     }
     &.carousel_static{
         & .carousel__item {
@@ -46,10 +54,15 @@
     border-radius: 50%;
     cursor: pointer;
     display: none;
+    position: absolute;
     height: rhythm(10);
     width: rhythm(10);
-    position: absolute;
     top: calc(50% - 1.875em);
+    @media (max-width: 38em) {
+        height: rhythm(7);
+        width: rhythm(7);
+        top: calc(50% - 1.3125em);
+    }
     z-index: 10;
     opacity:0.5;
     background-color: $accent;
@@ -100,6 +113,10 @@
     display: block;
     @include adjust-font-size-to(48px);
     line-height:rhythm(3, 48px);
+    @media (max-width: 38em) {
+        @include adjust-font-size-to(36px);
+        line-height:rhythm(2, 36px);
+    }
 }
 
 .carousel__bullet:hover {

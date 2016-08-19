@@ -1,124 +1,61 @@
 /*
- * Hamburgers
- * @description Tasty CSS-animated hamburgers
- * @author Jonathan Suh @jonsuh
- * @site https://jonsuh.com/hamburgers
- * @link https://github.com/jonsuh/hamburgers
- */
-/* line 3, ../../../../sass/lib/hamburgers/_base.scss */
-.hamburger {
-  padding: 7px 5px;
-  display: inline-block;
-  cursor: pointer;
-  transition-property: opacity, filter;
-  transition-duration: 0.15s;
-  transition-timing-function: linear;
-  font: inherit;
-  color: inherit;
-  text-transform: none;
-  background-color: transparent;
-  border: 0;
-  margin: 0;
-  overflow: visible;
-}
-/* line 21, ../../../../sass/lib/hamburgers/_base.scss */
-.hamburger:hover {
-  opacity: 0.7;
-}
+Error: Undefined variable: "$gray-80".
+        on line 16 of C:/Users/writt/Desktop/stroganina-website/sass/lib/hamburgers/hamburgers.scss
 
-/* line 31, ../../../../sass/lib/hamburgers/_base.scss */
-.hamburger-box {
-  width: 32px;
-  height: 22px;
-  display: inline-block;
-  position: relative;
-}
+11: $hamburger-padding-x                       : 5px !default;
+12: $hamburger-padding-y                       : 7px !default;
+13: $hamburger-layer-width                     : 32px !default;
+14: $hamburger-layer-height                    : 4px !default;
+15: $hamburger-layer-spacing                   : 5px !default;
+16: $hamburger-layer-color                     : $gray-80 !default;
+17: $hamburger-layer-border-radius             : 4px !default;
+18: $hamburger-hover-opacity                   : 0.7 !default;
+19: $hamburger-hover-transition-duration       : 0.15s !default;
+20: $hamburger-hover-transition-timing-function: linear !default;
+21: 
 
-/* line 38, ../../../../sass/lib/hamburgers/_base.scss */
-.hamburger-inner {
-  display: block;
-  top: 50%;
-  margin-top: -2px;
-}
-/* line 43, ../../../../sass/lib/hamburgers/_base.scss */
-.hamburger-inner, .hamburger-inner::before, .hamburger-inner::after {
-  width: 32px;
-  height: 4px;
-  background-color: #000;
-  border-radius: 4px;
-  position: absolute;
-  transition-property: transform;
-  transition-duration: 0.15s;
-  transition-timing-function: ease;
-}
-/* line 56, ../../../../sass/lib/hamburgers/_base.scss */
-.hamburger-inner::before, .hamburger-inner::after {
-  content: "";
-  display: block;
-}
-/* line 62, ../../../../sass/lib/hamburgers/_base.scss */
-.hamburger-inner::before {
-  top: -9px;
-}
-/* line 66, ../../../../sass/lib/hamburgers/_base.scss */
-.hamburger-inner::after {
-  bottom: -9px;
-}
-
-/*@import "types/3dx";
-@import "types/3dx-r";
-@import "types/3dy";
-@import "types/3dy-r";
-@import "types/arrow";
-@import "types/arrow-r";
-@import "types/arrowalt";
-@import "types/arrowalt-r";
-@import "types/boring";
-@import "types/collapse";
-@import "types/collapse-r";
-@import "types/elastic";
-@import "types/elastic-r";
-@import "types/emphatic";
-@import "types/emphatic-r";*/
-/*
- * Slider
- */
-/* line 6, ../../../../sass/lib/hamburgers/types/_slider.scss */
-.hamburger--slider .hamburger-inner {
-  top: 2px;
-}
-/* line 9, ../../../../sass/lib/hamburgers/types/_slider.scss */
-.hamburger--slider .hamburger-inner::before {
-  top: 9px;
-  transition-property: transform, opacity;
-  transition-timing-function: ease;
-  transition-duration: 0.2s;
-}
-/* line 16, ../../../../sass/lib/hamburgers/types/_slider.scss */
-.hamburger--slider .hamburger-inner::after {
-  top: 18px;
-}
-/* line 22, ../../../../sass/lib/hamburgers/types/_slider.scss */
-.hamburger--slider.is-active .hamburger-inner {
-  transform: translate3d(0, 9px, 0) rotate(45deg);
-}
-/* line 27, ../../../../sass/lib/hamburgers/types/_slider.scss */
-.hamburger--slider.is-active .hamburger-inner::before {
-  transform: rotate(-45deg) translate3d(-4.57142857px, -5px, 0);
-  opacity: 0;
-}
-/* line 32, ../../../../sass/lib/hamburgers/types/_slider.scss */
-.hamburger--slider.is-active .hamburger-inner::after {
-  transform: translate3d(0, -18px, 0) rotate(-90deg);
-}
-
-/*@import "types/slider-r";
-@import "types/spring";
-@import "types/spring-r";
-@import "types/stand";
-@import "types/stand-r";
-@import "types/spin";
-@import "types/spin-r";
-@import "types/squeeze";
-@import "types/vortex";
-@import "types/vortex-r";*/
+Backtrace:
+C:/Users/writt/Desktop/stroganina-website/sass/lib/hamburgers/hamburgers.scss:16
+C:/Ruby22-x64/lib/ruby/gems/2.2.0/gems/sass-3.4.21/lib/sass/script/tree/variable.rb:49:in `_perform'
+C:/Ruby22-x64/lib/ruby/gems/2.2.0/gems/sass-3.4.21/lib/sass/script/tree/node.rb:50:in `perform'
+C:/Ruby22-x64/lib/ruby/gems/2.2.0/gems/sass-3.4.21/lib/sass/tree/visitors/perform.rb:469:in `visit_variable'
+C:/Ruby22-x64/lib/ruby/gems/2.2.0/gems/sass-3.4.21/lib/sass/tree/visitors/base.rb:36:in `visit'
+C:/Ruby22-x64/lib/ruby/gems/2.2.0/gems/sass-3.4.21/lib/sass/tree/visitors/perform.rb:158:in `block in visit'
+C:/Ruby22-x64/lib/ruby/gems/2.2.0/gems/sass-3.4.21/lib/sass/stack.rb:79:in `block in with_base'
+C:/Ruby22-x64/lib/ruby/gems/2.2.0/gems/sass-3.4.21/lib/sass/stack.rb:115:in `with_frame'
+C:/Ruby22-x64/lib/ruby/gems/2.2.0/gems/sass-3.4.21/lib/sass/stack.rb:79:in `with_base'
+C:/Ruby22-x64/lib/ruby/gems/2.2.0/gems/sass-3.4.21/lib/sass/tree/visitors/perform.rb:158:in `visit'
+C:/Ruby22-x64/lib/ruby/gems/2.2.0/gems/sass-3.4.21/lib/sass/tree/visitors/base.rb:52:in `block in visit_children'
+C:/Ruby22-x64/lib/ruby/gems/2.2.0/gems/sass-3.4.21/lib/sass/tree/visitors/base.rb:52:in `map'
+C:/Ruby22-x64/lib/ruby/gems/2.2.0/gems/sass-3.4.21/lib/sass/tree/visitors/base.rb:52:in `visit_children'
+C:/Ruby22-x64/lib/ruby/gems/2.2.0/gems/sass-3.4.21/lib/sass/tree/visitors/perform.rb:167:in `block in visit_children'
+C:/Ruby22-x64/lib/ruby/gems/2.2.0/gems/sass-3.4.21/lib/sass/tree/visitors/perform.rb:179:in `with_environment'
+C:/Ruby22-x64/lib/ruby/gems/2.2.0/gems/sass-3.4.21/lib/sass/tree/visitors/perform.rb:166:in `visit_children'
+C:/Ruby22-x64/lib/ruby/gems/2.2.0/gems/sass-3.4.21/lib/sass/tree/visitors/base.rb:36:in `block in visit'
+C:/Ruby22-x64/lib/ruby/gems/2.2.0/gems/sass-3.4.21/lib/sass/tree/visitors/perform.rb:186:in `visit_root'
+C:/Ruby22-x64/lib/ruby/gems/2.2.0/gems/sass-3.4.21/lib/sass/tree/visitors/base.rb:36:in `visit'
+C:/Ruby22-x64/lib/ruby/gems/2.2.0/gems/sass-3.4.21/lib/sass/tree/visitors/perform.rb:157:in `visit'
+C:/Ruby22-x64/lib/ruby/gems/2.2.0/gems/sass-3.4.21/lib/sass/tree/visitors/perform.rb:8:in `visit'
+C:/Ruby22-x64/lib/ruby/gems/2.2.0/gems/sass-3.4.21/lib/sass/tree/root_node.rb:36:in `css_tree'
+C:/Ruby22-x64/lib/ruby/gems/2.2.0/gems/sass-3.4.21/lib/sass/tree/root_node.rb:20:in `render'
+C:/Ruby22-x64/lib/ruby/gems/2.2.0/gems/sass-3.4.21/lib/sass/engine.rb:278:in `render'
+C:/Ruby22-x64/lib/ruby/gems/2.2.0/gems/compass-import-once-1.0.5/lib/compass/import-once/engine.rb:17:in `block in render'
+C:/Ruby22-x64/lib/ruby/gems/2.2.0/gems/compass-import-once-1.0.5/lib/compass/import-once/engine.rb:29:in `with_import_scope'
+C:/Ruby22-x64/lib/ruby/gems/2.2.0/gems/compass-import-once-1.0.5/lib/compass/import-once/engine.rb:16:in `render'
+C:/Ruby22-x64/lib/ruby/gems/2.2.0/gems/sass-3.4.21/lib/sass/plugin/compiler.rb:492:in `update_stylesheet'
+C:/Ruby22-x64/lib/ruby/gems/2.2.0/gems/sass-3.4.21/lib/sass/plugin/compiler.rb:215:in `block in update_stylesheets'
+C:/Ruby22-x64/lib/ruby/gems/2.2.0/gems/sass-3.4.21/lib/sass/plugin/compiler.rb:209:in `each'
+C:/Ruby22-x64/lib/ruby/gems/2.2.0/gems/sass-3.4.21/lib/sass/plugin/compiler.rb:209:in `update_stylesheets'
+C:/Ruby22-x64/lib/ruby/gems/2.2.0/gems/sass-3.4.21/lib/sass/plugin/compiler.rb:471:in `on_file_changed'
+C:/Ruby22-x64/lib/ruby/gems/2.2.0/gems/sass-3.4.21/lib/sass/plugin/compiler.rb:328:in `block in watch'
+C:/Ruby22-x64/lib/ruby/gems/2.2.0/gems/sass-3.4.21/vendor/listen/lib/listen/listener.rb:252:in `call'
+C:/Ruby22-x64/lib/ruby/gems/2.2.0/gems/sass-3.4.21/vendor/listen/lib/listen/listener.rb:252:in `on_change'
+C:/Ruby22-x64/lib/ruby/gems/2.2.0/gems/sass-3.4.21/vendor/listen/lib/listen/listener.rb:290:in `block in initialize_adapter'
+C:/Ruby22-x64/lib/ruby/gems/2.2.0/gems/sass-3.4.21/vendor/listen/lib/listen/adapters/polling.rb:48:in `call'
+C:/Ruby22-x64/lib/ruby/gems/2.2.0/gems/sass-3.4.21/vendor/listen/lib/listen/adapters/polling.rb:48:in `poll_changed_directories'
+C:/Ruby22-x64/lib/ruby/gems/2.2.0/gems/sass-3.4.21/vendor/listen/lib/listen/adapter.rb:299:in `block in start_poller'
+*/
+body:before {
+  white-space: pre;
+  font-family: monospace;
+  content: "Error: Undefined variable: \"$gray-80\".\A         on line 16 of C:/Users/writt/Desktop/stroganina-website/sass/lib/hamburgers/hamburgers.scss\A \A 11: $hamburger-padding-x                       : 5px !default;\A 12: $hamburger-padding-y                       : 7px !default;\A 13: $hamburger-layer-width                     : 32px !default;\A 14: $hamburger-layer-height                    : 4px !default;\A 15: $hamburger-layer-spacing                   : 5px !default;\A 16: $hamburger-layer-color                     : $gray-80 !default;\A 17: $hamburger-layer-border-radius             : 4px !default;\A 18: $hamburger-hover-opacity                   : 0.7 !default;\A 19: $hamburger-hover-transition-duration       : 0.15s !default;\A 20: $hamburger-hover-transition-timing-function: linear !default;\A 21: "; }

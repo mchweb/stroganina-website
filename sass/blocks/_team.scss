@@ -16,11 +16,19 @@
 
 .teamItem{
 	@include span(3);
+	@media (max-width: 63em) {
+		@include span(6);
+		margin-bottom:rhythm(6);
+	}
+	@media (max-width: 32em) {
+		@include span(12);
+	}
 	text-align:center;
 }
 .teamItem__picture{
 	border-radius:100%;
-	max-width:100%;
+	width: 100%;
+    max-width: rhythm(40);
 	height:auto;
 }
 .teamItem__title{

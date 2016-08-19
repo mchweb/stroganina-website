@@ -30,13 +30,35 @@
 	& li:nth-child(3) .menuCat{
 		margin-left:auto;
 	}
+	& li{
+		@media (max-width: 63em) {
+			margin-left:auto;
+			margin-right:auto;
+		}
+	}
 	margin-bottom:rhythm(6); 
+	
 }
 .menuCatWrap{
 	@include span(4);
+	@media (max-width: 63em) {
+		@include span(6);
+		&:last-child {
+			margin-top:rhythm(6);
+			@include push(3);
+		}
+	}
+	@media (max-width: 40em) {
+		@include span(12);
+		margin-top:rhythm(6);
+		&:last-child {
+			@include push(0);
+		}
+	}
 }
 .menuCat{
 	max-width:rhythm(46);
+	margin:0 auto;
 }
 .menuCat__title{
 	text-align:center;

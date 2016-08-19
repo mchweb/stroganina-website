@@ -7,7 +7,12 @@
     min-height:100vh;
     padding:rhythm(3) rhythm(5);
     color:$gray-80;
-    z-index:1100;
+    z-index:2100;
+    
+    top: 0;
+    bottom:0;
+    overflow-y:scroll;
+    overflow-x:hidden;
 }
 .book_isActive{
 	right:0;
@@ -92,7 +97,10 @@
 		vertical-align:middle;
 		&:checked{
 			& ~ .bookFormGroup__details{
-				display:block;
+				height:auto;
+				transform: scaleY(1);
+				opacity:1;
+				margin:rhythm(1) 0 rhythm(3) 0;
 			}
 			& ~ .formGroup__label{
 				font-weight:bold;
@@ -103,8 +111,11 @@
 }
 
 .bookFormGroup__details{
-	margin:rhythm(1) 0 rhythm(3) 0;
-	display:none;
+	margin:0;
+	height:0;
+	opacity:0;
+	transform: scaleY(0);
+    transform-origin: top;
 	& .formGroup__error{
 		float:none;
 	}

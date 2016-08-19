@@ -22,8 +22,22 @@ textarea {resize:none;overflow: hidden;}
 
 strong {font-weight:bold}
 
+.modalBack{
+	opacity:0;
+	visibility:hidden;
+	width:100vw;
+	height:100vh;
+	position:fixed;
+	background:rgba(0,0,0,0.75);
+	z-index:2000; 
+}
+
 body.modal_open {
 	overflow: hidden;
+	& .modalBack{
+		opacity:1;
+		visibility:visible;
+	}
 }
 
 

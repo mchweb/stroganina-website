@@ -15,6 +15,13 @@
 
 .footer__text{
 	@include span(4);
+	@media (max-width: 64em) {
+		@include span(5);
+	}
+	@media (max-width: 56em) {
+		@include span(12);
+		margin-bottom:rhythm(2);
+	}
 	display:inline-block;
 	vertical-align:middle;
 	& p{
@@ -27,7 +34,19 @@
 .footer__contacts{
 	@include push(1);
 	@include span(4);
-	padding-top:rhythm(1);
+	margin-top:rhythm(1);
+	@media (max-width: 64em) {
+		@include push(0);
+	}
+	@media (max-width: 56em) {
+		@include span(6);
+		margin-top:0;
+	}
+	@media (max-width: 38em) {
+		@include span(12);
+	}
+
+	
 	display:inline-block;
 
 	vertical-align:middle;
@@ -43,8 +62,17 @@
 }
 
 .footer__links{
-	@include span(3);
 	text-align:right;
+	@include span(3);
+	@media (max-width: 56em) {
+		@include span(6);
+	}
+	@media (max-width: 38em) {
+		@include span(12);
+		text-align:left;
+		margin-top:rhythm(2);
+	}
+	
 }
 
 .soc-links__item{
@@ -85,6 +113,12 @@
 		width:auto;
 		height:rhythm(2);
 	}
+	@media (max-width: 56em) {
+		display:inline-block;
+		vertical-align:middle;
+		margin-top:0;
+		margin-left:rhythm(2);
+	}
 }
 
 .footerTop {
@@ -97,24 +131,38 @@
 }
 .footerLeft{
 	@include span(6);
+	@media (max-width: 40em) {
+		@include span(12);
+	}
 }
 .footerLeft__text{
-	margin:rhythm(5) 0;
+	margin:rhythm(5) 0 rhythm(1) 0;
 	& a{
 		@extend .p-link_black;
 	}
 }
 .footerLeft__links{
 	margin-bottom:rhythm(5);
+	@media (max-width: 56em) {
+		margin-top:rhythm(3);
+	}
 }
 .footerLeft__button{
 	margin-left:rhythm(5);
 	display:inline-block;
 	vertical-align:middle;
+	@media (max-width: 56em) {
+		display:block;
+		margin-left:0;
+		margin-top:rhythm(3);
+	}
 }
 
 .footerRight{
 	@include span(6);
+	@media (max-width: 40em) {
+		@include span(12);
+	}
 	text-align:left !important;
 	& .footerForm__inputs {
 		display:inline-block;
@@ -139,6 +187,9 @@
 	& a{
 		@extend .p-link_black;
 	}
+	@media (max-width: 68em) {
+		display:block;
+	}
 }
 
 .footerBottom__author{
@@ -147,6 +198,10 @@
 	vertical-align:middle;
 	& p {
 		@extend .p-secondary;
+	}
+	@media (max-width: 68em) {
+		float:left;
+		display:block;
 	}
 }
 .footerBottom__authorTitle, .footerBottom__authorLogo{

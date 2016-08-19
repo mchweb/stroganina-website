@@ -21,7 +21,7 @@
 	</head>
 	<body>
 
-		<!--[if lt IE 10]>
+		<!--[if lt IE 11]>
 			<p style="text-align:center;font-size:20px;background:white;width:100%;z-index:10000;padding:20px 0px"><strong>Кажется, ваш браузер безнадежно устарел.</strong> Скорее всего, сайт будет отображаться и работать некорректно.<br/>Пожалуйста, <a style="color:red" href="http://browsehappy.com/" target="_blank">установите с одного из официальных сайтов</a> новую версию своего браузера.<br/></p>
 		<![endif]-->
 
@@ -35,12 +35,14 @@
 			<meta itemprop="telephone" content="+79131000987">
 		</div>
 
-		<!-- BEGIN of book 
+		<div class="modalBack"></div>
+
+		<!-- BEGIN of book -->
 		<div class="book">
 			<button type="button" class="book__close" onclick="hideBookForm()"><p>×</p></button>
 			<div class="book__title"><p>Бронирование</p></div>
 			<form class="bookForm">
-				<div class="formRemember"><p>Мы заполнили форму данными из вашего прошлого заказа. Если данные изменились, вы можете <a>очистить форму</a>	.</p></div>
+				<div class="formRemember"><p>Мы заполнили форму данными из вашего прошлого заказа. Если данные изменились, вы можете <a>очистить форму</a>.</p></div>
 	
 	
 				<div class="bookFormSection">
@@ -66,8 +68,8 @@
 							<div class="bookFormGroup__dateTime formGroup_date">
 								<label class="formGroup__label" for="">Дата</label>
 								<input class="formGroup__input js-datepicker-bar" type="text" placeholder="24.07.2016">
-							</div>
-							<div class="bookFormGroup__dateTime formGroup_time">
+							</div><!--
+							--><div class="bookFormGroup__dateTime formGroup_time">
 								<label class="formGroup__label" for="">Время</label>
 								<input class="formGroup__input js-timepicker-bar" type="text" placeholder="18:00">
 								<div class="ui-timepicker-dropdown js-timepicker-bar-dropdown"></div>
@@ -84,8 +86,8 @@
 							<div class="bookFormGroup__dateTime formGroup_date">
 								<label class="formGroup__label" for="">Дата</label>
 								<input class="formGroup__input js-datepicker-space" type="text" placeholder="24.07.2016">
-							</div>
-							<div class="bookFormGroup__dateTime formGroup_time">
+							</div><!--
+							--><div class="bookFormGroup__dateTime formGroup_time">
 								<label class="formGroup__label" for="">Время</label>
 								<input class="formGroup__input js-timepicker-space" type="text" placeholder="18:00">
 								<div class="ui-timepicker-dropdown js-timepicker-space-dropdown"></div>
@@ -154,7 +156,7 @@
 		</div>
 		<!-- END of book -->
 
-		<!-- BEGIN of book for contacts -->
+		<!-- BEGIN of book for contacts 
 		<div class="book">
 			<button type="button" class="book__close" onclick="hideBookForm()"><p>×</p></button>
 			<div class="book__title"><p>Задать вопрос</p></div>
@@ -233,16 +235,37 @@
 		<!-- BEGIN of header -->
 		<header class="header">
 			<div class="headerInner">
+				<button class="header__mobileNavTrigger hamburger hamburger--slider" type="button">
+				  <span class="hamburger-box">
+				    <span class="hamburger-inner"></span>
+				  </span>
+				</button>
+
 				<div class="header__logo"><a href="#"></a></div>
 
 				<nav class="header__nav">
 					<ul class="nav">
 						<li class="nav__item"><a href="#">Бар</a></li><!--
 						--><li class="nav__item"><a href="#">Магазин кулинарии</a></li><!--
-						--><li class="nav__item"><a href="#">Пространство</a></li><!--
+						--><li class="nav__item nav__item_isActive"><a href="#">Пространство</a></li><!--
 						--><li class="nav__item"><a href="#">Афиша</a></li><!--
 						--><li class="nav__item"><a href="#">Контакты</a></li>
 					</ul>
+					<div class="navMobile">
+						<p class="navMobile__phone"><a href="tel:79131000987">+7 913 100-09-87</a></p>
+						<div class="navMobile__soc-links">
+							<ul class="soc-links">
+								<a href="#"><li class="soc-links__item soc-links__item_flamp"></li></a>
+								<a href="#"><li class="soc-links__item soc-links__item_fb"></li></a>
+								<a href="#"><li class="soc-links__item soc-links__item_insta"></li></a>
+								<a href="#"><li class="soc-links__item soc-links__item_tripadv"></li></a>
+								<a href="#"><li class="soc-links__item soc-links__item_email"></li></a>
+							</ul>
+						</div>
+						<div class="navMobile__buttons">
+							<button class="btn btn_primary"><p>Забронировать</p></button>
+						</div>
+					</div>
 				</nav>
 				<div class="headerSide">
 					<ul class="langSwitch">
@@ -251,21 +274,26 @@
 					</ul>
 					<div class="headerSide__phone"><a href="tel:79131000987">+7 913 100-09-87</a></div>
 					<div class="headerSide__minicart minicart">
-						<div class="minicart__title"><p>Корзина/<span>99</span></p></div>
+						<div class="minicart__title">
+							<p>
+								<span class="minicart__icon"></span>
+								<span class="minicart__text">Корзина/</span><span>0</span>
+							</p>
+							<div class="minicart__dummy"><p>Совсем скоро вы сможете заказать товары из каталога Магазина кулинарии прямо на сайте!</p></div>
+						</div>
+
 					</div>
 				</div>
 			</div>
 		</header>
 		<!-- END of header -->
 
-		<div style="clear:both"></div>
-
 		<!-- BEGIN of hero -->
 		<div class="hero" style="background-image:url('assets/img/index__hero.jpg')">
 			<div class="heroWrap">
 				<div class="heroContent">
 					<div class="hero__title"><h1>Строганина-бар</h1></div>
-					<div class="hero__desc"><p>Место для тех, кто ценит натуральное во&nbsp;всем&nbsp;&mdash; как в&nbsp;продуктах, так и&nbsp;в&nbsp;людях. Единственное место в&nbsp;Томске, где за&nbsp;ужином можно спланировать мероприятие и&nbsp;тут&nbsp;же провести его в&nbsp;нашем &laquo;Пространстве&raquo;.</p></div>
+					<div class="hero__desc"><p>Место для тех, кто ценит натуральное во&nbsp;всем&nbsp;&mdash; как в&nbsp;продуктах, так и&nbsp;в&nbsp;людях. Единственное место в&nbsp;Томске, где за&nbsp;ужином можно спланировать мероприятие и&nbsp;тут&nbsp;же провести его в&nbsp;нашем &laquo;Пространстве&raquo;</p></div>
 					<ul class="heroInfo">
 						<li class="heroInfo__item"><p class="heroInfo__item_geo">Карла Маркса 17а, Томск</p></li>
 						<li class="heroInfo__item"><p class="heroInfo__item_time">С 12:00 до последнего гостя</p></li>
@@ -278,7 +306,6 @@
 		<!-- BEGIN of slide -->
 		<div class="slide slide_right" style="background-image:url('assets/img/index__slide1.jpg')">
 			<div class="slideWrap">
-				<div class="slideSep"></div>
 				<div class="slideContentWrap">
 					<div class="slideContent">
 						<div class="slide__title"><h2>Бар</h2></div>
@@ -338,13 +365,13 @@
 							</li>
 							<li class="slideExtrasWrap">
 								<div class="slideExtras__item">
-									<img src="assets/img/index__slide1-4.svg" alt="">
+									<img src="assets/img/index__slide2-2.svg" alt="">
 									<p>Кулинария</p>
 								</div>
 							</li>
 							<li class="slideExtrasWrap">
 								<div class="slideExtras__item">
-									<img src="assets/img/index__slide2-2.svg" alt="">
+									<img src="assets/img/index__slide2-3.svg" alt="">
 									<p>Подарки</p>
 								</div>
 							</li>
@@ -358,7 +385,6 @@
 		<!-- BEGIN of slide -->
 		<div class="slide slide_right" style="background-image:url('assets/img/index__slide3.jpg')">
 			<div class="slideWrap">
-				<div class="slideSep"></div>
 				<div class="slideContentWrap">
 					<div class="slideContent">
 						<div class="slide__title"><h2>Пространство</h2></div>

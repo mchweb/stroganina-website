@@ -28,21 +28,36 @@
 		<!-- BEGIN of header -->
 		<header class="header header_black">
 			<div class="headerInner">
-				<div class="header__logo"><a href="#"></a></div>
+				<button class="header__mobileNavTrigger hamburger hamburger--slider" type="button">
+				  <span class="hamburger-box">
+				    <span class="hamburger-inner"></span>
+				  </span>
+				</button>
 
+				<div class="header__logo"><a href="#"></a></div>
+				
 				<nav class="header__nav">
 					<ul class="nav">
 						<li class="nav__item"><a href="#">Бар</a></li><!--
-						--><li class="nav__item nav__item_isActive"><a href="#">Магазин кулинарии</a></li><!--
+						--><li class="nav__item"><a href="#">Магазин кулинарии</a></li><!--
 						--><li class="nav__item"><a href="#">Пространство</a></li><!--
 						--><li class="nav__item"><a href="#">Афиша</a></li><!--
 						--><li class="nav__item"><a href="#">Контакты</a></li>
 					</ul>
 				</nav>
 				<div class="headerSide">
+					<ul class="langSwitch">
+						<li class="langSwitch__item langSwitch__item_isActive"><a href="#">RU</a></li>
+						<li class="langSwitch__item"><a href="#">EN</a></li>
+					</ul>
 					<div class="headerSide__phone"><a href="tel:79131000987">+7 913 100-09-87</a></div>
 					<div class="headerSide__minicart minicart">
-						<div class="minicart__title"><p>Корзина/<span>0</span></p></div>
+						<div class="minicart__title">
+							<p>
+								<span class="minicart__icon"></span>
+								<span class="minicart__text">Корзина/</span><span>99</span>
+							</p>
+						</div>
 					</div>
 				</div>
 			</div>

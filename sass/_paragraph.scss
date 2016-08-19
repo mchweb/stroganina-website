@@ -65,13 +65,24 @@
 	font-weight: bold;
 	font-style: normal;
 	@include adjust-font-size-to($fs-h2, 9);
+	@media (max-width: 56em) {
+		@include adjust-font-size-to($fs-h2-mob, 7);
+	}
+	@media (max-width: 40em) {
+		@include adjust-font-size-to($fs-h3, 5);
+	}
 }
 .p-h1 {
 	font-family: 'Lora';
 	font-weight: bold;
 	font-style: normal;
 	@include adjust-font-size-to($fs-h1, 12);
-	
+	@media (max-width: 56em) {
+		@include adjust-font-size-to($fs-h2, 9);
+	}
+	@media (max-width: 40em) {
+		@include adjust-font-size-to($fs-h2-mob, 7);
+	}
 }
 
 .p-link_black {
