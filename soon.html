@@ -33,9 +33,9 @@
 						<div class="menu__logo"><img src="assets/img/logo_black.svg" alt=""></div>
 						<div class="slide__title"><h2>Открытие в сентябре</h2></div>
 						<div class="slide__text"><p>Единственное в&nbsp;своем роде место в&nbsp;Томске, где ужиная деликатесами настоящей русской кухни, можно спланировать мероприятие, и&nbsp;тут&nbsp;же его провести в&nbsp;нашем &laquo;Пространстве&raquo;.</p></div>
-						<ul class="soc-links">
-							<a href="#"><li class="soc-links__item soc-links__item_fb"></li></a>
-							<a href="#"><li class="soc-links__item soc-links__item_insta"></li></a>
+						<ul class="soc-links soc-links_onWhite">
+							<a href="https://www.facebook.com/stroganinabar" target="_blank"><li class="soc-links__item soc-links__item_fb"></li></a>
+							<a href="https://www.instagram.com/stroganinabar_tomsk/" target="_blank"><li class="soc-links__item soc-links__item_insta"></li></a>
 						</ul>
 
 						<div class="subscribe footerForm_soon">
@@ -46,7 +46,7 @@
 									<div class="footerFormGroup">
 										<input type="text" name="fname" id="fname" class="footerFormGroup__input" placeholder="Введите ваше имя" required/	>
 									</div>
-									<div class="footerFormGroup">
+									<div class="footerFormGroup footerFormGroup_invalid">
 										<input type="email" name="femail" id="femail" class="footerFormGroup__input" placeholder="Введите ваш e-mail" 	required/>
 									</div>
 									<div class="footerFormGroup_privacy formPrivacy">
@@ -54,7 +54,7 @@
 									</div>
 								</div>
 								<div class="footerForm__button">
-									<button class="js-btn btn btn_primary" onclick="sendForm()">
+									<button class="js-btn btn btn_primary btn_loading" onclick="sendForm()">
 										<p>Отправить</p>
 										<div class="btn__spinner">
 											<div class="pt"></div>
@@ -67,8 +67,7 @@
 							</form>
 
 							<div class="footerSubscribe_success" style="display:none">
-								<div class="footerSubscribe__title"><p>Скоро вы получите приглашение</p></div>
-								<div class="footerSubscribe__caption"><p>на официальное открытие Строганина-бара.</p></div>
+								<div class="footerSubscribe__title"><p>Скоро вы&nbsp;получите приглашение на&nbsp;официальное открытие Строганина&#8209;бара.</p></div>
 								<div class="footerSubscribe__picture">
 									<img src="assets/img/subscribe__success_black.svg" alt="">
 								</div>

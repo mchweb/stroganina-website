@@ -119,28 +119,36 @@
 			<div class="cookSidebar">
 				<div class="cookNavWrap">
 					<ul class="cookNav">
-						<li><p>Продукты</p>
+						<li>
+							<input type="checkbox" checked="checked" id="c1_1" />
+							<label for="c1_1">Продукты</label>
 							<ul>
-								<li><p class="isTree">Мясо</p>
+								<li>
+									<input type="checkbox" checked="checked" id="c2_1" />
+									<label class="isTree" for="c2_1">Мясо</label>
 									<ul>
 										<li class="isActive"><p>Мясные деликатесы</p></li>
 										<li><p>Еще пункт</p></li>
 									</ul>
 								</li>
-								<li><p class="isTree">Рыба</p>
+								<li>
+									<input type="checkbox" checked="checked" id="c2_2" />
+									<label class="isTree" for="c2_2">Рыба</label>
 									<ul>
 										<li><p>Рыбные деликатесы</p></li>
 										<li><p>Василич рыбку поймал</p></li>
 									</ul>
 								</li>
 								<li><p>Домашние пельмени</p></li>
-								<li><p>Постные блюда</p></li>
+								<li class="isActive"><p>Постные блюда</p></li>
 							</ul>
 						</li>
 	
-						<li><p>Подарки</p>
+						<li><input type="checkbox" checked="checked" id="c1_2" />
+							<label for="c1_2">Подарки</label>
 							<ul>
-								<li><p class="isTree">К празднику</p>
+								<li><input type="checkbox" checked="checked" id="c3_1" />
+									<label class="isTree" for="c3_1">К празднику</label>
 									<ul>
 										<li><p>Мясные деликатесы</p></li>
 										<li><p>Еще пункт</p></li>
@@ -152,24 +160,15 @@
 							</ul>
 						</li>
 					</ul>
-
-					<div class="cookDelivery">
-						<div class="cookDelivery__text"><p>Вы можете оплатить заказ онлайн на сайте.<br>Адрес для самовывоза заказа: Томск, ул. Карла Маркса, 17а.</p></div>
-						<div class="cookDelivery__payMeth">
-							<img src="assets/img/payMeth.svg" alt="">
-						</div>
-					</div>
 				</div>
 			</div>
 
-			<ul class="breadcrumbs">
-				<li class="breadcrumbs__item">Продукты</li>
-				<li class="breadcrumbs__item">Мясо</li>
-				<li class="breadcrumbs__item">Мясные деликатесы</li>
-			</ul>
-
 			<div class="cookContent">
-				
+				<ul class="breadcrumbs">
+					<li class="breadcrumbs__item">Продукты</li>
+					<li class="breadcrumbs__item">Мясо</li>
+					<li class="breadcrumbs__item">Мясные деликатесы</li>
+				</ul>
 
 				<div class="goods">
 					<div class="good">
@@ -259,6 +258,15 @@
 						</footer>
 					</div>
 
+				</div>
+			</div>
+
+			<div class="cookDeliveryWrap">
+				<div class="cookDelivery">
+					<div class="cookDelivery__text"><p>Вы можете оплатить заказ онлайн на сайте.<br>Адрес для самовывоза заказа: Томск, ул. Карла Маркса, 17а.</p></div>
+					<div class="cookDelivery__payMeth">
+						<img src="assets/img/payMeth.svg" alt="">
+					</div>
 				</div>
 			</div>
 		</div>

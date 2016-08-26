@@ -110,13 +110,13 @@ $(document).ready(function() {
 
 
 function showBookForm(x){
+	$('.book').addClass('book_isActive');
 	closeMenuMobile();
 	if (x != null){
 		resetBookForm();
 		$('#f-order_' + x).prop('checked', true);
 	}
-	$('#f-name').focus();
-	$('.book').addClass('book_isActive');
+	
 	$("body").addClass("modal_open");
 }
 function hideBookForm(){
@@ -166,39 +166,58 @@ function sendBookForm(){
 	});
 
 	var isValid = true;
-	if (phone == "" || phone == "+7 "){
-		isValid = false;
-		$('#f-phone').parent().addClass("bookFormGroup_invalid");
+	if (sub && (email == "")){
+		$('#f-email').parent().addClass("bookFormGroup_invalid");
+		$('#f-email').focus();
+		$('#f-email').parent()[0].scrollIntoView();
 	}
-	if (!bar && !space && !lunch && !sub){
-		isValid = false;
-		$('#f-order').addClass("bookFormGroup_invalid");
+	if (space){
+		if (space_date == ""){
+			isValid = false;
+			$('#f-space_date').parent().addClass("bookFormGroup_invalid");
+			$('#f-space_date').focus();
+			$('#f-space_date').parent()[0].scrollIntoView();
+		}
+		if (space_time == ""){
+			isValid = false;
+			$('#f-space_time').parent().addClass("bookFormGroup_invalid");
+			if (space_date != ""){
+				$('#f-space_time').focus();
+				$('#f-space_time').parent()[0].scrollIntoView();
+			}
+		}	
 	}
 	if (bar){
 		console.log(bar);
 		if (bar_date == ""){
 			isValid = false;
 			$('#f-bar_date').parent().addClass("bookFormGroup_invalid");
+			$('#f-bar_date').focus();
+			$('#f-bar_date').parent()[0].scrollIntoView();
 		}
 		if (bar_time == ""){
 			isValid = false;
 			$('#f-bar_time').parent().addClass("bookFormGroup_invalid");
+			if (bar_date != ""){
+				$('#f-bar_time').focus();
+				$('#f-bar_time').parent()[0].scrollIntoView();
+			}
 		}
-	}
-	if (space){
-		if (space_date == ""){
-			isValid = false;
-			$('#f-space_date').parent().addClass("bookFormGroup_invalid");
-		}
-		if (space_time == ""){
-			isValid = false;
-			$('#f-space_time').parent().addClass("bookFormGroup_invalid");
-		}
-	}
-	if (sub && (email == "")){
-		$('#f-email').parent().addClass("bookFormGroup_invalid");
-	}
 
+	}
+	if (!bar && !space && !lunch && !sub){
+		isValid = false;
+		$('#f-order').addClass("bookFormGroup_invalid");
+		$('#f-order').focus();
+		$('#f-order')[0].scrollIntoView();
+	}
+	if (phone == "" || phone == "+7 "){
+		isValid = false;
+		$('#f-phone').parent().addClass("bookFormGroup_invalid");
+		$('#f-phone').focus();
+		$('#f-phone').parent()[0].scrollIntoView();
+	}
+	
 	if (!isValid){return}
 
 }
@@ -215,16 +234,22 @@ function sendContactForm(){
 	});
 
 	var isValid = true;
-	if (phone == "" || phone == "+7 "){
-		isValid = false;
-		$('#f-phone').parent().addClass("bookFormGroup_invalid");
+	if (sub && (email == "")){
+		$('#f-email').parent().addClass("bookFormGroup_invalid");
+		$('#f-email').focus();
+		$('#f-email').parent()[0].scrollIntoView();
 	}
 	if (text == ""){
 		isValid = false;
 		$('#f-text').parent().addClass("bookFormGroup_invalid");
+		$('#f-text').focus();
+		$('#f-text').parent()[0].scrollIntoView();
 	}
-	if (sub && (email == "")){
-		$('#f-email').parent().addClass("bookFormGroup_invalid");
+	if (phone == "" || phone == "+7 "){
+		isValid = false;
+		$('#f-phone').parent().addClass("bookFormGroup_invalid");
+		$('#f-phone').focus();
+		$('#f-phone').parent()[0].scrollIntoView();
 	}
 
 	if (!isValid){return}
@@ -255,8 +280,8 @@ function sendFooterForm(){
 
 $(document).ready(function() {
 	$(".modalBack").click(function(){
+		closeMenuMobile();
  		hideBookForm();
- 		closeMenuMobile();
 	});
 });
 
@@ -265,7 +290,9 @@ $(document).ready(function() {
 function closeMenuMobile(){
 	$(".hamburger").removeClass("is-active");
 	$(".header__nav").removeClass("header__nav_isActive");
-	$("body").removeClass("modal_open");
+	if (!($('.book').hasClass('book_isActive'))){
+		$("body").removeClass("modal_open");
+	}
 }
 $(document).ready(function() {
 
@@ -277,8 +304,9 @@ $(document).ready(function() {
         } else {
             $(".hamburger").addClass("is-active");
             x.addClass("header__nav_isActive");
-            $("body").addClass("modal_open");
             hideBookForm();
+            $("body").addClass("modal_open");
+            
         }
     });
     

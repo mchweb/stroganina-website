@@ -10,6 +10,9 @@
 	}
 	& p{
 		@extend .p-small;
+	}
+	& a{
+		border-bottom:1px solid $gray-25;
 	}	
 }
 .footerSubscribe{
@@ -44,6 +47,7 @@
 	@include adjust-font-size-to($fs-base);
 	color:$bg-clr;
 	outline:0;
+	border-radius:0;
 	width:100%;
 	border:none;
 	background:none;
@@ -73,7 +77,10 @@
 .footerSubscribe__picture{
 	margin:rhythm(5) auto rhythm(13) auto;
 	max-width:rhythm(12);
-	height:auto;
+	& img{
+		max-width:100%;
+		height:auto;
+	}
 }
 
 .footerForm_soon{

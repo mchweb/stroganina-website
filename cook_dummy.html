@@ -36,123 +36,6 @@
 		</div>
 
 		<div class="modalBack"></div>
-
-		<!-- BEGIN of book -->
-		<div class="book">
-			<button type="button" class="book__close" onclick="hideBookForm()"><p>×</p></button>
-			<div class="book__title"><p>Бронирование</p></div>
-			<form class="bookForm" action="javascript:void(null);" onSubmit="sendBookForm()">
-				<div class="formRemember"><p>Мы заполнили форму данными из вашего прошлого заказа. Если данные изменились, вы можете <a>очистить форму</a>.</p></div>
-	
-				<div class="bookFormSection">
-					<div class="bookFormGroup">
-						<label class="formGroup__label" for="f-name">Представьтесь</label>
-						<input name="f-name" id="f-name" type="text" class="formGroup__input" placeholder="Иванов Иван">
-					</div>
-					<div class="bookFormGroup bookFormGroup_required">
-						<label class="formGroup__label" for="f-phone">Телефон</label>
-						<p class="formGroup__error">Пожалуйста, укажите свой телефон</p>
-						<input name="f-phone" id="f-phone" class="formGroup__input" type="tel" value="+7 " required="" placeholder="+7 ___ ___-__-__">
-					</div>
-				</div>
-	
-				<div class="bookFormSection" id="f-order">
-					<p class="formGroup__error">Пожалуйста, выберите хотя бы один пункт</p>
-					<div class="bookFormGroup bookFormGroup_checkbox">
-						<input class="formGroup__checkbox" type="checkbox" name="f-order_bar" id="f-order_bar">
-						<label class="formGroup__label" for="f-order_bar">Забронировать столик в Строганина-баре</label>
-	
-						<div class="bookFormGroup__details">
-							<div class="bookFormGroup__dateTime formGroup_date">
-								<label class="formGroup__label" for="f-bar_date">Дата</label>
-								<input name="f-bar_date" id="f-bar_date" class="formGroup__input js-datepicker-bar" type="text" placeholder="24.07.2016">
-							</div><!--
-							--><div class="bookFormGroup__dateTime formGroup_time">
-								<label class="formGroup__label" for="f-bar_time">Время</label>
-								<input name="f-bar_time" id="f-bar_time" class="formGroup__input js-timepicker-bar" type="text" placeholder="18:00">
-								<div class="ui-timepicker-dropdown js-timepicker-bar-dropdown"></div>
-							</div>
-							<p class="formGroup__error">Пожалуйста, укажите дату и время бронирования столика в Строганина-баре</p>
-						</div>
-					</div>
-	
-					<div class="bookFormGroup bookFormGroup_checkbox">
-						<input class="formGroup__checkbox" type="checkbox" name="f-order_space" id="f-order_space">
-						<label class="formGroup__label" for="f-order_space">Арендовать зал для мероприятия в «Пространстве»</label>
-	
-						<div class="bookFormGroup__details">
-							<div class="bookFormGroup__dateTime formGroup_date">
-								<label class="formGroup__label" for="f-space_date">Дата</label>
-								<input name="f-space_date" id="f-space_date" class="formGroup__input js-datepicker-space" type="text" placeholder="24.07.2016">
-							</div><!--
-							--><div class="bookFormGroup__dateTime formGroup_time">
-								<label class="formGroup__label" for="f-space_time">Время</label>
-								<input name="f-space_time" id="f-space_time" class="formGroup__input js-timepicker-space" type="text" placeholder="18:00">
-								<div class="ui-timepicker-dropdown js-timepicker-space-dropdown"></div>
-							</div>
-							<p class="formGroup__error">Пожалуйста, укажите дату и время аренды зала в «Пространстве»</p>
-						</div>
-					</div>
-	
-					<div class="bookFormGroup bookFormGroup_checkbox">
-						<input class="formGroup__checkbox" type="checkbox" name="f-order_lunch" id="f-order_lunch">
-						<label class="formGroup__label" for="f-order_lunch">Оформить подписку на доставку бизнес-ланчей в офис</label>
-	
-						<div class="bookFormGroup__details">
-							<p class="p-compact">Наши менеджеры свяжутся с вами по телефону для уточнения подробностей</p>
-						</div>
-	
-					</div>
-				</div>
-	
-				<div class="bookFormSection">
-					<div class="bookFormGroup bookFormGroup_checkbox">
-						<input class="formGroup__checkbox" type="checkbox" name="f-order_sub" id="f-order_sub">
-						<label class="formGroup__label" for="f-order_sub">Подписаться на дайджест новостей и мероприятий в&nbsp;«Пространстве»</label>
-	
-						<div class="bookFormGroup bookFormGroup__details bookFormGroup_required">
-							<label class="formGroup__label" for="f-email">E-mail</label>
-							<p class="formGroup__error">Пожалуйста, укажите свой e-mail</p>
-							<input name="f-email" id="f-email" class="formGroup__input" type="email" placeholder="ivanov@gmail.com">
-						</div>
-					</div>
-	
-					<div class="formPrivacy">
-						<p>даю согласие на обработку своих персональных данных</p>
-					</div>
-				</div>
-	
-				<div class="bookForm__button">
-					<button class="btn btn_primary" onclic="sendBookForm()">
-						<p>Отправить</p>
-						<div class="btn__spinner">
-							<div class="pt"></div>
-							<div class="pt"></div>
-							<div class="pt"></div>
-						</div>
-					</button>
-				</div>
-			</form>
-
-			<div class="bookSuccess">
-				<div class="checkmark"></div>
-				<div class="bookSuccess__text">
-					<p>Вы забронировали <span>столик в баре на 5 июля, 17:00; зал в «Пространстве» на 6 июля, 20:00; оставили заявку на доставку бизнес-ланчей в офис; подписались на наш дайджест</span>. В ближайшее время мы свяжемся с вами, чтобы подтвердить заявку.</p>
-				</div>
-				<p class="p-secondary">Ищите нас в любимых социальных сетях</p>
-
-				<div class="bookSuccess__soc-links">
-					<ul class="soc-links">
-						<a href="#"><li class="soc-links__item soc-links__item_flamp"></li></a>
-						<a href="#"><li class="soc-links__item soc-links__item_fb"></li></a>
-						<a href="#"><li class="soc-links__item soc-links__item_insta"></li></a>
-						<a href="#"><li class="soc-links__item soc-links__item_tripadv"></li></a>
-						<a href="#"><li class="soc-links__item soc-links__item_email"></li></a>
-					</ul>
-				</div>
-			</div>
-		</div>
-		<!-- END of book -->
 		
 		<!-- BEGIN of header -->
 		<header class="header">
@@ -215,7 +98,7 @@
 			<div class="heroWrap">
 				<div class="heroContent">
 					<div class="hero__title"><h1>Магазин кулинарии наполняется...</h1></div>
-					<div class="hero__desc"><p>Если вы поставщик наркоты, пишите на почту <a href="mailto:info@stroganina-bar.ru">info@stroganina-bar.ru</a></p></div>
+					<div class="hero__desc"><p>Если вы постащик продуктов и напитков, свяжитесь с нами:<br> <a href="mailto:info@stroganina-bar.ru">info@stroganina-bar.ru</a></p></div>
 				</div>
 			</div>
 		</div>

@@ -7,7 +7,7 @@
 	max-height:rhythm(180);
 	display:flex;
 	align-items: center;
-	justify-content:flex-end;
+	//justify-content:flex-end;
 	color:$bg-clr;
 	& a{
 		color:$bg-clr;
@@ -15,6 +15,7 @@
 	@media (max-width: 40em) {
 		height:auto;
 		max-height:none;
+		min-height:rhythm(94);
 		padding-bottom:rhythm(4);
 	}
 }

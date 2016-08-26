@@ -1,22 +1,30 @@
 .cook{
 	@include container();
 }
-.cookSidebar{
-	@include span(3);
-}
 .cookNavWrap{
 	border-style:solid;
 	border-color:$gray-70;
-	border-width:0 rhythm(1/6);
+	border-width:0 1px;
 }
 .cookNav{
 	color:$gray-15;
-	cursor:pointer;
+	& input {
+		position: absolute;
+		clip: rect(0, 0, 0, 0);
+	}
+	& label{
+		@extend .p-base;
+	}
 	& > li{
-		& > p {
+		& input ~ ul { visibility: hidden; max-height: 0; padding:0; overflow-y: hidden;}
+		& input:checked ~ ul { visibility: visible; max-height: rhythm(100); padding:rhythm(2 - 1/6) 0;}
+		& > label {
+			display:block;
+			width:100%;
 			padding:rhythm(2, 24px) rhythm(5, 24px);
-			border-bottom:rhythm(1/6, 24px) solid $gray-70;
+			border-bottom:1px solid $gray-70;
 			@extend .p-h3;
+			cursor:pointer;
 			&:after{
 				content: "";
     			display: inline-block;
@@ -31,17 +39,18 @@
 		}
 
 		& > ul{
-			padding:rhythm(2 - 1/6) 0;
-			border-bottom:rhythm(1/6) solid $gray-70;
+			border-bottom:1px solid $gray-70;
 		}
 		& > ul > li{
-			& > p {
+			& input:checked ~ ul { padding:0;}
+			& > p, & > label {
 				padding:0 rhythm(5, 14px);
 				&:hover{
 					color:$accent;
 				}
+				cursor:pointer;
 			}
-			& > p.isTree{
+			& > p.isTree, & > label.isTree {
 				&:after{
 					content: "";
     				display: inline-block;
@@ -50,8 +59,9 @@
     				background-image:url('../img/tree.svg');
     				margin-left:rhythm(1, 14px);
 				}
+				cursor:pointer;
 			}
-			&.isActive > p{
+			&.isActive > p, &.isActive > label{
 				font-weight:bold;
 				&:before{
 					content: "";
@@ -69,6 +79,7 @@
 					&:hover{
 						color:$accent;
 					}
+					cursor:pointer;
 				}
 				&.isActive > p{
 					font-weight:bold;
@@ -87,9 +98,24 @@
 	}
 }
 
+.cookSidebar{
+	@include span(3);
+	@media (max-width: 63em) {
+		@include span(4);
+	}
+}
+.cookDeliveryWrap{
+	clear:left;
+	@include span(3);
+	@media (max-width: 63em) {
+		@include span(4);
+	}
+}
 .cookDelivery{
 	padding:rhythm(4) rhythm(5);
-	border-bottom:rhythm(1/6) solid $gray-70;
+	border-color:$gray-70;
+	border-style:solid;
+	border-width:0px 1px 1px 1px;
 }
 .cookDelivery__text{
 	color:$gray-50;
@@ -103,10 +129,8 @@
 }
 
 .breadcrumbs{
-	@include span(9);
 	color:$gray-25;
-	padding-top:rhythm(3);
-	padding-bottom:rhythm(3);
+	padding:rhythm(3);
 	& li{
 		display:inline;
 		@include adjust-font-size-to($fs-base);
@@ -125,12 +149,19 @@
 	}
 }
 
-.goods{
+.cookContent{
 	@include span(9);
-	padding:0;
+	@media (max-width: 63em) {
+		@include span(8);
+	}
+	float:right !important;
+	padding:0 !important;
 }
 .good {
 	@include span(4);
+	@media (max-width: 63em) {
+		@include span(6);
+	}
 	min-height:rhythm(58);
 }
 .good__picture{

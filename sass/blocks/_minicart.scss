@@ -6,7 +6,9 @@
 	& p{
 		@extend .p-note;
 	}
-	&:hover .minicart__dummy{
+	&:hover .minicart__dummy,
+	&:focus .minicart__dummy
+	{
 		visibility:visible;
 		opacity:1;
 		margin-top:rhythm(1);
