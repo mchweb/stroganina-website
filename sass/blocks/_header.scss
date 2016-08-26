@@ -145,8 +145,12 @@
 	}
 }
 .navMobile{
-	visibility:hidden;
-	padding:rhythm(2) rhythm(2) rhythm(2) rhythm(3);
+	display:none;
+	@media (max-width: 63em) {
+		display:block;
+		visibility:hidden;
+		padding:rhythm(2) rhythm(2) rhythm(2) rhythm(3);
+	}
 }
 .navMobile__phone{
 	@extend .p-accent;

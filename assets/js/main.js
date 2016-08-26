@@ -109,6 +109,19 @@ $(document).ready(function() {
 });
 
 
+function hideCatalog(){
+	$('.cookSidebar').removeClass("cookSidebar_isActive");
+	$('.cookNavTrigger').removeClass("cookNavTrigger_isActive");
+}
+function toggleCatalog(){
+	if (!($('.cookSidebar').hasClass("cookSidebar_isActive"))){
+		$('.cookSidebar').addClass("cookSidebar_isActive");
+		$('.cookNavTrigger').addClass("cookNavTrigger_isActive");
+	}else{
+		hideCatalog();
+	}
+}
+
 function showBookForm(x){
 	$('.book').addClass('book_isActive');
 	closeMenuMobile();
@@ -302,6 +315,7 @@ $(document).ready(function() {
         if (x.hasClass("header__nav_isActive")) {
             closeMenuMobile();
         } else {
+        	hideCatalog();
             $(".hamburger").addClass("is-active");
             x.addClass("header__nav_isActive");
             hideBookForm();
