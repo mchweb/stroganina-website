@@ -239,37 +239,25 @@
 		<!-- BEGIN of carousel -->
 		<div class="carousel carousel_big">
 			<div class="carouselWrap">
-				<input class="carousel__radio" type="radio" id="carousel-1" name="carousel" aria-hidden="true" hidden="" checked="checked">
-				<div class="carousel__item" style="background-image:url('assets/img/bar__carousel1.jpg')"></div>
-				<input class="carousel__radio" type="radio" id="carousel-2" name="carousel" aria-hidden="true" hidden="">
-				<div class="carousel__item" style="background-image:url('assets/img/bar__carousel2.jpg')"></div>
-				<input class="carousel__radio" type="radio" id="carousel-3" name="carousel" aria-hidden="true" hidden="">
-				<div class="carousel__item" style="background-image:url('assets/img/bar__carousel3.jpg')"></div>
-				<input class="carousel__radio" type="radio" id="carousel-4" name="carousel" aria-hidden="true" hidden="">
-				<div class="carousel__item" style="background-image:url('assets/img/bar__carousel4.jpg')"></div>
-				<input class="carousel__radio" type="radio" id="carousel-5" name="carousel" aria-hidden="true" hidden="">
-				<div class="carousel__item" style="background-image:url('assets/img/bar__carousel5.jpg')"></div>
+				<ol class="carouselList">
+					<li class="carousel__item carousel__item_isActive" style="background-image:url('assets/img/bar__carousel1.jpg')"></li>
+					<li class="carousel__item" style="background-image:url('assets/img/bar__carousel2.jpg')"></li>
+					<li class="carousel__item" style="background-image:url('assets/img/bar__carousel3.jpg')"></li>
+					<li class="carousel__item" style="background-image:url('assets/img/bar__carousel4.jpg')"></li>
+					<li class="carousel__item" style="background-image:url('assets/img/bar__carousel5.jpg')"></li>
+				</ol>
 
-				<label for="carousel-5" class="carousel__control prev control-1"></label>
-				<label for="carousel-2" class="carousel__control next control-1"></label>
+				<button class="carousel__control prev"></button>
+				<button class="carousel__control next"></button>
 
-				<label for="carousel-1" class="carousel__control prev control-2"></label>
-				<label for="carousel-3" class="carousel__control next control-2"></label>
-
-				<label for="carousel-2" class="carousel__control prev control-3"></label>
-				<label for="carousel-4" class="carousel__control next control-3"></label>
-
-				<label for="carousel-3" class="carousel__control prev control-4"></label>
-				<label for="carousel-5" class="carousel__control next control-4"></label>
-
-				<label for="carousel-4" class="carousel__control prev control-5"></label>
-				<label for="carousel-1" class="carousel__control next control-5"></label>
 				<ol class="carouselIndicators">
-					<li><label for="carousel-1" class="carousel__bullet">•</label></li>
-					<li><label for="carousel-2" class="carousel__bullet">•</label></li>
-					<li><label for="carousel-3" class="carousel__bullet">•</label></li>
-					<li><label for="carousel-4" class="carousel__bullet">•</label></li>
-					<li><label for="carousel-5" class="carousel__bullet">•</label></li>
+					<li class="carousel__bullet"><button>•</button></li>
+					<li class="carousel__bullet"><button>•</button></li>
+					<li class="carousel__bullet"><button>•</button></li>
+					<li class="carousel__bullet"><button>•</button></li>
+					<li class="carousel__bullet"><button>•</button></li>
+
+
 				    <br>
 				    <div class="carousel__button"><button type="button" onclick="showBookForm('bar')" class="btn btn_primary"><p>Забронировать</p></button></div>
 				</ol>

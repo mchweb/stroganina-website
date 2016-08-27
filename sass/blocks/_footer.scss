@@ -13,44 +13,73 @@
 	}
 }
 
-.footer__text{
-	@include span(4);
-	@media (max-width: 64em) {
-		@include span(5);
+.footer__business{
+	margin-top:rhythm(0.5);
+	@include span(5);
+	@media (max-width: 74em) {
+		@include span(6);
 	}
-	@media (max-width: 56em) {
+	@media (max-width: 63em) {
+		@include span(8);
+	}
+	
+	@media (max-width: 46em) {
 		@include span(12);
 		margin-bottom:rhythm(2);
 	}
 	display:inline-block;
+	vertical-align:middle;	
+}
+.footer__text{
+	margin-left:rhythm(1.5);
+	display:inline-block;
 	vertical-align:middle;
+	max-width:rhythm(56);
 	& p{
 		@extend .p-secondary;
 	}
 	& a{
 		@extend .p-link_black;
 	}
+	@media (max-width: 30em) {
+		display:block;
+		margin-top:rhythm(2);
+		margin-left:0;
+		max-width:none;
+	}
+}
+.footer__logo{
+	border:none !important;
+	display:inline-block;
+	vertical-align:middle;
+	width:rhythm(7);
+	margin-right:rhythm(1);
+	& img{
+		max-width:100%;		
+		height:auto;
+	}
+	&:hover{
+		-webkit-filter: brightness(1.25);
+	}
 }
 .footer__contacts{
-	@include push(1);
 	@include span(4);
 	margin-top:rhythm(1);
-	@media (max-width: 64em) {
-		@include push(0);
+	@media (max-width: 74em) {
+		@include span(3);
 	}
-	@media (max-width: 56em) {
-		@include span(6);
-		margin-top:0;
+	@media (max-width: 63em) {
+		@include span(4);
 	}
-	@media (max-width: 38em) {
+	@media (max-width: 46em) {
 		@include span(12);
 	}
 
 	
 	display:inline-block;
-
 	vertical-align:middle;
 	& p{
+		display:inline-block;
 		@extend .p-secondary;
 	}
 	& a{
@@ -64,13 +93,10 @@
 .footer__links{
 	text-align:right;
 	@include span(3);
-	@media (max-width: 56em) {
-		@include span(6);
-	}
-	@media (max-width: 38em) {
+	@media (max-width: 63em) {
 		@include span(12);
 		text-align:left;
-		margin-top:rhythm(2);
+		margin-top:rhythm(3);
 	}
 	
 }
@@ -116,7 +142,7 @@
 		width:auto;
 		height:rhythm(2);
 	}
-	@media (max-width: 56em) {
+	@media (max-width: 63em) {
 		display:inline-block;
 		vertical-align:middle;
 		margin-top:0;

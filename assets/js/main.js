@@ -121,6 +121,9 @@ function toggleCatalog(){
 		hideCatalog();
 	}
 }
+$(".breadcrumbs").click(function(){
+	toggleCatalog();
+});
 
 function showBookForm(x){
 	$('.book').addClass('book_isActive');
@@ -295,6 +298,15 @@ $(document).ready(function() {
 	$(".modalBack").click(function(){
 		closeMenuMobile();
  		hideBookForm();
+ 		hideAllGoods();
+	});
+});
+
+$(document).ready(function() {
+	$(".minicart").hover(function(){
+		$(".minicart").addClass("minicart_isActive");
+	}, function(){
+		$(".minicart").removeClass("minicart_isActive");
 	});
 });
 
@@ -329,6 +341,103 @@ $(document).ready(function() {
     });
 });
 //////////////////////////////////////////////////////////////////////////////////////////////////////
+
+/////////////////////////////////////////////////////////////////////////////////////////////////////
+// goods
+goods = (function(){
+	var goods = document.querySelectorAll('.good');
+	goods.forEach(function(item, i, arr){
+
+		item.querySelector('.good__more button').addEventListener('click', function(ev) {
+    		toggleGood(item);
+  		});
+  		item.querySelector('.good__close').addEventListener('click', function(ev) {
+    		toggleGood(item);
+  		});
+	});
+
+	function toggleGood(good){
+		if (good.classList.contains('good_isActive')){
+			document.body.classList.remove('modal_open');
+			good.classList.remove('good_isActive');
+			good.classList.add('good_isInactive');
+		}else{
+			document.body.classList.add('modal_open');
+			good.classList.remove('good_isInactive');
+			good.classList.add('good_isActive');
+		}
+	}
+})();
+
+function hideAllGoods(){
+	var goods = document.querySelectorAll('.good');
+	goods.forEach(function(item, i, arr){
+		if (item.classList.contains('good_isActive')){
+			item.classList.remove('good_isActive');
+			item.classList.add('good_isInactive');
+		}
+	});
+}
+
+/////////////////////////////////////////////////////////////////////////////////////////////////////
+
+/////////////////////////////////////////////////////////////////////////////////////////////////////
+// carousel
+carousel = (function(){
+  var box = document.querySelector('.carouselWrap');
+  var next = box.querySelector('.next');
+  var prev = box.querySelector('.prev');
+  var items = box.querySelectorAll('.carouselList > li');
+  var dots = box.querySelectorAll('.carouselIndicators li');
+  var counter = 0;
+  var amount = items.length;
+  var current = items[0];
+  var currentDot = dots[0];
+
+  function navigate(direction) {
+    current.classList.remove('carousel__item_isActive');
+    currentDot.classList.remove('carousel__bullet_isActive');
+    counter = counter + direction;
+    if (direction === -1 && 
+        counter < 0) { 
+      counter = amount - 1; 
+    }
+    if (direction === 1 && 
+        !items[counter]) { 
+      counter = 0;
+    }
+    current = items[counter];
+    currentDot = dots[counter];
+
+    current.classList.add('carousel__item_isActive');
+    currentDot.classList.add('carousel__bullet_isActive');
+  }
+  function set(num){
+  	current.classList.remove('carousel__item_isActive');
+    currentDot.classList.remove('carousel__bullet_isActive');
+    counter = num;
+
+    current = items[counter];
+    currentDot = dots[counter];
+    current.classList.add('carousel__item_isActive');
+    currentDot.classList.add('carousel__bullet_isActive');
+  }
+  next.addEventListener('click', function(ev) {
+    navigate(1);
+  });
+  prev.addEventListener('click', function(ev) {
+    navigate(-1);
+  });
+  dots.forEach(function(item, i, arr){
+  	item.addEventListener('click', function(ev) {
+    	set(i);
+  	});
+  });
+
+  navigate(0);
+})();
+
+/////////////////////////////////////////////////////////////////////////////////////////////////////
 
 //////////////////////////////////////////////////////////////////////////////////////////////////////
 // Instafeed
@@ -461,3 +570,5 @@ function updownResize(){
 updownResize();
 window.onresize = updownResize;
 //////////////////////////////////////////////////////////////////////////////////////////////////////
+
+

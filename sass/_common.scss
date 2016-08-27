@@ -16,7 +16,11 @@ a.anchor{
 	position: absolute;
 	margin-top:-5em;
 }
-
+button{
+	background:none;
+    border:none;
+    margin:0;
+}
 button:focus, input, textarea {outline:0;}
 textarea {resize:none;overflow: hidden;}
 

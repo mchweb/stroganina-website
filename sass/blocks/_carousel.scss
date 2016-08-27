@@ -21,8 +21,9 @@
             visibility:hidden;
             opacity:0.7;
         }
-        & .carousel__radio:checked + .carousel__item {
+        & .carousel__item_isActive {
             visibility:visible;
+            opacity:1;
         }
     }
 }
@@ -36,11 +37,8 @@
     width: 100%;
     min-height:rhythm(68);
 }
-
-.carousel__radio:checked + .carousel__item {
-    opacity: 1; 
-}
 .carousel__item {
+    pointer-events:none;
     position: absolute;
     opacity: 0;
     min-height:rhythm(68);
@@ -49,11 +47,15 @@
     background-size:cover;
     background-position:center;
 }
+.carousel__item_isActive {
+    pointer-events: auto;
+    opacity: 1; 
+}
 
 .carousel__control { 
+    border:none;
     border-radius: 50%;
     cursor: pointer;
-    display: none;
     position: absolute;
     height: rhythm(10);
     width: rhythm(10);
@@ -63,7 +65,7 @@
         width: rhythm(7);
         top: calc(50% - 1.3125em);
     }
-    z-index: 10;
+    z-index: 1010;
     opacity:0.5;
     background-color: $accent;
     background-image:url('../img/carousel__arrow.svg');
@@ -81,14 +83,6 @@
     opacity:1;
 }
 
-#carousel-1:checked ~ .control-1,
-#carousel-2:checked ~ .control-2,
-#carousel-3:checked ~ .control-3,
-#carousel-4:checked ~ .control-4,
-#carousel-5:checked ~ .control-5 {
-    display: block;
-}
-
 .carouselIndicators {
     list-style: none;
     margin: 0;
@@ -103,35 +97,37 @@
 
 .carouselIndicators li {
     display: inline-block;
-    margin: 0 rhythm(2);
-}
-
-.carousel__bullet {
-    color:$bg-clr;
-    opacity:0.5;
-    cursor: pointer;
-    display: block;
-    @include adjust-font-size-to(48px);
-    line-height:rhythm(3, 48px);
+    margin: 0 rhythm(1);
     @media (max-width: 38em) {
-        @include adjust-font-size-to(36px);
-        line-height:rhythm(2, 36px);
+        margin: 0;
     }
 }
 
-.carousel__bullet:hover {
-    color: $accent;
-}
-
-#carousel-1:checked ~ .control-1 ~ .carouselIndicators li:nth-child(1) .carousel__bullet,
-#carousel-2:checked ~ .control-2 ~ .carouselIndicators li:nth-child(2) .carousel__bullet,
-#carousel-3:checked ~ .control-3 ~ .carouselIndicators li:nth-child(3) .carousel__bullet,
-#carousel-4:checked ~ .control-4 ~ .carouselIndicators li:nth-child(4) .carousel__bullet,
-#carousel-5:checked ~ .control-5 ~ .carouselIndicators li:nth-child(5) .carousel__bullet {
-    opacity:0.9;
-    cursor:default;
-    &:hover{
+.carousel__bullet {
+    & button{
+        outline:none;
         color:$bg-clr;
+        opacity:0.5;
+        cursor: pointer;
+        display: block;
+        @include adjust-font-size-to(48px);
+        line-height:rhythm(3, 48px);
+        @media (max-width: 38em) {
+            @include adjust-font-size-to(36px);
+            line-height:rhythm(2, 36px);
+        } 
+        &:hover{
+            color: $accent;
+        }
+    }
+    &.carousel__bullet_isActive {
+        & button{
+            opacity:0.9;
+            cursor:default;
+            &:hover{
+                color:$bg-clr;
+            }
+        }
     }
 }
 

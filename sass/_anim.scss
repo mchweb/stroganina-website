@@ -2,16 +2,19 @@
 
 // slow animation
 .book,
-.modalBack
+.modalBack,
+.bookSuccess
 {
 	transition: all 0.3s ease-in-out;
 }
 
 .header,
 .header__nav,
-.bookSuccess,
 .cookSidebar,
-.cookNavTrigger
+.cookNavTrigger,
+.good__button,
+.minicart__title,
+.minicartWrap
 {
     transition: all 0.2s ease-in-out;
 }

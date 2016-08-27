@@ -58,49 +58,46 @@
 		<!-- BEGIN of carousel -->
 		<div class="carousel carousel_static carousel_schedule">
 			<div class="carouselWrap">
-				<input class="carousel__radio" type="radio" id="carousel-1" name="carousel" aria-hidden="true" hidden="" checked="checked">
-				<div class="carousel__item" style="background-image:url('assets/img/event__soon.jpg')">
-					<div class="banner">
-						<div class="bannerContent">
-							<div class="bannerMeta">
-								<div class="bannerLabel"><p>Скоро</p></div>
-								<ul class="bannerTags">
-									<li class="bannerTags__item">#ещеодин</li>
-								</ul>
+				<ol class="carouselList">
+					<li class="carousel__item" style="background-image:url('assets/img/event__soon.jpg')">
+						<div class="banner">
+							<div class="bannerContent">
+								<div class="bannerMeta">
+									<div class="bannerLabel"><p>Скоро</p></div>
+									<ul class="bannerTags">
+										<li class="bannerTags__item">#ещеодин</li>
+									</ul>
+								</div>
+								<div class="bannerContent__title"><h2>5 вдохновляющих фильмов о Скандинавии</h2></div>
+								<div class="bannerContent__text"><p>Расскажем, как и&nbsp;зачем их&nbsp;смотреть, обсудим с&nbsp;вами сюжеты, героев, а &nbsp;главное&nbsp;&mdash; вместе будем искать вдохновение в&nbsp;каждом кадре.</p></div>
+								<div class="bannerContent__link"><a href="#" class="link link_light"><p>Перейти</p></a></div>
 							</div>
-							<div class="bannerContent__title"><h2>5 вдохновляющих фильмов о Скандинавии</h2></div>
-							<div class="bannerContent__text"><p>Расскажем, как и&nbsp;зачем их&nbsp;смотреть, обсудим с&nbsp;вами сюжеты, героев, а&nbsp;главное&nbsp;&mdash; вместе будем искать вдохновение в&nbsp;каждом кадре.</p></div>
-							<div class="bannerContent__link"><a href="#" class="link link_light"><p>Перейти</p></a></div>
 						</div>
-					</div>
-				</div>
-				<input class="carousel__radio" type="radio" id="carousel-2" name="carousel" aria-hidden="true" hidden="">
-				<div class="carousel__item" style="background-image:url('assets/img/bar__carousel2.jpg')">
-					<div class="banner">
-						<div class="bannerContent">
-							<div class="bannerMeta">
-								<div class="bannerLabel"><p>Скоро</p></div>
-								<ul class="bannerTags">
-									<li class="bannerTags__item">#васячотакое</li>
-									<li class="bannerTags__item">#яжирный</li>
-								</ul>
+					</li>
+					<li class="carousel__item" style="background-image:url('assets/img/bar__carousel2.jpg')">
+						<div class="banner">
+							<div class="bannerContent">
+								<div class="bannerMeta">
+									<div class="bannerLabel"><p>Скоро</p></div>
+									<ul class="bannerTags">
+										<li class="bannerTags__item">#васячотакое</li>
+										<li class="bannerTags__item">#яжирный</li>
+									</ul>
+								</div>
+								<div class="bannerContent__title"><h2>Как бухать водку и не отупеть</h2></div>
+								<div class="bannerContent__text"><p>Главный томский эксперт Василич расскажет свой магический секрет вечной молодости, вечной пьяности.</p></div>
+								<div class="bannerContent__link"><a href="#" class="link link_light"><p>Перейти</p></a></div>
 							</div>
-							<div class="bannerContent__title"><h2>Как бухать водку и не отупеть</h2></div>
-							<div class="bannerContent__text"><p>Главный томский эксперт Василич расскажет свой магический секрет вечной молодости, вечной пьяности.</p></div>
-							<div class="bannerContent__link"><a href="#" class="link link_light"><p>Перейти</p></a></div>
 						</div>
-					</div>
-				</div>
+					</li>
+				</ol>
 
-				<label for="carousel-2" class="carousel__control prev control-1"></label>
-				<label for="carousel-2" class="carousel__control next control-1"></label>
-
-				<label for="carousel-1" class="carousel__control prev control-2"></label>
-				<label for="carousel-1" class="carousel__control next control-2"></label>
+				<button class="carousel__control prev"></button>
+				<button class="carousel__control next"></button>
 
 				<ol class="carouselIndicators">
-					<li><label for="carousel-1" class="carousel__bullet">•</label></li>
-					<li><label for="carousel-2" class="carousel__bullet">•</label></li>
+					<li class="carousel__bullet"><button>•</button></li>
+					<li class="carousel__bullet"><button>•</button></li>
 				</ol>
 			</div>
 		</div>

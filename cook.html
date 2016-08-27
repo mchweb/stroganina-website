@@ -28,7 +28,7 @@
 		<div class="modalBack"></div>
 		
 		<!-- BEGIN of header -->
-		<header class="header header_black">
+		<header class="header header_black header_fixed">
 			<div class="headerInner">
 				<button class="header__mobileNavTrigger hamburger hamburger--slider" type="button">
 				  <span class="hamburger-box">
@@ -74,9 +74,54 @@
 								<span class="minicart__icon"></span>
 								<span class="minicart__text">Корзина/</span><span>0</span>
 							</p>
-							<div class="minicart__dummy"><p>Совсем скоро вы сможете заказать товары из каталога Магазина кулинарии прямо на сайте</p></div>
+							<!--<div class="minicart__dummy"><p>Совсем скоро вы сможете заказать товары из каталога Магазина кулинарии прямо на сайте</p></div>-->
 						</div>
+						<div class="minicartWrap">
+							<div class="minicartContent">
+								<div class="minicart__header"><p>В вашей корзине:</p></div>
+								<div class="minicart__empty"><p>Здесь будет отображаться ваш заказ.</p></div>
 
+								<ul class="minicart__items">
+									<li class="minicart__item">
+										<div class="minicartItem__title"><p>Полярный плашкоут (50/50/50/50/50/50/45/45 г)</p></div>
+										<div class="minicartItem__buttons">
+											<button class="btn-minus js-cart-minus" data-id="39_1"><p>–</p></button><!--
+										--><input class="btn-count" id="count-39_1" type="text" disabled="" value="1" maxlength="3"><!--
+										--><button class="btn-plus js-cart-plus" data-id="39_1"><p>+</p></button>
+										</div>
+										<div class="minicartItem__price"><p>3 100 Р</p></div>
+										<div class="minicartItem__remove"><button><p>×</p></button></div>
+									</li>
+									<li class="minicart__item">
+										<div class="minicartItem__title"><p>Жирная свинюха</p></div>
+										<div class="minicartItem__buttons">
+											<button class="btn-minus js-cart-minus" data-id="39_1"><p>–</p></button><!--
+										--><input class="btn-count" id="count-39_1" type="text" disabled="" value="1" maxlength="3"><!--
+										--><button class="btn-plus js-cart-plus" data-id="39_1"><p>+</p></button>
+										</div>
+										<div class="minicartItem__price"><p>100 Р</p></div>
+										<div class="minicartItem__remove"><button><p>×</p></button></div>
+									</li>
+									<li class="minicart__item">
+										<div class="minicartItem__title"><p>Васькино бухлишко, оно так утоляет жажду, и я чувствую себя человеком! </p></div>
+										<div class="minicartItem__buttons">
+											<button class="btn-minus js-cart-minus" data-id="39_1"><p>–</p></button><!--
+										--><input class="btn-count" id="count-39_1" type="text" disabled="" value="42" maxlength="3"><!--
+										--><button class="btn-plus js-cart-plus" data-id="39_1"><p>+</p></button>
+										</div>
+										<div class="minicartItem__price"><p>1 002 Р</p></div>
+										<div class="minicartItem__remove"><button><p>×</p></button></div>
+									</li>
+								</ul>
+
+								<div class="minicart__footer">
+									<div class="minicart__total"><p>Итого: <span>3 300 Р</span></p></div>
+									<div class="minicart__button">
+										<a href="#" class="btn btn_primary"><p>Перейти к оформлению</p></a>
+									</div>
+								</div>
+							</div>
+						</div>
 					</div>
 				</div>
 			</div>
@@ -89,45 +134,43 @@
 		</div>
 		<!-- END of heading -->
 
+
 		<!-- BEGIN of carousel -->
 		<div class="carousel carousel_static">
 			<div class="carouselWrap">
-				<input class="carousel__radio" type="radio" id="carousel-1" name="carousel" aria-hidden="true" hidden="" checked="checked">
-				<div class="carousel__item" style="background-image:url('assets/img/cook__banner.jpg')">
-					<div class="banner">
-						<div class="bannerContent">
-							<div class="bannerMeta">
-								<div class="bannerLabel"><p>Новинка</p></div>
+				<ol class="carouselList">
+					<li class="carousel__item" style="background-image:url('assets/img/cook__banner.jpg')">
+						<div class="banner">
+							<div class="bannerContent">
+								<div class="bannerMeta">
+									<div class="bannerLabel"><p>Новинка</p></div>
+								</div>
+								<div class="bannerContent__title"><h2>Горчица!</h2></div>
+								<div class="bannerContent__text"><p>Самая популярная приправа русской и немецкой кухни. Попробуете? </p></div>
+								<div class="bannerContent__link"><a href="#" class="link link_light"><p>Перейти</p></a></div>
 							</div>
-							<div class="bannerContent__title"><h2>Горчица!</h2></div>
-							<div class="bannerContent__text"><p>Самая популярная приправа русской и немецкой кухни. Попробуете? </p></div>
-							<div class="bannerContent__link"><a href="#" class="link link_light"><p>Перейти</p></a></div>
 						</div>
-					</div>
-				</div>
-				<input class="carousel__radio" type="radio" id="carousel-2" name="carousel" aria-hidden="true" hidden="">
-				<div class="carousel__item" style="background-image:url('assets/img/cook__banner2.jpg')">
-					<div class="banner">
-						<div class="bannerContent">
-							<div class="bannerMeta">
-								<div class="bannerLabel"><p>Новинка</p></div>
+					</li>
+					<li class="carousel__item" style="background-image:url('assets/img/cook__banner2.jpg')">
+						<div class="banner">
+							<div class="bannerContent">
+								<div class="bannerMeta">
+									<div class="bannerLabel"><p>Новинка</p></div>
+								</div>
+								<div class="bannerContent__title"><h2>Бухло от Василича</h2></div>
+								<div class="bannerContent__text"><p>Магический секрет вечной молодости, вечной пьяности от главного томского эксперта Василича.</p></div>
+								<div class="bannerContent__link"><a href="#" class="link link_light"><p>Перейти</p></a></div>
 							</div>
-							<div class="bannerContent__title"><h2>Бухло от Василича</h2></div>
-							<div class="bannerContent__text"><p>Магический секрет вечной молодости, вечной пьяности от главного томского эксперта Василича.</p></div>
-							<div class="bannerContent__link"><a href="#" class="link link_light"><p>Перейти</p></a></div>
 						</div>
-					</div>
-				</div>
+					</li>
+				</ol>
 
-				<label for="carousel-2" class="carousel__control prev control-1"></label>
-				<label for="carousel-2" class="carousel__control next control-1"></label>
-
-				<label for="carousel-1" class="carousel__control prev control-2"></label>
-				<label for="carousel-1" class="carousel__control next control-2"></label>
+				<button class="carousel__control prev"></button>
+				<button class="carousel__control next"></button>
 
 				<ol class="carouselIndicators">
-					<li><label for="carousel-1" class="carousel__bullet">•</label></li>
-					<li><label for="carousel-2" class="carousel__bullet">•</label></li>
+					<li class="carousel__bullet"><button>•</button></li>
+					<li class="carousel__bullet"><button>•</button></li>
 				</ol>
 			</div>
 		</div>
@@ -197,92 +240,123 @@
 
 				<div class="goods">
 					<div class="good">
-						<div class="good__picture" style="background-image:url('assets/img/good.jpg')">
-							<div class="good__label good__label_1"><p>Новинка</p></div>
+						<div class="goodWrap">
+							<div class="goodContent">
+								<div class="good__picture" style="background-image:url('assets/img/good.jpg')">
+									<div class="good__label good__label_1"><p>Новинка</p></div>
+									<button type="button" class="good__close"><p>×</p></button>
+								</div>
+								<div class="good__title"><h3>Ребрышки оленя варено-копченые</h3></div>
+								<div class="good__more"><button>Подробное описание ›</button></div>
+								<div class="good__info"><p>
+									Состав: оленина ребрышки, соль, чеснок, перец, смесь фирменных специй.
+									Условия хранения: 180 часов, t=2 — (-5) С. Замороженая продукция дополнительно упаковывается в специальный термопакет.
+									Способ приготовления:
+									Примичания: по вашему желанию мы можем нарезать продукцию.
+								</p></div>
+								<footer class="good__footer">
+									<div class="good__size"><p>100 г</p></div>
+									<div class="good__price"><p>134 Р</p></div>
+									<div class="good__button"><button><p>В корзину</p></button></div>
+									<div class="good__count">
+										<button class="btn-minus js-cart-minus" data-id="39_1"><span>–</span></button><!--
+										--><input class="btn-count" id="count-39_1" type="text" disabled="" value="1" maxlength="3"><!--
+										--><button class="btn-plus js-cart-plus" data-id="39_1"><span>+</span></button>
+									</div>
+								</footer>
+							</div>
 						</div>
-						<div class="good__title"><h3>Ребрышки оленя варено-копченые</h3></div>
-						<div class="good__more"><button>Подробное описание ›</button></div>
-						<div class="good__info"><p>
-							Состав: оленина ребрышки, соль, чеснок, перец, смесь фирменных специй.
-							Условия хранения: 180 часов, t=2 — (-5) С. Замороженая продукция дополнительно упаковывается в специальный термопакет.
-							Способ приготовления:
-							Примичания: по вашему желанию мы можем нарезать продукцию.
-						</p></div>
-						<footer class="good__footer">
-							<div class="good__size"><p>100 г</p></div>
-							<div class="good__price"><p>134 Р</p></div>
-							<div class="good__button"><button><p>В корзину</p></button></div>
-						</footer>
 					</div>
 					<div class="good">
-						<div class="good__picture" style="background-image:url('assets/img/good.jpg')">
-							<div class="good__label good__label_2"><p>Вегетерианское</p></div>
+						<div class="goodWrap">
+							<div class="goodContent">
+								<div class="good__picture" style="background-image:url('assets/img/good.jpg')">
+									<div class="good__label good__label_2"><p>Вегетерианское</p></div>
+									<button type="button" class="good__close"><p>×</p></button>
+								</div>
+								<div class="good__title"><h3>Ребрышки оленя варено-копченые</h3></div>
+								<div class="good__more"><button>Подробное описание ›</button></div>
+								<div class="good__info"><p>
+									Состав: оленина ребрышки, соль, чеснок, перец, смесь фирменных специй.
+									Условия хранения: 180 часов, t=2 — (-5) С. Замороженая продукция дополнительно упаковывается в специальный термопакет.
+									Способ приготовления:
+									Примичания: по вашему желанию мы можем нарезать продукцию.
+								</p></div>
+								<footer class="good__footer">
+									<div class="good__size"><p>100 г</p></div>
+									<div class="good__price"><p>134 Р</p></div>
+									<div class="good__button"><button><p>В корзину</p></button></div>
+								</footer>
+							</div>
 						</div>
-						<div class="good__title"><h3>Сало домашнее соленое</h3></div>
-						<div class="good__more"><button>Подробное описание ›</button></div>
-						<div class="good__info"><p>
-							Состав: оленина ребрышки, соль, чеснок, перец, смесь фирменных специй.
-							Условия хранения: 180 часов, t=2 — (-5) С. Замороженая продукция дополнительно упаковывается в специальный термопакет.
-							Способ приготовления:
-							Примичания: по вашему желанию мы можем нарезать продукцию.
-						</p></div>
-						<footer class="good__footer">
-							<div class="good__size"><p>100 г</p></div>
-							<div class="good__price"><p>134 Р</p></div>
-							<div class="good__button"><button><p>В корзину</p></button></div>
-						</footer>
 					</div>
 					<div class="good">
-						<div class="good__picture" style="background-image:url('assets/img/good.jpg')">
-							<div class="good__label good__label_3"><p>Хит</p></div>
+						<div class="goodWrap">
+							<div class="goodContent">
+								<div class="good__picture" style="background-image:url('assets/img/good.jpg')">
+									<div class="good__label good__label_3"><p>Хит</p></div>
+									<button type="button" class="good__close"><p>×</p></button>
+								</div>
+								<div class="good__title"><h3>Ребрышки оленя варено-копченые</h3></div>
+								<div class="good__more"><button>Подробное описание ›</button></div>
+								<div class="good__info"><p>
+									Состав: оленина ребрышки, соль, чеснок, перец, смесь фирменных специй.
+									Условия хранения: 180 часов, t=2 — (-5) С. Замороженая продукция дополнительно упаковывается в специальный термопакет.
+									Способ приготовления:
+									Примичания: по вашему желанию мы можем нарезать продукцию.
+								</p></div>
+								<footer class="good__footer">
+									<div class="good__size"><p>100 г</p></div>
+									<div class="good__price"><p>134 Р</p></div>
+									<div class="good__button"><button><p>В корзину</p></button></div>
+								</footer>
+							</div>
 						</div>
-						<div class="good__title"><h3>Сало домашнее подкопченное</h3></div>
-						<div class="good__more"><button>Подробное описание ›</button></div>
-						<div class="good__info"><p>
-							Состав: оленина ребрышки, соль, чеснок, перец, смесь фирменных специй.
-							Условия хранения: 180 часов, t=2 — (-5) С. Замороженая продукция дополнительно упаковывается в специальный термопакет.
-							Способ приготовления:
-							Примичания: по вашему желанию мы можем нарезать продукцию.
-						</p></div>
-						<footer class="good__footer">
-							<div class="good__size"><p>100 г</p></div>
-							<div class="good__price"><p>134 Р</p></div>
-							<div class="good__button"><button><p>В корзину</p></button></div>
-						</footer>
 					</div>
 					<div class="good">
-						<div class="good__picture" style="background-image:url('assets/img/good.jpg')"></div>
-						<div class="good__title"><h3>Ребрышки оленя варено-копченые</h3></div>
-						<div class="good__more"><button>Подробное описание ›</button></div>
-						<div class="good__info"><p>
-							Состав: оленина ребрышки, соль, чеснок, перец, смесь фирменных специй.
-							Условия хранения: 180 часов, t=2 — (-5) С. Замороженая продукция дополнительно упаковывается в специальный термопакет.
-							Способ приготовления:
-							Примичания: по вашему желанию мы можем нарезать продукцию.
-						</p></div>
-						<footer class="good__footer">
-							<div class="good__size"><p>100 г</p></div>
-							<div class="good__price"><p>134 Р</p></div>
-							<div class="good__button"><button><p>В корзину</p></button></div>
-						</footer>
+						<div class="goodWrap">
+							<div class="goodContent">
+								<div class="good__picture" style="background-image:url('assets/img/good.jpg')">
+									<button type="button" class="good__close"><p>×</p></button>
+								</div>
+								<div class="good__title"><h3>Ребрышки оленя варено-копченые</h3></div>
+								<div class="good__more"><button>Подробное описание ›</button></div>
+								<div class="good__info"><p>
+									Состав: оленина ребрышки, соль, чеснок, перец, смесь фирменных специй.
+									Условия хранения: 180 часов, t=2 — (-5) С. Замороженая продукция дополнительно упаковывается в специальный термопакет.
+									Способ приготовления:
+									Примичания: по вашему желанию мы можем нарезать продукцию.
+								</p></div>
+								<footer class="good__footer">
+									<div class="good__size"><p>100 г</p></div>
+									<div class="good__price"><p>134 Р</p></div>
+									<div class="good__button"><button><p>В корзину</p></button></div>
+								</footer>
+							</div>
+						</div>
 					</div>
 					<div class="good">
-						<div class="good__picture" style="background-image:url('assets/img/good.jpg')"></div>
-						<div class="good__title"><h3>Ребрышки оленя варено-копченые</h3></div>
-						<div class="good__more"><button>Подробное описание ›</button></div>
-						<div class="good__info"><p>
-							Состав: оленина ребрышки, соль, чеснок, перец, смесь фирменных специй.
-							Условия хранения: 180 часов, t=2 — (-5) С. Замороженая продукция дополнительно упаковывается в специальный термопакет.
-							Способ приготовления:
-							Примичания: по вашему желанию мы можем нарезать продукцию.
-						</p></div>
-						<footer class="good__footer">
-							<div class="good__size"><p>100 г</p></div>
-							<div class="good__price"><p>134 Р</p></div>
-							<div class="good__button"><button><p>В корзину</p></button></div>
-						</footer>
+						<div class="goodWrap">
+							<div class="goodContent">
+								<div class="good__picture" style="background-image:url('assets/img/good.jpg')">
+									<button type="button" class="good__close"><p>×</p></button>
+								</div>
+								<div class="good__title"><h3>Ребрышки оленя варено-копченые</h3></div>
+								<div class="good__more"><button>Подробное описание ›</button></div>
+								<div class="good__info"><p>
+									Состав: оленина ребрышки, соль, чеснок, перец, смесь фирменных специй.
+									Условия хранения: 180 часов, t=2 — (-5) С. Замороженая продукция дополнительно упаковывается в специальный термопакет.
+									Способ приготовления:
+									Примичания: по вашему желанию мы можем нарезать продукцию.
+								</p></div>
+								<footer class="good__footer">
+									<div class="good__size"><p>100 г</p></div>
+									<div class="good__price"><p>134 Р</p></div>
+									<div class="good__button"><button><p>В корзину</p></button></div>
+								</footer>
+							</div>
+						</div>
 					</div>
-
 				</div>
 			</div>
 
@@ -301,24 +375,28 @@
 		<!-- BEGIN of footer -->
 		<footer class="footer">
 			<div class="footerContent">
-				<div class="footer__text">
-					<p>Строганина Бар&nbsp;&mdash; проект инвестиционно-управляющей <a href="#">Группы&nbsp;компаний WIN Corp</a>, созданный по&nbsp;франшизе от&nbsp;Группы&nbsp;компаний&nbsp;&laquo;Руян&raquo;.</p>
+				<div class="footer__business">
+					<a class="footer__logo" href="#" target="_blank"><img src="assets/img/footer__logo1.svg" alt=""></a>
+					<a class="footer__logo" href="#" target="_blank"><img src="assets/img/footer__logo2.svg" alt=""></a>
+					<div class="footer__text">
+						<p>&raquo;Строганина-бар Экспедиция&laquo;&nbsp;&mdash; проект <a href="http://wincorp.ru/?from=stroganina-bar.ru" target="_blank">ГК&nbsp;WIN Corp</a>, в&nbsp;Томске создан по&nbsp;франшизе ГК&nbsp;&laquo;Руян&raquo; (Экспедиция)</p>
+					</div>
 				</div>
 				<div class="footer__contacts">
-					<p><a href="#">+7 913 100-09-87</a>,<br>
+					<p><a href="tel:73822502800">+7 (3822) 502-800</a>,<br>
 						Томск, Карла Марска, 17а
-						<a class="footer__link" href="#">Открыть карту</a></p>
+						<a class="footer__link" href="#">На карте</a></p>
 				</div>
 				<div class="footer__links">
 					<ul class="soc-links">
-						<a href="#"><li class="soc-links__item soc-links__item_flamp"></li></a>
-						<a href="#"><li class="soc-links__item soc-links__item_fb"></li></a>
-						<a href="#"><li class="soc-links__item soc-links__item_insta"></li></a>
-						<a href="#"><li class="soc-links__item soc-links__item_tripadv"></li></a>
-						<a href="#"><li class="soc-links__item soc-links__item_email"></li></a>
+						<a href="#" target="_blank"><li class="soc-links__item soc-links__item_flamp"></li></a>
+						<a href="#" target="_blank"><li class="soc-links__item soc-links__item_fb"></li></a>
+						<a href="#" target="_blank"><li class="soc-links__item soc-links__item_insta"></li></a>
+						<a href="#" target="_blank"><li class="soc-links__item soc-links__item_tripadv"></li></a>
+						<a href="#" target="_blank"><li class="soc-links__item soc-links__item_email"></li></a>
 					</ul>
 					<div class="footer__author">
-						<a href="http://provocationstudio.ru/?from=stroganina"><img src="assets/img/provocation.svg" alt=""></a>
+						<a href="http://provocationstudio.ru/?from=stroganina-bar.ru" target="_blank"><img src="assets/img/provocation.svg" alt=""></a>
 					</div>
 				</div>
 			</div>
