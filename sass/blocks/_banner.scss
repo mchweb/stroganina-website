@@ -7,6 +7,9 @@
 	color:$bg-clr;
 	@include container();
 }
+_:-ms-lang(x), .banner {
+    height:rhythm(68);
+}
 .bannerContent{
 	text-align:left;
 	@include push(3);

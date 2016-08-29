@@ -18,6 +18,8 @@
 .footerSubscribe{
 	text-align:center;
 	margin:rhythm(4) 0 rhythm(8) 0;
+	padding-left:rhythm(2.5);
+	padding-right:rhythm(2.5);
 }
 .footerSubscribe .footerSubscribe__title{
 	color:$bg-clr;
@@ -66,12 +68,26 @@
 	margin-top:rhythm(1);
 }
 .footerSubscribe__success{
-	display:none;
+	text-align:center;
 	max-width:rhythm(95);
-	margin:0 auto;
+	margin:rhythm(4) auto rhythm(8) auto;
+	display:none;
+	
 	& .footerSubscribe__title{
 		margin-top:rhythm(5);
 		margin-bottom:rhythm(2);
+	}
+}
+.footerRight {
+	& .footerSubscribe__success{
+		margin-top:0;
+		margin-bottom:0;
+	}
+	& .footerSubscribe__title{
+		margin-top:0;
+	}
+	& .footerSubscribe__picture{
+		margin-bottom:0;
 	}
 }
 .footerSubscribe__picture{

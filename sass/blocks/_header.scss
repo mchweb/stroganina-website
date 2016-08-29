@@ -1,4 +1,6 @@
 .header{
+	opacity:1;
+	pointer-events:auto;
 	position:absolute;
 	width:100%;
 	color:$bg-clr;
@@ -28,7 +30,7 @@
 
 	@media (max-width: 63em) {
 		position:fixed !important;
-		z-index:2050;
+		z-index:700;
 		padding-top:rhythm(1);
 		padding-bottom:rhythm(1);
 				
@@ -61,6 +63,7 @@
 	}
 }
 .headerInner{
+	position: relative;
 	@include container();
 	padding-top:rhythm(5);
 	@media (max-width: 74em) {
@@ -81,7 +84,7 @@
 	}
 	background:$bg-clr !important;
 	position:fixed !important;
-	z-index:2050;
+	z-index:700;
 	padding-top:rhythm(1);
 	padding-bottom:rhythm(0);
 	& .headerInner{
@@ -94,6 +97,9 @@
 			padding-top:rhythm(13) !important;
 		}
 		
+	}
+	& ~ #updown #updown-container{
+		margin-top:rhythm(12) !important;
 	}
 }
 .header__logo{
@@ -185,8 +191,12 @@
 	margin:0 rhythm(1.5);
 	
 	&:first-child {
+		display:none;
+	}
+	&:nth-child(2) {
 		margin-left:0;
 	}
+
 	& a{
 		@extend .p-note;
 	}
@@ -197,6 +207,9 @@
 		}
 	}
 	@media (max-width: 63em) {
+		&:first-child {
+			display:block;
+		}
 		display:block;
 		width:100%;
 		margin:0;
@@ -278,9 +291,9 @@
 	& a{
 		@extend .p-note;
 	}
-	margin:0 0 0 rhythm(3);
+	margin:0 rhythm(3) 0;
 	@media (max-width: 74em) {
-		margin:0 0 0 rhythm(1.5);
+		margin:0 rhythm(1.5);
 	}
 	@media (max-width: 38em) {
 		display:none !important;

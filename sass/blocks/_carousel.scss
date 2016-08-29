@@ -37,11 +37,14 @@
     width: 100%;
     min-height:rhythm(68);
 }
+_:-ms-lang(x), .carouselWrap {
+    height:rhythm(68);
+}
 .carousel__item {
     pointer-events:none;
     position: absolute;
     opacity: 0;
-    min-height:rhythm(68);
+    //min-height:rhythm(68);
     width:100%;
     transition: opacity 0.3s linear;
     background-size:cover;
@@ -65,7 +68,7 @@
         width: rhythm(7);
         top: calc(50% - 1.3125em);
     }
-    z-index: 1010;
+    z-index: 300;
     opacity:0.5;
     background-color: $accent;
     background-image:url('../img/carousel__arrow.svg');
@@ -114,7 +117,7 @@
         line-height:rhythm(3, 48px);
         @media (max-width: 38em) {
             @include adjust-font-size-to(36px);
-            line-height:rhythm(2, 36px);
+            line-height:rhythm(4, 36px);
         } 
         &:hover{
             color: $accent;

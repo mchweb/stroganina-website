@@ -10,7 +10,7 @@
     & a{
     	color:$gray-80;
     }
-    z-index:2100;
+    z-index:900;
     top: 0;
     bottom:0;
     overflow-y:scroll;
@@ -50,6 +50,7 @@
 	}
 }
 .book_success{
+	
 	.bookForm{
 		margin-left:-100%;
 		margin-right:100%;
@@ -158,13 +159,24 @@
 .formGroup_time{
 	padding-left:rhythm(2);
 }
+.bookForm__button{
+	padding-bottom:rhyyhm(6);
+}
 
 .formRemember{
-	display:none;
+	visibility:hidden;
+	max-height:0;
+	overflow:hidden;
+	padding:0;
+	
+	&.formRemember__isActive{
+		visibility:visible;
+		max-height:rhythm(19);
+		padding:rhythm(2);
+	}
 	background-color:rgba(242, 229, 229, 0.5);
-	padding:rhythm(2);
 	border-radius:rhythm(1);
-	color:$gray-15;
+	color:$text-clr;
 	margin:rhythm(-2) 0;
 	& p{
 		@extend .p-compact;

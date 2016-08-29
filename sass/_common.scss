@@ -33,11 +33,16 @@ strong {font-weight:bold !important}
 	height:100vh;
 	position:fixed;
 	background:rgba(0,0,0,0.75);
-	z-index:2000; 
+	z-index:600; 
 }
 
-body.modal_open {
+body.modal_open,
+body.modal_open ~ html {
+	position:relative;
 	overflow: hidden;
+	height:100%;
+}
+body.modal_open {
 	& .modalBack{
 		opacity:1;
 		visibility:visible;

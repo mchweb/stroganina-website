@@ -112,7 +112,7 @@
     	top: rhythm(12);
     	background: white;
     	padding: 0;
-    	z-index: 3021;
+    	z-index: 400;
     	box-shadow: 0 0 rhythm(1.5) $gray-65;
     	overflow: auto;
     	max-height: 70vh;
@@ -150,7 +150,8 @@
 	color:$gray-50;
 }
 .cookDelivery__payMeth{
-	padding-top:rhythm(2);
+	margin-top:rhythm(2);
+	margin-bottom:rhythm(3);
 	& img{
 		max-width:rhythm(20);
 		height:auto;
@@ -179,7 +180,7 @@
 }
 
 .cookNavTrigger{
-	z-index: 1020;
+	z-index: 400;
 	left:0;
 	display:none;
     position: fixed;
@@ -230,8 +231,9 @@
 	}
 	@media (max-width: 32em) {
 		@include span(12);
+		min-height:0 !important;
 	}
-	min-height:rhythm(58);
+	min-height:rhythm(61);
 }
 .good__picture{
 	width:100%;
@@ -240,6 +242,7 @@
 	margin-bottom:rhythm(2);
 }
 .good__label{
+	cursor:default;
 	position:absolute;
 	margin-top:rhythm(2);
 	margin-left:rhythm(-1 - 1/3);
@@ -312,6 +315,7 @@
 		@extend .p-secondary;
 		color:$gray-50;
 		border-bottom:1px solid $gray-70;
+		margin-bottom:-1px;
 		&:hover{
 			color:$text-clr;
 			border-color:$gray-25;
@@ -327,6 +331,7 @@
 }
 .good__size, .good__price, .good__button{
 	display:inline-block;
+	vertical-align: middle;
 }
 .good__size{
 	color:$gray-50;
@@ -345,6 +350,9 @@
 .good_isOnCart{
 	& .good__button{
 		max-height:0;
+	}
+	& .good__count{
+		visibility:visible;
 	}
 }
 .good__button{
@@ -378,6 +386,7 @@
 
 .good__count {
 	display:inline-block;
+	visibility:hidden;
 	& .btn-minus, & .btn-plus{
 		border:none;
 		color:$bg-clr;
@@ -406,6 +415,9 @@
 		margin:0;
 		height:rhythm(5);
 		text-align:center;
+		&[disabled]{
+			opacity:1 !important;
+		}
 	}
 }
 
@@ -444,7 +456,7 @@
 .good_isActive{
 	& .goodWrap{
 		position: fixed;
-    	z-index: 4000;
+    	z-index: 900;
     	top: rhythm(15);
     	@media (max-width: 63em) {
     		top: rhythm(10);
@@ -503,6 +515,7 @@
 }
 
 .good__close{
+	opacity:0.8;
 	display:none;
 	border:none;
 	background:none;
@@ -510,8 +523,7 @@
 	color:$warning-dark;
 	position: absolute;
 	right:rhythm(2);
-	top:rhythm(2);
-	opacity:0.5;
+	top:rhythm(2); 
 	& p{
 		@include adjust-font-size-to(34px, 3);
 	}

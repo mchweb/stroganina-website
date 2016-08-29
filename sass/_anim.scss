@@ -1,11 +1,13 @@
 // ANIMATIONS
 
 // slow animation
+.modalBack {
+	transition: opacity 0.25s ease-in-out;
+}
 .book,
-.modalBack,
 .bookSuccess
 {
-	transition: all 0.3s ease-in-out;
+	transition: all 0.25s ease-in-out;
 }
 
 .header,
@@ -28,7 +30,8 @@
 .bookFormGroup__details,
 .minicart__dummy,
 .bookForm,
-.cookNav ul
+.cookNav ul,
+.formRemember
 {
     transition: all 0.1s ease-in-out;
 }

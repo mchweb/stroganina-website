@@ -42,7 +42,7 @@
 			<button type="button" class="book__close" onclick="hideBookForm()"><p>×</p></button>
 			<div class="book__title"><p>Бронирование</p></div>
 			<form class="bookForm" action="javascript:void(null);" onSubmit="sendBookForm()">
-				<div class="formRemember"><p>Мы заполнили форму данными из вашего прошлого заказа. Если данные изменились, вы можете <a>очистить форму</a>.</p></div>
+				<div class="formRemember"><p>Мы&nbsp;заполнили форму данными из&nbsp;вашего прошлого заказа. Если данные изменились, вы&nbsp;можете <a onclick="resetUserData('book')">очистить форму</a>.</p></div>
 	
 				<div class="bookFormSection">
 					<div class="bookFormGroup">
@@ -123,7 +123,7 @@
 				</div>
 	
 				<div class="bookForm__button">
-					<button class="btn btn_primary" onclic="sendBookForm()">
+					<button class="btn btn_primary" onclick="sendBookForm()">
 						<p>Отправить</p>
 						<div class="btn__spinner">
 							<div class="pt"></div>
@@ -137,7 +137,7 @@
 			<div class="bookSuccess">
 				<div class="checkmark"></div>
 				<div class="bookSuccess__text">
-					<p>Вы забронировали <span>столик в баре на 5 июля, 17:00; зал в «Пространстве» на 6 июля, 20:00; оставили заявку на доставку бизнес-ланчей в офис; подписались на наш дайджест</span>. В ближайшее время мы свяжемся с вами, чтобы подтвердить заявку.</p>
+					<p>Вы <span id="bookSuccess_text"></span>. В&nbsp;ближайшее время мы&nbsp;свяжемся с&nbsp;вами, чтобы подтвердить заявку.</p>
 				</div>
 				<p class="p-secondary">Ищите нас в любимых социальных сетях</p>
 
@@ -167,7 +167,8 @@
 
 				<nav class="header__nav">
 					<ul class="nav">
-						<li class="nav__item"><a href="#">Бар</a></li><!--
+						<li class="nav__item"><a href="#">Главная</a></li><!--
+						--><li class="nav__item"><a href="#">Бар</a></li><!--
 						--><li class="nav__item"><a href="#">Магазин кулинарии</a></li><!--
 						--><li class="nav__item nav__item_isActive"><a href="#">Пространство</a></li><!--
 						--><li class="nav__item"><a href="#">Афиша</a></li><!--
@@ -259,7 +260,7 @@
 			<div class="heroWrap">
 				<div class="heroContent">
 					<div class="hero__title"><h1>Строганина-бар</h1></div>
-					<div class="hero__desc"><p>Место для тех, кто ценит натуральное во&nbsp;всем&nbsp;&mdash; как в&nbsp;продуктах, так и&nbsp;в&nbsp;людях. Единственное место в&nbsp;Томске, где за&nbsp;ужином можно спланировать мероприятие и&nbsp;тут&nbsp;же провести его в&nbsp;нашем &laquo;Пространстве&raquo;</p></div>
+					<div class="hero__desc"><p><strong>Открытие 8-10 сентября</strong><br>Место для тех, кто ценит натуральное&nbsp;&mdash; как в&nbsp;продуктах, так и&nbsp;в&nbsp;людях. Единственное место в&nbsp;Томске, где ужиная деликатесами северной кухни, вы&nbsp;можете спланировать мероприятие и&nbsp;тут&nbsp;же провести его в&nbsp;&laquo;Пространстве&raquo;.</p></div>
 					<ul class="heroInfo">
 						<li class="heroInfo__item"><p class="heroInfo__item_geo">Карла Маркса 17а, Томск</p></li>
 						<li class="heroInfo__item"><p class="heroInfo__item_time">С 12:00 до последнего гостя</p></li>
@@ -275,7 +276,7 @@
 				<div class="slideContentWrap">
 					<div class="slideContent">
 						<div class="slide__title"><h2>Бар</h2></div>
-						<div class="slide__text"><p>Строганина-бар в&nbsp;Томске&nbsp;&mdash; место для проведения запланированных деловых встреч и&nbsp;спонтанных душевных сабантуев со&nbsp;старыми друзьями. В&nbsp;меню бара вкусная понятная кухня и&nbsp;фирменные напитки собственного приготовления.</p></div>
+						<div class="slide__text"><p>Строганина-бар в&nbsp;Томске&nbsp;&mdash; место для проведения запланированных деловых встреч и&nbsp;спонтанных душевных сабантуев со&nbsp;старыми друзьями. В&nbsp;меню бара вкусная еда и&nbsp;напитки собственного приготовления.</p></div>
 						<div class="slide__buttons">
 							<button type="button" onclick="showBookForm('bar')" class="btn btn_primary"><p>Забронировать</p></button>
 							<a href="#" class="btn"><p>Перейти в бар</p></a>
@@ -354,7 +355,7 @@
 				<div class="slideContentWrap">
 					<div class="slideContent">
 						<div class="slide__title"><h2>Пространство</h2></div>
-						<div class="slide__text"><p>Отдельное помещение в&nbsp;рамках общей концепции бара, оборудованное всей необходимой техникой для проведения любого мероприятия до&nbsp;40&nbsp;человек и&nbsp;возможностью живой видео-трансляции в&nbsp;интернет. Проводите бизнес-тренинги, творческие мастерские и&nbsp;праздники, а&nbsp;мы&nbsp;поможем организовать их&nbsp;в&nbsp;лучшем виде.</p></div>
+						<div class="slide__text"><p>Отдельное помещение в&nbsp;рамках общей концепции бара. Проводите бизнес-тренинги с&nbsp;онлайн-трансляцией, творческие мастерские и&nbsp;праздники, а&nbsp;мы&nbsp;поможем организовать их&nbsp;в&nbsp;лучшем виде. Помещение рассчитано на&nbsp;40&nbsp;человек, есть все необходимое оборудование.</p></div>
 						<div class="slide__buttons">
 							<a href="#" class="btn btn_primary"><p>Узнать больше</p></a>
 							<a href="#" class="btn btn_long"><p>Афиша мероприятий</p></a>
@@ -404,7 +405,7 @@
 					<a class="footer__logo" href="#" target="_blank"><img src="assets/img/footer__logo1.svg" alt=""></a>
 					<a class="footer__logo" href="#" target="_blank"><img src="assets/img/footer__logo2.svg" alt=""></a>
 					<div class="footer__text">
-						<p>&raquo;Строганина-бар Экспедиция&laquo;&nbsp;&mdash; проект <a href="http://wincorp.ru/?from=stroganina-bar.ru" target="_blank">ГК&nbsp;WIN Corp</a>, в&nbsp;Томске создан по&nbsp;франшизе ГК&nbsp;&laquo;Руян&raquo; (Экспедиция)</p>
+						<p>&raquo;Строганина-бар Экспедиция&laquo;&nbsp;&mdash; проект <a href="http://wincorp.ru/?from=stroganina-bar.ru" target="_blank">ГК&nbsp;WIN&nbsp;Corp</a>, в&nbsp;Томске создан по&nbsp;франшизе ГК&nbsp;&laquo;Руян&raquo; (Экспедиция)</p>
 					</div>
 				</div>
 				<div class="footer__contacts">

@@ -179,14 +179,47 @@
 		<!-- BEGIN of footer -->
 		<footer class="footer">
 			<div class="footerContent">
-				<div class="footerSubscribe footerSubscribe_success">
-					<div class="footerSubscribe__title"><p>Вы подписались</p></div>
-					<div class="footerSubscribe__caption"><p>на рассылку самых интересных мероприятий и выступлений и Строганина-баре.<br>
-						Для подтверждения подписки, пожалуйста, пройдите по ссылке в письме, которое мы отправили по указанному вами e-mail.</p></div>
-					<div class="footerSubscribe__picture">
-						<img src="assets/img/subscribe__success.svg" alt="">
+				<div class="footerSubscribe">
+						<div class="footerSubscribe__form">
+							<div class="footerSubscribe__title"><p>Подпишитесь</p></div>
+							<div class="footerSubscribe__caption"><p>на&nbsp;рассылку самых интересных мероприятий и&nbsp;выступлений в&nbsp;Строганина-баре</p></div>
+
+							<form class="footerForm" action="javascript:void(null);" onSubmit="sendFooterForm()">
+								<div class="footerForm__inputs">
+									<div class="footerFormGroup">
+										<input name="ff-name" id="ff-name" type="text" class="footerFormGroup__input" placeholder="Введите ваше имя" required/>
+									</div>
+									<div class="footerFormGroup">
+										<input name="ff-email" id="ff-email" type="email" class="footerFormGroup__input" placeholder="Введите свой e-mail" required/>
+									</div>
+									<div class="footerFormGroup_privacy formPrivacy">
+										<p>даю <a href="#">согласие на обработку</a> своих персональных данных</p>
+									</div>
+								</div>
+								<div class="footerForm__button">
+									<button class="btn btn_primary">
+										<p>Подписаться</p>
+										<div class="btn__spinner">
+											<div class="pt"></div>
+											<div class="pt"></div>
+											<div class="pt"></div>
+										</div>
+									</button>
+								</div>
+							</form>
+						</div>
+
+						<div class="footerSubscribe__success">
+							<div class="footerSubscribe__title"><p>Вы подписались</p></div>
+							<div class="footerSubscribe__caption"><p>на рассылку самых интересных мероприятий и выступлений и Строганина-баре.<br>
+								Для подтверждения подписки, пожалуйста, пройдите по ссылке в письме, которое мы отправили по указанному вами e-mail.</p></div>
+							<div class="footerSubscribe__picture">
+								<img src="assets/img/subscribe__success.svg" alt="">
+							</div>
+						</div>
 					</div>
-				</div>
+
+
 
 				<div class="footer__text">
 					<p>Строганина Бар&nbsp;&mdash; проект инвестиционно-управляющей <a href="#">Группы&nbsp;компаний WIN Corp</a>, созданный по&nbsp;франшизе от&nbsp;Группы&nbsp;компаний&nbsp;&laquo;Руян&raquo;.</p>
