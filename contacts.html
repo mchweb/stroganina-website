@@ -27,39 +27,39 @@
 		<![endif]-->
 
 		<!-- BEGIN of book -->
-		<div class="book">
-			<button type="button" class="book__close" onclick="hideBookForm()"><p>×</p></button>
+		<div class="book book_contact">
+			<button type="button" class="book__close" onclick="hideContactForm()"><p>×</p></button>
 			<div class="book__title"><p>Задать вопрос</p></div>
 			<form class="bookForm" action="javascript:void(null);" onSubmit="sendContactForm()">
-				<div class="formRemember"><p>Мы&nbsp;заполнили форму данными из&nbsp;вашего прошлого заказа. Если данные изменились, вы&nbsp;можете <a onClick="resetUserData('book')">очистить форму</a>.</p></div>
+				<div class="formRemember"><p>Мы&nbsp;заполнили форму данными из&nbsp;вашего прошлого заказа. Если данные изменились, вы&nbsp;можете <a onClick="resetUserData('contact')">очистить форму</a>.</p></div>
 	
 				<div class="bookFormSection">
 					<div class="bookFormGroup">
-						<label class="formGroup__label" for="f-name">Представьтесь</label>
-						<input name="f-name" id="f-name" type="text" class="formGroup__input" placeholder="Иванов Иван">
+						<label class="formGroup__label" for="fc-name">Представьтесь</label>
+						<input name="fc-name" id="fc-name" type="text" class="formGroup__input" placeholder="Иванов Иван">
 					</div>
 					<div class="bookFormGroup bookFormGroup_required">
-						<label class="formGroup__label" for="f-phone">Телефон</label>
+						<label class="formGroup__label" for="fc-phone">Телефон</label>
 						<p class="formGroup__error">Пожалуйста, укажите свой телефон</p>
-						<input name="f-phone" id="f-phone" class="formGroup__input" type="tel" value="+7 " required placeholder="+7 ___ ___-__-__">
+						<input name="fc-phone" id="fc-phone" class="formGroup__input" type="tel" value="+7 " required placeholder="+7 ___ ___-__-__">
 					</div>
 
 					<div class="bookFormGroup bookFormGroup_required">
-						<label class="formGroup__label" for="f-text">Сообщение</label>
+						<label class="formGroup__label" for="fc-text">Сообщение</label>
 						<p class="formGroup__error">Пожалуйста, укажите текст сообщения</p>
-						<textarea name="f-text" id="f-text" onkeyup="autoGrowTextArea(this)" class="formGroup__input" rows="3" required=""></textarea>
+						<textarea name="fc-text" id="fc-text" onkeyup="autoGrowTextArea(this)" class="formGroup__input" rows="3" required=""></textarea>
 					</div>
 				</div>
 
 				<div class="bookFormSection">
 					<div class="bookFormGroup bookFormGroup_checkbox">
-						<input class="formGroup__checkbox" type="checkbox" name="f-order_sub" id="f-order_sub">
-						<label class="formGroup__label" for="f-order_sub">Подписаться на дайджест новостей и мероприятий в&nbsp;«Пространстве»</label>
+						<input class="formGroup__checkbox" type="checkbox" name="fb-order_sub" id="fc-order_sub">
+						<label class="formGroup__label" for="fc-order_sub">Подписаться на дайджест новостей и мероприятий в&nbsp;«Пространстве»</label>
 	
 						<div class="bookFormGroup bookFormGroup__details bookFormGroup_required">
-							<label class="formGroup__label" for="f-email">E-mail</label>
+							<label class="formGroup__label" for="fc-email">E-mail</label>
 							<p class="formGroup__error">Пожалуйста, укажите свой e-mail</p>
-							<input name="f-email" id="f-email" class="formGroup__input" type="email" placeholder="ivanov@gmail.com">
+							<input name="fc-email" id="fc-email" class="formGroup__input" type="email" placeholder="ivanov@gmail.com">
 						</div>
 					</div>
 	
@@ -69,7 +69,7 @@
 				</div>
 	
 				<div class="bookForm__button">
-					<button class="btn btn_primary" onclic="sendBookForm()">
+					<button class="js-form-loader btn btn_primary" onclic="sendContactForm()">
 						<p>Отправить</p>
 						<div class="btn__spinner">
 							<div class="pt"></div>
@@ -84,6 +84,129 @@
 				<div class="checkmark"></div>
 				<div class="bookSuccess__text">
 					<p>Ваше обращение отправлено. Мы&nbsp;свяжемся с&nbsp;вами в&nbsp;ближайшее время.</p>
+				</div>
+				<p class="p-secondary">Ищите нас в любимых социальных сетях</p>
+
+				<div class="bookSuccess__soc-links">
+					<ul class="soc-links">
+						<a href="#"><li class="soc-links__item soc-links__item_flamp"></li></a>
+						<a href="#"><li class="soc-links__item soc-links__item_fb"></li></a>
+						<a href="#"><li class="soc-links__item soc-links__item_insta"></li></a>
+						<a href="#"><li class="soc-links__item soc-links__item_tripadv"></li></a>
+						<a href="#"><li class="soc-links__item soc-links__item_email"></li></a>
+					</ul>
+				</div>
+			</div>
+		</div>
+		<!-- END of book -->
+
+		<!-- BEGIN of book -->
+		<div class="book book_book">
+			<button type="button" class="book__close" onclick="hideBookForm()"><p>×</p></button>
+			<div class="book__title"><p>Бронирование</p></div>
+			<form class="bookForm" action="javascript:void(null);" onSubmit="sendBookForm()">
+				<div class="formRemember"><p>Мы&nbsp;заполнили форму данными из&nbsp;вашего прошлого заказа. Если данные изменились, вы&nbsp;можете <a onclick="resetUserData('book')">очистить форму</a>.</p></div>
+	
+				<div class="bookFormSection">
+					<div class="bookFormGroup">
+						<label class="formGroup__label" for="f-name">Представьтесь</label>
+						<input name="f-name" id="f-name" type="text" class="formGroup__input" placeholder="Иванов Иван">
+					</div>
+					<div class="bookFormGroup bookFormGroup_required">
+						<label class="formGroup__label" for="f-phone">Телефон</label>
+						<p class="formGroup__error">Пожалуйста, укажите свой телефон</p>
+						<input name="f-phone" id="f-phone" class="formGroup__input" type="tel" value="+7 " required placeholder="+7 ___ ___-__-__">
+					</div>
+				</div>
+	
+				<div class="bookFormSection" id="f-order">
+					<p class="formGroup__error">Пожалуйста, выберите хотя бы один пункт</p>
+					<div class="bookFormGroup bookFormGroup_checkbox">
+						<input class="formGroup__checkbox" type="checkbox" name="f-order_bar" id="f-order_bar">
+						<label class="formGroup__label" for="f-order_bar">Забронировать столик в Строганина-баре</label>
+	
+						<div class="bookFormGroup__details">
+							<div class="bookFormGroup__dateTime formGroup_date">
+								<label class="formGroup__label" for="f-bar_date">Дата</label>
+								<input name="f-bar_date" id="f-bar_date" class="formGroup__input js-datepicker-bar" type="text" placeholder="24.07.2016">
+							</div><!--
+							--><div class="bookFormGroup__dateTime formGroup_time">
+								<label class="formGroup__label" for="f-bar_time">Время</label>
+								<input name="f-bar_time" id="f-bar_time" class="formGroup__input js-timepicker-bar" type="text" placeholder="18:00">
+								<div class="ui-timepicker-dropdown js-timepicker-bar-dropdown"></div>
+							</div>
+							<p class="formGroup__error">Пожалуйста, укажите дату и время бронирования столика в Строганина-баре</p>
+						</div>
+					</div>
+	
+					<div class="bookFormGroup bookFormGroup_checkbox">
+						<input class="formGroup__checkbox" type="checkbox" name="f-order_space" id="f-order_space">
+						<label class="formGroup__label" for="f-order_space">Арендовать зал для мероприятия в «Пространстве»</label>
+	
+						<div class="bookFormGroup__details">
+							<div class="bookFormGroup__dateTime formGroup_date">
+								<label class="formGroup__label" for="f-space_date">Дата</label>
+								<input name="f-space_date" id="f-space_date" class="formGroup__input js-datepicker-space" type="text" placeholder="24.07.2016">
+							</div><!--
+							--><div class="bookFormGroup__dateTime formGroup_time">
+								<label class="formGroup__label" for="f-space_time">Время</label>
+								<input name="f-space_time" id="f-space_time" class="formGroup__input js-timepicker-space" type="text" placeholder="18:00">
+								<div class="ui-timepicker-dropdown js-timepicker-space-dropdown"></div>
+							</div>
+							<p class="formGroup__error">Пожалуйста, укажите дату и время аренды зала в «Пространстве»</p>
+						</div>
+					</div>
+	
+					<div class="bookFormGroup bookFormGroup_checkbox">
+						<input class="formGroup__checkbox" type="checkbox" name="f-order_lunch" id="f-order_lunch">
+						<label class="formGroup__label" for="f-order_lunch">Оформить подписку на доставку бизнес-ланчей в офис</label>
+	
+						<div class="bookFormGroup__details">
+							<p class="p-compact">Наши менеджеры свяжутся с вами по телефону для уточнения подробностей</p>
+						</div>
+	
+					</div>
+				</div>
+	
+				<div class="bookFormSection">
+					<div class="bookFormGroup bookFormGroup_checkbox">
+						<input class="formGroup__checkbox" type="checkbox" name="f-order_sub" id="f-order_sub">
+						<label class="formGroup__label" for="f-order_sub">Подписаться на дайджест новостей и мероприятий в&nbsp;«Пространстве»</label>
+	
+						<div class="bookFormGroup bookFormGroup__details bookFormGroup_required">
+							<label class="formGroup__label" for="f-email">E-mail</label>
+							<p class="formGroup__error">Пожалуйста, укажите свой e-mail</p>
+							<input name="f-email" id="f-email" class="formGroup__input" type="email" placeholder="ivanov@gmail.com">
+						</div>
+					</div>
+				</div>
+
+				<div class="bookFormGroup">
+					<label class="formGroup__label" for="f-text">Комментарий</label>
+					<textarea name="f-text" id="f-text" onkeyup="autoGrowTextArea(this)" class="formGroup__input" rows="3"></textarea>
+
+					<div class="formPrivacy">
+						<p>даю <a href="#">согласие на обработку</a> своих персональных данных</p>
+					</div>
+				</div>
+
+
+				<div class="bookForm__button">
+					<button class="js-form-loader btn btn_primary" onclick="sendBookForm()">
+						<p>Отправить</p>
+						<div class="btn__spinner">
+							<div class="pt"></div>
+							<div class="pt"></div>
+							<div class="pt"></div>
+						</div>
+					</button>
+				</div>
+			</form>
+
+			<div class="bookSuccess">
+				<div class="checkmark"></div>
+				<div class="bookSuccess__text">
+					<p>Вы <span id="bookSuccess_text"></span>. В&nbsp;ближайшее время мы&nbsp;свяжемся с&nbsp;вами, чтобы подтвердить заявку.</p>
 				</div>
 				<p class="p-secondary">Ищите нас в любимых социальных сетях</p>
 
@@ -167,7 +290,7 @@
 								<a href="#"><li class="soc-links__item soc-links__item_tripadv"></li></a>
 								<a href="#"><li class="soc-links__item soc-links__item_email"></li></a>
 							</ul>
-							<button class="footerLeft__button btn btn_light" type="button" onclick="showBookForm()"><p>Задать вопрос</p></button>
+							<button class="footerLeft__button btn btn_light" type="button" onclick="showContactForm()"><p>Задать вопрос</p></button>
 						</div>
 					</div>
 
@@ -213,7 +336,11 @@
 				</div>
 
 				<div class="footerBottom">
-					<div class="footerBottom__text"><p>Строганина Бар&nbsp;&mdash; проект инвестиционно-управляющей <a href="http://wincorp.ru/?from=stroganina-bar.ru">Группы&nbsp;компаний WIN Corp</a>, созданный по&nbsp;франшизе от&nbsp;Группы&nbsp;компаний&nbsp;&laquo;Руян&raquo;.</p></div>
+					
+					<div class="footerBottom__text">
+						<a class="footer__logo" href="#" target="_blank"><img src="assets/img/footer__logo1.svg" alt=""></a>
+						<a class="footer__logo" href="#" target="_blank"><img src="assets/img/footer__logo2.svg" alt=""></a>
+						<p>&laquo;Строганина-бар Экспедиция&raquo;&nbsp;&mdash; проект <a href="http://wincorp.ru/?from=stroganina-bar.ru" target="_blank">ГК&nbsp;WIN&nbsp;Corp</a>, в&nbsp;Томске создан по&nbsp;франшизе ГК&nbsp;&laquo;Руян&raquo; (Экспедиция).</p></div>
 					<div class="footerBottom__author">
 						<a href="http://provocationstudio.ru/?from=stroganina-bar.ru" target="_blank">
 							<p class="footerBottom__authorTitle">Разработано в digital-студии</p>

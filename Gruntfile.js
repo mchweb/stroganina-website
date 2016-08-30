@@ -28,8 +28,7 @@ module.exports = function(grunt) {
         processhtml: {
             build: {
                 files: {
-                    //'prod/index.html': ['index.html'],
-                    'prod/soon.html': ['soon.html']
+                    'prod/index.html': ['index.html']
                 }
             }
         },
@@ -46,14 +45,14 @@ module.exports = function(grunt) {
         },
         inlineImgSize: {
             files: {
-                src: ['soon.html']
+                src: ['index.html', 'bar.html', 'contacts.html', 'space.html']
             }
         },
         postcss: {
             options: {
                 map: false, 
                 processors: [
-                    require('css-mqpacker')(),
+                    //require('css-mqpacker')(),
                     require('postcss-focus')(),
                     require('autoprefixer')({browsers: '> 1%, last 2 versions'}),
                     require('cssnano')()
@@ -81,6 +80,6 @@ module.exports = function(grunt) {
     grunt.loadNpmTasks('grunt-postcss');
     grunt.loadNpmTasks('grunt-uncss');
 
-    grunt.registerTask('default', ['compass', 'postcss', 'uglify', 'inlineImgSize', 'processhtml', 'imagemin', 'copy', 'uncss']);
+    grunt.registerTask('default', ['postcss', 'uglify', 'inlineImgSize', 'processhtml']);
 
 };

@@ -40,66 +40,68 @@
 		<!-- BEGIN of book -->
 		<div class="book book_book">
 			<button type="button" class="book__close" onclick="hideBookForm()"><p>×</p></button>
-			<div class="book__title"><p>Бронирование</p></div>
+			<div class="book__title"><p>Your reservation</p></div>
 			<form class="bookForm" action="javascript:void(null);" onSubmit="sendBookForm()">
-				<div class="formRemember"><p>Мы&nbsp;заполнили форму данными из&nbsp;вашего прошлого заказа. Если данные изменились, вы&nbsp;можете <a onclick="resetUserData('book')">очистить форму</a>.</p></div>
+				<div class="formRemember"><p>
+					We&nbsp;automatically put your personal info from your last order. You can <a onclick="resetUserData('book')">clear&nbsp;it</a>, if&nbsp;necessary.
+					</p></div>
 	
 				<div class="bookFormSection">
 					<div class="bookFormGroup">
-						<label class="formGroup__label" for="f-name">Представьтесь</label>
+						<label class="formGroup__label" for="f-name">Your name</label>
 						<input name="f-name" id="f-name" type="text" class="formGroup__input" placeholder="Иванов Иван">
 					</div>
 					<div class="bookFormGroup bookFormGroup_required">
-						<label class="formGroup__label" for="f-phone">Телефон</label>
-						<p class="formGroup__error">Пожалуйста, укажите свой телефон</p>
+						<label class="formGroup__label" for="f-phone">Phone</label>
+						<p class="formGroup__error">Please fill out this field</p>
 						<input name="f-phone" id="f-phone" class="formGroup__input" type="tel" value="+7 " required placeholder="+7 ___ ___-__-__">
 					</div>
 				</div>
 	
 				<div class="bookFormSection" id="f-order">
-					<p class="formGroup__error">Пожалуйста, выберите хотя бы один пункт</p>
+					<p class="formGroup__error">Please select at least one item</p>
 					<div class="bookFormGroup bookFormGroup_checkbox">
 						<input class="formGroup__checkbox" type="checkbox" name="f-order_bar" id="f-order_bar">
-						<label class="formGroup__label" for="f-order_bar">Забронировать столик в Строганина-баре</label>
+						<label class="formGroup__label" for="f-order_bar">Reserve a table at the Stroganina-bar</label>
 	
 						<div class="bookFormGroup__details">
 							<div class="bookFormGroup__dateTime formGroup_date">
-								<label class="formGroup__label" for="f-bar_date">Дата</label>
+								<label class="formGroup__label" for="f-bar_date">Date</label>
 								<input name="f-bar_date" id="f-bar_date" class="formGroup__input js-datepicker-bar" type="text" placeholder="24.07.2016">
 							</div><!--
 							--><div class="bookFormGroup__dateTime formGroup_time">
-								<label class="formGroup__label" for="f-bar_time">Время</label>
+								<label class="formGroup__label" for="f-bar_time">Time</label>
 								<input name="f-bar_time" id="f-bar_time" class="formGroup__input js-timepicker-bar" type="text" placeholder="18:00">
 								<div class="ui-timepicker-dropdown js-timepicker-bar-dropdown"></div>
 							</div>
-							<p class="formGroup__error">Пожалуйста, укажите дату и время бронирования столика в Строганина-баре</p>
+							<p class="formGroup__error">Please specify the date and time of your reservation</p>
 						</div>
 					</div>
 	
 					<div class="bookFormGroup bookFormGroup_checkbox">
 						<input class="formGroup__checkbox" type="checkbox" name="f-order_space" id="f-order_space">
-						<label class="formGroup__label" for="f-order_space">Арендовать зал для мероприятия в «Пространстве»</label>
+						<label class="formGroup__label" for="f-order_space">Rent a hall for your event at «Space Hall»</label>
 	
 						<div class="bookFormGroup__details">
 							<div class="bookFormGroup__dateTime formGroup_date">
-								<label class="formGroup__label" for="f-space_date">Дата</label>
+								<label class="formGroup__label" for="f-space_date">Date</label>
 								<input name="f-space_date" id="f-space_date" class="formGroup__input js-datepicker-space" type="text" placeholder="24.07.2016">
 							</div><!--
 							--><div class="bookFormGroup__dateTime formGroup_time">
-								<label class="formGroup__label" for="f-space_time">Время</label>
+								<label class="formGroup__label" for="f-space_time">Time</label>
 								<input name="f-space_time" id="f-space_time" class="formGroup__input js-timepicker-space" type="text" placeholder="18:00">
 								<div class="ui-timepicker-dropdown js-timepicker-space-dropdown"></div>
 							</div>
-							<p class="formGroup__error">Пожалуйста, укажите дату и время аренды зала в «Пространстве»</p>
+							<p class="formGroup__error">Please specify the date and time of your reservation</p>
 						</div>
 					</div>
 	
 					<div class="bookFormGroup bookFormGroup_checkbox">
 						<input class="formGroup__checkbox" type="checkbox" name="f-order_lunch" id="f-order_lunch">
-						<label class="formGroup__label" for="f-order_lunch">Оформить подписку на доставку бизнес-ланчей в офис</label>
+						<label class="formGroup__label" for="f-order_lunch">Subscribe for delivery of business lunches to your office</label>
 	
 						<div class="bookFormGroup__details">
-							<p class="p-compact">Наши менеджеры свяжутся с вами по телефону для уточнения подробностей</p>
+							<p class="p-compact">Our managers will contact you by phone for details</p>
 						</div>
 	
 					</div>
@@ -108,29 +110,29 @@
 				<div class="bookFormSection">
 					<div class="bookFormGroup bookFormGroup_checkbox">
 						<input class="formGroup__checkbox" type="checkbox" name="f-order_sub" id="f-order_sub">
-						<label class="formGroup__label" for="f-order_sub">Подписаться на дайджест новостей и мероприятий в&nbsp;«Пространстве»</label>
+						<label class="formGroup__label" for="f-order_sub">Subscribe for our digest of&nbsp;news and events in&nbsp;the Space Hall</label>
 	
 						<div class="bookFormGroup bookFormGroup__details bookFormGroup_required">
 							<label class="formGroup__label" for="f-email">E-mail</label>
-							<p class="formGroup__error">Пожалуйста, укажите свой e-mail</p>
+							<p class="formGroup__error">Please fill out this field</p>
 							<input name="f-email" id="f-email" class="formGroup__input" type="email" placeholder="ivanov@gmail.com">
 						</div>
 					</div>
 				</div>
 
 				<div class="bookFormGroup">
-					<label class="formGroup__label" for="f-text">Комментарий</label>
+					<label class="formGroup__label" for="f-text">Extra information</label>
 					<textarea name="f-text" id="f-text" onkeyup="autoGrowTextArea(this)" class="formGroup__input" rows="3"></textarea>
 
 					<div class="formPrivacy">
-						<p>даю <a href="#">согласие на обработку</a> своих персональных данных</p>
+						<p>I accept the <a href="#">Privacy Policy</a></p>
 					</div>
 				</div>
 
 
 				<div class="bookForm__button">
 					<button class="js-form-loader btn btn_primary" onclick="sendBookForm()">
-						<p>Отправить</p>
+						<p>Submit</p>
 						<div class="btn__spinner">
 							<div class="pt"></div>
 							<div class="pt"></div>
@@ -143,9 +145,9 @@
 			<div class="bookSuccess">
 				<div class="checkmark"></div>
 				<div class="bookSuccess__text">
-					<p>Вы <span id="bookSuccess_text"></span>. В&nbsp;ближайшее время мы&nbsp;свяжемся с&nbsp;вами, чтобы подтвердить заявку.</p>
+					<p>You <span id="bookSuccess_text"></span>. We&nbsp;will contact you as&nbsp;soon as&nbsp;possible to&nbsp;confirm your request</p>
 				</div>
-				<p class="p-secondary">Ищите нас в любимых социальных сетях</p>
+				<p class="p-secondary">Visit&nbsp;us on&nbsp;your favorite social networkss</p>
 
 				<div class="bookSuccess__soc-links">
 					<ul class="soc-links">
@@ -161,7 +163,7 @@
 		<!-- END of book -->
 		
 		<!-- BEGIN of header -->
-		<header class="header">
+		<header class="header header_en">
 			<div class="headerInner">
 				<button class="header__mobileNavTrigger hamburger hamburger--slider" type="button">
 				  <span class="hamburger-box">
@@ -173,12 +175,9 @@
 
 				<nav class="header__nav">
 					<ul class="nav">
-						<li class="nav__item"><a href="#">Главная</a></li><!--
-						--><li class="nav__item"><a href="#">Бар</a></li><!--
-						--><li class="nav__item"><a href="#">Магазин кулинарии</a></li><!--
-						--><li class="nav__item nav__item_isActive"><a href="#">Пространство</a></li><!--
-						--><li class="nav__item"><a href="#">Афиша</a></li><!--
-						--><li class="nav__item"><a href="#">Контакты</a></li>
+						<li class="nav__item"><a href="#">Home</a></li><!--
+						--><li class="nav__item"><a href="#">About bar</a></li><!--
+						--><li class="nav__item"><a href="#">Contact us</a></li>
 					</ul>
 					<div class="navMobile">
 						<p class="navMobile__phone"><a href="tel:73822502800">502-800</a></p>
@@ -192,69 +191,23 @@
 							</ul>
 						</div>
 						<div class="navMobile__buttons">
-							<button type="button" onclick="showBookForm()" class="btn btn_primary"><p>Забронировать</p></button>
+							<button type="button" onclick="showBookForm()" class="btn btn_primary"><p>Reserve now</p></button>
 						</div>
 					</div>
 				</nav>
 				<div class="headerSide">
 					<ul class="langSwitch">
-						<li class="langSwitch__item langSwitch__item_isActive"><a href="#">RU</a></li>
-						<li class="langSwitch__item"><a href="#">EN</a></li>
+						<li class="langSwitch__item"><a href="#">RU</a></li>
+						<li class="langSwitch__item langSwitch__item_isActive"><a href="#">EN</a></li>
 					</ul>
 					<div class="headerSide__phone"><a href="tel:773822502800">502-800</a></div>
 					<div class="headerSide__minicart minicart">
 						<div class="minicart__title">
 							<p>
 								<span class="minicart__icon"></span>
-								<span class="minicart__text">Корзина/</span><span>0</span>
+								<span class="minicart__text">Cart/</span><span>0</span>
 							</p>
-							<div class="minicart__dummy"><p>Совсем скоро вы сможете заказать товары из каталога Магазина кулинарии прямо на сайте</p></div>
-						</div>
-
-						<div class="minicartWrap">
-							<div class="minicartContent">
-								<div class="minicart__header"><p>В вашей корзине:</p></div>
-								<div class="minicart__empty"><p>Здесь будет отображаться ваш заказ.</p></div>
-								<ul class="minicart__items">
-									<li class="minicart__item">
-										<div class="minicartItem__title"><p>Полярный плашкоут (50/50/50/50/50/50/45/45 г)</p></div>
-										<div class="minicartItem__buttons">
-											<button class="btn-minus js-cart-minus" data-id="39_1"><p>–</p></button><!--
-										--><input class="btn-count" id="count-39_1" type="text" disabled="" value="1" maxlength="3"><!--
-										--><button class="btn-plus js-cart-plus" data-id="39_1"><p>+</p></button>
-										</div>
-										<div class="minicartItem__price"><p>3 100 Р</p></div>
-										<div class="minicartItem__remove"><button><p>×</p></button></div>
-									</li>
-									<li class="minicart__item">
-										<div class="minicartItem__title"><p>Жирная свинюха</p></div>
-										<div class="minicartItem__buttons">
-											<button class="btn-minus js-cart-minus" data-id="39_1"><p>–</p></button><!--
-										--><input class="btn-count" id="count-39_1" type="text" disabled="" value="1" maxlength="3"><!--
-										--><button class="btn-plus js-cart-plus" data-id="39_1"><p>+</p></button>
-										</div>
-										<div class="minicartItem__price"><p>100 Р</p></div>
-										<div class="minicartItem__remove"><button><p>×</p></button></div>
-									</li>
-									<li class="minicart__item">
-										<div class="minicartItem__title"><p>Васькино бухлишко, оно так утоляет жажду, и я чувствую себя человеком! </p></div>
-										<div class="minicartItem__buttons">
-											<button class="btn-minus js-cart-minus" data-id="39_1"><p>–</p></button><!--
-										--><input class="btn-count" id="count-39_1" type="text" disabled="" value="42" maxlength="3"><!--
-										--><button class="btn-plus js-cart-plus" data-id="39_1"><p>+</p></button>
-										</div>
-										<div class="minicartItem__price"><p>1 002 Р</p></div>
-										<div class="minicartItem__remove"><button><p>×</p></button></div>
-									</li>
-								</ul>
-
-								<div class="minicart__footer">
-									<div class="minicart__total"><p>Итого: <span>3 300 Р</span></p></div>
-									<div class="minicart__button">
-										<a href="#" class="btn btn_primary"><p>Перейти к оформлению</p></a>
-									</div>
-								</div>
-							</div>
+							<div class="minicart__dummy"><p>Purchase items from Cookery Store online. Coming soon (in russian)</p></div>
 						</div>
 					</div>
 				</div>
@@ -266,11 +219,11 @@
 		<div class="hero" style="background-image:url('assets/img/index__hero.jpg')">
 			<div class="heroWrap">
 				<div class="heroContent">
-					<div class="hero__title"><h1>Строганина-бар</h1></div>
-					<div class="hero__desc"><p><strong>Открытие 8-10 сентября</strong><br>Место для тех, кто ценит натуральное&nbsp;&mdash; как в&nbsp;продуктах, так и&nbsp;в&nbsp;людях. Единственное место в&nbsp;Томске, где ужиная деликатесами северной кухни, вы&nbsp;можете спланировать мероприятие и&nbsp;тут&nbsp;же провести его в&nbsp;&laquo;Пространстве&raquo;.</p></div>
+					<div class="hero__title"><h1>Stroganina Bar</h1></div>
+					<div class="hero__desc"><p><strong>Opening September, 8-10</strong> <br>A&nbsp;place for people who appreciate natural&mdash;both in&nbsp;food and in&nbsp;people. The only place in&nbsp;Tomsk where you, while enjoying delicacies of&nbsp;the northern cuisine, can plan your event and hold it&nbsp;right here&mdash;in the Space Hall.</p></div>
 					<ul class="heroInfo">
-						<li class="heroInfo__item"><p class="heroInfo__item_geo">Карла Маркса 17а, Томск</p></li>
-						<li class="heroInfo__item"><p class="heroInfo__item_time">С 12:00 до последнего гостя</p></li>
+						<li class="heroInfo__item"><p class="heroInfo__item_geo">17a Karla Marksa St., Tomsk</p></li>
+						<li class="heroInfo__item"><p class="heroInfo__item_time">From 12:00 p.m. until the last guest leaves</p></li>
 					</ul>
 				</div>
 			</div>
@@ -282,35 +235,35 @@
 			<div class="slideWrap">
 				<div class="slideContentWrap">
 					<div class="slideContent">
-						<div class="slide__title"><h2>Бар</h2></div>
-						<div class="slide__text"><p>Строганина-бар в&nbsp;Томске&nbsp;&mdash; место для проведения запланированных деловых встреч и&nbsp;спонтанных душевных сабантуев со&nbsp;старыми друзьями. В&nbsp;меню бара вкусная еда и&nbsp;напитки собственного приготовления.</p></div>
+						<div class="slide__title"><h2>Bar</h2></div>
+						<div class="slide__text"><p>Stroganina Bar in&nbsp;Tomsk is&nbsp;a&nbsp;place for scheduled business meetings and spontaneous intimate parties with old friends. The Bar offers its own delicious food and drinks.</p></div>
 						<div class="slide__buttons">
-							<button type="button" onclick="showBookForm('bar')" class="btn btn_primary"><p>Забронировать</p></button>
-							<a href="#" class="btn"><p>Перейти в бар</p></a>
+							<button type="button" onclick="showBookForm('bar')" class="btn btn_primary"><p>Reserve now</p></button>
+							<a href="#" class="btn"><p>Learn more</p></a>
 						</div>
 						<ul class="slideExtras">
 							<li class="slideExtrasWrap">
 								<div class="slideExtras__item">
 									<img src="assets/img/index__slide1-1.svg" alt="">
-									<p>Северные деликатесы</p>
+									<p>Northern delicacies</p>
 								</div>
 							</li>
 							<li class="slideExtrasWrap">
 								<div class="slideExtras__item">
 									<img src="assets/img/index__slide1-2.svg" alt="">
-									<p>Фирменные настойки</p>
+									<p>Specialty liquors</p>
 								</div>
 							</li>
 							<li class="slideExtrasWrap">
 								<div class="slideExtras__item">
 									<img src="assets/img/index__slide1-3.svg" alt="">
-									<p>Банкеты</p>
+									<p>Banquets</p>
 								</div>
 							</li>
 							<li class="slideExtrasWrap">
 								<div class="slideExtras__item">
 									<img src="assets/img/index__slide1-4.svg" alt="">
-									<p>Новинки от шеф-повара</p>
+									<p>Novelty from our Master Chef</p>
 								</div>
 							</li>
 						</ul>
@@ -325,28 +278,29 @@
 			<div class="slideWrap">
 				<div class="slideContentWrap">
 					<div class="slideContent">
-						<div class="slide__title"><h2>Магазин кулинарии</h2></div>
-						<div class="slide__text"><p>Магазин кулинарии&nbsp;&mdash; это интернет-магазин деликатесов, которые мы&nbsp;готовим на&nbsp;кухне в&nbsp;Строганина-баре. Такой формат позволяет вам накрывать на&nbsp;стол за&nbsp;5-10&nbsp;минут. Здесь вы&nbsp;найдете блюда из&nbsp;бара и&nbsp;дополнительные позиции, а&nbsp;также &laquo;гастрономические подарки&raquo; для поздравления делового партнера и&nbsp;друга.</p></div>
+						<div class="slide__title"><h2>Cookery Store</h2></div>
+						<div class="slide__text"><p>
+							Cookery Store is&nbsp;the online store of&nbsp;delicacies prepared in&nbsp;the kitchen of&nbsp;Stroganina Bar. This format allows you to&nbsp;lay the table within 5-10&nbsp;minutes. Here you will find dishes from the bar and extra items, as&nbsp;well as&nbsp;“delicious gifts” for your business partners and friends.</p></div>
 						<div class="slide__buttons">
-							<a href="#" class="btn btn_primary"><p>Перейти к меню</p></a>
+							<a href="#" class="btn btn_primary"><p>Go to the Menu</p></a>
 						</div>
 						<ul class="slideExtras">
 							<li class="slideExtrasWrap">
 								<div class="slideExtras__item">
 									<img src="assets/img/index__slide2-1.svg" alt="">
-									<p>Блюда из бара</p>
+									<p>Dishes from bar menu</p>
 								</div>
 							</li>
 							<li class="slideExtrasWrap">
 								<div class="slideExtras__item">
 									<img src="assets/img/index__slide2-2.svg" alt="">
-									<p>Кулинария</p>
+									<p>Cookery</p>
 								</div>
 							</li>
 							<li class="slideExtrasWrap">
 								<div class="slideExtras__item">
 									<img src="assets/img/index__slide2-3.svg" alt="">
-									<p>Подарки</p>
+									<p>Gifts</p>
 								</div>
 							</li>
 						</ul>
@@ -361,29 +315,25 @@
 			<div class="slideWrap">
 				<div class="slideContentWrap">
 					<div class="slideContent">
-						<div class="slide__title"><h2>Пространство</h2></div>
-						<div class="slide__text"><p>Отдельное помещение в&nbsp;рамках общей концепции бара. Проводите бизнес-тренинги с&nbsp;онлайн-трансляцией, творческие мастерские и&nbsp;праздники, а&nbsp;мы&nbsp;поможем организовать их&nbsp;в&nbsp;лучшем виде. Помещение рассчитано на&nbsp;40&nbsp;человек, есть все необходимое оборудование.</p></div>
-						<div class="slide__buttons">
-							<a href="#" class="btn btn_primary"><p>Узнать больше</p></a>
-							<a href="#" class="btn btn_long"><p>Афиша мероприятий</p></a>
-						</div>
+						<div class="slide__title"><h2>Space Hall</h2></div>
+						<div class="slide__text"><p>It&nbsp;is&nbsp;a&nbsp;separate hall under the general concept of&nbsp;the bar. You are welcome to&nbsp;hold business trainings with online broadcasting, creative workshops and holidays. We&nbsp;will help you to&nbsp;arrange them at&nbsp;the highest level. The hall is&nbsp;well equipped and accommodates 40&nbsp;guests.</p></div>
 						<ul class="slideExtras">
 							<li class="slideExtrasWrap">
 								<div class="slideExtras__item">
 									<img src="assets/img/index__slide3-1.svg" alt="">
-									<p>Бизнес-мероприятия</p>
+									<p>Business events</p>
 								</div>
 							</li>
 							<li class="slideExtrasWrap">
 								<div class="slideExtras__item">
 									<img src="assets/img/index__slide3-2.svg" alt="">
-									<p>Мастер-классы</p>
+									<p>Master classes</p>
 								</div>
 							</li>
 							<li class="slideExtrasWrap">
 								<div class="slideExtras__item">
 									<img src="assets/img/index__slide3-3.svg" alt="">
-									<p>Праздники</p>
+									<p>Holidays</p>
 								</div>
 							</li>
 						</ul>
@@ -412,13 +362,15 @@
 					<a class="footer__logo" href="#" target="_blank"><img src="assets/img/footer__logo1.svg" alt=""></a>
 					<a class="footer__logo" href="#" target="_blank"><img src="assets/img/footer__logo2.svg" alt=""></a>
 					<div class="footer__text">
-						<p>&raquo;Строганина-бар Экспедиция&laquo;&nbsp;&mdash; проект <a href="http://wincorp.ru/?from=stroganina-bar.ru" target="_blank">ГК&nbsp;WIN&nbsp;Corp</a>, в&nbsp;Томске создан по&nbsp;франшизе ГК&nbsp;&laquo;Руян&raquo; (Экспедиция)</p>
+						<p>
+							Stroganina Bar Expedition, a&nbsp;project of&nbsp;<a href="http://wincorp.ru/?from=stroganina-bar.ru" target="_blank">WIN Corp Group</a> based on&nbsp;the franchise from Ruyan Group
+							</p>
 					</div>
 				</div>
 				<div class="footer__contacts">
 					<p><a href="tel:73822502800">+7 (3822) 502-800</a>,<br>
-						Томск, Карла Марска, 17а
-						<a class="footer__link" href="#">На карте</a></p>
+						17a Karla Marksa St., Tomsk
+						<a class="footer__link" href="#">On map</a></p>
 				</div>
 				<div class="footer__links">
 					<ul class="soc-links">
@@ -439,7 +391,7 @@
 		<div id="updown"><div id="updown-container"></div></div>
 
 		<!-- BEGIN of sticky -->
-		<button type="button" class="btn btn_primary btn_nohover sticky" onclick="showBookForm()"><p>Забронировать</p></button>
+		<button type="button" class="btn btn_primary btn_nohover sticky" onclick="showBookForm()"><p>&nbsp;&nbsp;Reserve now&nbsp;&nbsp;</p></button>
 		<!-- END of sticky -->
 
 

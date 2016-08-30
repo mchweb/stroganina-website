@@ -215,6 +215,8 @@
 	display:inline-block;
 	vertical-align:middle;
 	& p {
+		display:inline-block;
+		padding-top:rhythm(1, 12px);
 		@extend .p-secondary;
 	}
 	& a{
@@ -227,8 +229,9 @@
 
 .footerBottom__author{
 	float:right;
-	display:inline-block;
-	vertical-align:middle;
+	padding-top:rhythm(2);
+	//display:inline-block;
+	//vertical-align:middle;
 	& p {
 		@extend .p-secondary;
 	}

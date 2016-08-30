@@ -1,0 +1,251 @@
+<!doctype html>
+<html lang="ru">
+	<head>
+		<meta charset="utf-8">
+		<meta http-equiv="x-ua-compatible" content="ie=edge">
+		<meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no">
+
+		<title>Строганина-бар</title>
+		<meta name="description" content="Описание">
+		
+		<link rel="icon" href="favicon.ico" type="image/x-icon"/>
+		<link rel="apple-touch-icon" href="assets/img/apple-touch-icon.png">
+		
+		<!--[if lt IE 9]>
+			<script src="js/vendor/html5shiv.min.js"></script>
+		<![endif]-->
+
+		<!-- build:css assets/css/screen.min.css -->
+		<link rel="stylesheet" media="screen" href="assets/css/screen.css">
+		<!-- /build -->
+	</head>
+	<body>
+
+		<!--[if lt IE 11]>
+			<p style="text-align:center;font-size:20px;background:white;width:100%;z-index:10000;padding:20px 0px"><strong>Кажется, ваш браузер безнадежно устарел.</strong> Скорее всего, сайт будет отображаться и работать некорректно.<br/>Пожалуйста, <a style="color:red" href="http://browsehappy.com/" target="_blank">установите с одного из официальных сайтов</a> новую версию своего браузера.<br/></p>
+		<![endif]-->
+		<div class="modalBack"></div>
+
+		<!-- BEGIN of book -->
+		<div class="book">
+			<button type="button" class="book__close" onclick="hideBookForm()"><p>×</p></button>
+			<div class="book__title"><p>Contact us</p></div>
+			<form class="bookForm" action="javascript:void(null);" onSubmit="sendContactForm()">
+				<div class="formRemember"><p>
+					We&nbsp;automatically put your personal info from your last order. You can <a onclick="resetUserData('book')">clear&nbsp;it</a>, if&nbsp;necessary.
+					</p></div>
+	
+				<div class="bookFormSection">
+					<div class="bookFormGroup">
+						<label class="formGroup__label" for="f-name">Your name</label>
+						<input name="f-name" id="f-name" type="text" class="formGroup__input" placeholder="Иванов Иван">
+					</div>
+					<div class="bookFormGroup bookFormGroup_required">
+						<label class="formGroup__label" for="f-phone">Phone</label>
+						<p class="formGroup__error">Please fill out this field</p>
+						<input name="f-phone" id="f-phone" class="formGroup__input" type="tel" value="+7 " required placeholder="+7 ___ ___-__-__">
+					</div>
+					<div class="bookFormGroup bookFormGroup_required">
+						<label class="formGroup__label" for="f-text">Message</label>
+						<p class="formGroup__error">Please fill out this field</p>
+						<textarea name="f-text" id="f-text" onkeyup="autoGrowTextArea(this)" class="formGroup__input" rows="3" required=""></textarea>
+					</div>
+				</div>
+
+				<div class="bookFormSection">
+					<div class="bookFormGroup bookFormGroup_checkbox">
+						<input class="formGroup__checkbox" type="checkbox" name="f-order_sub" id="f-order_sub">
+						<label class="formGroup__label" for="f-order_sub">Subscribe for our digest of&nbsp;news and events in&nbsp;the Space Hall</label>
+	
+						<div class="bookFormGroup bookFormGroup__details bookFormGroup_required">
+							<label class="formGroup__label" for="f-email">E-mail</label>
+							<p class="formGroup__error">Please fill out this field</p>
+							<input name="f-email" id="f-email" class="formGroup__input" type="email" placeholder="ivanov@gmail.com">
+						</div>
+					</div>
+
+					<div class="formPrivacy">
+						<p>I accept the <a href="#">Privacy Policy</a></p>
+					</div>
+				</div>
+
+				<div class="bookForm__button">
+					<button class="js-form-loader btn btn_primary" onclick="sendContactForm()">
+						<p>Submit</p>
+						<div class="btn__spinner">
+							<div class="pt"></div>
+							<div class="pt"></div>
+							<div class="pt"></div>
+						</div>
+					</button>
+				</div>
+			</form>
+
+			<div class="bookSuccess">
+				<div class="checkmark"></div>
+				<div class="bookSuccess__text">
+					<p>Your message has been sent. We&nbsp;will contact you as&nbsp;soon as&nbsp;possible.</p>
+				</div>
+				<p class="p-secondary">Visit&nbsp;us on&nbsp;your favorite social networks</p>
+
+				<div class="bookSuccess__soc-links">
+					<ul class="soc-links">
+						<a href="#"><li class="soc-links__item soc-links__item_flamp"></li></a>
+						<a href="#"><li class="soc-links__item soc-links__item_fb"></li></a>
+						<a href="#"><li class="soc-links__item soc-links__item_insta"></li></a>
+						<a href="#"><li class="soc-links__item soc-links__item_tripadv"></li></a>
+						<a href="#"><li class="soc-links__item soc-links__item_email"></li></a>
+					</ul>
+				</div>
+			</div>
+		</div>
+		<!-- END of book -->
+		
+		<!-- BEGIN of header -->
+		<header class="header header_covered">
+			<div class="headerInner">
+				<button class="header__mobileNavTrigger hamburger hamburger--slider" type="button">
+				  <span class="hamburger-box">
+				    <span class="hamburger-inner"></span>
+				  </span>
+				</button>
+
+				<div class="header__logo"><a href="#"></a></div>
+
+				<nav class="header__nav">
+					<ul class="nav">
+						<li class="nav__item"><a href="#">Home</a></li><!--
+						--><li class="nav__item"><a href="#">About bar</a></li><!--
+						--><li class="nav__item"><a href="#">Contact us</a></li>
+					</ul>
+					<div class="navMobile">
+						<p class="navMobile__phone"><a href="tel:73822502800">502-800</a></p>
+						<div class="navMobile__soc-links">
+							<ul class="soc-links soc-links_onWhite">
+								<a href="#"><li class="soc-links__item soc-links__item_flamp"></li></a>
+								<a href="#"><li class="soc-links__item soc-links__item_fb"></li></a>
+								<a href="#"><li class="soc-links__item soc-links__item_insta"></li></a>
+								<a href="#"><li class="soc-links__item soc-links__item_tripadv"></li></a>
+								<a href="#"><li class="soc-links__item soc-links__item_email"></li></a>
+							</ul>
+						</div>
+						<div class="navMobile__buttons">
+							<button type="button" onclick="showBookForm()" class="btn btn_primary"><p>Reserve now</p></button>
+						</div>
+					</div>
+				</nav>
+				<div class="headerSide">
+					<ul class="langSwitch">
+						<li class="langSwitch__item"><a href="#">RU</a></li>
+						<li class="langSwitch__item langSwitch__item_isActive"><a href="#">EN</a></li>
+					</ul>
+					<div class="headerSide__phone"><a href="tel:773822502800">502-800</a></div>
+					<div class="headerSide__minicart minicart">
+						<div class="minicart__title">
+							<p>
+								<span class="minicart__icon"></span>
+								<span class="minicart__text">Cart/</span><span>0</span>
+							</p>
+							<div class="minicart__dummy"><p>Purchase items from Cookery Store online. Coming soon (in russian)</p></div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</header>
+		<!-- END of header -->
+
+		<!-- BEGIN of hero -->
+		<div id="map">
+			<script charset="utf-8" src="http://widgets.2gis.com/js/DGWidgetLoader.js"></script><script>	new DGWidgetLoader({"width":'100%',"height":740,"borderColor":"transparent","pos":{"lat":56.493229890664615,"lon":84.94540929794313,"zoom":16},"opt":{"city":"tomsk"},"org":[{"id":"70000001024327238"}]});</script>
+		</div>
+		<!-- END of hero -->
+
+		<!-- BEGIN of footer -->
+		<footer class="footer">
+			<div class="footerContent">
+				<div class="footerTop"> 
+					<div class="footerLeft">
+						<div class="footerLeft__text">
+							<p><a href="tel:73822502800">+7 (3822) 502-800</a>,<br>
+							<a href="mailto:info@stroganina-bar.ru">info@stroganina-bar.ru</a><br>
+							17a Karla Marksa St., Tomsk<br>
+							From 12:00 p.m. until the last guest leaves<br>
+						</p>
+						</div>
+	
+						<div class="footerLeft__links">
+							<ul class="soc-links">
+								<a href="#"><li class="soc-links__item soc-links__item_flamp"></li></a>
+								<a href="#"><li class="soc-links__item soc-links__item_fb"></li></a>
+								<a href="#"><li class="soc-links__item soc-links__item_insta"></li></a>
+								<a href="#"><li class="soc-links__item soc-links__item_tripadv"></li></a>
+								<a href="#"><li class="soc-links__item soc-links__item_email"></li></a>
+							</ul>
+							<button class="footerLeft__button btn btn_light" type="button" onclick="showBookForm()"><p>Contact us</p></button>
+						</div>
+					</div>
+
+					<div class="footerRight footerSubscribe">
+						<div class="footerSubscribe__form">
+							<div class="footerSubscribe__title"><p>Subscribe</p></div>
+							<div class="footerSubscribe__caption"><p>for&nbsp;our digest of&nbsp;the most interesting news and events in&nbsp;Stroganina bar</p></div>
+
+							<form class="footerForm" action="javascript:void(null);" onSubmit="sendFooterForm()">
+								<div class="footerForm__inputs">
+									<div class="footerFormGroup">
+										<input name="ff-name" id="ff-name" type="text" class="footerFormGroup__input" placeholder="Your name" required/>
+									</div>
+									<div class="footerFormGroup">
+										<input name="ff-email" id="ff-email" type="email" class="footerFormGroup__input" placeholder="Your e-mail" required/>
+									</div>
+									<div class="footerFormGroup_privacy formPrivacy">
+										<p>I accept the <a href="#">Privacy Policy</a></p>
+									</div>
+								</div>
+								<div class="footerForm__button">
+									<button class="btn btn_primary">
+										<p>Subscribe</p>
+										<div class="btn__spinner">
+											<div class="pt"></div>
+											<div class="pt"></div>
+											<div class="pt"></div>
+										</div>
+									</button>
+								</div>
+							</form>
+						</div>
+
+						<div class="footerSubscribe__success">
+							<div class="footerSubscribe__title"><p>You subscribed</p></div>
+							<div class="footerSubscribe__caption"><p>for&nbsp;our digest of&nbsp;the most interesting news and events in&nbsp;Stroganina bar.<br>
+								To&nbsp;confirm your subscription, please follow the link we&nbsp;sent to&nbsp;your e-mail.<br><br></p></div>
+							<div class="footerSubscribe__picture">
+								<img src="assets/img/subscribe__success.svg" alt="">
+							</div>
+						</div>
+					</div>
+				</div>
+
+				<div class="footerBottom">
+					<div class="footerBottom__text"><p>Stroganina Bar Expedition, a&nbsp;project of&nbsp;<a href="http://wincorp.ru/?from=stroganina-bar.ru" target="_blank">WIN Corp Group</a> based on&nbsp;the franchise from Ruyan Group</p></div>
+					<div class="footerBottom__author">
+						<a href="http://provocationstudio.ru/?from=stroganina-bar.ru" target="_blank">
+							<p class="footerBottom__authorTitle">Created by digital-studio</p>
+							<img class="footerBottom__authorLogo" src="assets/img/provocation.svg" alt="">
+						</a>
+					</div>
+				</div>
+			</div>
+		</footer>
+		<!-- END of footer -->
+
+		<div id="updown"><div id="updown-container"></div></div>
+
+		<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.4/jquery.min.js"></script>
+		<script>window.jQuery || document.write('<script src="assets/js/vendor/jquery.min.js"><\/script>')</script>
+		<!--<script src="https://api-maps.yandex.ru/2.1/?lang=ru_RU" type="text/javascript"></script>-->
+		<!-- build:js assets/js/main.min.js -->
+		<script src="assets/js/main.js"></script>
+		<!-- /build -->
+	</body>
+</html>

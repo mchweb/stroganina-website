@@ -34,6 +34,9 @@ p.dataMask&&b.applyDataMask();setInterval(function(){b.jMaskGlobals.watchDataMas
 var i=s.getLeadingZeroNum,a={hourMin:this.minHours,hourMax:i(this.maxHours),hourStep:this.opts.hoursStep,hourValue:i(this.displayHours),minMin:this.minMinutes,minMax:i(this.maxMinutes),minStep:this.opts.minutesStep,minValue:i(this.minutes)},n=s.template(t,a);this.$timepicker=e(n).appendTo(this.d.$datepicker),this.$ranges=e('[type="range"]',this.$timepicker),this.$hours=e('[name="hours"]',this.$timepicker),this.$minutes=e('[name="minutes"]',this.$timepicker),this.$hoursText=e(".datepicker--time-current-hours",this.$timepicker),this.$minutesText=e(".datepicker--time-current-minutes",this.$timepicker),this.d.ampm&&(this.$ampm=e('<span class="datepicker--time-current-ampm">').appendTo(e(".datepicker--time-current",this.$timepicker)).html(this.dayPeriod),this.$timepicker.addClass("-am-pm-"))},_updateCurrentTime:function(){var t=s.getLeadingZeroNum(this.displayHours),e=s.getLeadingZeroNum(this.minutes);this.$hoursText.html(t),this.$minutesText.html(e),this.d.ampm&&this.$ampm.html(this.dayPeriod)},_updateRanges:function(){this.$hours.attr({min:this.minHours,max:this.maxHours}).val(this.hours),this.$minutes.attr({min:this.minMinutes,max:this.maxMinutes}).val(this.minutes)},_handleDate:function(t){this._setDefaultMinMaxTime(),t&&(s.isSame(t,this.d.opts.minDate)?this._setMinTimeFromDate(this.d.opts.minDate):s.isSame(t,this.d.opts.maxDate)&&this._setMaxTimeFromDate(this.d.opts.maxDate)),this._validateHoursMinutes(t)},update:function(){this._updateRanges(),this._updateCurrentTime()},_getValidHoursFromDate:function(t,e){var i=t,a=t;t instanceof Date&&(i=s.getParsedDate(t),a=i.hours);var n=e||this.d.ampm,h="am";if(n)switch(!0){case 0==a:a=12;break;case 12==a:h="pm";break;case a>11:a-=12,h="pm"}return{hours:a,dayPeriod:h}},set hours(t){this._hours=t;var e=this._getValidHoursFromDate(t);this.displayHours=e.hours,this.dayPeriod=e.dayPeriod},get hours(){return this._hours},_onChangeRange:function(t){var i=e(t.target),s=i.attr("name");this.d.timepickerIsActive=!0,this[s]=i.val(),this._updateCurrentTime(),this.d._trigger("timeChange",[this.hours,this.minutes]),this._handleDate(this.d.lastSelectedDate),this.update()},_onSelectDate:function(t,e){this._handleDate(e),this.update()},_onMouseEnterRange:function(t){var i=e(t.target).attr("name");e(".datepicker--time-current-"+i,this.$timepicker).addClass("-focus-")},_onMouseOutRange:function(t){var i=e(t.target).attr("name");this.d.inFocus||e(".datepicker--time-current-"+i,this.$timepicker).removeClass("-focus-")},_onMouseUpRange:function(t){this.d.timepickerIsActive=!1}}}()}(window,jQuery);
 ;
 
+
+
+
 /////////////////////////////////////////////////////////////////////////////////////////////////////
 // header scrolling
 function headerScroll(){
@@ -51,8 +54,6 @@ $(document).ready(function() {
 	});
 });
 /////////////////////////////////////////////////////////////////////////////////////////////////////
-
-
 
 /////////////////////////////////////////////////////////////////////////////////////////////////////
 // book form
@@ -77,10 +78,16 @@ $(document).ready(function() {
 	$('.js-timepicker-space').mask("00:00");
 
 	var d = new Date();
+	var m = new Date(2016, 8, 8);
+	if (d > m){
+		m = new Date();
+	}
+
 	d.setMonth(d.getMonth() + 6);
 
+
 	$('.js-datepicker-bar').datepicker({
-		minDate: new Date(),
+		minDate: m,
 		maxDate: d,
 		autoClose:true,
 		offset:9,
@@ -100,7 +107,7 @@ $(document).ready(function() {
 	$('.js-datepicker-bar').mask("00.00.0000");
 
 	$('.js-datepicker-space').datepicker({
-		minDate: new Date(),
+		minDate: m,
 		maxDate: d,
 		autoClose:true,
 		offset:9,
@@ -131,15 +138,13 @@ function rememberUserData(name, phone, email){
 	if (email != ""){
 		localStorage.setItem("email", email);
 	}
-	//if (localStorage.getItem("lastorder") != null) {
-	//}
 }
 function fillUserData(form){
 	if (localStorage.getItem("remember") != null) {
 		$(".formRemember").each(function(){
 			$(this).addClass("formRemember__isActive");
 		});
-		if (form == null || form == "book" || form == "contact"){
+		if (form == null || form == "book"){
 			if (localStorage.getItem("name") != null){
 				$('#f-name').val(localStorage.getItem("name"));
 			}
@@ -148,6 +153,17 @@ function fillUserData(form){
 			}
 			if (localStorage.getItem("email") != null){
 				$('#f-email').val(localStorage.getItem("email"));
+			}
+		}
+		if (form == null || form == "contact"){
+			if (localStorage.getItem("name") != null){
+				$('#fc-name').val(localStorage.getItem("name"));
+			}
+			if (localStorage.getItem("phone") != null){
+				$('#fc-phone').val(localStorage.getItem("phone"));
+			}
+			if (localStorage.getItem("email") != null){
+				$('#fc-email').val(localStorage.getItem("email"));
 			}
 		}
 		if (form == null || form == "footer"){
@@ -164,30 +180,46 @@ function resetUserData(form){
 	$(".formRemember").each(function(){
 		$(this).removeClass("formRemember__isActive");
 	});
-	if (form == null || form == "book" || form == "contact"){
+	if (form == null || form == "book"){
 		$('#f-name').val("");
 		$('#f-phone').val("+7 ");
 		$('#f-email').val("");
+	}
+	if (form == null || form == "contact"){
+		$('#fc-name').val("");
+		$('#fc-phone').val("+7 ");
+		$('#fc-email').val("");
 	}
 }
 $(document).ready(function() {
 	fillUserData();
 });
 function showBookForm(x){
-	$('.book').addClass('book_isActive');
+	$('.book_book').addClass('book_isActive');
 	closeMenuMobile();
 	if (x != null){
 		resetBookForm();
-		fillUserData(x);
+		fillUserData();
 		$('#f-order_' + x).prop('checked', true);
 	}
 	
 	$("body").addClass("modal_open");
 }
+function showContactForm(x){
+	$('.book_contact').addClass('book_isActive');
+	closeMenuMobile();
+	
+	$("body").addClass("modal_open");
+}
 function hideBookForm(){
-	$('.book').removeClass('book_isActive');
+	$('.book_book').removeClass('book_isActive');
 	$("body").removeClass("modal_open");
-	setTimeout(function(){$(".book").removeClass("book_success");}, 0.4 * 1000);
+	setTimeout(function(){$(".book_book").removeClass("book_success");}, 0.4 * 1000);
+}
+function hideContactForm(){
+	$('.book_contact').removeClass('book_isActive');
+	$("body").removeClass("modal_open");
+	setTimeout(function(){$(".book_contact").removeClass("book_success");}, 0.4 * 1000);
 }
 function resetBookForm(){
 	$(".bookForm")[0].reset();
@@ -204,20 +236,51 @@ function resetBookForm(){
 		$(this).removeClass("bookFormGroup_invalid");
 	});
 }
-function successBookForm(bar_dt, space_dt, lunch, sub){
+function successBookForm(bar_date, bar_time, space_date, space_time, lunch, sub, loc){
 	var string = "", st = [];
+	var lan = [];
+	if (loc == "en"){
+		lan[0] = "have reserved a&nbsp;table at&nbsp;the bar for&nbsp;";
+		lan[1] = "have reserved the Space Hall for&nbsp;";
+		lan[2] = "made a&nbsp;request for delivery of&nbsp;business lunches to&nbsp;your office";
+		lan[3] = "subscribed for our digest";
+	}else{
+		lan[0] = "забронировали столик в&nbsp;баре на&nbsp;";
+		lan[1] = "оставили заявку на&nbsp;аренду зала в&nbsp;&laquo;Пространстве&raquo; на&nbsp;";
+		lan[2] = "оставили заявку на&nbsp;доставку бизнес-ланчей в&nbsp;офис";
+		lan[3] = "подписались на&nbsp;наш дайджест";
+	}
 
-	if (bar_dt != null){
-		st.push("забронировали столик в&nbsp;баре на&nbsp;" + bar_dt);
+	var f_bar_dt ="", f_space_dt = "";
+	var userAgent = window.navigator.userAgent;
+
+	if (userAgent.match(/iPad/i) || userAgent.match(/iPhone/i) || loc == "en") {
+		if (bar_date != "" && bar_time != ""){ f_bar_dt = bar_date.toString() + ", " + bar_time.toString(); }
+		if (space_date != "" && space_time != ""){ f_space_dt = space_date.toString() + ", " + space_time.toString(); }
 	}
-	if (space_dt != null){
-		st.push("оставили заявку на&nbsp;аренду зала в&nbsp;&laquo;Пространстве&raquo; на&nbsp;" + space_dt);
+	else {
+		var options = {month: 'long',  day: 'numeric'}, dt;
+		if (bar_date != "" && bar_time != ""){
+			dt = bar_date.split("."),
+			f_bar_dt = new Date(dt[2], (dt[1] - 1), dt[0]).toLocaleString("ru", options).replace(" ", "&nbsp;") + ", " + bar_time.toString();
+		}
+		if (space_date != "" && space_time != ""){
+			dt = space_date.split("."),
+			f_space_dt = new Date(dt[2], (dt[1] - 1), dt[0]).toLocaleString("ru", options).replace(" ", "&nbsp;") + ", " + space_time.toString();
+		}
 	}
-	if (lunch != false){
-		st.push("оставили заявку на&nbsp;доставку бизнес-ланчей в&nbsp;офис");
+
+	if (f_bar_dt != ""){
+		st.push(lan[0] + f_bar_dt);
 	}
-	if (sub != false){
-		st.push("подписались на&nbsp;наш дайджест");
+	if (f_space_dt != ""){
+		st.push(lan[1] + f_space_dt);
+	}
+	if (lunch != ""){
+		st.push(lan[2]);
+	}
+	if (sub != ""){
+		st.push(lan[3]);
 	}
 
 	var l = st.length, i;
@@ -227,104 +290,9 @@ function successBookForm(bar_dt, space_dt, lunch, sub){
 	string += st[l-1];
 	$("#bookSuccess_text").html(string);
 
-	$(".book").addClass("book_success");
+	$(".book_book").addClass("book_success");
 	resetBookForm();
 	fillUserData('book');
-}
-function sendBookForm(){
-	var name = $('#f-name').val(),
-		phone = $('#f-phone').val(),
-		bar = $('#f-order_bar').prop("checked"),
-		bar_date = $('#f-bar_date').val(),
-		bar_time = $('#f-bar_time').val(),
-		space = $('#f-order_space').prop("checked"),
-		space_date = $('#f-space_date').val(),
-		space_time = $('#f-space_time').val(),
-		lunch = $('#f-order_lunch').prop("checked"),
-		sub = $('#f-order_sub').prop("checked"),
-		email = $('#f-email').val();
-	
-	$(".bookFormGroup").each(function(){
-		$(this).removeClass("bookFormGroup_invalid");
-	});
-	$(".bookFormGroup__dateTime").each(function(){
-		$(this).removeClass("bookFormGroup_invalid");
-	});
-	$(".bookFormSection").each(function(){
-		$(this).removeClass("bookFormGroup_invalid");
-	});
-
-	var isValid = true;
-	if (sub && (email == "")){
-		isValid = false;
-		$('#f-email').parent().addClass("bookFormGroup_invalid");
-		$('#f-email').focus();
-		$('#f-email').parent()[0].scrollIntoView();
-	}
-	if (space){
-		if (space_date == ""){
-			isValid = false;
-			$('#f-space_date').parent().addClass("bookFormGroup_invalid");
-			$('#f-space_date').focus();
-			$('#f-space_date').parent()[0].scrollIntoView();
-		}
-		if (space_time == ""){
-			isValid = false;
-			$('#f-space_time').parent().addClass("bookFormGroup_invalid");
-			if (space_date != ""){
-				$('#f-space_time').focus();
-				$('#f-space_time').parent()[0].scrollIntoView();
-			}
-		}	
-	}
-	if (bar){
-		if (bar_date == ""){
-			isValid = false;
-			$('#f-bar_date').parent().addClass("bookFormGroup_invalid");
-			$('#f-bar_date').focus();
-			$('#f-bar_date').parent()[0].scrollIntoView();
-		}
-		if (bar_time == ""){
-			isValid = false;
-			$('#f-bar_time').parent().addClass("bookFormGroup_invalid");
-			if (bar_date != ""){
-				$('#f-bar_time').focus();
-				$('#f-bar_time').parent()[0].scrollIntoView();
-			}
-		}
-
-	}
-	if (!bar && !space && !lunch && !sub){
-		isValid = false;
-		$('#f-order').addClass("bookFormGroup_invalid");
-		$('#f-order').focus();
-		$('#f-order')[0].scrollIntoView();
-	}
-	if (phone == "" || phone == "+7 "){
-		isValid = false;
-		$('#f-phone').parent().addClass("bookFormGroup_invalid");
-		$('#f-phone').focus();
-		$('#f-phone').parent()[0].scrollIntoView();
-	}
-	
-	if (!isValid){return}
-
-	$(".bookForm__button button").addClass("btn_loading");
-	$(".bookForm__button button").prop("disabled", true);
-
-	// отправляем форму
-
-	rememberUserData(name, phone, email);
-	var options = {month: 'long',  day: 'numeric'},
-		d1 = bar_date.split("."),
-		d2 = space_date.split(".");
-	successBookForm((bar_date == "") ? null : new Date(d1[2], (d1[1] - 1), d1[0]).toLocaleString("ru", options).replace(" ", "&nbsp;") + ", " + bar_time.toString(), 
-					(space_date == "") ? null : new Date(d2[2], (d2[1] - 1), d2[0]).toLocaleString("ru", options).replace(" ", "&nbsp;") + ", " + space_time.toString(), 
-					(lunch != ""),
-					(sub != ""));
-
-	$(".bookForm__button button").addClass("btn_loading");
-	$(".bookForm__button button").prop("disabled", true);
 }
 /////////////////////////////////////////////////////////////////////////////////////////////////////
 
@@ -334,74 +302,11 @@ function autoGrowTextArea(element) {
     element.style.height = "67px";
     element.style.height = (element.scrollHeight)+"px";
 }
-function sendContactForm(){
-	var name = $('#f-name').val(),
-		phone = $('#f-phone').val(),
-		text = $('#f-text').val(),
-		sub = $('#f-order_sub').prop("checked"),
-		email = $('#f-email').val();
-	
-	$(".bookFormGroup").each(function(){
-		$(this).removeClass("bookFormGroup_invalid");
-	});
-
-	var isValid = true;
-	if (sub && (email == "")){
-		isValid = false;
-		$('#f-email').parent().addClass("bookFormGroup_invalid");
-		$('#f-email').focus();
-		$('#f-email').parent()[0].scrollIntoView();
-	}
-	if (text == ""){
-		isValid = false;
-		$('#f-text').parent().addClass("bookFormGroup_invalid");
-		$('#f-text').focus();
-		$('#f-text').parent()[0].scrollIntoView();
-	}
-	if (phone == "" || phone == "+7 "){
-		isValid = false;
-		$('#f-phone').parent().addClass("bookFormGroup_invalid");
-		$('#f-phone').focus();
-		$('#f-phone').parent()[0].scrollIntoView();
-	}
-
-	if (!isValid){return}
-
-	rememberUserData(name, phone, email);
-	$(".book").addClass("book_success");
-	resetBookForm();
-	fillUserData('book');
-}
 /////////////////////////////////////////////////////////////////////////////////////////////////////
 
 /////////////////////////////////////////////////////////////////////////////////////////////////////
 // footer form
-function sendFooterForm(){
-	var name = $('#ff-name').val(),
-		email = $('#ff-email').val();
-	
-	$(".footerFormGroup").each(function(){
-		$(this).removeClass("footerFormGroup_invalid");
-	});
 
-	var isValid = true;
-	if (email == ""){
-		isValid = false;
-		$('#ff-email').parent().addClass("footerFormGroup_invalid");
-	}
-	if (name == ""){
-		isValid = false;
-		$('#ff-name').parent().addClass("footerFormGroup_invalid");
-	}
-
-	if (!isValid){return}
-
-	rememberUserData(name, "", email);
-	$(".footerSubscribe .footerSubscribe__form").fadeOut("",function(){
-		$(".footerSubscribe .footerSubscribe__success").fadeIn("");
-	});
-	
-}
 /////////////////////////////////////////////////////////////////////////////////////////////////////
 
 /////////////////////////////////////////////////////////////////////////////////////////////////////
@@ -431,6 +336,7 @@ $(document).ready(function() {
 	$(".modalBack").click(function(){
 		closeMenuMobile();
  		hideBookForm();
+ 		hideContactForm();
  		hideAllGoods();
 	});
 });
@@ -438,8 +344,7 @@ $(document).ready(function() {
 
 /////////////////////////////////////////////////////////////////////////////////////////////////////
 // minicart
-//!function(a){var b={},c={};c.attachEvent=function(b,c,d){return"addEventListener"in a?b.addEventListener(c,d,!1):void 0},c.fireFakeEvent=function(a,b){return document.createEvent?a.target.dispatchEvent(c.createEvent(b)):void 0},c.createEvent=function(b){if(document.createEvent){var c=a.document.createEvent("HTMLEvents");return c.initEvent(b,!0,!0),c.eventName=b,c}},c.getRealEvent=function(a){return a.originalEvent&&a.originalEvent.touches&&a.originalEvent.touches.length?a.originalEvent.touches[0]:a.touches&&a.touches.length?a.touches[0]:a};var d=[{test:("propertyIsEnumerable"in a||"hasOwnProperty"in document)&&(a.propertyIsEnumerable("ontouchstart")||document.hasOwnProperty("ontouchstart")||a.hasOwnProperty("ontouchstart")),events:{start:"touchstart",move:"touchmove",end:"touchend"}},{test:a.navigator.msPointerEnabled,events:{start:"MSPointerDown",move:"MSPointerMove",end:"MSPointerUp"}},{test:a.navigator.pointerEnabled,events:{start:"pointerdown",move:"pointermove",end:"pointerup"}}];b.options={eventName:"tap",fingerMaxOffset:11};var e,f,g,h,i={};e=function(a){return c.attachEvent(document.documentElement,h[a],g[a])},g={start:function(a){a=c.getRealEvent(a),i.start=[a.pageX,a.pageY],i.offset=[0,0]},move:function(a){return i.start||i.move?(a=c.getRealEvent(a),i.move=[a.pageX,a.pageY],void(i.offset=[Math.abs(i.move[0]-i.start[0]),Math.abs(i.move[1]-i.start[1])])):!1},end:function(d){if(d=c.getRealEvent(d),i.offset[0]<b.options.fingerMaxOffset&&i.offset[1]<b.options.fingerMaxOffset&&!c.fireFakeEvent(d,b.options.eventName)){if(a.navigator.msPointerEnabled||a.navigator.pointerEnabled){var e=function(a){a.preventDefault(),d.target.removeEventListener("click",e)};d.target.addEventListener("click",e,!1)}d.preventDefault()}i={}},click:function(a){return c.fireFakeEvent(a,b.options.eventName)?void 0:a.preventDefault()}},f=function(){for(var a=0;a<d.length;a++)if(d[a].test){h=d[a].events,e("start"),e("move"),e("end");break}return c.attachEvent(document.documentElement,"click",g.click)},c.attachEvent(a,"load",f),"function"==typeof define&&define.amd?define(function(){return f(),b}):a.Tap=b}(window);
-
+/*
 $(document).ready(function() {
 	var minicart_closing = false;
 
@@ -465,6 +370,7 @@ $(document).ready(function() {
     	}
 	});
 });
+*/
 /////////////////////////////////////////////////////////////////////////////////////////////////////
 
 /////////////////////////////////////////////////////////////////////////////////////////////////////
@@ -472,7 +378,10 @@ $(document).ready(function() {
 function closeMenuMobile(){
 	$(".hamburger").removeClass("is-active");
 	$(".header__nav").removeClass("header__nav_isActive");
-	if (!($('.book').hasClass('book_isActive'))){
+	if (!($('.book_book').hasClass('book_isActive'))){
+		$("body").removeClass("modal_open");
+	}
+	if (!($('.book_contact').hasClass('book_isActive'))){
 		$("body").removeClass("modal_open");
 	}
 }
@@ -648,19 +557,15 @@ $(document).ready(function() {
 //////////////////////////////////////////////////////////////////////////////////////////////////////
 // Ajax
 $(document).ajaxStart(function() {
-    $(".form-loader").each(function(){
-    	$(this).addClass("form-loader_isActive");
-    });
-    $(".js-send-btn").each(function(){
+    $(".js-form-loader").each(function(){
+    	$(this).addClass("btn_loading");
     	$(this).prop("disabled", true);
     });
 });
 
-$(document).ajaxStart(function() {
-    $(".form-loader").each(function(){
-    	$(this).removeClass("form-loader_isActive");
-    });
-    $(".js-send-btn").each(function(){
+$(document).ajaxStop(function() {
+    $(".js-form-loader").each(function(){
+    	$(this).removeClass("btn_loading");
     	$(this).prop("disabled", false);
     });
 });
