@@ -202,10 +202,15 @@
 		display:inline-block;
 		vertical-align:bottom;
 	}
+	& .footerSubscribe__success{
+		text-align:left;
+	}
 	& .footerSubscribe__picture {
 		margin-top:rhythm(2);
+		margin-left:0;
 		max-width:rhythm(8);
 	}
+
 }
 
 .footerBottom{

@@ -80,6 +80,6 @@ module.exports = function(grunt) {
     grunt.loadNpmTasks('grunt-postcss');
     grunt.loadNpmTasks('grunt-uncss');
 
-    grunt.registerTask('default', ['postcss', 'uglify', 'inlineImgSize', 'processhtml']);
+    grunt.registerTask('default', ['postcss', 'uglify', 'imagemin', 'processhtml']);
 
 };

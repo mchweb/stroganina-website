@@ -28,26 +28,71 @@
 		<!-- BEGIN of header -->
 		<header class="header header_black">
 			<div class="headerInner">
+				<button class="header__mobileNavTrigger hamburger hamburger--slider" type="button">
+				  <span class="hamburger-box">
+				    <span class="hamburger-inner"></span>
+				  </span>
+				</button>
+
 				<div class="header__logo"><a href="#"></a></div>
 
 				<nav class="header__nav">
 					<ul class="nav">
-						<li class="nav__item"><a href="#">Бар</a></li><!--
+						<li class="nav__item"><a href="#">Главная</a></li><!--
+						--><li class="nav__item"><a href="#">Бар</a></li><!--
 						--><li class="nav__item"><a href="#">Магазин кулинарии</a></li><!--
-						--><li class="nav__item"><a href="#">Пространство</a></li><!--
-						--><li class="nav__item nav__item_isActive"><a href="#">Афиша</a></li><!--
+						--><li class="nav__item nav__item_isActive"><a href="#">Пространство</a></li><!--
+						--><li class="nav__item"><a href="#">Афиша</a></li><!--
 						--><li class="nav__item"><a href="#">Контакты</a></li>
 					</ul>
+					<div class="navMobile">
+						<p class="navMobile__phone"><a href="tel:73822502800">502-800</a></p>
+						<div class="navMobile__soc-links">
+							<ul class="soc-links soc-links_onWhite">
+								<a href="#"><li class="soc-links__item soc-links__item_flamp"></li></a>
+								<a href="#"><li class="soc-links__item soc-links__item_fb"></li></a>
+								<a href="#"><li class="soc-links__item soc-links__item_insta"></li></a>
+								<a href="#"><li class="soc-links__item soc-links__item_tripadv"></li></a>
+								<a href="#"><li class="soc-links__item soc-links__item_email"></li></a>
+							</ul>
+						</div>
+						<ul class="navMobile__langSwitch">
+							<li class="langSwitch__item langSwitch__item_isActive"><a href="#">RU</a></li>
+							<li class="langSwitch__item"><a href="#">EN</a></li>
+						</ul>
+						<div class="navMobile__buttons">
+							<button type="button" onclick="showBookForm()" class="btn btn_primary"><p>Забронировать</p></button>
+						</div>
+					</div>
 				</nav>
 				<div class="headerSide">
-					<div class="headerSide__phone"><a href="tel:79131000987">+7 913 100-09-87</a></div>
+					<ul class="langSwitch">
+						<li class="langSwitch__item langSwitch__item_isActive"><a href="#">RU</a></li>
+						<li class="langSwitch__item"><a href="#">EN</a></li>
+					</ul>
+					<div class="headerSide__phone"><a href="tel:773822502800">502-800</a></div>
 					<div class="headerSide__minicart minicart">
-						<div class="minicart__title"><p>Корзина/<span>0</span></p></div>
+						<div class="minicart__title">
+							<p>
+								<span class="minicart__icon"></span>
+								<span class="minicart__text">Корзина/</span><span>0</span>
+							</p>
+							<div class="minicart__dummy"><p>Совсем скоро вы сможете заказать товары из каталога Магазина кулинарии прямо на сайте</p></div>
+						</div>
 					</div>
 				</div>
 			</div>
 		</header>
 		<!-- END of header -->
+
+		<!-- BEGIN of heading -->
+		<div class="heading">
+			<ul class="breadcrumbs event__breadcrumbs">
+				<li class="breadcrumbs__item"><a href="#">Афиша</a></li>
+				<li class="breadcrumbs__item">Мастер-класс по упаковке и продаже франшиз</li>
+			</ul>
+		</div>
+		<!-- END of heading -->
 
 		<!-- BEGIN of eventheading -->
 		<div class="eventHeading"  style="background-image:url('assets/img/event__picture.jpg')">
@@ -60,7 +105,7 @@
 							<div class="date__time"><p>14:00 — 16:00</p></div>
 						</div>
 				</div>
-				<div class="eventHeading__button"><a href="#" class="btn btn_primary"><p>Регистрация</p></a></div>
+				<div class="eventHeading__button"><a href="#eventReg" class="btn btn_primary"><p>Регистрация</p></a></div>
 				<div class="eventHeading__price eventHeading__price_sm"><p>Бесплатное<br>мероприятие</p></div>
 			</div>
 			
@@ -73,8 +118,10 @@
 				<div class="eventAuthor__picture">
 					<img src="assets/img/event__author.jpg" alt=""/>
 				</div>
-				<div class="eventAuthor__title"><p>Светлана Балыбина,<br>руководитель проектов</p></div>
-				<div class="eventAuthor__caption"><p>НП ПИТ «Бизнес<br>Партнеры»<br><a href="#">ipartner.pro</a></p></div>
+				<div class="eventAuthor__info">
+					<div class="eventAuthor__title"><p>Константин Константинопольский,<br>руководитель проектов</p></div>
+					<div class="eventAuthor__caption"><p>НП ПИТ «Бизнес<br>Партнеры»<br><a href="#">ipartner.pro</a></p></div>
+				</div>
 			</div>
 			<div class="event__info">
 				<ul class="eventTags">
@@ -88,11 +135,86 @@
 					<img src="assets/img/event__image1.jpg" height="310" width="653" alt="">
 					<h2>Для кого мастер-класс</h2>
 					<p>С легкого и яркого импрессионизма часто начинается наша любовь к изобразительному искусству. А знаете ли вы, что история импрессионизма началась еще в Древнем Египте? И охватила не только Францию, но и Россию, Италию, Скандинавию и Америку?</p>
+
+					<div class="notice">
+						<p>Основа, которую мы&nbsp;затронем сегодня&nbsp;— это ценность продукта и&nbsp;возможность различного варианта заработка на&nbsp;нём. Каждый прекрасно понимает, что создавать нечто никому не&nbsp;нужное&nbsp;— пустая трата сил и&nbsp;времени.</p>
+					</div>
+
+					<div class="quote quote_noImage">
+						<div class="quoteWrap">
+							<div class="quote__image"></div>
+							<div class="quote__text">
+								<p>Основа, которую мы&nbsp;затронем сегодня&nbsp;— это ценность продукта и&nbsp;возможность различного варианта заработка на&nbsp;нём. Каждый прекрасно понимает, что создавать нечто никому не&nbsp;нужное&nbsp;— пустая трата сил и&nbsp;времени.</p>
+								<p><strong>Константин Константинопольский</strong></p>
+							</div>
+						</div>
+					</div>
+
+
+					<div class="quote">
+						<div class="quoteWrap">
+							<div class="quote__image"><img src="assets/img/event__author.jpg" alt=""/></div>
+							<div class="quote__text">
+								<p>Основа, которую мы&nbsp;затронем сегодня&nbsp;— это ценность продукта и&nbsp;возможность различного варианта заработка на&nbsp;нём. Каждый прекрасно понимает, что создавать нечто никому не&nbsp;нужное&nbsp;— пустая трата сил и&nbsp;времени.</p>
+								<p><strong>Константин Константинопольский</strong></p>
+							</div>
+						</div>
+					</div>
+
+					<!-- BEGIN of carousel -->
+					<div class="carousel">
+						<div class="carouselWrap">
+							<ol class="carouselList">
+								<li class="carousel__item carousel__item_isActive" style="background-image:url('assets/img/bar__carousel1.jpg')"></li>
+								<li class="carousel__item" style="background-image:url('assets/img/bar__carousel2.jpg')"></li>
+								<li class="carousel__item" style="background-image:url('assets/img/bar__carousel3.jpg')"></li>
+								<li class="carousel__item" style="background-image:url('assets/img/bar__carousel4.jpg')"></li>
+								<li class="carousel__item" style="background-image:url('assets/img/bar__carousel5.jpg')"></li>
+							</ol>
+			
+							<button class="carousel__control prev"></button>
+							<button class="carousel__control next"></button>
+			
+							<ol class="carouselIndicators">
+								<li class="carousel__bullet"><button>•</button></li>
+								<li class="carousel__bullet"><button>•</button></li>
+								<li class="carousel__bullet"><button>•</button></li>
+								<li class="carousel__bullet"><button>•</button></li>
+								<li class="carousel__bullet"><button>•</button></li>
+							</ol>
+						</div>
+					</div>
+					<!-- END of carousel -->
+
+
+					<h2>Расписание</h2>
+					<table class="timetable">
+						<tr>
+							<th><p>Время</p></th>
+							<th><p>Событие</p></th>
+						</tr>
+						<tr>
+							<td><p>10:00&nbsp;—&nbsp;11:30</p></td>
+							<td>
+								<p><strong>Павел Кошак</strong></p>
+								<p>Франчайзинг как модель масштабирования — одна из самых проверенных быстрых моделей роста. Разумеется, как владелец бизнеса, вы приступаете к упаковке франшизы со словами «хочу владеть федеральным/мировым брендом».</p>
+							</td>
+						</tr>
+						<tr>
+							<td><p>11:30&nbsp;—&nbsp;12:00</p></td>
+							<td>
+								<p><strong>Дашка Евстегнеева</strong></p>
+								<p>Как тяжело живется современному подростку и как сложно работать в отпуске.</p>
+							</td>
+						</tr>
+					</table>
+
 					<div>
 						<img src="assets/img/event__image2.jpg" alt="">
 						<img src="assets/img/event__image3.jpg" alt="">
 					</div>
 				</div>
+				<a class="anchor" id="eventReg"></a>
 				<div class="eventReg">
 					<div class="eventReg__title"><p>Регистрация</p></div>
 					<div class="eventReg__caption"><p>Это бесплатное мероприятие, поэтому для участия вам нужно только зарегистрироваться. Все поля являются обязательными.</p></div>
@@ -106,25 +228,29 @@
 							<tr>
 								<td><p>Входной билет</p></td>
 								<td><p>Бесплатно</p></td>
-								<td><p><input class="eventForm__count" min="1" type="number" value="1"></input></p></td>
+								<td><p><input class="eventForm__count" min="1" name="e-count" id="e-count" type="number" value="1"></input></p></td>
 							</tr>
 						</table>
 
-						<div class="eventFormGroup">
-							<label class="eventFormGroup__label" for=""><p>Представьтесь</p></label>
-							<input class="eventFormGroup__input" type="text" placeholder="Иван Иванович"/>
+						<div class="eventFormGroup eventFormGroup_invalid">
+							<label class="eventFormGroup__label" for="e-name">Представьтесь</label>
+							<p class="eventFormGroup__error">Пожалуйста, введите ваше имя</p>
+							<input class="eventFormGroup__input" name="e-name" id="e-name" type="text" placeholder="Иван Иванович"/>
 						</div>
 
 						<div class="eventFormGroup">
-							<label class="eventFormGroup__label" for=""><p>E-mail</p></label>
-							<input class="eventFormGroup__input" type="email" placeholder="ivanov@gmail.com"/>
+							<label class="eventFormGroup__label" for="e-email">E-mail</label>
+							<p class="eventFormGroup__error">Пожалуйста, введите ваш e-mail</p>
+							<input class="eventFormGroup__input" name="e-email" id="e-email" type="email" placeholder="ivanov@gmail.com"/>
 						</div>
 
 						<div class="eventFormGroup">
-							<label class="eventFormGroup__label" for=""><p>Телефон</p></label>
-							<input class="eventFormGroup__input" type="phone" placeholder="+7 912 345-67-89"/>
+							<label class="eventFormGroup__label" for="e-phone">Телефон</label>
+							<p class="eventFormGroup__error">Пожалуйста, введите ваш телефон</p>
+							<input class="eventFormGroup__input" name="e-phone" id="e-phone" type="phone" placeholder="+7 912 345-67-89"/>
 						</div>
 
+						<!--
 						<div class="eventFormGroup eventFormGroup_radio">
 							<div class="eventForm__radio">
 								<label for="pt-12_0" class="eventFormGroup__radioLabel">
@@ -139,16 +265,18 @@
 								</label>
 							</div>
 						</div>
+						-->
+						
 						<div class="eventFormGroup">
-							
-							<label for="pt-13_0" class="eventFormGroup__radioLabel">
-								<input type="checkbox" name="pt-13" id="pt-13_0" class="eventFormGroup__radio" checked>
+							<label for="e-sub" class="eventFormGroup__radioLabel">
+								<input type="checkbox" name="e-sub" id="e-sub" class="eventFormGroup__radio" checked>
 								Я хочу получать дайджест интересных событий в «Пространстве» от Строганина-бара
 							</label>
 						</div>
 
+
 						<div class="eventForm__privacy formPrivacy">
-							<p>даю согласие на обработку своих персональных данных</p>
+							<p>даю <a href="javascript:void(0);" onclick="window.open('http://stroganina-bar.ru/oferta', 'OFERTA', 'menubar=no,location=no,resizable=yes,scrollbars=yes,status=no')">согласие на обработку</a> своих персональных данных</p>
 						</div>
 
 						<button class="btn btn_primary"><p>Зарегистрироваться</p></button>
@@ -159,13 +287,14 @@
 				<div class="eventSidebar__title"><p>Ближайшие мероприятия</p></div>
 				<ul class="eventRecent">
 					<li class="eventRecent__item">
-						<img class="eventRecent__picture" src="assets/img/event__sidebar.jpg" height="160" width="260" alt="">
+						<img class="eventRecent__picture" src="assets/img/event__sidebar.jpg" alt="">
 						<div class="eventRecent__title"><h3>Как превратить бизнес в хобби?</h3></div>
 						<div class="eventRecent__date"><p>27.08.2017</p></div>
 						<div class="eventRecent__text"><p>Встреча будет полезна начинающим предпринимателям, тем, кто только планирует свое дело, а также всем, кому интересна деятельность Scandinavia Club и Coordi.ru.</p></div>
 						<a href="#" class="link"><p>Перейти</p></a>
 					</li>
 					<li class="eventRecent__item">
+						<img class="eventRecent__picture" src="assets/img/event__sidebar.jpg" alt="">
 						<div class="eventRecent__title"><h3>Скандинавская мифология</h3></div>
 						<div class="eventRecent__date"><p>01.08.2017</p></div>
 						<div class="eventRecent__text"><p>Историк культуры и скандинавист, расскажет о том, почему не стоит сводить северную мифологию к четкой системе персонажей и их взаимосвязей и научит работать с первоисточниками.</p></div>

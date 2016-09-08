@@ -194,6 +194,12 @@
 .navMobile__soc-links{
 	margin:rhythm(3) 0;
 }
+.navMobile__buttons{
+	padding-bottom:rhythm(6);
+}
+.navMobile__langSwitch{
+	margin:rhythm(3) 0;
+}
 .nav__item{
 	@include underline-from-center();
 	display:inline-block;
@@ -348,12 +354,11 @@
 	@include container();
 	padding:0 rhythm(2.5);
 	margin-bottom:rhythm(4);
-	& h1{
+	& h1 {
 		@extend .p-h3;
 	}
 	@media (max-width: 64em) {
 		padding-top: rhythm(11);
     	text-align: center;
-	}
-	    
+	}	    
 }

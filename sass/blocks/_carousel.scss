@@ -46,6 +46,7 @@ _:-ms-lang(x), .carouselWrap {
     opacity: 0;
     //min-height:rhythm(68);
     width:100%;
+    height:100%;
     transition: opacity 0.3s linear;
     background-size:cover;
     background-position:center;
@@ -75,11 +76,17 @@ _:-ms-lang(x), .carouselWrap {
 }
 .carousel__control.prev {
     left: 5%;
+    @media (max-width: 24em) {
+        left:rhythm(1);
+    }
     transform: rotate(180deg);
 }
 
 .carousel__control.next {
     right: 5%;
+    @media (max-width: 24em) {
+        right:rhythm(1);
+    }
 }
 
 .carousel__control:hover {

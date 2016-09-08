@@ -1,0 +1,54 @@
+.soon{
+	z-index:550;
+	position: fixed;
+    bottom: rhythm(-38);
+    width: 100%;
+    background: $accent-back;
+}
+.soon_isActive{
+	bottom:rhythm(0);
+	& ~ .footer{
+		margin-bottom:rhythm(16);
+	}
+}
+.soon__content{
+	@include container();
+	padding-top:rhythm(1);
+	padding-bottom:rhythm(4);
+	padding-left:rhythm(2.5);
+	padding-right:rhythm(2.5);
+	text-align:center;
+}
+.soon__text, .soon__btn {
+	display:inline-block;
+	vertical-align:middle;
+	margin-top:rhythm(2);
+}
+.soon__text {
+	text-align:left;
+	color:$gray-15;
+	margin-right:rhythm(5);
+	& .soon__title {
+		color:$text-clr;
+		@extend .p-h3;
+	}
+}
+.soon__btn{
+	padding-top:rhythm(0.5);
+}
+.soon__close{
+	border:none;
+	background:none;
+	padding:0;
+	color:$warning-dark;
+	position: absolute;
+	right:rhythm(3);
+	padding-top:rhythm(1.5);
+	opacity:0.5;
+	& p{
+		@include adjust-font-size-to(34px, 3);
+	}
+	&:hover{
+		opacity:1;
+	}
+}

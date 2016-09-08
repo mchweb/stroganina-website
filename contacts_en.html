@@ -27,7 +27,7 @@
 		<div class="modalBack"></div>
 
 		<!-- BEGIN of book -->
-		<div class="book">
+		<div class="book book_contact">
 			<button type="button" class="book__close" onclick="hideBookForm()"><p>×</p></button>
 			<div class="book__title"><p>Contact us</p></div>
 			<form class="bookForm" action="javascript:void(null);" onSubmit="sendContactForm()">
@@ -37,30 +37,30 @@
 	
 				<div class="bookFormSection">
 					<div class="bookFormGroup">
-						<label class="formGroup__label" for="f-name">Your name</label>
-						<input name="f-name" id="f-name" type="text" class="formGroup__input" placeholder="Иванов Иван">
+						<label class="formGroup__label" for="fc-name">Your name</label>
+						<input name="fc-name" id="fc-name" type="text" class="formGroup__input" placeholder="Иванов Иван">
 					</div>
 					<div class="bookFormGroup bookFormGroup_required">
-						<label class="formGroup__label" for="f-phone">Phone</label>
+						<label class="formGroup__label" for="fc-phone">Phone</label>
 						<p class="formGroup__error">Please fill out this field</p>
-						<input name="f-phone" id="f-phone" class="formGroup__input" type="tel" value="+7 " required placeholder="+7 ___ ___-__-__">
+						<input name="fc-phone" id="fc-phone" class="formGroup__input" type="tel" value="+7 " required placeholder="+7 ___ ___-__-__">
 					</div>
 					<div class="bookFormGroup bookFormGroup_required">
-						<label class="formGroup__label" for="f-text">Message</label>
+						<label class="formGroup__label" for="fc-text">Message</label>
 						<p class="formGroup__error">Please fill out this field</p>
-						<textarea name="f-text" id="f-text" onkeyup="autoGrowTextArea(this)" class="formGroup__input" rows="3" required=""></textarea>
+						<textarea name="fc-text" id="fc-text" onkeyup="autoGrowTextArea(this)" class="formGroup__input" rows="3" required=""></textarea>
 					</div>
 				</div>
 
 				<div class="bookFormSection">
 					<div class="bookFormGroup bookFormGroup_checkbox">
-						<input class="formGroup__checkbox" type="checkbox" name="f-order_sub" id="f-order_sub">
-						<label class="formGroup__label" for="f-order_sub">Subscribe for our digest of&nbsp;news and events in&nbsp;the Space Hall</label>
+						<input class="formGroup__checkbox" type="checkbox" name="fc-order_sub" id="fc-order_sub">
+						<label class="formGroup__label" for="fc-order_sub">Subscribe for our digest of&nbsp;news and events in&nbsp;the Space Hall</label>
 	
 						<div class="bookFormGroup bookFormGroup__details bookFormGroup_required">
-							<label class="formGroup__label" for="f-email">E-mail</label>
+							<label class="formGroup__label" for="fc-email">E-mail</label>
 							<p class="formGroup__error">Please fill out this field</p>
-							<input name="f-email" id="f-email" class="formGroup__input" type="email" placeholder="ivanov@gmail.com">
+							<input name="fc-email" id="fc-email" class="formGroup__input" type="email" placeholder="ivanov@gmail.com">
 						</div>
 					</div>
 

@@ -11,10 +11,16 @@
 }
 .schedule__meta{
 	margin-top:rhythm(-1);
-	@include span(3);
+	@include span(3 first);
+	@media (max-width: 63em) {
+		@include span(4 last);
+	}
 }
 .schedule__info{
 	@include span(6);
+	@media (max-width: 63em) {
+		@include span(8);
+	}
 }
 .schedule__title{
 	margin-bottom:rhythm(3);
@@ -30,8 +36,11 @@
 	margin-top:rhythm(2);
 }
 .schedule__author{
-	@include span(3); 
+	@include span(3 last); 
 	text-align:center;
+	@media (max-width: 63em) {
+		@include span(4 last);
+	}
 }
 .schedule__link{
 	margin:rhythm(1) 0;
@@ -50,13 +59,15 @@
 .date__digits, .date__text{
 	display:inline-block;
 	vertical-align:middle;
+	text-align:left;
 }
 .date__digits{
 	& p{
-		@extend .p-h1;
+		@extend .p-h1_noscale;
 	}
 }
 .date__month{
+	text-align:left;
 	& p{
 		@extend .p-h3;
 	}
@@ -64,4 +75,30 @@
 .moreEvents{
 	margin:rhythm(6) rhythm(3);
 	text-align:center;
+	& button{
+		max-height:rhythm(10);
+		overflow-x:hidden;
+	}
+	& .moreEvents__end{
+		
+		
+	}
+}
+.moreEvents__end{
+	overflow-x:hidden;
+	max-height:0;
+	padding:0;
+	opacity:0;
+}
+.moreEvents_noMore{
+	& button {
+		max-height:0;
+		border:none;
+		padding:0;
+	}
+	& .moreEvents__end{
+		padding:rhythm(2) 0;
+		opacity:1;
+		max-height:rhythm(10);
+	}
 }

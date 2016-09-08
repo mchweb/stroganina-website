@@ -84,6 +84,12 @@
 		@include adjust-font-size-to($fs-h2-mob, 7);
 	}
 }
+.p-h1_noscale {
+	font-family: 'Lora', Georgia, serif;
+	font-weight: bold;
+	font-style: normal;
+	@include adjust-font-size-to($fs-h1, 12);
+}
 
 .p-link_black {
 	border-bottom:1px solid rgba(186, 186, 186, 0.4);

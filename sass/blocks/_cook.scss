@@ -158,9 +158,11 @@
 	}
 }
 
+.cookContent__breadcrumbs{
+	padding:rhythm(3);
+}
 .breadcrumbs{
 	color:$gray-25;
-	padding:rhythm(3);
 	& li{
 		display:inline;
 		@include adjust-font-size-to($fs-base);
@@ -176,6 +178,9 @@
 			width:0;
 			height:0;
 		}
+	}
+	& a{
+		border-bottom:1px solid $gray-50;
 	}
 }
 

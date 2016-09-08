@@ -5,7 +5,8 @@
 	transition: opacity 0.25s ease-in-out;
 }
 .book,
-.bookSuccess
+.bookSuccess,
+.soon
 {
 	transition: all 0.25s ease-in-out;
 }
@@ -16,7 +17,9 @@
 .cookNavTrigger,
 .good__button,
 .minicart__title,
-.minicartWrap
+.minicartWrap,
+.moreEvents button,
+.moreEvents__end
 {
     transition: all 0.2s ease-in-out;
 }
