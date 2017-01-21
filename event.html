@@ -99,16 +99,21 @@
 			<div class="eventHeadingWrap">
 				<div class="eventHeading__title"><h1>Мастер-класс по упаковке и продаже франшиз</h1></div>
 				<div class="eventHeading__date">
+					<!-- -->
+					<div class="date__month date__month_longt"><p>С&nbsp;29 сентября<br>по 30 октября</p></div>
+					<div class="date__time"><p>14:00 — 16:00</p></div>
+					<!-- -->
+					<!-- -->
 					<div class="date__digits"><p>29</p></div>
-						<div class="date__text">
-							<div class="date__month"><p>сентября</p></div>
-							<div class="date__time"><p>14:00 — 16:00</p></div>
-						</div>
+					<div class="date__text">
+						<div class="date__month"><p>сентября</p></div>
+						<div class="date__time"><p>14:00 — 16:00</p></div>
+					</div>
+					<!-- -->
 				</div>
 				<div class="eventHeading__button"><a href="#eventReg" class="btn btn_primary"><p>Регистрация</p></a></div>
 				<div class="eventHeading__price eventHeading__price_sm"><p>Бесплатное<br>мероприятие</p></div>
 			</div>
-			
 		</div>
 		<!-- END of eventheading -->
 
@@ -119,8 +124,10 @@
 					<img src="assets/img/event__author.jpg" alt=""/>
 				</div>
 				<div class="eventAuthor__info">
-					<div class="eventAuthor__title"><p>Константин Константинопольский,<br>руководитель проектов</p></div>
-					<div class="eventAuthor__caption"><p>НП ПИТ «Бизнес<br>Партнеры»<br><a href="#">ipartner.pro</a></p></div>
+					<div class="eventAuthor__title">
+						<p><strong>Константин Константинопольский,<br>руководитель проектов</strong></p>
+						<p>НП ПИТ «Бизнес<br>Партнеры»<br><a href="#">ipartner.pro</a></p>
+					</div>
 				</div>
 			</div>
 			<div class="event__info">
@@ -135,6 +142,11 @@
 					<img src="assets/img/event__image1.jpg" height="310" width="653" alt="">
 					<h2>Для кого мастер-класс</h2>
 					<p>С легкого и яркого импрессионизма часто начинается наша любовь к изобразительному искусству. А знаете ли вы, что история импрессионизма началась еще в Древнем Египте? И охватила не только Францию, но и Россию, Италию, Скандинавию и Америку?</p>
+					<ol>
+						<li>привет</li>
+						<li>стой</li>
+						<li>але</li>
+					</ol>
 
 					<div class="notice">
 						<p>Основа, которую мы&nbsp;затронем сегодня&nbsp;— это ценность продукта и&nbsp;возможность различного варианта заработка на&nbsp;нём. Каждый прекрасно понимает, что создавать нечто никому не&nbsp;нужное&nbsp;— пустая трата сил и&nbsp;времени.</p>
@@ -215,10 +227,31 @@
 					</div>
 				</div>
 				<a class="anchor" id="eventReg"></a>
-				<div class="eventReg">
+				<div class="eventReg eventReg_success eventReg_pay">
 					<div class="eventReg__title"><p>Регистрация</p></div>
-					<div class="eventReg__caption"><p>Это бесплатное мероприятие, поэтому для участия вам нужно только зарегистрироваться. Все поля являются обязательными.</p></div>
-					<form action="" class="eventForm">
+					<div class="eventReg__success">
+						<div class="checkmark checkmark_accent"></div>
+						<div class="eventReg__caption">
+							<p class="eventReg__pay-caption">Сейчас вы попадете на страницу оплаты...</p>
+							<p>Вы&nbsp;успешно зарегистрировались на&nbsp;мероприятие &laquo;Мастер-класс по&nbsp;упаковке и&nbsp;продаже франшиз&raquo;. Встретимся в&nbsp;&laquo;Пространстве&raquo;! <button class="eventReg__bring" onclick="bringRegForm()">Зарегистрировать друзей</button></p>
+						
+						</div>
+
+						<p class="p-secondary">Ищите нас в любимых социальных сетях</p>
+
+						<div class="bookSuccess__soc-links">
+							<ul class="soc-links soc-links_onWhite">
+								<a href="#"><li class="soc-links__item soc-links__item_flamp"></li></a>
+								<a href="#"><li class="soc-links__item soc-links__item_fb"></li></a>
+								<a href="#"><li class="soc-links__item soc-links__item_insta"></li></a>
+								<a href="#"><li class="soc-links__item soc-links__item_tripadv"></li></a>
+								<a href="#"><li class="soc-links__item soc-links__item_email"></li></a>
+							</ul>
+						</div>
+					</div>
+
+					<form action="javascript:void(null);" onSubmit="sendRegForm()" class="eventForm">
+						<div class="eventReg__caption"><p>Это бесплатное мероприятие, поэтому для участия вам нужно только зарегистрироваться. Все поля являются обязательными.</p></div>
 						<table class="eventForm__tickets">
 							<tr>
 								<th><p>Тип билета</p></th>
@@ -228,63 +261,92 @@
 							<tr>
 								<td><p>Входной билет</p></td>
 								<td><p>Бесплатно</p></td>
-								<td><p><input class="eventForm__count" min="1" name="e-count" id="e-count" type="number" value="1"></input></p></td>
+								<td><p><input class="eventForm__count" min="1" name="e-count" id="e-count" type="number" value="1" required></input></p></td>
 							</tr>
 						</table>
 
-						<div class="eventFormGroup eventFormGroup_invalid">
+						<div class="eventReg__formRemember formRemember"><p>Мы&nbsp;заполнили форму данными из&nbsp;вашего прошлого заказа. Если данные изменились, вы&nbsp;можете <a onclick="resetUserData('reg')">очистить форму</a>.</p></div>
+
+						<div class="eventFormGroup">
 							<label class="eventFormGroup__label" for="e-name">Представьтесь</label>
 							<p class="eventFormGroup__error">Пожалуйста, введите ваше имя</p>
-							<input class="eventFormGroup__input" name="e-name" id="e-name" type="text" placeholder="Иван Иванович"/>
+							<input required class="eventFormGroup__input" name="e-name" id="e-name" type="text" placeholder="Иван Иванович"/>
 						</div>
 
 						<div class="eventFormGroup">
 							<label class="eventFormGroup__label" for="e-email">E-mail</label>
 							<p class="eventFormGroup__error">Пожалуйста, введите ваш e-mail</p>
-							<input class="eventFormGroup__input" name="e-email" id="e-email" type="email" placeholder="ivanov@gmail.com"/>
+							<input required class="eventFormGroup__input" name="e-email" id="e-email" type="email" placeholder="ivanov@gmail.com"/>
 						</div>
 
 						<div class="eventFormGroup">
 							<label class="eventFormGroup__label" for="e-phone">Телефон</label>
 							<p class="eventFormGroup__error">Пожалуйста, введите ваш телефон</p>
-							<input class="eventFormGroup__input" name="e-phone" id="e-phone" type="phone" placeholder="+7 912 345-67-89"/>
+							<input required class="eventFormGroup__input" name="e-phone" id="e-phone" type="phone" placeholder="+7 912 345-67-89"/>
 						</div>
 
-						<!--
+						<div class="eventFormGroup">
+							<label class="eventFormGroup__label" for="e-org">Организация</label>
+							<input required class="eventFormGroup__input" name="e-org" id="e-org" type="text" placeholder="ПАО Сбербанк"/>
+						</div>
+
+						<div class="eventFormGroup">
+							<label class="eventFormGroup__label" for="e-position">Должность</label>
+							<input required class="eventFormGroup__input" name="e-position" id="e-position" type="text" placeholder="Генеральный директор"/>
+						</div>
+
+						
 						<div class="eventFormGroup eventFormGroup_radio">
 							<div class="eventForm__radio">
-								<label for="pt-12_0" class="eventFormGroup__radioLabel">
-									<input type="radio" name="pt-12" id="pt-12_0" class="eventFormGroup__radio" checked>
+								<label for="e-pay_0" class="eventFormGroup__radioLabel">
+									<input type="radio" name="e-pay" id="e-pay_0" class="eventFormGroup__radio" checked>
 									Оплата онлайн картой Visa/Master Card/Maestro
 								</label>
 							</div>
 							<div class="eventForm__radio">
-								<label for="pt-12_1" class="eventFormGroup__radioLabel">
-									<input type="radio" name="pt-12" id="pt-12_1" class="eventFormGroup__radio">
+								<label for="e-pay_1" class="eventFormGroup__radioLabel">
+									<input type="radio" name="e-pay" id="e-pay_1" class="eventFormGroup__radio">
 									Оплата в «Пространстве» в день мероприятия
 								</label>
 							</div>
 						</div>
-						-->
 						
+						<!--
+						<div class="eventFormGroup">
+							<label for="e-pay" class="eventFormGroup__radioLabel">
+								<input type="checkbox" name="e-pay" id="e-pay" class="eventFormGroup__radio" checked>
+								Оплатить онлайн (банковские карты, Яндекс.Деньги, Qiwi)
+							</label>
+						</div>
+						-->
 						<div class="eventFormGroup">
 							<label for="e-sub" class="eventFormGroup__radioLabel">
 								<input type="checkbox" name="e-sub" id="e-sub" class="eventFormGroup__radio" checked>
 								Я хочу получать дайджест интересных событий в «Пространстве» от Строганина-бара
 							</label>
 						</div>
+						
 
 
 						<div class="eventForm__privacy formPrivacy">
 							<p>даю <a href="javascript:void(0);" onclick="window.open('http://stroganina-bar.ru/oferta', 'OFERTA', 'menubar=no,location=no,resizable=yes,scrollbars=yes,status=no')">согласие на обработку</a> своих персональных данных</p>
 						</div>
 
-						<button class="btn btn_primary"><p>Зарегистрироваться</p></button>
+						<button class="js-form-loader btn btn_primary" onClick="sendRegForm()">
+							<p>Зарегистрироваться</p>
+							<div class="btn__spinner">
+								<div class="pt"></div>
+								<div class="pt"></div>
+								<div class="pt"></div>
+							</div>
+						</button>
 					</form>
 				</div>
 			</div>
 			<div class="event__sidebar">
 				<div class="eventSidebar__title"><p>Ближайшие мероприятия</p></div>
+				<p>Больше нет предстоящих мероприятий.</p>
+				<!--
 				<ul class="eventRecent">
 					<li class="eventRecent__item">
 						<img class="eventRecent__picture" src="assets/img/event__sidebar.jpg" alt="">
@@ -301,6 +363,7 @@
 						<a href="#" class="link"><p>Перейти</p></a>
 					</li>
 				</ul>
+				-->
 			</div>
 		</div>
 		<!-- END of event -->
@@ -381,6 +444,7 @@
 		<!--<script src="https://api-maps.yandex.ru/2.1/?lang=ru_RU" type="text/javascript"></script>-->
 		<!-- build:js assets/js/main.min.js -->
 		<script src="assets/js/main.js"></script>
+		<script src="assets/js/forms.js"></script>
 		<!-- /build -->
 	</body>
 </html>

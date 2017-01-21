@@ -26,6 +26,10 @@
 	}
 }
 
+.btn_small{
+	padding:rhythm(1.5 - 1/6) rhythm(3);
+}
+
 .btn_primary{
 	background:$accent;
 	color:$bg-clr;
@@ -42,7 +46,7 @@
 }
 .btn_light{
 	background:none;
-	color:$gray-70;
+	color:$bg-clr;
 	border-color:$gray-70;
 	&:hover, &.btn_disabled{
 		color:$text-clr;
@@ -61,6 +65,10 @@
 	max-width:rhythm(27);
 	padding:rhythm(1 - 1/6) rhythm(4);
 }
+.btn_long-2x{
+	max-width:rhythm(30);
+}
+
 
 
 @keyframes spinner {

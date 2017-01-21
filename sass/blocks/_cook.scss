@@ -241,6 +241,7 @@
 	min-height:rhythm(61);
 }
 .good__picture{
+	cursor:pointer;
 	width:100%;
 	height:rhythm(30);
 	background-size:cover;
@@ -307,6 +308,7 @@
 	}
 }
 .good__title{
+	cursor:pointer;
 	& h3{
 		@extend .p-accent;
 	}
@@ -458,14 +460,12 @@
     	max-width: rhythm(60);
     }
 }
+
 .good_isActive{
 	& .goodWrap{
 		position: fixed;
     	z-index: 900;
-    	top: rhythm(15);
-    	@media (max-width: 63em) {
-    		top: rhythm(10);
-    	}
+    	top: rhythm(10);
     	
     	width:100%;
     	max-width:rhythm(80);
@@ -478,18 +478,25 @@
     	}    
 	}
 	& .goodContent{
+		-webkit-overflow-scrolling: touch;
 		animation-duration: 0.15s;
 		animation-name: zoomGood;
 		position:absolute;
 		background: white;
+		min-width:rhythm(80);
+		@media (max-width: 30em) {
+    		min-width: 100vw;
+    	} 
 	}
     & .good__picture{
     	height:rhythm(50);
+    	cursor:default;
     }
     & .good__title,
     & .good__more,
     & .good__info,
     & .good__footer {
+    	cursor:default;
     	padding-left:rhythm(3);
     	padding-right:rhythm(3);
     }
@@ -506,9 +513,9 @@
 		display:block;
 	}
     @media (max-width: 30em) {
-    	top: rhythm(8);
+    	top: rhythm(0);
     	& .goodWrap{
-    		top: rhythm(8);
+    		top: rhythm(0);
     		left:0;
     	}
     }

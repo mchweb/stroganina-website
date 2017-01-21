@@ -69,10 +69,11 @@
 					</ul>
 					<div class="headerSide__phone"><a href="tel:773822502800">502-800</a></div>
 					<div class="headerSide__minicart minicart">
+						<div class="headerSide__book"><button type="button" onclick="showBookForm()" class="btn btn_small btn_primary"><p>Забронировать</p></button></div>
 						<div class="minicart__title">
 							<p>
 								<span class="minicart__icon"></span>
-								<span class="minicart__text">Корзина/</span><span>0</span>
+								<span class="minicart__text">Корзина/</span><span class="minicart__count">0</span>
 							</p>
 							<!--<div class="minicart__dummy"><p>Совсем скоро вы сможете заказать товары из каталога Магазина кулинарии прямо на сайте</p></div>-->
 						</div>
@@ -81,41 +82,11 @@
 								<div class="minicart__header"><p>В вашей корзине:</p></div>
 								<div class="minicart__empty"><p>Здесь будет отображаться ваш заказ.</p></div>
 
-								<ul class="minicart__items">
-									<li class="minicart__item">
-										<div class="minicartItem__title"><p>Полярный плашкоут (50/50/50/50/50/50/45/45 г)</p></div>
-										<div class="minicartItem__buttons">
-											<button class="btn-minus js-cart-minus" data-id="39_1"><p>–</p></button><!--
-										--><input class="btn-count" id="count-39_1" type="text" disabled="" value="1" maxlength="3"><!--
-										--><button class="btn-plus js-cart-plus" data-id="39_1"><p>+</p></button>
-										</div>
-										<div class="minicartItem__price"><p>3 100 Р</p></div>
-										<div class="minicartItem__remove"><button><p>×</p></button></div>
-									</li>
-									<li class="minicart__item">
-										<div class="minicartItem__title"><p>Жирная свинюха</p></div>
-										<div class="minicartItem__buttons">
-											<button class="btn-minus js-cart-minus" data-id="39_1"><p>–</p></button><!--
-										--><input class="btn-count" id="count-39_1" type="text" disabled="" value="1" maxlength="3"><!--
-										--><button class="btn-plus js-cart-plus" data-id="39_1"><p>+</p></button>
-										</div>
-										<div class="minicartItem__price"><p>100 Р</p></div>
-										<div class="minicartItem__remove"><button><p>×</p></button></div>
-									</li>
-									<li class="minicart__item">
-										<div class="minicartItem__title"><p>Васькино бухлишко, оно так утоляет жажду, и я чувствую себя человеком! </p></div>
-										<div class="minicartItem__buttons">
-											<button class="btn-minus js-cart-minus" data-id="39_1"><p>–</p></button><!--
-										--><input class="btn-count" id="count-39_1" type="text" disabled="" value="42" maxlength="3"><!--
-										--><button class="btn-plus js-cart-plus" data-id="39_1"><p>+</p></button>
-										</div>
-										<div class="minicartItem__price"><p>1 002 Р</p></div>
-										<div class="minicartItem__remove"><button><p>×</p></button></div>
-									</li>
+								<ul class="minicart__items js-cart-items">
 								</ul>
 
 								<div class="minicart__footer">
-									<div class="minicart__total"><p>Итого: <span>3 300 Р</span></p></div>
+									<div class="minicart__total"><p>Итого: <span class="js-cart-total">0</span><span> Р</span></p></div>
 									<div class="minicart__button">
 										<a href="#" class="btn btn_primary"><p>Перейти к оформлению</p></a>
 									</div>
@@ -193,6 +164,30 @@
 							<ul>
 								<li>
 									<input type="checkbox" checked="checked" id="c2_1" />
+									<label class="isTree" for="c2_1">Мясная продукция</label>
+									<ul>
+										<li class="isActive"><p><a href="#">Мясные деликатесы</a></p></li>
+									</ul>
+								</li>
+								<li><p><a href="#">Соленья</a></p></li>
+								<li><p><a href="#">Варенье</a></p></li>
+								<li><p><a href="#">Сладкое</a></p></li>
+								<li><p><a href="#">Настойки и наливки</a></p></li>
+							</ul>
+						</li>
+						<li><input type="checkbox" checked="checked" id="c1_2" />
+							<label for="c1_2">Подарки</label>
+							<ul>
+								<li><p><a href="#">Наборы</a></p></li>
+								<li><p><a href="#">Таежные сладости</a></p></li>
+							</ul>
+						</li>
+						<!--<li>
+							<input type="checkbox" checked="checked" id="c1_1" />
+							<label for="c1_1">Продукты</label>
+							<ul>
+								<li>
+									<input type="checkbox" checked="checked" id="c2_1" />
 									<label class="isTree" for="c2_1">Мясо</label>
 									<ul>
 										<li class="isActive"><p>Мясные деликатесы</p></li>
@@ -211,6 +206,7 @@
 								<li class="isActive"><p>Постные блюда</p></li>
 							</ul>
 						</li>
+					
 	
 						<li><input type="checkbox" checked="checked" id="c1_2" />
 							<label for="c1_2">Подарки</label>
@@ -227,6 +223,7 @@
 								<li><p>По цене</p></li>
 							</ul>
 						</li>
+						-->
 					</ul>
 				</div>
 			</div>
@@ -239,7 +236,7 @@
 				</ul>
 
 				<div class="goods">
-					<div class="good">
+					<div class="good" id="good-1">
 						<div class="goodWrap">
 							<div class="goodContent">
 								<div class="good__picture" style="background-image:url('assets/img/good.jpg')">
@@ -257,17 +254,17 @@
 								<footer class="good__footer">
 									<div class="good__size"><p>100 г</p></div>
 									<div class="good__price"><p>134 Р</p></div>
-									<div class="good__button"><button><p>В корзину</p></button></div>
+									<div class="good__button"><button class="js-cart-add" id="add-1" data-id="1" data-sid="1553" data-title="Полярный плашкоут" data-price="134" data-caption="100 гр | 1000" data-image="assets/img/good.jpg"><p>В корзину</p></button></div>
 									<div class="good__count">
-										<button class="btn-minus js-cart-minus" data-id="39_1"><span>–</span></button><!--
-										--><input class="btn-count" id="count-39_1" type="text" disabled="" value="1" maxlength="3"><!--
-										--><button class="btn-plus js-cart-plus" data-id="39_1"><span>+</span></button>
+										<button class="btn-minus js-cart-minus" data-id="1"><span>–</span></button><!--
+										--><input class="btn-count" id="count-1" type="text" disabled="" value="1" maxlength="3"><!--
+										--><button class="btn-plus js-cart-plus" data-id="1"><span>+</span></button>
 									</div>
 								</footer>
 							</div>
 						</div>
 					</div>
-					<div class="good">
+					<div class="good" id="good-2">
 						<div class="goodWrap">
 							<div class="goodContent">
 								<div class="good__picture" style="background-image:url('assets/img/good.jpg')">
@@ -284,12 +281,12 @@
 								</p></div>
 								<footer class="good__footer">
 									<div class="good__size"><p>100 г</p></div>
-									<div class="good__price"><p>134 Р</p></div>
-									<div class="good__button"><button><p>В корзину</p></button></div>
+									<div class="good__price"><p>29 Р</p></div>
+									<div class="good__button"><button class="js-cart-add" id="add-2" data-id="2" data-sid="1523" data-title="Ребрышки оленя варено-копченые" data-price="29" data-caption="20 гр" data-image="assets/img/good.jpg"><p>В корзину</p></button></div>
 									<div class="good__count">
-										<button class="btn-minus js-cart-minus" data-id="39_1"><span>–</span></button><!--
-										--><input class="btn-count" id="count-39_1" type="text" disabled="" value="1" maxlength="3"><!--
-										--><button class="btn-plus js-cart-plus" data-id="39_1"><span>+</span></button>
+										<button class="btn-minus js-cart-minus" data-id="2"><span>–</span></button><!--
+										--><input class="btn-count" id="count-2" type="text" disabled="" value="1" maxlength="3"><!--
+										--><button class="btn-plus js-cart-plus" data-id="2"><span>+</span></button>
 									</div>
 								</footer>
 							</div>
@@ -302,13 +299,10 @@
 									<div class="good__label good__label_3"><p>Хит</p></div>
 									<button type="button" class="good__close"><p>×</p></button>
 								</div>
-								<div class="good__title"><h3>Ребрышки оленя варено-копченые</h3></div>
+								<div class="good__title"><h3>Ребрышки</h3></div>
 								<div class="good__more"><button>Подробное описание ›</button></div>
 								<div class="good__info"><p>
-									Состав: оленина ребрышки, соль, чеснок, перец, смесь фирменных специй.
-									Условия хранения: 180 часов, t=2 — (-5) С. Замороженая продукция дополнительно упаковывается в специальный термопакет.
-									Способ приготовления:
-									Примичания: по вашему желанию мы можем нарезать продукцию.
+
 								</p></div>
 								<footer class="good__footer">
 									<div class="good__size"><p>100 г</p></div>
@@ -386,7 +380,7 @@
 					<div class="cookDelivery__payMeth">
 						<img src="assets/img/payMeth.svg" alt="">
 					</div>
-					<button class="btn btn_primary"><p>Оформить заказ</p></button>
+					<button class="btn btn_primary js-checkout"><p>Оформить заказ</p></button>
 				</div>
 			</div>
 		</div>

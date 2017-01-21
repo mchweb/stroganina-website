@@ -212,8 +212,14 @@
 
 .slideInfo__item{
 	width:50%;
+	text-align:center;
 	display:inline-block;
+	vertical-align:top;
 }
+.slideInfo__caption{
+	@extend .p-compact;
+}
+ 
 .slideInfo__price{
 	@extend .p-h3;
 }

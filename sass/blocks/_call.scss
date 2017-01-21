@@ -1,0 +1,30 @@
+//b-call
+.call{
+	position:fixed;
+	z-index:550;
+	display:none;
+	bottom:rhythm(4);
+	//width:100%;
+	text-align: right;
+	right:0;
+    padding-right: rhythm(4);
+	@media (max-width: 63em) {
+		display:block;
+	}
+}
+.call__icon{
+	display:inline-block;
+	max-width:rhythm(10);
+	height:auto;
+	animation-name: spin;
+    animation-duration: 8s;
+    animation-delay: 2s;
+    animation-iteration-count: infinite; 
+}
+@keyframes spin {
+    0% { transform: rotate(0deg); }
+    10% { transform: rotate(60deg); }
+    20% { transform: rotate(-20deg); }
+    30% { transform: rotate(-0deg); }
+    100% { transform: rotate(0deg); }
+}

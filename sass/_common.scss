@@ -50,6 +50,10 @@ body.modal_open {
 		opacity:1;
 		visibility:visible;
 	}
+	& .header_fixed{
+		opacity:0;
+		pointer-events:none;
+	}
 }
 
 
@@ -90,6 +94,27 @@ FONTS
 	font-weight: bold;
 	font-style: normal;
 	font-display: swap;
+}
+
+/***************************************************
+FONT FIX
+***************************************************/
+@-webkit-keyframes fontfix {
+    from {
+        opacity: 1;
+    }
+
+    to {
+        opacity: 1;
+    }
+}
+
+body {
+    -webkit-animation-duration: 1s;
+    -webkit-animation-name: fontfix;
+    -webkit-animation-iteration-count: 1;
+    -webkit-animation-timing-function: linear;
+    -webkit-animation-delay: .1s;
 }
 
 /***************************************************

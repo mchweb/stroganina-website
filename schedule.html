@@ -18,6 +18,8 @@
 		<!-- build:css assets/css/screen.min.css -->
 		<link rel="stylesheet" media="screen" href="assets/css/screen.css">
 		<!-- /build -->
+
+		<link rel="stylesheet" media="screen" href="assets/css/blocks/calendar.css">
 	</head>
 	<body>
 
@@ -51,70 +53,52 @@
 
 		<!-- BEGIN of heading -->
 		<div class="heading">
-			<h1>Афиша</h1>
+			<h1>Афиша на <span class="js-afisha-date" data-y="2017" data-m="4" data-d="12"></span></h1>
 		</div>
 		<!-- END of heading -->
 
-		<!-- BEGIN of carousel -->
-		<div class="carousel carousel_static carousel_schedule">
-			<div class="carouselWrap">
-				<ol class="carouselList">
-					<li class="carousel__item" style="background-image:url('assets/img/event__soon.jpg')">
-						<div class="banner">
-							<div class="bannerContent">
-								<div class="bannerMeta">
-									<div class="bannerLabel"><p>Скоро</p></div>
-									<ul class="bannerTags">
-										<li class="bannerTags__item">#ещеодин</li>
-									</ul>
-								</div>
-								<div class="bannerContent__title"><h2>5 вдохновляющих фильмов о Скандинавии</h2></div>
-								<div class="bannerContent__text"><p>Расскажем, как и&nbsp;зачем их&nbsp;смотреть, обсудим с&nbsp;вами сюжеты, героев, а &nbsp;главное&nbsp;&mdash; вместе будем искать вдохновение в&nbsp;каждом кадре.</p></div>
-								<div class="bannerContent__link"><a href="#" class="link link_light"><p>Перейти</p></a></div>
-							</div>
+		<div class="calendar">
+			<div class="calendar__content" style="background-image:url('assets/img/event__soon.jpg')">
+				<div class="banner calendar__banner">
+					<div class="bannerContent">
+						<div class="bannerMeta">
+							<div class="bannerLabel"><p>Скоро</p></div>
+							<ul class="bannerTags">
+								<li class="bannerTags__item">#ещеодин</li>
+							</ul>
 						</div>
-					</li>
-					<li class="carousel__item" style="background-image:url('assets/img/bar__carousel2.jpg')">
-						<div class="banner">
-							<div class="bannerContent">
-								<div class="bannerMeta">
-									<div class="bannerLabel"><p>Скоро</p></div>
-									<ul class="bannerTags">
-										<li class="bannerTags__item">#васячотакое</li>
-										<li class="bannerTags__item">#яжирный</li>
-									</ul>
-								</div>
-								<div class="bannerContent__title"><h2>Как бухать водку и не отупеть</h2></div>
-								<div class="bannerContent__text"><p>Главный томский эксперт Василич расскажет свой магический секрет вечной молодости, вечной пьяности.</p></div>
-								<div class="bannerContent__link"><a href="#" class="link link_light"><p>Перейти</p></a></div>
-							</div>
-						</div>
-					</li>
-				</ol>
-
-				<button class="carousel__control prev"></button>
-				<button class="carousel__control next"></button>
-
-				<ol class="carouselIndicators">
-					<li class="carousel__bullet"><button>•</button></li>
-					<li class="carousel__bullet"><button>•</button></li>
-				</ol>
+						<div class="bannerContent__title"><h2><a href="#">5 вдохновляющих фильмов о Скандинавии</a></h2></div>
+						<div class="bannerContent__text"><p>Расскажем, как и&nbsp;зачем их&nbsp;смотреть, обсудим с&nbsp;вами сюжеты, героев, а &nbsp;главное&nbsp;&mdash; вместе будем искать вдохновение в&nbsp;каждом кадре.</p></div>
+						<div class="bannerContent__link"><a href="#" class="link link_light"><p>Перейти</p></a></div>
+					</div>
+				</div>
+				<div class="calendar__datepicker">
+					<div class="calendat__side">
+						<div class="calendar__title"><p>Афиша на день</p></div>
+						<div class="datepicker-here datepicker_calendar"></div>
+					</div>
+				</div>
 			</div>
 		</div>
-		<!-- END of carousel -->
+
 
 		<ul class="schedule">
 			<li class="schedule__item">
 				<div class="schedule__meta">
 					<div class="schedule__date">
+						<div class="date__month date__month_long"><p>С&nbsp;29 сентября<br>по 30 октября</p></div>
+						<div class="date__time"><p>14:00 — 16:00</p></div>
+						<!--
 						<div class="date__digits"><p>29</p></div>
 						<div class="date__text">
 							<div class="date__month"><p>сентября</p></div>
 							<div class="date__time"><p>14:00 — 16:00</p></div>
 						</div>
+						-->
 					</div>
+					<div class="schedule__price"><p>Бесплатное мероприятие</p></div>
 					<div class="schedule__link"><a href="#" class="btn"><p>Регистрация</p></a></div>
-					<div class="schedule__price_sm"><p>Бесплатное мероприятие</p></div>
+					
 				</div>
 				<div class="schedule__info">
 					<div class="schedule__title"><h2>Масстер-класс по упаковке и продаже франшиз</h2></div>
@@ -130,8 +114,11 @@
 					<div class="eventAuthor__picture">
 						<img src="assets/img/event__author.jpg" alt=""/>
 					</div>
-					<div class="eventAuthor__title"><p>Светлана Балыбина</p></div>
-					<div class="eventAuthor__caption"><p>НП ПИТ «Бизнес<br>Партнеры»</p></div>
+					<div class="eventAuthor__title">
+						<p><strong>Светлана Балыбина</strong></p>
+						<p>НП ПИТ «Бизнес<br>Партнеры»</p>
+					</div>
+					<div class="schedule__link schedule__link_mobile"><a href="#" class="btn"><p>Регистрация</p></a></div>
 				</div>
 			</li>
 			<li class="schedule__item">
@@ -143,8 +130,8 @@
 							<div class="date__time"><p>14:00 — 16:00</p></div>
 						</div>
 					</div>
+					<div class="schedule__price"><p>Стоимость участия — <span>4200 Р</span></p></div>
 					<div class="schedule__link"><a href="#" class="btn"><p>Регистрация</p></a></div>
-					<div class="schedule__price"><p>4200 Р</p></div>
 				</div>
 				<div class="schedule__info">
 					<div class="schedule__title"><h2>Свадьба Энвера и Ксении</h2></div>
@@ -160,14 +147,24 @@
 					<div class="eventAuthor__picture">
 						<img src="assets/img/event__author.jpg" alt=""/>
 					</div>
-					<div class="eventAuthor__title"><p>Светлана Балыбина</p></div>
-					<div class="eventAuthor__caption"><p>НП ПИТ «Бизнес<br>Партнеры»</p></div>
+					<div class="eventAuthor__title">
+						<p><strong>Светлана Балыбина</strong></p>
+						<p>НП ПИТ «Бизнес<br>Партнеры»</p>
+					</div>
 				</div>
 			</li>
 		</ul>
+	-->
 
 		<div class="moreEvents">
-			<button class="btn btn_primary"><p>Загрузить еще</p></button>
+			<button class="btn btn_primary">
+				<p>Загрузить еще</p>
+				<div class="btn__spinner">
+					<div class="pt"></div>
+					<div class="pt"></div>
+					<div class="pt"></div>
+				</div>
+			</button>
 			<div class="moreEvents__end"><p>Показаны все мероприятия</p></div>
 		</div>
 

@@ -1,0 +1,137 @@
+.p-menu{
+	display:none;
+	position: fixed;
+    z-index: 900;
+    top: rhythm(5);    
+    width:100%;
+    max-width:rhythm(192);
+    bottom: 0;
+    left: calc(50vw - 36em);
+    overflow-y: overlay;
+    @media (max-width: 72em) {
+    	max-width: none;
+    	left:0;
+    }
+    @media (max-width: 63em) {
+    	top: rhythm(0);
+    }
+}
+.p-menu_isActive{
+	display:block;
+	animation-duration: 0.15s;
+	animation-name: zoomMenu;
+}
+@keyframes zoomMenu{
+    0% {
+        transform:scale(0.8);
+    }
+
+    to {
+        transform:scale(1);
+    }
+}
+.p-menu__wrap{
+	position: absolute;
+	background: $bg-clr;
+	width:100%;
+}
+.p-menu__header{
+	//padding:rhythm(1) rhythm(3);
+}
+
+.p-menu__content{
+	height:calc(100vh - 11em);
+	@media (max-width: 63em) {
+    	height:calc(100vh - 9em);
+    }
+}
+
+.p-menu__item{
+	padding:rhythm(1.5) rhythm(3);
+	& p {
+		@extend .p-note;
+	}
+	&:hover{
+		background:$accent;
+		color:$bg-clr;	
+	}
+}
+.p-menu__item_isActive{
+	background: #323639;
+	color:$bg-clr;
+}
+
+.p-menu__footer{
+	border-top:1px solid $gray-70;
+	padding:rhythm(0.5) rhythm(3) rhythm(2) rhythm(3);
+	margin-left:auto;
+	margin-right:auto;
+	text-align: center;
+}
+.p-menu__title{
+	margin-top:rhythm(1);
+	& p{
+		@extend .p-h4;
+	}
+	display:inline-block;
+	vertical-align:middle;
+	margin-right:rhythm(3);
+}
+.p-menu__book{
+	margin-top:rhythm(1);
+	display:inline-block;
+	vertical-align:middle;
+}
+.p-menu__legacy{
+	padding:rhythm(5);
+	padding-top:rhythm(25);
+	text-align:center;
+	& p{
+		margin:0 auto;
+		max-width:rhythm(80, 14px);
+	}
+}
+.p-menu__close{
+	opacity:0.8;
+	border:none;
+	background:none;
+	padding:0;
+	color:$warning-dark;
+	position: absolute;
+	right:rhythm(2);
+	top:rhythm(2); 
+	& p{
+		@include adjust-font-size-to(34px, 3);
+	}
+	&:hover{
+		opacity:1;
+	}
+}
+
+.p-menu__btn_main{
+	margin-top:rhythm(1);
+	@media (max-width: 48em), (max-height:32em) {
+		display:none;
+	}
+}
+.p-menu__btn_mob{
+	display:none;
+	margin-top:rhythm(1);
+	@media (max-width: 48em), (max-height:32em) {
+		display:inline-block;
+	}
+}
+
+.p-menu__loading{
+	text-align:center;
+	height:0;
+}
+.p-menu__l-title{
+	padding-top:rhythm(6);
+}
+.p-menu__url{
+	border-bottom:1px solid rgba(0,0,0,0.4);
+	&:hover{
+		border-color:rgba(0,0,0,0.7);
+	}
+}

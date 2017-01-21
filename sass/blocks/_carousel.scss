@@ -7,14 +7,6 @@
         & .carousel__item {
             height:100vh;
         }
-        @media (max-width: 38em) {
-            & .carouselWrap {
-                height:auto;
-            }
-            & .carousel__item {
-                height:auto;
-            }
-        }
     }
     &.carousel_static{
         & .carousel__item {
@@ -28,7 +20,7 @@
     }
 }
 .carousel_schedule{
-    margin-bottom:rhythm(8);
+    margin-bottom:rhythm(5);
 }
 
 .carouselWrap {
@@ -103,6 +95,9 @@ _:-ms-lang(x), .carouselWrap {
     right: 0;
     text-align: center;
     z-index: 10;
+    @media (max-width: 30em) {
+        display:none;
+    }
 }
 
 .carouselIndicators li {

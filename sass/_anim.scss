@@ -6,7 +6,13 @@
 }
 .book,
 .bookSuccess,
-.soon
+.soon,
+.eventForm,
+.eventReg__success,
+.callback__success,
+.callback__content,
+.checkout__success,
+.checkout__content
 {
 	transition: all 0.25s ease-in-out;
 }
@@ -19,7 +25,8 @@
 .minicart__title,
 .minicartWrap,
 .moreEvents button,
-.moreEvents__end
+.moreEvents__end,
+.p-menu
 {
     transition: all 0.2s ease-in-out;
 }
@@ -34,7 +41,11 @@
 .minicart__dummy,
 .bookForm,
 .cookNav ul,
-.formRemember
+.formRemember,
+.sticky,
+.callback__send,
+.callback,
+.p-menu__item
 {
     transition: all 0.1s ease-in-out;
 }

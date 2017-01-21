@@ -17,6 +17,7 @@
 		max-height:none;
 		min-height:rhythm(94);
 		padding-bottom:rhythm(4);
+		padding-top:rhythm(10);
 	}
 }
 
@@ -127,4 +128,12 @@
 
 #map iframe{
 	max-height:70vh;
+}
+
+.hero__buttons{
+	margin-top:rhythm(5);
+	& button, a {
+		margin-bottom:rhythm(3);
+		margin-right:rhythm(2);	
+	}
 }

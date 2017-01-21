@@ -28,6 +28,9 @@ _:-ms-lang(x), .banner {
 	& h2{
 		@extend .p-h3;
 	}
+	& a{
+		color:$bg-clr;
+	}
 }
 .bannerContent__text{
 	& p{

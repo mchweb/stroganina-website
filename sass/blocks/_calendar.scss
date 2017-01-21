@@ -1,0 +1,90 @@
+.calendar{
+	@include container();
+	padding-left:15px;
+	padding-right:15px;
+}
+
+.calendar__content{
+	&:after{
+		content: " ";
+    	display: block;
+    	clear: both;
+	}
+}
+
+.calendar__banner{
+	@include span(6);
+	@include push(1);
+	@media (max-width: 56em) {
+		@include span(7);
+    	@include push(0);
+    }
+    @media (max-width: 46em) {
+    	@include span(6);
+    }
+    @media (max-width: 38em) {
+    	display:none;
+    }
+}
+.calendar__banner{
+	.bannerContent{
+		width:100%;
+		margin:0;
+		padding:0;
+	}
+}
+.calendar__datepicker{
+	@include push(1);
+	@include span(4);
+	min-height: 25.5em;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    @media (max-width: 56em) {
+    	@include push(0);
+    	@include span(5);
+    	justify-content: flex-end;
+    }
+    @media (max-width: 46em) {
+    	@include span(6);
+    }
+    @media (max-width: 38em) {
+    	@include span(12);
+    	justify-content: center;
+    }
+}
+.calendar__title{
+	text-align:center;
+	color:$bg-clr;
+	margin-bottom:rhythm(2);
+	& p{
+		@extend .p-accent;
+	}
+}
+
+
+.datepicker_calendar{
+  & .datepicker--cell-day{
+    &.-focus-{
+    	background:$bg-clr;
+    }
+  }
+  & .hasEvent, & .hasEvent.-focus-{
+    background:url('../img/datepicker__back.svg');
+    background-size: cover;
+    background-position: center center;
+   
+  }
+  & .hasEvent.-focus-{
+  	 background:url('../img/datepicker__back_active.svg');
+  	 background-size: cover;
+    background-position: center center;
+    & a{
+    	color:$bg-clr;
+    	width: 100%;
+    	text-align: center;
+    	line-height: rhythm(5);
+    }
+  }
+  
+}

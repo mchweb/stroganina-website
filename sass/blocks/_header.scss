@@ -110,6 +110,7 @@
 	& ~ #updown #updown-container{
 		margin-top:rhythm(12) !important;
 	}
+	opacity:1;
 }
 .header__logo{
 	@include span(2);
@@ -142,6 +143,7 @@
 	}
 }
 .header__nav{
+	-webkit-overflow-scrolling: touch;
 	padding-top:rhythm(2);
 	padding-bottom:rhythm(2);
 	@include span(6);

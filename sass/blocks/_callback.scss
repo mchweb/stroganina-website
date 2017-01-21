@@ -1,0 +1,131 @@
+.callback{
+	z-index:700;
+	visibility:hidden;
+	opacity:0;
+	position:absolute;
+	background:$bg-clr;
+	border-radius:rhythm(2);
+	padding:rhythm(2) rhythm(3) rhythm(3) rhythm(3);
+	//margin-left: rhythm(-36);
+	
+
+	text-align:left;
+	color:$gray-15;
+	box-shadow: 0 0 rhythm(1.5) $gray-65;
+	width:rhythm(44);
+	height:rhythm(14.5);
+}
+.callback_top{
+	margin-top:rhythm(4);
+	&::before{
+    	width: rhythm(4);
+		content: "";
+    	display: block;
+    	position: absolute;
+    	margin-top:rhythm(-4);
+    	right:rhythm(20);
+    	
+    	border-left: rhythm(2) solid transparent;
+    	border-right: rhythm(2) solid transparent;
+    	border-bottom: rhythm(2) solid $bg-clr;
+	}
+}
+.callback_bottom{
+	margin-bottom:rhythm(2);
+	&::before{
+    	width: rhythm(4);
+		content: "";
+    	display: block;
+    	position: absolute;
+    	bottom:rhythm(-2);
+    	right:rhythm(20);
+    	
+    	border-left: rhythm(2) solid transparent;
+    	border-right: rhythm(2) solid transparent;
+    	border-top: rhythm(2) solid $bg-clr;
+	}
+}
+.callback_left{
+	margin-left:rhythm(2.5);
+	&::before{
+		right:rhythm(37.5);
+	}
+}
+.callback_right{
+	margin-right:rhythm(2.5);
+	&::before{
+		right:rhythm(2.5);
+	}
+}
+.callback_header{
+	
+}
+.callback_isActive{
+	opacity:1;
+	visibility:visible;
+	
+}
+.callback__content{
+	overflow:hidden;
+	max-height:rhythm(15);
+}
+
+.callback__title{
+	& p{
+		@extend .p-note;
+	}
+}
+.callback__form{
+	margin-top:rhythm(1);
+}
+
+.callback__input{
+	display:inline-block;
+	vertical-align:middle;
+	@include adjust-font-size-to($fs-base);
+	width:rhythm(23, $fs-base);
+	border-radius:rhythm(1, $fs-base);
+	border:1px solid $gray-70;
+	padding:rhythm(1, $fs-base) rhythm(1.5, $fs-base) rhythm(1 - 2/6, $fs-base) rhythm(1.5, $fs-base);
+	margin-right:rhythm(1.5);
+	&:focus{
+		border-color:$gray-50;
+	}
+}
+
+.callback__form_invalid{
+	& .callback__input{
+		border-color:$warning-dark;	
+	}
+}
+
+.callback__send{
+	display:inline-block;
+	vertical-align:middle;
+	border-radius:rhythm(1);
+	padding:rhythm(3/6) rhythm(2);
+	background-color:$accent;
+	color:$bg-clr;
+	&:hover{
+		background-color:$accent-dark;
+	}
+}
+.callback__success{
+	& .callback__title{
+		margin:rhythm(1) 0;
+	}
+	//display:none;
+	visibility:hidden;
+	overflow:hidden;
+	max-height:0;
+}
+.callback_success{
+	& .callback__content{
+		visibility:hidden;
+		max-height:0;
+	}
+	& .callback__success{
+		visibility:visible;
+		max-height:rhythm(14.5);
+	}
+}

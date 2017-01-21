@@ -3,18 +3,69 @@
     z-index: 400;
     top: calc(50% - 1.5em);
     right: rhythm(-25);
-    &:hover{
-    	right:rhythm(-3.5);
-    	padding-right:rhythm(6);
+    &:hover {
+        right:rhythm(-3.5);
+        .sticky__button{
+    	   padding-right:rhythm(6);
+        }
     }
+    .sticky__close{
+        display:none;
+    }
+}
+.sticky_isActive{
+    .sticky__close{
+        display: inline-block;
+    }
+    right:rhythm(-3.5);
+    .sticky__button{
+        padding-right:rhythm(6);
+        animation-duration: 2.5s;
+        animation-name: highlight;
+        animation-iteration-count: infinite;
+    }
+}
+@keyframes highlight {
+    0% {
+        box-shadow:0px 0px rhythm(2) transparent;
+    }
+
+    50% {
+        box-shadow:0px 0px rhythm(2) $accent;
+        
+    }
+
+    to {
+        box-shadow:0px 0px rhythm(2) transparent;
+    }
+}
+.sticky__button{
     & p:before{
-    	content: "";
-    	vertical-align: middle;
-    	display: inline-block;
-    	width: rhythm(4, 11px);
-    	height:rhythm(4, 11px);
-    	margin:rhythm(-1, 11px);
-    	margin-right:rhythm(2, 11px);
-    	background-image:url("../img/sticky.svg");
+        content: "";
+        vertical-align: middle;
+        display: inline-block;
+        width: rhythm(4, 11px);
+        height:rhythm(4, 11px);
+        margin:rhythm(-1, 11px);
+        margin-right:rhythm(2, 11px);
+        background-image:url("../img/sticky.svg");
+    }
+}
+.sticky_isClosed{
+    right: rhythm(-25) !important;
+    .sticky__button{
+       padding-right:rhythm(4) !important;
+    }
+}
+.sticky__close{
+    vertical-align: middle;
+    padding-top: rhythm(0.5);
+    margin-right:rhythm(1);
+    border:none;
+    background:none;
+    padding:0;
+    color:$warning-dark;
+    & p{
+        @include adjust-font-size-to(34px, 3);
     }
 }

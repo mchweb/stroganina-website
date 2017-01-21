@@ -131,6 +131,54 @@ function sendContactForm(){
 	fillUserData();
 }
 
+function sendRegForm(){
+	var name = $('#e-name').val(),
+		phone = $('#e-phone').val(),
+		email = $('#e-email').val(),
+		org = $('#e-org').val(),
+		position = $('#e-position').val(),
+		count = $('#e-count').val(),
+		pay = $('#e-pay_1').prop("checked");
+		id = 1,
+		sub = $('#e-sub').prop("checked");
+	
+	$(".eventFormGroup").each(function(){
+		$(this).removeClass("eventFormGroup_invalid");
+	});
+	$('#e-count').removeClass("eventForm__count_invalid");
+
+	var isValid = true;
+	if (phone == "" || phone == "+7 "){
+		isValid = false;
+		$('#e-phone').parent().addClass("eventFormGroup_invalid");
+		$('#e-phone').focus();
+	}
+	if (email == ""){
+		isValid = false;
+		$('#e-email').parent().addClass("eventFormGroup_invalid");
+		$('#e-email').focus();
+	}
+	if (name == ""){
+		isValid = false;
+		$('#e-name').parent().addClass("eventFormGroup_invalid");
+		$('#e-name').focus();
+	}
+	if (count == ""){
+		isValid = false;
+		$('#e-count').addClass("eventForm__count_invalid");
+		$('#e-count').focus();
+	}
+
+	if (!isValid){return}
+
+
+
+	rememberUserData(name, phone, email, org, position);
+	$(".eventReg").addClass("eventReg_success");
+
+	//fillUserData();
+}
+
 function sendFooterForm(){
 	var name = $('#ff-name').val(),
 		email = $('#ff-email').val();
@@ -156,4 +204,48 @@ function sendFooterForm(){
 		$(".footerSubscribe .footerSubscribe__success").fadeIn("");
 	});
 	
+}
+
+function sendCallback(){
+	var phone = $('#c-phone').val();
+	var isValid = true;
+
+	$(".callback__form").removeClass("callback__form_invalid");
+	if (phone == "" || phone == "+7 " || phone.length < 16){
+		isValid = false;
+		$(".callback__form").addClass("callback__form_invalid");
+		$('#f-phone').focus();
+		$('#f-phone').parent()[0].scrollIntoView();
+	}
+
+	if (!isValid){return}
+
+	
+
+	rememberUserData("", phone);
+	$(".callback").addClass("callback_success");
+	fillUserData();
+}
+
+function sendOrderForm(){
+	//yaCounter36628560.reachGoal('button');
+	var name = $('#o-name').val(),
+		phone = $('#o-phone').val(),
+		cartData = getCartData();
+	
+	$(".order-form__formGroup").each(function(){
+		$(this).removeClass("order-form__formGroup_invalid");
+	});
+
+	var isValid = true;
+	if (phone == "" || phone == "+7 " || phone.length < 16){
+		isValid = false;
+		$('#o-phone').parent().addClass("order-form__form_invalid");
+	}
+
+	if (!isValid){return}
+
+	//yaCounter36628560.reachGoal('request');
+
+	rememberUserData(name, phone);	
 }

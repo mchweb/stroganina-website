@@ -1,4 +1,5 @@
 .richText{
+	margin-bottom:rhythm(2);
 	& h2{
 		@extend .p-h3;
 		margin-bottom:rhythm(1, 24px);
@@ -25,5 +26,16 @@
 				padding-left:rhythm(1.25);
 			}
 		}
+	}
+	& ul, ol {
+		color:$gray-25;
+		@extend .p-base;
+		margin-bottom:rhythm(2);
+	}
+	& ul li{
+		list-style-type:disc;
+	}
+	& ol li{
+		list-style-type:decimal;
 	}
 }

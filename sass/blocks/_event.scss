@@ -104,6 +104,7 @@
 	@media (max-width: 63em) {
     	vertical-align: middle;
     	margin-bottom:0;
+    	margin-right:rhythm(2);
 	}
 	@media (max-width: 24em) {
 		margin-bottom:rhythm(2);
@@ -120,21 +121,22 @@
 		display: inline-block;
     	vertical-align: middle;
     	//text-align: left;
-    	padding-left: rhythm(2);
+    	//padding-left: rhythm(2);
 	}
 	@media (max-width: 24em) {
 		display:block;
 		padding-left:0;
 	}
 }
-.eventAuthor__title, .eventAuthor__caption{
-	color:$gray-15;
+.eventAuthor__title {
 	& p{
 		@extend .p-compact;
 	}
-}
-.eventAuthor__caption{
 	color:$gray-50;
+	& strong {
+		font-weight:normal !important;
+		color:$gray-15;
+	}
 	& a{
 		color:$gray-50;
 		border-bottom:rhythm(1/3) solid $gray-70; 
@@ -143,8 +145,11 @@
 			border-color:$gray-25;
 		}
 	}
+	@media (max-width: 63em) {
+		display: inline-block;
+    	vertical-align: middle;
+    }
 }
-
 .event__info{
 	@include span(7);
 	margin-top:rhythm(-1);
@@ -215,6 +220,30 @@
 .eventReg{
 	margin-top:rhythm(4);
 	max-width:rhythm(75);
+	.checkmark{
+		padding-left:rhythm(5);
+	}
+}
+.eventReg__success {
+	.eventReg__caption{
+		margin-bottom:rhythm(2);
+	}
+}
+.eventReg_success{
+	.eventReg__success {
+		visibility:visible;
+		max-height:rhythm(64);
+	}
+	.eventForm{
+		visibility:hidden;
+		max-height:0;
+	}
+	.checkmark{
+		opacity:1;
+	}
+}
+.eventReg__formRemember{
+	margin:0 !important;
 }
 .eventReg__title{
 	margin-bottom:rhythm(1);
@@ -226,11 +255,29 @@
 .eventReg__caption{
 	color:$gray-15;
 }
+.eventReg__success{
+	overflow:hidden;
+	visibility:hidden;
+	max-height:0;
+	& button{
+		padding:0;
+		border-bottom:1px solid rgba(0, 0, 0, 0.4);
+		&:hover{
+			color:$text-clr;
+			border-color: rgba(0, 0, 0, 0.65);
+		}
+	}
+}
 
+.eventForm{
+	overflow:hidden;
+	visibility:visible;
+	max-height:rhythm(160);
+}
 .eventForm__tickets{
 	text-align:left;
 	width:100%;
-	margin:rhythm(2) 0;
+	margin:rhythm(2) 0 rhythm(2) 0;
 	& th{
 		color:$bg-clr;
 		background:$accent;
@@ -253,6 +300,9 @@
 	border:1px solid $gray-65;
 	padding:rhythm(4/6) rhythm(1) rhythm(2/6) rhythm(1);
 	max-width:rhythm(10);
+	&.eventForm__count_invalid{
+		border-color:$warning-dark;
+	}
 }
 .eventForm__privacy{
 	margin-bottom:rhythm(1);
@@ -305,6 +355,18 @@
 	color:$gray-15;
 	cursor:pointer;
 	margin-bottom:rhythm(2);
+}
+.eventReg__pay-caption{
+	@extend .p-h4;
+	display:none;
+}
+.eventReg_pay{
+	.eventReg__pay-caption{
+		display:block;
+	}
+	.eventReg__bring{
+		display:none;
+	}
 }
 
 .notice{

@@ -15,11 +15,17 @@
 	@media (max-width: 63em) {
 		@include span(4 last);
 	}
+	@media (max-width: 40em) {
+		@include span(12 first);
+	}
 }
 .schedule__info{
 	@include span(6);
 	@media (max-width: 63em) {
 		@include span(8);
+	}
+	@media (max-width: 40em) {
+		@include span(12);
 	}
 }
 .schedule__title{
@@ -40,20 +46,37 @@
 	text-align:center;
 	@media (max-width: 63em) {
 		@include span(4 last);
+		text-align:left;
+		margin-top:rhythm(2);
+		& .eventAuthor__picture{
+			margin-bottom:rhythm(1);
+		}
+	}
+	@media (max-width: 40em) {
+		@include span(12);
 	}
 }
 .schedule__link{
 	margin:rhythm(1) 0;
-}
-.schedule__price {
-	& p{
-		@extend .p-h3;
+	@media (max-width: 40em) {
+		display:none;
 	}
 }
-.schedule__price_sm{
+.schedule__link_mobile{
+	display:none;
+	@media (max-width: 40em) {
+		display:block;
+	}
+}
+
+.schedule__price{
 	& p{
 		@extend .p-secondary;
 	}
+	& span {
+		font-weight:bold;
+	}
+	margin-bottom:rhythm(2);
 }
 
 .date__digits, .date__text{
@@ -70,6 +93,19 @@
 	text-align:left;
 	& p{
 		@extend .p-h3;
+	}
+}
+.date__month_long{
+	margin-top:rhythm(1);
+}
+.date__month_longt{
+	@media (max-width: 56em) {
+		& p{
+			@include adjust-font-size-to($fs-md, 4);
+		}
+	}
+	@media (max-width: 38em) {
+		text-align:center !important;
 	}
 }
 .moreEvents{
@@ -100,5 +136,44 @@
 		padding:rhythm(2) 0;
 		opacity:1;
 		max-height:rhythm(10);
+	}
+}
+
+.scheduleSwitcher {
+	margin-top:rhythm(2);
+	margin-bottom:rhythm(-1);
+	text-align:center;
+}
+.switcher__items{
+	display:inline-block;
+	vertical-align:middle;
+}
+.switcher__item{
+	display:inline-block;
+	
+	& a{
+		padding: rhythm(1.5) rhythm(2);
+    	border-style: solid;
+    	border-width: 1px 0 1px 0;
+    	
+    	border-color: $gray-50;
+    	background: linear-gradient(to top, $gray-90 0%,rgba(0,0,0,0) 100%); 
+    	&:hover{
+    		background: $gray-80;
+    	}
+	}
+	&:first-child a{
+		border-radius: rhythm(1) 0 0 rhythm(1);
+		border-left-width:1px;
+	}
+	&:last-child a{
+		border-radius: 0 rhythm(1) rhythm(1) 0;
+		border-right-width:1px;
+	}
+	&.switcher__item_isActive{
+		& a{
+    		background: linear-gradient(to bottom, $gray-50 0%,$gray-65 100%); 
+    		color:$bg-clr;
+		}
 	}
 }
