@@ -446,6 +446,7 @@ $(document).ready(function() {
  		hideContactForm();
  		hideAllGoods();
  		hidePopupMenu();
+
 	});
 });
 /////////////////////////////////////////////////////////////////////////////////////////////////////
@@ -652,12 +653,14 @@ goods = (function(){
 			if (type == 2) isClosing = true;
 			if (type != 1){
 				document.body.classList.remove('modal_open');
+				document.body.classList.remove('good_open');
 				good.classList.remove('good_isActive');
 				good.classList.add('good_isInactive');
 			}
 		}else{
 			if (type != 2 && !isClosing){
 				document.body.classList.add('modal_open');
+				document.body.classList.add('good_open');
 				good.classList.remove('good_isInactive');
 				good.classList.add('good_isActive');
 			}
@@ -667,6 +670,7 @@ goods = (function(){
 })();
 
 function hideAllGoods(){
+	document.body.classList.remove('good_open');
 	var goods = document.querySelectorAll('.good');
 	if (goods == null) {return}
 	goods.forEach(function(item, i, arr){

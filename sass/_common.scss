@@ -50,6 +50,8 @@ body.modal_open {
 		opacity:1;
 		visibility:visible;
 	}
+}
+body.good_open{
 	& .header_fixed{
 		opacity:0;
 		pointer-events:none;

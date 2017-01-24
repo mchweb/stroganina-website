@@ -69,16 +69,17 @@
     	background:$bg-clr;
     }
   }
-  & .hasEvent, & .hasEvent.-focus-{
+  & .hasEvent {
     background:url('../img/datepicker__back.svg');
     background-size: cover;
     background-position: center center;
    
   }
-  & .hasEvent.-focus-{
-  	 background:url('../img/datepicker__back_active.svg');
-  	 background-size: cover;
+  & .hasEvent.-focus-, & .selectedDate, & .selectedDate.-focus- {
+  	background:url('../img/datepicker__back_active.svg');
+  	background-size: cover;
     background-position: center center;
+    color:$bg-clr;
     & a{
     	color:$bg-clr;
     	width: 100%;
