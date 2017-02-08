@@ -69,7 +69,26 @@
     	background:$bg-clr;
     }
   }
+  & .datepicker--cell-day{
+    &.-current-{
+        pointer-events:none;
+        font-weight:bold;
+        color:$accent !important;
+        & a{
+            color:$accent !important;
+        }
+        &.-focus- a{
+            color:$bg-clr !important;
+        }
+        &.-selected-{
+            background:url('../img/datepicker__back_active.svg');
+            background-size: cover;
+            background-position: center center;
+        }
+    }
+  }
   & .hasEvent {
+    pointer-events:auto !important;
     background:url('../img/datepicker__back.svg');
     background-size: cover;
     background-position: center center;
@@ -86,6 +105,10 @@
     	text-align: center;
     	line-height: rhythm(5);
     }
+  }
+  & .hasEvent.last {
+    opacity:0.5;
+   
   }
   
 }
