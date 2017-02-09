@@ -51,6 +51,9 @@
 		font-size:10em;
 		line-height:1em;
 	}
+	&.hero__title_sm h1{
+		@extend .p-h2;
+	}
 }
 .hero__desc {
 	margin-bottom:rhythm(2);
