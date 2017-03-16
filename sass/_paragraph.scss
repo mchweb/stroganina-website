@@ -1,11 +1,17 @@
 .p-small {
-	font-family: 'Lato', Helvetica, Arial, sans-serif;;
+	font-family:sans-serif;
+	font-family:Arial;
+	font-family:Helvetica;
+	font-family:'Lato';
 	font-weight: normal;
 	font-style: normal;
 	@include adjust-font-size-to($fs-xxs);
 }
 .p-buttons {
-	font-family: 'Lato', Helvetica, Arial, sans-serif;;
+	font-family:sans-serif;
+	font-family:Arial;
+	font-family:Helvetica;
+	font-family: 'Lato';
 	font-weight: normal;
 	font-style: normal;
 	@include adjust-font-size-to($fs-xs, 3);
@@ -13,55 +19,78 @@
 	text-transform: uppercase;
 }
 .p-secondary {
-	font-family: 'Lato', Helvetica, Arial, sans-serif;;
+	font-family:sans-serif;
+	font-family:Arial;
+	font-family:Helvetica;
+	font-family: 'Lato';
 	font-weight: normal;
 	font-style: normal;
 	@include adjust-font-size-to($fs-sm, 3);
 }
 .p-base {
-	font-family: 'Lato', Helvetica, Arial, sans-serif;;
+	font-family:sans-serif;
+	font-family:Arial;
+	font-family:Helvetica;
+	font-family: 'Lato';
 	font-weight: normal;
 	font-style: normal;
 	@include adjust-font-size-to($fs-base, 4);
 }
 .p-compact {
-	font-family: 'Lato', Helvetica, Arial, sans-serif;;
+	font-family:sans-serif;
+	font-family:Arial;
+	font-family:Helvetica;
+	font-family: 'Lato';
 	font-weight: normal;
 	font-style: normal;
 	@include adjust-font-size-to($fs-base, 3);
 }
 .p-note {
-	font-family: 'Lato', Helvetica, Arial, sans-serif;;
+	font-family:sans-serif;
+	font-family:Arial;
+	font-family:Helvetica;
+	font-family: 'Lato';
 	font-weight: normal;
 	font-style: normal;
 	@include adjust-font-size-to($fs-lg, 4);
 }
 .p-accent {
-	font-family: 'Lato', Helvetica, Arial, sans-serif;;
+	font-family:sans-serif;
+	font-family:Arial;
+	font-family:Helvetica;
+	font-family: 'Lato';
 	font-weight: bold;
 	font-style: normal;
 	@include adjust-font-size-to($fs-lg, 4);
 }
 .p-h5 {
-	font-family: 'Lora', Georgia, serif;
+	font-family:serif;
+	font-family:Georgia;
+	font-family: 'Lora';
 	font-weight: bold;
 	font-style: normal;
 	@include adjust-font-size-to($fs-base, 4);
 }
 .p-h4 {
-	font-family: 'Lora', Georgia, serif;
+	font-family:serif;
+	font-family:Georgia;
+	font-family: 'Lora';
 	font-weight: bold;
 	font-style: normal;
 	@include adjust-font-size-to($fs-lg, 4);
 }
 .p-h3 {
-	font-family: 'Lora', Georgia, serif;
+	font-family:serif;
+	font-family:Georgia;
+	font-family: 'Lora';
 	font-weight: bold;
 	font-style: normal;
 	@include adjust-font-size-to($fs-h3, 5);
 }
 .p-h2 {
-	font-family: 'Lora', Georgia, serif;
+	font-family:serif;
+	font-family:Georgia;
+	font-family: 'Lora';
 	font-weight: bold;
 	font-style: normal;
 	@include adjust-font-size-to($fs-h2, 9);
@@ -73,7 +102,9 @@
 	}
 }
 .p-h1 {
-	font-family: 'Lora', Georgia, serif;
+	font-family:serif;
+	font-family:Georgia;
+	font-family: 'Lora';
 	font-weight: bold;
 	font-style: normal;
 	@include adjust-font-size-to($fs-h1, 12);
@@ -85,7 +116,9 @@
 	}
 }
 .p-h1_noscale {
-	font-family: 'Lora', Georgia, serif;
+	font-family:serif;
+	font-family:Georgia;
+	font-family: 'Lora';
 	font-weight: bold;
 	font-style: normal;
 	@include adjust-font-size-to($fs-h1, 12);
