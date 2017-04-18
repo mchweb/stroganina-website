@@ -102,12 +102,11 @@
 .menu__links{
 }
 
-.menu-link{
-	@include span(4);
-	/*
+.menu__links.menu__links__x2 .menu-link{
 	&:first-child{
-		//@include push(2);
+		@include push(2);
 	}
+	@include span(4);
 	@media (max-width: 63em) {
 		@include span(5);
 		&:first-child{
@@ -120,7 +119,12 @@
 			@include push(0);
 		}
 	}
-	*/
+}
+
+
+.menu__links.menu__links__x3 .menu-link{
+	@include span(4);
+	
 	@media (max-width: 63em) {
 		@include span(12);
 		margin-bottom:rhythm(3);
