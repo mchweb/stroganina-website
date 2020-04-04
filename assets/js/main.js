@@ -176,7 +176,7 @@ $(document).ready(function() {
 
 	$('.js-datepicker-space').mask("00.00.0000");
 });
-function rememberUserData(name, phone, email, org, position){
+function rememberUserData(name, phone, email, org, position, addr){
 	localStorage.setItem("remember", "1");
 
 	if (name != "" && name != undefined){
@@ -193,6 +193,9 @@ function rememberUserData(name, phone, email, org, position){
 	}
 	if (position != "" && position != undefined){
 		localStorage.setItem("position", position);
+	}
+	if (addr != "" && addr != undefined){
+		localStorage.setItem("addr", addr);
 	}
 }
 function fillUserData(form){
@@ -259,6 +262,9 @@ function fillUserData(form){
 			if (localStorage.getItem("phone") != null){
 				$('#o-phone').val(localStorage.getItem("phone"));
 			}
+			if (localStorage.getItem("addr") != null){
+				$('#o-addr').val(localStorage.getItem("addr"));
+			}
 		}
 	}
 }
@@ -286,6 +292,7 @@ function resetUserData(form){
 	if (form == null || form == "order"){
 		$('#o-name').val("");
 		$('#o-phone').val("+7 ");
+		$('#o-addr').val("");
 	}
 }
 $(document).ready(function() {
@@ -871,7 +878,7 @@ window.onresize = updownResize;
 //////////////////////////////////////////////////////////////////////////////////////////////////////
 // Cart
 $(document).ready(function() {
-	updateCart(1);
+	updateCart();
 });
 // Получаем данные из LocalStorage
 function getCartData() {
@@ -888,6 +895,7 @@ function addToCart(e, btn) {
 	if (btn != null){
 		$that = $(btn);
 	}
+	
     var cartData = getCartData() || {}, // получаем данные корзины или создаём новый объект, если данных еще нет
         id = $that.data('id'), // ID товара в бэкенде
         sid = $that.data('sid'), // 0 ID товара в системе (для интеграции)
@@ -895,16 +903,17 @@ function addToCart(e, btn) {
         // 2 количество     
         itemPrice = $that.data('price'), // 3 стоимость товара
         itemCaption = $that.data('caption'), // 4
-        itemImage = $that.data('image');  // 5
+		itemImage = $that.data('image'), // 5
+		itemMenu = $that.data('menu') || 0;  // 6 тип меню. 0 -- кулинария, 1 -- бизнес-ланч, 2 -- доставка
 
     if (cartData.hasOwnProperty(id)) { // если такой товар уже в корзине, то добавляем +1 к его количеству
         if (cartData[id][2] == 0) {
-            cartData[id] = [sid, itemTitle, 1, itemPrice, itemCaption, itemImage];
+            cartData[id] = [sid, itemTitle, 1, itemPrice, itemCaption, itemImage, itemMenu];
         } else {
             cartData[id][2] += 1;
         }
     } else { // если товара в корзине еще нет, то добавляем в объект
-        cartData[id] = [sid, itemTitle, 1, itemPrice, itemCaption, itemImage];
+        cartData[id] = [sid, itemTitle, 1, itemPrice, itemCaption, itemImage, itemMenu];
     }
     // Обновляем данные в LocalStorage
     if (!setCartData(cartData)) {
@@ -979,20 +988,28 @@ function removeFromCart() {
         console.log("Не удалось обновить корзину");
     }
 }
-var cartTotal = 0;
-function updateCart(x) {
+
+// условия доставки
+var DELIVERY_PRICES = [
+	{ price: 150, minOrder: 600, discount: 20 }, // кулинария
+	{ price: 150, minOrder: 600, discount: 20 }, // бизнес ланч
+	{ price: 150, minOrder: 1200, discount: 20 }, // основное меню
+];
+var deliv_type = 0;
+function updateCart() {
     var cartData = getCartData(), // вытаскиваем все данные корзины
         total = 0,
         count = 0,
         crt = $(".js-cart-items"),
-        n = '',
+		n = '',
+		menu = 0,
         arr = [];
     // если что-то в корзине уже есть, начинаем формировать данные для вывода
     if (cartData !== null) {
         for (var items in cartData) {
             var i = items,
-                c = cartData[items][2];            
-
+				c = cartData[items][2];
+				
             $("#count-" + i).val(c);
             $("#m-count-" + i).val(c);
             if (c != 0) {
@@ -1003,7 +1020,9 @@ function updateCart(x) {
 
                 total += c * price;
                 
-                arr.push(cartData[items][0]);
+				arr.push(cartData[items][0]);
+				
+				if (cartData[items][6]) menu = Math.max(menu, cartData[items][6]);
                 
                 if (crt.hasClass("cart__items")) {
                     n += '' +
@@ -1037,33 +1056,68 @@ function updateCart(x) {
             }else{
             	$("#good-" + i).removeClass("good_isOnCart");
             }
-        }
-
-        crt.html(n);
-
-        $(".minicart__count").html(count);
-        $(".js-cart-total").each(function(){$(this).html(total)});;
-        cartTotal = total;
-        
-
-        if (total == 0) {
-            $(".cart__empty").addClass("cart__empty_isActive");
-            $(".order-form__title").css("display","none");
-            $(".order-form").css("display","none");
-            $(".js-checkout").css("display","none");
-            $(".minicart").removeClass("minicart_notEmpty");
-        } else {
-        	$(".cart__empty").removeClass("cart__empty_isActive");
-            $(".order-form__title").css("display","block");
-            $(".order-form").css("display","block");
-            $(".js-checkout").css("display","block");
-            $(".minicart").addClass("minicart_notEmpty");
-
-            $('.n-cart-plus').on('click', plusToCart);
-            $('.n-cart-minus').on('click', minusToCart);
-            $('.n-cart-rm').on('click', removeFromCart);
-    	}     
+		}
 	}
+
+	crt.html(n);
+
+	$(".minicart__count").html(count);
+	$(".js-cart-total").each(function(){$(this).html(total)});;
+
+	if (total == 0) {
+		$(".cart__empty").addClass("cart__empty_isActive");
+		$(".order-form__title").css("display","none");
+		$(".order-form").css("display","none");
+		$(".js-checkout").css("display","none");
+		$(".minicart").removeClass("minicart_notEmpty");
+	} else {
+		$(".cart__empty").removeClass("cart__empty_isActive");
+		$(".order-form__title").css("display","block");
+		$(".order-form").css("display","block");
+		$(".js-checkout").css("display","block");
+		$(".minicart").addClass("minicart_notEmpty");
+
+		$('.n-cart-plus').on('click', plusToCart);
+		$('.n-cart-minus').on('click', minusToCart);
+		$('.n-cart-rm').on('click', removeFromCart);
+
+		var deliv = deliv_type;
+		
+		var discount = 0, discount_reason = '', order_total = 0, deliv_prices = DELIVERY_PRICES[menu], deliv_charge = 0;
+		if (total >= deliv_prices.minOrder){
+			$('.js-order-delivery-charge').hide();
+			discount = deliv_prices.discount;
+			discount_reason = ' при заказе от ' + DELIVERY_PRICES[menu].minOrder + ' Р';
+		} else {
+			$('.js-order-delivery-charge').show();
+			$('.js-cart-delivery-charge-min').html(deliv_prices.minOrder);
+			deliv_charge = deliv_prices.price;
+		}
+		if (deliv === 'o-deliv_1'){
+			$('.js-order-delivery-charge').hide();
+			discount = 20;
+			discount_reason = ' за самовывоз';
+			deliv_charge = 0;
+		}
+		
+
+		order_total = total + deliv_charge;
+		$('.js-order-total').html(order_total.toFixed(2));
+		$('.js-cart-delivery-discount-reason').html(discount_reason);
+
+		if (discount == 0){
+			$('.order-form__total').removeClass('order-form__total_discounted');
+			$('.js-cart-delivery-discount-description').hide();
+		} else {
+			$('.order-form__total').addClass('order-form__total_discounted');
+			var order_total_discounted = total * ((100-discount)*0.01) + deliv_charge;
+			$('.js-order-total-discounted').html(order_total_discounted.toFixed(2));
+			$('.js-cart-delivery-discount-description').show();
+		}
+
+
+	}     
+	
 }
 
 /* Добавляем товар в корзину */
@@ -1083,9 +1137,18 @@ function clearCart() {
         setCartData(cartData);
     }
 }
- $('input[type=radio][name=o-pay]').change(function() {
+ $('input[type=radio][name=o-deliv]').change(function() {
+    if (this.value == 'o-deliv_0') {
+    	$('.js-order-addr').removeClass("order-form__formGroup_hidden");
+    }else{
+		$('.js-order-addr').addClass("order-form__formGroup_hidden");
+	}
+	deliv_type = this.value;
+	updateCart();
+});
+$('input[type=radio][name=o-pay]').change(function() {
     var text = "Оформить и оплатить заказ";
-    if (this.value == 'o-pay_1') {
+    if (this.value !== 'o-pay_0') {
     	text = "Оформить заказ";
     }
     $(".js-order-send").html(text);

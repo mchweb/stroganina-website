@@ -142,7 +142,7 @@
     	float: none;
     	visibility:visible;
     	left:rhythm(-42);
-    	width: rhythm(40);
+    	width: rhythm(42);
     	top: rhythm(12);
     	background: white;
     	padding: 0;
@@ -175,7 +175,7 @@
 	}
 }
 .cookDelivery{
-	padding:rhythm(4) rhythm(5);
+	padding:rhythm(2) rhythm(3);
 	border-color:$gray-70;
 	border-style:solid;
 	border-width:0px 1px 1px 1px;
@@ -273,7 +273,7 @@
 		@include span(12);
 		min-height:0 !important;
 	}
-	min-height:rhythm(61);
+	min-height:rhythm(62);
 }
 .good__picture{
 	cursor:pointer;
@@ -457,9 +457,12 @@
 		margin:0;
 		height:rhythm(5);
 		text-align:center;
-		&[disabled]{
-			opacity:1 !important;
-		}
+	}
+}
+.btn-count {
+	&:disabled{
+		opacity:1 !important;
+		-webkit-appearance: none;
 	}
 }
 

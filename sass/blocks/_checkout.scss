@@ -166,8 +166,12 @@
 .order-form__formGroup_radio {
 	cursor:pointer;
 }
+.order-form__formGroup_hidden {
+	display: none;
+}
 .order-form__radio{
 	margin-top:rhythm(0.5);
+	padding: rhythm(1) 0;
 }
 .order-form__radioLabel{
 	@include adjust-font-size-to($fs-base);
@@ -182,7 +186,8 @@
 
 .order-form__sum{
 	margin:rhythm(3) 0 rhythm(1) 0;
-	& p{
+	& p {@extend .p-small;}
+	& p:not(.order-form__subtitle){
 		@extend .p-accent;
 	}
 }
@@ -224,4 +229,18 @@
 
 .js-checkout{
 	display:none;
+}
+
+.order-form__total {
+	.order-form__total-discounted {
+		display:none;
+	}
+	&.order-form__total_discounted {
+		.order-form__total-base {
+			text-decoration: line-through;
+		}
+		.order-form__total-discounted {
+			display: inline;
+		}
+	}
 }

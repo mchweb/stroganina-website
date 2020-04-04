@@ -253,6 +253,9 @@
 					<div class="cart__empty"><p>Чтобы оформить заказ, <a href="#">добавьте товары в корзину</a>.</p></div>
 					<ul class="cart__items js-cart-items">
 					</ul>
+					<div class="order-form__sum">
+						<p>Сумма заказа: <span class="js-cart-total">0</span> Р</p>
+					</div>
 				</div>
 
 				<div class="checkout__title order-form__title"><p>Информация о заказе</p></div>
@@ -273,22 +276,37 @@
 
 					<div class="order-form__formGroup order-form__formGroup_radio">
 						<div class="order-form__radio">
-							<label for="o-deliv_0" class="order-form__radioLabel order-form__radioLabel_disabled">
-								<input type="radio" name="o-deliv" id="o-deliv_0" class="order-form__radio" disabled>
-								Доставка временно не осуществляется. Ориентрировочная дата запуска доставки — 1 февраля 2017 г.
+							<label for="o-deliv_0" class="order-form__radioLabel">
+								<input type="radio" name="o-deliv" id="o-deliv_0" value="o-deliv_0" class="order-form__radio" checked>
+								Доставка по адресу
 							</label>
+						</div>
+						<div class="order-form__formGroup js-order-addr">
+							<input class="order-form__input" name="o-addr" id="o-addr" type="text" placeholder="ул. Ленина, д. 1, кв. 1">
 						</div>
 						<div class="order-form__radio">
 							<label for="o-deliv_1" class="order-form__radioLabel">
-								<input type="radio" name="o-deliv" id="o-deliv_1" class="order-form__radio" checked>
+								<input type="radio" name="o-deliv" id="o-deliv_1" value="o-deliv_1" class="order-form__radio">
 								Самовывоз в баре по адресу: ул. Карла Маркса 17а.
 							</label>
 						</div>
 					</div>
 
-					<div class="order-form__sum">
-						<p>К оплате: <span class="js-cart-total">0</span> Р</p>
+					<div class="order-form__sum js-order-delivery-charge">
+						<p>Стоимость доставки: <span class="js-cart-delivery-charge-amount">150</span> Р</p>
+						<p class="order-form__subtitle">Бесплатная доставка только при заказе от <span class="js-cart-delivery-charge-min">1200</span> Р</p>
 					</div>
+
+					<div class="order-form__sum">
+						<p>К оплате: 
+							<span class="order-form__total">
+								<span class="order-form__total-base"><span class="js-order-total">0</span> Р</span>
+								<span class="order-form__total-discounted"><span class="js-order-total-discounted">0</span> Р</span>
+							</span>
+						</p>
+						<p class="order-form__subtitle js-cart-delivery-discount-description">Скидка <span class="js-cart-delivery-discount">20</span>%<span class="js-cart-delivery-discount-reason"> за самовывоз</span></p>
+					</div>
+					
 
 					<div class="order-form__formGroup order-form__formGroup_radio">
 						<div class="order-form__radio">
@@ -300,7 +318,13 @@
 						<div class="order-form__radio">
 							<label for="o-pay_1" class="order-form__radioLabel">
 								<input type="radio" name="o-pay" value="o-pay_1" id="o-pay_1" class="order-form__radio">
-								Оплата в баре при получении
+								Оплата наличными при получении
+							</label>
+						</div>
+						<div class="order-form__radio">
+							<label for="o-pay_2" class="order-form__radioLabel">
+								<input type="radio" name="o-pay" value="o-pay_2" id="o-pay_2" class="order-form__radio">
+								Оплата картой при получении
 							</label>
 						</div>
 					</div>

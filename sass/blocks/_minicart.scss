@@ -103,8 +103,12 @@ _:-ms-lang(x), .minicartContent {
 }
 .minicart__item{
 	cursor: default;
+	display: flex;
 	&:hover{
 		background:$gray-90;
+	}
+	@media (max-width: 32em) {
+		display: block;
 	}
 }
 .minicart__header{
