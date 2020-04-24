@@ -1,583 +1,600 @@
-.cook{
-	@include container();
+.cook {
+  @include container();
 }
-.cook-heading{
-	padding-top:rhythm(12);
-	@media (max-width: 63em) {
-		padding-top:rhythm(10);
-	}
+.cook-heading {
+  padding-top: rhythm(12);
+  @media (max-width: 63em) {
+    padding-top: rhythm(10);
+  }
 }
-.cook-heading__wrap{
-	background-image:url('../img/cook-heading.jpg');
-	background-size:cover;
-	background-position:center center;
+.cook-heading__wrap {
+  background-image: url("../img/cook-heading.jpg");
+  background-size: cover;
+  background-position: center center;
 }
-.cook-heading__content{
-	color:$bg-clr;
-	@include container();
-	padding-left:15px;
-	padding-right:15px;
+.cook-heading__content {
+  color: $bg-clr;
+  @include container();
+  padding-left: 15px;
+  padding-right: 15px;
 }
-.cook-heading__title{
-	max-width:rhythm(100);
-	padding-top:rhythm(6);
-	padding-bottom:rhythm(2);
-	& h1{
-		@extend .p-h1;
-	}
+.cook-heading__title {
+  max-width: rhythm(100);
+  padding-top: rhythm(6);
+  padding-bottom: rhythm(2);
+  & h1 {
+    @extend .p-h1;
+  }
 }
-.cook-heading__caption{
-	padding-bottom:rhythm(8);
+.cook-heading__caption {
+  padding-bottom: rhythm(8);
 }
-.cookNavWrap{
-	border-style:solid;
-	border-color:$gray-70;
-	border-width:0 1px;
+.cookNavWrap {
+  border-style: solid;
+  border-color: $gray-70;
+  border-width: 0 1px;
 }
-.cookNav{
-	color:$gray-15;
-	& input {
-		position: absolute;
-		clip: rect(0, 0, 0, 0);
-	}
-	& label{
-		@extend .p-base;
-	}
-	& > li{
-		& input ~ ul { visibility: hidden; max-height: 0; padding:0; overflow-y: hidden;}
-		& input:checked ~ ul { visibility: visible; max-height: rhythm(100); padding:rhythm(2 - 1/6) 0;}
-		& > label {
-			display:block;
-			width:100%;
-			padding:rhythm(2, 24px) rhythm(5, 24px);
-			border-bottom:1px solid $gray-70;
-			@extend .p-h3;
-			cursor:pointer;
-			&:after{
-				content: "";
-    			display: inline-block;
-    			width: rhythm(3, 24px);
-    			height: rhythm(2, 24px);
-    			background-image:url('../img/tree.svg');
-    			margin-left:rhythm(2, 24px);
-			}
-			&:hover{
-				color:$accent;
-			}
-		}
+.cookNav {
+  color: $gray-15;
+  & input {
+    position: absolute;
+    clip: rect(0, 0, 0, 0);
+  }
+  & label {
+    @extend .p-base;
+  }
+  & > li {
+    & input ~ ul {
+      visibility: hidden;
+      max-height: 0;
+      padding: 0;
+      overflow-y: hidden;
+    }
+    & input:checked ~ ul {
+      visibility: visible;
+      max-height: rhythm(100);
+      padding: rhythm(2 - 1/6) 0;
+    }
+    & > label {
+      display: block;
+      width: 100%;
+      padding: rhythm(2, 24px) rhythm(5, 24px);
+      border-bottom: 1px solid $gray-70;
+      @extend .p-h3;
+      cursor: pointer;
+      &:after {
+        content: "";
+        display: inline-block;
+        width: rhythm(3, 24px);
+        height: rhythm(2, 24px);
+        background-image: url("../img/tree.svg");
+        margin-left: rhythm(2, 24px);
+      }
+      &:hover {
+        color: $accent;
+      }
+    }
 
-		& > ul{
-			border-bottom:1px solid $gray-70;
-		}
-		& > ul > li{
-			& input:checked ~ ul { padding:0;}
-			& > p, & > label {
-				padding:0 rhythm(5, 14px);
-				&:hover a{
-					color:$accent;
-				}
-				& a:active{
-					font-weight:bold;
-				}
-				cursor:pointer;
-			}
-			& > p.isTree, & > label.isTree {
-				&:after{
-					content: "";
-    				display: inline-block;
-    				width: rhythm(2, 14px);
-    				height: rhythm(1 + 1/3, 14px);
-    				background-image:url('../img/tree.svg');
-    				margin-left:rhythm(1, 14px);
-				}
-				cursor:pointer;
-			}
-			&.isActive > p, &.isActive > label{
-				font-weight:bold;
-				&:before{
-					content: "";
-    				vertical-align: middle;
-    				display: inline-block;
-    				width: rhythm(4, 14px);
-    				height:rhythm(3, 14px);
-    				margin-left: rhythm(-1 - 1/3, 14px);
-    				background-image:url('../img/arrow.svg');
-				}
-			}
-			& > ul > li{
-				& > p {
-					padding:0 rhythm(5, 14px) 0 rhythm(8, 14px);
-					&:hover a{
-						color:$accent;
-					}
-					& a:active{
-						font-weight:bold;
-					}
-					cursor:pointer;
-				}
-				&.isActive > p{
-					font-weight:bold;
-					&:before{
-						content: "";
-    					vertical-align: middle;
-    					display: inline-block;
-    					width: rhythm(4, 14px);
-    					height:rhythm(3, 14px);
-    					margin-left: rhythm(-1 - 1/3, 14px);
-    					background-image:url('../img/arrow.svg');
-					}
-				}
-			}
-		}
-	}
-}
-
-.cookSidebar{
-	@include span(3);
-	@media (max-width: 63em) {
-		@include span(4);
-	}
-	@media (max-width: 50em) {
-		position: fixed;
-    	float: none;
-    	visibility:visible;
-    	left:rhythm(-42);
-    	width: rhythm(42);
-    	top: rhythm(12);
-    	background: white;
-    	padding: 0;
-    	z-index: 400;
-    	box-shadow: 0 0 rhythm(1.5) $gray-65;
-    	overflow: auto;
-    	max-height: 70vh;
-    	& .cookNavWrap{
-    		border-left:none;
-    	}
-    	&.cookSidebar_isActive{
-    		visibility:visible;
-    		left:0;
-    	}
-	}
-}
-.cookDeliveryWrap{
-	clear:left;
-	@include span(3);
-	@media (max-width: 63em) {
-		@include span(4);
-	}
-	@media (max-width: 50em) {
-		@include span(12);
-		& .cookDelivery{
-			border:none;
-			padding-left:0;
-			padding-right:0;
-		}
-	}
-}
-.cookDelivery{
-	padding:rhythm(2) rhythm(3);
-	border-color:$gray-70;
-	border-style:solid;
-	border-width:0px 1px 1px 1px;
-}
-.cookDelivery__text{
-	color:$gray-50;
-}
-.cookDelivery__payMeth{
-	margin-top:rhythm(2);
-	margin-bottom:rhythm(3);
-	& img{
-		max-width:rhythm(20);
-		height:auto;
-	}
+    & > ul {
+      border-bottom: 1px solid $gray-70;
+    }
+    & > ul > li {
+      & input:checked ~ ul {
+        padding: 0;
+      }
+      & > p,
+      & > label {
+        padding: 0 rhythm(5, 14px);
+        &:hover a {
+          color: $accent;
+        }
+        & a:active {
+          font-weight: bold;
+        }
+        cursor: pointer;
+      }
+      & > p.isTree,
+      & > label.isTree {
+        &:after {
+          content: "";
+          display: inline-block;
+          width: rhythm(2, 14px);
+          height: rhythm(1 + 1/3, 14px);
+          background-image: url("../img/tree.svg");
+          margin-left: rhythm(1, 14px);
+        }
+        cursor: pointer;
+      }
+      &.isActive > p,
+      &.isActive > label {
+        font-weight: bold;
+        &:before {
+          content: "";
+          vertical-align: middle;
+          display: inline-block;
+          width: rhythm(4, 14px);
+          height: rhythm(3, 14px);
+          margin-left: rhythm(-1 - 1/3, 14px);
+          background-image: url("../img/arrow.svg");
+        }
+      }
+      & > ul > li {
+        & > p {
+          padding: 0 rhythm(5, 14px) 0 rhythm(8, 14px);
+          &:hover a {
+            color: $accent;
+          }
+          & a:active {
+            font-weight: bold;
+          }
+          cursor: pointer;
+        }
+        &.isActive > p {
+          font-weight: bold;
+          &:before {
+            content: "";
+            vertical-align: middle;
+            display: inline-block;
+            width: rhythm(4, 14px);
+            height: rhythm(3, 14px);
+            margin-left: rhythm(-1 - 1/3, 14px);
+            background-image: url("../img/arrow.svg");
+          }
+        }
+      }
+    }
+  }
 }
 
-.cookContent__breadcrumbs{
-	padding:rhythm(3);
-}
-.breadcrumbs{
-	color:$gray-25;
-	& li{
-		display:inline;
-		@include adjust-font-size-to($fs-base);
-		&:after{
-			content:"";
-			display:inline-block;
-			vertical-align:middle;			
-			background-image:url('../img/arrow_black.svg');
-			width:rhythm(4, $fs-base);
-			height:rhythm(3, $fs-base);
-		}
-		&:last-child:after{
-			width:0;
-			height:0;
-		}
-	}
-	& a{
-		border-bottom:1px solid $gray-50;
-	}
-}
-
-.cookNavTrigger{
-	z-index: 400;
-	left:0;
-	display:none;
+.cookSidebar {
+  @include span(3);
+  @media (max-width: 63em) {
+    @include span(4);
+  }
+  @media (max-width: 50em) {
     position: fixed;
-    top: rhythm(14);
-    width: rhythm(14);
-    border: none;
-    background: $accent;
-    color:white;
-    padding: rhythm(0.5) rhythm(1) rhythm(0.5) rhythm(3);
-    margin-left: rhythm(-2);
-    border-radius: rhythm(1);
-    & p{
-    	@include adjust-font-size-to($fs-sm, 3);
+    float: none;
+    visibility: visible;
+    left: rhythm(-42);
+    width: rhythm(42);
+    top: rhythm(12);
+    background: white;
+    padding: 0;
+    z-index: 400;
+    box-shadow: 0 0 rhythm(1.5) $gray-65;
+    overflow: auto;
+    max-height: 70vh;
+    & .cookNavWrap {
+      border-left: none;
     }
-    & .cookNavTrigger__show{
-    	display:inline;
+    &.cookSidebar_isActive {
+      visibility: visible;
+      left: 0;
     }
-    & .cookNavTrigger__hide{
-    	display:none;
-    }
-    &.cookNavTrigger_isActive{
-    	left:rhythm(40);
-    	& .cookNavTrigger__show{
-    		display:none;
-    	}
-    	& .cookNavTrigger__hide{
-    		display:inline;
-    	}
-    }
-    @media (max-width: 50em) {
-		display:block;
-	}
+  }
 }
-.cookContent{
-	@include span(9);
-	@media (max-width: 63em) {
-		@include span(8);
-	}
-	@media (max-width: 50em) {
-		@include span(12);
-	}
-	float:right !important;
-	padding:0 !important;
+.cookDeliveryWrap {
+  clear: left;
+  @include span(3);
+  @media (max-width: 63em) {
+    @include span(4);
+  }
+  @media (max-width: 50em) {
+    @include span(12);
+    & .cookDelivery {
+      border: none;
+      padding-left: 0;
+      padding-right: 0;
+    }
+  }
+}
+.cookDelivery {
+  padding: rhythm(2) rhythm(3);
+  border-color: $gray-70;
+  border-style: solid;
+  border-width: 0px 1px 1px 1px;
+}
+.cookDelivery__text {
+  color: $gray-50;
+}
+.cookDelivery__payMeth {
+  margin-top: rhythm(2);
+  margin-bottom: rhythm(3);
+  & img {
+    max-width: rhythm(20);
+    height: auto;
+  }
+}
+
+.cookContent__breadcrumbs {
+  padding: rhythm(3);
+}
+.breadcrumbs {
+  color: $gray-25;
+  & li {
+    display: inline;
+    @include adjust-font-size-to($fs-base);
+    &:after {
+      content: "";
+      display: inline-block;
+      vertical-align: middle;
+      background-image: url("../img/arrow_black.svg");
+      width: rhythm(4, $fs-base);
+      height: rhythm(3, $fs-base);
+    }
+    &:last-child:after {
+      width: 0;
+      height: 0;
+    }
+  }
+  & a {
+    border-bottom: 1px solid $gray-50;
+  }
+}
+
+.cookNavTrigger {
+  z-index: 400;
+  left: 0;
+  display: none;
+  position: fixed;
+  top: rhythm(14);
+  width: rhythm(14);
+  border: none;
+  background: $accent;
+  color: white;
+  padding: rhythm(0.5) rhythm(1) rhythm(0.5) rhythm(3);
+  margin-left: rhythm(-2);
+  border-radius: rhythm(1);
+  & p {
+    @include adjust-font-size-to($fs-sm, 3);
+  }
+  & .cookNavTrigger__show {
+    display: inline;
+  }
+  & .cookNavTrigger__hide {
+    display: none;
+  }
+  &.cookNavTrigger_isActive {
+    left: rhythm(40);
+    & .cookNavTrigger__show {
+      display: none;
+    }
+    & .cookNavTrigger__hide {
+      display: inline;
+    }
+  }
+  @media (max-width: 50em) {
+    display: block;
+  }
+}
+.cookContent {
+  @include span(9);
+  @media (max-width: 63em) {
+    @include span(8);
+  }
+  @media (max-width: 50em) {
+    @include span(12);
+  }
+  float: right !important;
+  padding: 0 !important;
 }
 .good {
-	@include span(4);
-	@media (max-width: 63em) {
-		@include span(6);
-	}
-	@media (max-width: 32em) {
-		@include span(12);
-		min-height:0 !important;
-	}
-	min-height:rhythm(62);
+  @include span(4);
+  @media (max-width: 63em) {
+    @include span(6);
+  }
+  @media (max-width: 32em) {
+    @include span(12);
+    min-height: 0 !important;
+  }
+  min-height: rhythm(62);
 }
-.good__picture{
-	cursor:pointer;
-	width:100%;
-	height:rhythm(30);
-	background-size:cover;
-	margin-bottom:rhythm(2);
+.good__picture {
+  cursor: pointer;
+  width: 100%;
+  height: rhythm(30);
+  background-size: cover;
+  margin-bottom: rhythm(2);
 }
-.good__label{
-	cursor:default;
-	position:absolute;
-	margin-top:rhythm(2);
-	margin-left:rhythm(-1 - 1/3);
-	padding:rhythm(0.5) rhythm(2) rhythm(0.5) rhythm(1);
-	color:$bg-clr;
-	background:$text-clr;
-	& p{
-		@extend .p-h5;
-		&:before{
-			content: "";
-    		display: block;
-    		width: rhythm(4, $fs-base);
-    		height: rhythm(4, $fs-base);
-    		float: left;
-    		margin-right:rhythm(1, $fs-base);
-		}
-	}
-	&:before{
-		content:'';
-    	position:absolute;
-    	left:0;
-    	margin-top: rhythm(-1 - 5/6);
-    	border-top:solid rhythm(0.75) transparent;
-    	border-right:solid rhythm(0.75) $label1-dark;
-    	border-bottom:solid rhythm(0.75) $label1-dark;
-    	border-left:solid rhythm(0.75) transparent;
-	}
+.good__label {
+  cursor: default;
+  position: absolute;
+  margin-top: rhythm(2);
+  margin-left: rhythm(-1 - 1/3);
+  padding: rhythm(0.5) rhythm(2) rhythm(0.5) rhythm(1);
+  color: $bg-clr;
+  background: $text-clr;
+  & p {
+    @extend .p-h5;
+    &:before {
+      content: "";
+      display: block;
+      width: rhythm(4, $fs-base);
+      height: rhythm(4, $fs-base);
+      float: left;
+      margin-right: rhythm(1, $fs-base);
+    }
+  }
+  &:before {
+    content: "";
+    position: absolute;
+    left: 0;
+    margin-top: rhythm(-1 - 5/6);
+    border-top: solid rhythm(0.75) transparent;
+    border-right: solid rhythm(0.75) $label1-dark;
+    border-bottom: solid rhythm(0.75) $label1-dark;
+    border-left: solid rhythm(0.75) transparent;
+  }
 }
-.good__label_1{
-	background-color:$label1;
-	& p:before{
-		background-image:url('../img/label1.svg');
-	}
-	&:before{
-		border-right-color:$label1-dark;
-		border-bottom-color:$label1-dark;
-	}
+.good__label_3 {
+  background-color: $label1;
+  & p:before {
+    background-image: url("../img/label1.svg");
+  }
+  &:before {
+    border-right-color: $label1-dark;
+    border-bottom-color: $label1-dark;
+  }
 }
-.good__label_2{
-	background-color:$label2;
-	& p:before{
-		background-image:url('../img/label2.svg');
-	}
-	&:before{
-		border-right-color:$label2-dark;
-		border-bottom-color:$label2-dark;
-	}
+.good__label_1 {
+  background-color: $label2;
+  & p:before {
+    background-image: url("../img/label2.svg");
+  }
+  &:before {
+    border-right-color: $label2-dark;
+    border-bottom-color: $label2-dark;
+  }
 }
-.good__label_3{
-	background-color:$label3;
-	& p:before{
-		background-image:url('../img/label3.svg');
-	}
-	&:before{
-		border-right-color:$label3-dark;
-		border-bottom-color:$label3-dark;
-	}
+.good__label_2 {
+  background-color: $label3;
+  & p:before {
+    background-image: url("../img/label3.svg");
+  }
+  &:before {
+    border-right-color: $label3-dark;
+    border-bottom-color: $label3-dark;
+  }
 }
-.good__title{
-	cursor:pointer;
-	& h3{
-		@extend .p-accent;
-	}
+.good__title {
+  cursor: pointer;
+  & h3 {
+    @extend .p-accent;
+  }
 }
-.good__more{
-	& button{
-		border:none;
-		background:none;
-		outline:0;
-		padding:0;
-		@extend .p-secondary;
-		color:$gray-50;
-		border-bottom:1px solid $gray-70;
-		margin-bottom:-1px;
-		&:hover{
-			color:$text-clr;
-			border-color:$gray-25;
-		}
-	}
+.good__more {
+  & button {
+    border: none;
+    background: none;
+    outline: 0;
+    padding: 0;
+    @extend .p-secondary;
+    color: $gray-50;
+    border-bottom: 1px solid $gray-70;
+    margin-bottom: -1px;
+    &:hover {
+      color: $text-clr;
+      border-color: $gray-25;
+    }
+  }
 }
-.good__info{
-	display:none;
+.good__info {
+  display: none;
 }
 
-.good__footer{
-	margin:rhythm(3) 0 rhythm(6) 0;
+.good__footer {
+  margin: rhythm(3) 0 rhythm(6) 0;
 }
-.good__size, .good__price, .good__button{
-	display:inline-block;
-	vertical-align: middle;
+.good__size,
+.good__price,
+.good__button {
+  display: inline-block;
+  vertical-align: middle;
 }
-.good__size{
-	color:$gray-50;
-	padding-right:rhythm(2);
-	& p{
-		@extend .p-secondary;
-	}
+.good__size {
+  color: $gray-50;
+  padding-right: rhythm(2);
+  & p {
+    @extend .p-secondary;
+  }
 }
-.good__price{
-	color:$accent;
-	padding-right:rhythm(2);
-	& p{
-		@extend .p-accent;
-	}
+.good__price {
+  color: $accent;
+  padding-right: rhythm(2);
+  & p {
+    @extend .p-accent;
+  }
 }
-.good_isOnCart{
-	& .good__button{
-		max-height:0;
-	}
-	& .good__count{
-		visibility:visible;
-	}
+.good_isOnCart {
+  & .good__button {
+    max-height: 0;
+  }
+  & .good__count {
+    visibility: visible;
+  }
 }
-.good__button{
-	position:absolute;
-	overflow-y:hidden;
-	max-height:rhythm(10);
-	& button{
-		border:none;
-		color:$bg-clr;
-		background:$gray-15;
-		outline:0;
-		padding:rhythm(1) rhythm(2);
-		border-radius:rhythm(2);
-		& p{
-			@extend .p-secondary;
-			&:before{
-				content: "";
-    			display: block;
-    			width: rhythm(3, $fs-sm);
-    			height: rhythm(3, $fs-sm);
-    			float: left;
-    			background-image:url('../img/cart_white.svg');
-    			margin-right:rhythm(1, $fs-sm);
-			}
-		}
-		&:hover{
-			background-color:$accent;
-		}
-	}
+.good__button {
+  position: absolute;
+  overflow-y: hidden;
+  max-height: rhythm(10);
+  & button {
+    border: none;
+    color: $bg-clr;
+    background: $gray-15;
+    outline: 0;
+    padding: rhythm(1) rhythm(2);
+    border-radius: rhythm(2);
+    & p {
+      @extend .p-secondary;
+      &:before {
+        content: "";
+        display: block;
+        width: rhythm(3, $fs-sm);
+        height: rhythm(3, $fs-sm);
+        float: left;
+        background-image: url("../img/cart_white.svg");
+        margin-right: rhythm(1, $fs-sm);
+      }
+    }
+    &:hover {
+      background-color: $accent;
+    }
+  }
 }
 
 .good__count {
-	display:inline-block;
-	visibility:hidden;
-	& .btn-minus, & .btn-plus{
-		border:none;
-		color:$bg-clr;
-		background:$gray-15;
-		outline:0;
-		
-		& span{
-			@extend .p-compact;
-		}
-		&:hover{
-			background-color:$accent;
-		}
-	}
-	& .btn-minus {
-		padding:rhythm(1) rhythm(1 + 5/6) rhythm(1) rhythm(2 + 1/6);
-		
-		border-radius:rhythm(2) 0 0 rhythm(2);
-	}
-	& .btn-plus {
-		padding:rhythm(1) rhythm(2 + 1/6) rhythm(1) rhythm(1 + 5/6);
-		border-radius:0 rhythm(2) rhythm(2) 0;
-	}
-	& .btn-count{
-		width:rhythm(6.5);
-		border:none;
-		margin:0;
-		height:rhythm(5);
-		text-align:center;
-	}
+  display: inline-block;
+  visibility: hidden;
+  & .btn-minus,
+  & .btn-plus {
+    border: none;
+    color: $bg-clr;
+    background: $gray-15;
+    outline: 0;
+
+    & span {
+      @extend .p-compact;
+    }
+    &:hover {
+      background-color: $accent;
+    }
+  }
+  & .btn-minus {
+    padding: rhythm(1) rhythm(1 + 5/6) rhythm(1) rhythm(2 + 1/6);
+
+    border-radius: rhythm(2) 0 0 rhythm(2);
+  }
+  & .btn-plus {
+    padding: rhythm(1) rhythm(2 + 1/6) rhythm(1) rhythm(1 + 5/6);
+    border-radius: 0 rhythm(2) rhythm(2) 0;
+  }
+  & .btn-count {
+    width: rhythm(6.5);
+    border: none;
+    margin: 0;
+    height: rhythm(5);
+    text-align: center;
+  }
 }
 .btn-count {
-	&:disabled{
-		opacity:1 !important;
-		-webkit-appearance: none;
-	}
+  &:disabled {
+    opacity: 1 !important;
+    -webkit-appearance: none;
+  }
 }
 
 @keyframes zoomGood {
-    0% {
-        transform:scale(0.8);
-    }
+  0% {
+    transform: scale(0.8);
+  }
 
-    to {
-        transform:scale(1);
-    }
+  to {
+    transform: scale(1);
+  }
 }
 @keyframes unzoomGood {
-    0% {
-        transform:scale(1.2);
-    }
+  0% {
+    transform: scale(1.2);
+  }
 
-    to {
-        transform:scale(1);
-    }
+  to {
+    transform: scale(1);
+  }
 }
 
-.good_isInactive{
-	& .goodContent{
-		animation-duration: 0.15s;
-		animation-name: unzoomGood;
-	}
+.good_isInactive {
+  & .goodContent {
+    animation-duration: 0.15s;
+    animation-name: unzoomGood;
+  }
 }
-.goodWrap{
-	@media (max-width: 63em) {
-		margin-left: auto;
-		margin-right:auto;
-    	max-width: rhythm(60);
-    }
+.goodWrap {
+  @media (max-width: 63em) {
+    margin-left: auto;
+    margin-right: auto;
+    max-width: rhythm(60);
+  }
 }
 
-.good_isActive{
-	& .goodWrap{
-		position: fixed;
-    	z-index: 900;
-    	top: rhythm(10);
-    	
-    	width:100%;
-    	max-width:rhythm(80);
-    	bottom: 0;
-    	left: calc(50vw - 15em);
-    	//box-shadow: 0px 0px 11px gray;
-    	overflow-y: overlay;
-    	@media (max-width: 32em) {
-    		max-width: none;
-    	}    
-	}
-	& .goodContent{
-		-webkit-overflow-scrolling: touch;
-		animation-duration: 0.15s;
-		animation-name: zoomGood;
-		position:absolute;
-		background: white;
-		min-width:rhythm(80);
-		@media (max-width: 30em) {
-    		min-width: 100vw;
-    	} 
-	}
-    & .good__picture{
-    	height:rhythm(50);
-    	cursor:default;
+.good_isActive {
+  & .goodWrap {
+    position: fixed;
+    z-index: 900;
+    top: rhythm(10);
+
+    width: 100%;
+    max-width: rhythm(80);
+    bottom: 0;
+    left: calc(50vw - 15em);
+    //box-shadow: 0px 0px 11px gray;
+    overflow-y: overlay;
+    @media (max-width: 32em) {
+      max-width: none;
     }
-    & .good__title,
-    & .good__more,
-    & .good__info,
-    & .good__footer {
-    	cursor:default;
-    	padding-left:rhythm(3);
-    	padding-right:rhythm(3);
-    }
-    & .good__label{
-    	display:none;
-    }
-    & .good__more{
-    	display:none;
-    }
-    & .good__info{
-    	display:block;
-    }
-    & .good__close{
-		display:block;
-	}
+  }
+  & .goodContent {
+    -webkit-overflow-scrolling: touch;
+    animation-duration: 0.15s;
+    animation-name: zoomGood;
+    position: absolute;
+    background: white;
+    min-width: rhythm(80);
     @media (max-width: 30em) {
-    	top: rhythm(0);
-    	& .goodWrap{
-    		top: rhythm(0);
-    		left:0;
-    	}
+      min-width: 100vw;
     }
-     @media (max-width: 24em) {
-    	& .good__picture{
-    		height:rhythm(30);
-    	}
+  }
+  & .good__picture {
+    height: rhythm(50);
+    cursor: default;
+  }
+  & .good__title,
+  & .good__more,
+  & .good__info,
+  & .good__footer {
+    cursor: default;
+    padding-left: rhythm(3);
+    padding-right: rhythm(3);
+  }
+  & .good__label {
+    display: none;
+  }
+  & .good__more {
+    display: none;
+  }
+  & .good__info {
+    display: block;
+  }
+  & .good__close {
+    display: block;
+  }
+  @media (max-width: 30em) {
+    top: rhythm(0);
+    & .goodWrap {
+      top: rhythm(0);
+      left: 0;
     }
+  }
+  @media (max-width: 24em) {
+    & .good__picture {
+      height: rhythm(30);
+    }
+  }
 }
 
-.good__close{
-	opacity:0.8;
-	display:none;
-	border:none;
-	background:none;
-	padding:0;
-	color:$warning-dark;
-	position: absolute;
-	right:rhythm(2);
-	top:rhythm(2); 
-	& p{
-		@include adjust-font-size-to(34px, 3);
-	}
-	&:hover{
-		opacity:1;
-	}
+.good__close {
+  opacity: 0.8;
+  display: none;
+  border: none;
+  background: none;
+  padding: 0;
+  color: $warning-dark;
+  position: absolute;
+  right: rhythm(2);
+  top: rhythm(2);
+  & p {
+    @include adjust-font-size-to(34px, 3);
+  }
+  &:hover {
+    opacity: 1;
+  }
 }
