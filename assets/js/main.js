@@ -991,8 +991,8 @@ function removeFromCart() {
 
 // условия доставки
 var DELIVERY_PRICES = [
-	{ price: 150, minOrder: 600, discount: 20 }, // кулинария
-	{ price: 150, minOrder: 600, discount: 20 }, // бизнес ланч
+	{ price: 150, minOrder: 600, discount: 0 }, // кулинария
+	{ price: 150, minOrder: 600, discount: 0 }, // бизнес ланч
 	{ price: 150, minOrder: 1200, discount: 20 }, // основное меню
 ];
 var deliv_type = 0;
