@@ -1086,15 +1086,18 @@ function updateCart() {
 		var discount = 0, discount_reason = '', order_total = 0, deliv_prices = DELIVERY_PRICES[menu], deliv_charge = 0;
 		if (total >= deliv_prices.minOrder){
 			$('.js-order-delivery-charge').hide();
+			$('.js-cart-delivery-charge-amount').html(0);
 			discount = deliv_prices.discount;
 			discount_reason = ' при заказе от ' + DELIVERY_PRICES[menu].minOrder + ' Р';
 		} else {
 			$('.js-order-delivery-charge').show();
+			$('.js-cart-delivery-charge-amount').html(deliv_prices.price);
 			$('.js-cart-delivery-charge-min').html(deliv_prices.minOrder);
 			deliv_charge = deliv_prices.price;
 		}
 		if (deliv === 'o-deliv_1'){
 			$('.js-order-delivery-charge').hide();
+			$('.js-cart-delivery-charge-amount').html(0);
 			discount = 20;
 			discount_reason = ' за самовывоз';
 			deliv_charge = 0;
