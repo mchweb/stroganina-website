@@ -993,7 +993,7 @@ function removeFromCart() {
 var DELIVERY_PRICES = [
 	{ price: 150, minOrder: 600, discount: 0 }, // кулинария
 	{ price: 150, minOrder: 600, discount: 0 }, // бизнес ланч
-	{ price: 150, minOrder: 1200, discount: 20 }, // основное меню
+	{ price: 150, minOrder: 600, discount: 0 }, // основное меню
 ];
 var deliv_type = 0;
 function updateCart() {
@@ -1111,6 +1111,7 @@ function updateCart() {
 		if (discount == 0){
 			$('.order-form__total').removeClass('order-form__total_discounted');
 			$('.js-cart-delivery-discount-description').hide();
+			$('.js-order-total-discounted').html(order_total);
 		} else {
 			$('.order-form__total').addClass('order-form__total_discounted');
 			var order_total_discounted = total * ((100-discount)*0.01) + deliv_charge;
@@ -1142,9 +1143,13 @@ function clearCart() {
 }
  $('input[type=radio][name=o-deliv]').change(function() {
     if (this.value == 'o-deliv_0') {
-    	$('.js-order-addr').removeClass("order-form__formGroup_hidden");
+		$('.js-order-addr').removeClass("order-form__formGroup_hidden");
+		$('.js-pay-1').addClass("order-form__formGroup_hidden");
+		$('.js-pay-2').addClass("order-form__formGroup_hidden");
     }else{
 		$('.js-order-addr').addClass("order-form__formGroup_hidden");
+		$('.js-pay-1').removeClass("order-form__formGroup_hidden");
+		$('.js-pay-2').removeClass("order-form__formGroup_hidden");
 	}
 	deliv_type = this.value;
 	updateCart();
