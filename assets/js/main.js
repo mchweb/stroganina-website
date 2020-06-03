@@ -265,6 +265,9 @@ function fillUserData(form){
 			if (localStorage.getItem("addr") != null){
 				$('#o-addr').val(localStorage.getItem("addr"));
 			}
+			if (localStorage.getItem("email") != null){
+				$('#o-email').val(localStorage.getItem("email"));
+			}
 		}
 	}
 }
@@ -292,6 +295,7 @@ function resetUserData(form){
 	if (form == null || form == "order"){
 		$('#o-name').val("");
 		$('#o-phone').val("+7 ");
+		$('#o-email').val("");
 		$('#o-addr').val("");
 	}
 }
