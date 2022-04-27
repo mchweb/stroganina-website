@@ -2,7 +2,7 @@
   "name": "stroganina-website",
   "version": "0.1.0",
   "devDependencies": {
-    "grunt": "~1.1.0",
+    "grunt": "~1.5.2",
     "grunt-contrib-compass": "^1.0.4",
     "grunt-contrib-copy": "^0.8.2",
     "grunt-contrib-imagemin": "^1.0.0",
